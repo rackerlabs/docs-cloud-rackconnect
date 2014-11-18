@@ -455,13 +455,5 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         </listitem>
       </itemizedlist></para>
   </chapter>
-    <chapter xml:id="somesection" role="api-reference">
-      <title>API Reference</title>
-      <para>For more information on how this section works, see <link
-        xlink:href="http://docs-internal.rackspace.com/writers-guide/content/ch_wadl.html"
-        >Generating an API reference from a WADL file</link>. </para>
-
-      <resources xmlns="http://wadl.dev.java.net/2009/02" href="../wadl/rackconnect.wadl"/>
-      
-    </chapter>
+    
 </book>

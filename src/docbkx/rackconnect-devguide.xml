@@ -454,13 +454,29 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         </listitem>
       </itemizedlist></para>
   </chapter>
-    <chapter xml:id="somesection" role="api-reference">
+    <chapter xml:id="api-operations" role="api-reference">
+      <!-- role="api-reference" introduces chapter with table of operations describing full content of WADL -->
       <title>API Reference</title>
-      <para>For more information on how this section works, see <link
-        xlink:href="http://docs-internal.rackspace.com/writers-guide/content/ch_wadl.html"
-        >Generating an API reference from a WADL file</link>. </para>
-
-      <resources xmlns="http://wadl.dev.java.net/2009/02" href="../wadl/rackconnect.wadl"/>
+      <para>The API can perform these operations:</para>
+  
+        <resources xmlns="http://wadl.dev.java.net/2009/02" href="../wadl/rackconnect.wadl"/>
+      
+      <section xml:id="CloudNetworks_Operations">
+        <title>Cloud networks</title>
+        <para>This section describes the operations 
+          that are available for cloud networks.</para>
+        
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#cloud_networks">
+            
+            <wadl:method href="../wadl/rackconnect.wadl#listAllNetworks"/>
+            <wadl:method href="../wadl/rackconnect.wadl#retrieve1Network"/> 
+          
+          </wadl:resource>
+        </wadl:resources> 
+        
+      </section>
       
     </chapter>
 </book>
