@@ -489,6 +489,7 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
           <wadl:resource 
             href="../wadl/rackconnect.wadl#public_ips">
             <wadl:method href="../wadl/rackconnect.wadl#listAllPublicIPs"/>
+            <wadl:method href="../wadl/rackconnect.wadl#add1PublicIP"/>
           </wadl:resource>
         </wadl:resources> 
         

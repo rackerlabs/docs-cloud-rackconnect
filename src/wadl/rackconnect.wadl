@@ -58,6 +58,7 @@
     <resource id="public_ips" path="public_ips">
       <wadl:doc title="Public IPs"/>   
     	<method href="#listAllPublicIPs" />
+    	<method href="#add1PublicIP" />
         		
     </resource>
     <!-- resources for *public IPs* end here -->
@@ -135,7 +136,7 @@
 	<!-- List all public IPs -->
 	<!--*******************************************************-->
 	<method name="GET" id="listAllPublicIPs">
-		<wadl:doc xml:lang="EN" title="List all public IP"
+		<wadl:doc xml:lang="EN" title="List all public IPs"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				List details for all public IPs. 
@@ -154,6 +155,41 @@
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-allPublicIPs-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- Add one public IP -->
+	<!--*******************************************************-->
+	<method name="POST" id="add1PublicIP">
+		<wadl:doc xml:lang="EN" title="Add one public IP"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				Add one public IP. 
+			</para>
+			<para>This operation 
+				provisions a new
+				public IP 
+				for <code>tenant_id</code>.
+			</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-addPublicIP-response.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="OK" xml:lang="EN">Success.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-addPublicIP-response.json"
 					/>
 				</wadl:doc>
 			</representation>
