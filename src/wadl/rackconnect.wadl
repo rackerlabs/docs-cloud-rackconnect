@@ -54,6 +54,15 @@
 	</resource>
     <!-- resources for *cloud networks* end here --> 
 
+    <!-- resources for *load balancer pools* begin here -->    	
+    <resource id="load_balancer_pools" path="load_balancer_pools">
+      <wadl:doc title="Load balancer pools"/>   
+        		<method href="#listAllLBPools" />
+        		<method href="#retrieve1LBPool" />
+        		
+        	</resource>
+    <!-- resources for *load balancer pools* end here -->
+
     <!-- resources for *public IPs* begin here -->    	
     <resource id="public_ips" path="public_ips">
       <wadl:doc title="Public IPs"/>   
@@ -129,6 +138,65 @@
 						href="../wadl/samples/rc3-allVolumes-response.json"
 					/>
 			</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	
+	<!--*******************************************************-->
+	<!-- List all load balancer pools -->
+	<!--*******************************************************-->
+	<method name="GET" id="listAllLBPools">
+		<wadl:doc xml:lang="EN" title="List all load balancer pools"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				List details for all load balancer pools. 
+			</para>
+			<para>This operation 
+				lists details for 
+				all load balancer pools 
+				available to <code>tenant_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="OK" xml:lang="EN">Success.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-allLBPools-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- List details about one load balancer pool -->
+	<!--*******************************************************-->
+	<method name="GET" id="retrieve1LBPool">
+		<wadl:doc 
+			title="Retrieve one load balancer pool"
+			xmlns="http://docbook.org/ns/docbook"
+			xml:lang="EN">
+			<para role="shortdesc">
+				List details for one load balancer pool. 
+			</para>
+			<para>This operation 
+				lists details for 
+				one load balancer pool 
+				identified by <code>id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response status="200">
+			<doc title="OK">Success.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-1LBPool-response.json"
+					/>
+				</wadl:doc>
 			</representation>
 		</response>
 	</method>

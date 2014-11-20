@@ -480,6 +480,21 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         
       </section>
       
+      <section xml:id="Load_Balancer_Pools_Operations">
+        <title>Load Balancer Pools</title>
+        <para>This section describes the operations 
+          that are available for load balancer pools.</para>
+        
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#load_balancer_pools">
+            <wadl:method href="../wadl/rackconnect.wadl#listAllLBPools"/>
+            <wadl:method href="../wadl/rackconnect.wadl#retrieve1LBPool"/>
+          </wadl:resource>
+        </wadl:resources> 
+        
+      </section>
+      
       <section xml:id="PublicIPs_Operations">
         <title>Public IPs</title>
         <para>This section describes the operations 
