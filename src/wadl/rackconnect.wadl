@@ -23,7 +23,7 @@
   		rackconnect-v30-api-add-and-remove-public-ip-addresses
   	-->
 <resources base="https://dfw.rackconnect.api.rackspacecloud.com/">
-    <resource id="version" path="v3/">
+    <resource id="version" path="v3">
         <resource id="tenant_id" path="{tenant_id}">
 	        <param name="tenant_id" style="template"
 	        	type="xsd:string">
@@ -34,25 +34,33 @@
 	    			 </para>
 	  			</wadl:doc>
 			</param>
-        	
+    <!-- resources for *cloud networks* begin here -->    	
 	<resource id="cloud_networks" path="cloud_networks">
 	  <wadl:doc title="Cloud Networks"/>   
 	  <method href="#listAllNetworks" />
 	  
-	  <resource path="{id}" id="network_id">
+	  <resource path="{id}" id="id">
 	    <param name="id" style="template"
 	    	type="xsd:string">
-	      <wadl:doc xmlns="http://docbook.org/ns/docbook">
+	     <wadl:doc xmlns="http://docbook.org/ns/docbook">
 	      	<para>
-		The unique identifier of a network.
-	      </para>
+				The unique identifier of a network.
+	        </para>
 	      </wadl:doc>
 	    </param>
-	    
 	  	<method href="#retrieve1Network" />
-	    
 	  </resource>
+		
 	</resource>
+    <!-- resources for *cloud networks* end here --> 
+
+    <!-- resources for *public IPs* begin here -->    	
+    <resource id="public_ips" path="public_ips">
+      <wadl:doc title="Public IPs"/>   
+    	<method href="#listAllPublicIPs" />
+        		
+    </resource>
+    <!-- resources for *public IPs* end here -->
 
       </resource>
     </resource>
@@ -97,8 +105,10 @@
 	<!-- List details about one network -->
 	<!--*******************************************************-->
 	<method name="GET" id="retrieve1Network">
-		<wadl:doc xml:lang="EN" title="Retrieve one cloud network"
-			xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc 
+			title="Retrieve one cloud network"
+			xmlns="http://docbook.org/ns/docbook"
+			xml:lang="EN">
 			<para role="shortdesc">
 				List details for one cloud network. 
 			</para>
@@ -109,13 +119,41 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
+		<response status="200">
+			<doc title="OK">Success.</doc>
+			<representation mediaType="application/json">
+			<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-allVolumes-response.json"
+					/>
+			</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- List all public IPs -->
+	<!--*******************************************************-->
+	<method name="GET" id="listAllPublicIPs">
+		<wadl:doc xml:lang="EN" title="List all public IP"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				List details for all public IPs. 
+			</para>
+			<para>This operation 
+				lists details for 
+				all public IPs 
+				available to <code>tenant_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
 		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
 			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allVolumes-response.json"
+						href="../wadl/samples/rc3-allPublicIPs-response.json"
 					/>
 				</wadl:doc>
 			</representation>

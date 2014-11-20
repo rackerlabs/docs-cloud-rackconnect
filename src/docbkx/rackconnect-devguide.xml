@@ -455,11 +455,15 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
       </itemizedlist></para>
   </chapter>
     <chapter xml:id="api-operations" role="api-reference">
-      <!-- role="api-reference" introduces chapter with table of operations describing full content of WADL -->
+      <!-- role="api-reference" introduces chapter 
+        with table of operations describing full content of WADL -->
       <title>API Reference</title>
       <para>The API can perform these operations:</para>
   
-        <resources xmlns="http://wadl.dev.java.net/2009/02" href="../wadl/rackconnect.wadl"/>
+        <wadl:resources 
+          xmlns:wadl="http://wadl.dev.java.net/2009/02" 
+          href="../wadl/rackconnect.wadl"
+          />
       
       <section xml:id="CloudNetworks_Operations">
         <title>Cloud networks</title>
@@ -469,10 +473,22 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
           <wadl:resource 
             href="../wadl/rackconnect.wadl#cloud_networks">
-            
-            <wadl:method href="../wadl/rackconnect.wadl#listAllNetworks"/>
+            <wadl:method href="../wadl/rackconnect.wadl#listAllNetworks"/> 
             <wadl:method href="../wadl/rackconnect.wadl#retrieve1Network"/> 
-          
+          </wadl:resource>
+        </wadl:resources> 
+        
+      </section>
+      
+      <section xml:id="PublicIPs_Operations">
+        <title>Public IPs</title>
+        <para>This section describes the operations 
+          that are available for public IPs.</para>
+        
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#public_ips">
+            <wadl:method href="../wadl/rackconnect.wadl#listAllPublicIPs"/>
           </wadl:resource>
         </wadl:resources> 
         
