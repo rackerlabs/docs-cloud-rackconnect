@@ -39,8 +39,8 @@
 	  <wadl:doc title="Cloud Networks"/>   
 	  <method href="#listAllNetworks" />
 	  
-	  <resource path="{id}" id="id">
-	    <param name="id" style="template"
+	  <resource path="{network_id}" id="network_id">
+	    <param name="network_id" style="template"
 	    	type="xsd:string">
 	     <wadl:doc xmlns="http://docbook.org/ns/docbook">
 	      	<para>

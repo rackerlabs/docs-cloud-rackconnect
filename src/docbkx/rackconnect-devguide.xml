@@ -459,12 +459,7 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         with table of operations describing full content of WADL -->
       <title>API Reference</title>
       <para>The API can perform these operations:</para>
-  
-        <wadl:resources 
-          xmlns:wadl="http://wadl.dev.java.net/2009/02" 
-          href="../wadl/rackconnect.wadl"
-          />
-      
+
       <section xml:id="CloudNetworks_Operations">
         <title>Cloud networks</title>
         <para>This section describes the operations 
@@ -473,7 +468,10 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
           <wadl:resource 
             href="../wadl/rackconnect.wadl#cloud_networks">
-            <wadl:method href="../wadl/rackconnect.wadl#listAllNetworks"/> 
+            <wadl:method href="../wadl/rackconnect.wadl#listAllNetworks"/>  
+          </wadl:resource>
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#network_id">
             <wadl:method href="../wadl/rackconnect.wadl#retrieve1Network"/> 
           </wadl:resource>
         </wadl:resources> 
