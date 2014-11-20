@@ -36,7 +36,7 @@
 			</param>
     <!-- resources for *cloud networks* begin here -->    	
 	<resource id="cloud_networks" path="cloud_networks">
-	  <wadl:doc title="Cloud Networks"/>   
+	  <wadl:doc title="Cloud networks"/>   
 	  <method href="#listAllNetworks" />
 	  
 	  <resource path="{network_id}" id="network_id">
@@ -58,9 +58,20 @@
     <resource id="load_balancer_pools" path="load_balancer_pools">
       <wadl:doc title="Load balancer pools"/>   
         		<method href="#listAllLBPools" />
-        		<method href="#retrieve1LBPool" />
-        		
-        	</resource>
+
+    	<resource path="{load_balancer_pool_id}" id="load_balancer_pool_id">
+    		<param name="load_balancer_pool_id" style="template"
+    			type="xsd:string">
+    			<wadl:doc xmlns="http://docbook.org/ns/docbook">
+    				<para>
+    					The unique identifier of a load balancer pool.
+    				</para>
+    			</wadl:doc>
+    		</param>
+    		<method href="#retrieve1LBPool" />
+    	</resource>
+
+     </resource>
     <!-- resources for *load balancer pools* end here -->
 
     <!-- resources for *public IPs* begin here -->    	
@@ -125,7 +136,7 @@
 			<para>This operation 
 				lists details for 
 				one cloud network 
-				identified by <code>id</code>.
+				identified by <code>network_id</code>.
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
@@ -184,7 +195,7 @@
 			<para>This operation 
 				lists details for 
 				one load balancer pool 
-				identified by <code>id</code>.
+				identified by <code>load_balancer_pool_id</code>.
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->

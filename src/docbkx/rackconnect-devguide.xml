@@ -479,7 +479,7 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
       </section>
       
       <section xml:id="Load_Balancer_Pools_Operations">
-        <title>Load Balancer Pools</title>
+        <title>Load balancer pools</title>
         <para>This section describes the operations 
           that are available for load balancer pools.</para>
         
@@ -487,7 +487,10 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
           <wadl:resource 
             href="../wadl/rackconnect.wadl#load_balancer_pools">
             <wadl:method href="../wadl/rackconnect.wadl#listAllLBPools"/>
-            <wadl:method href="../wadl/rackconnect.wadl#retrieve1LBPool"/>
+          </wadl:resource>
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#load_balancer_pool_id">
+            <wadl:method href="../wadl/rackconnect.wadl#retrieve1LBPool"/> 
           </wadl:resource>
         </wadl:resources> 
         
