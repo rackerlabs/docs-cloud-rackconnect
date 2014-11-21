@@ -35,9 +35,12 @@
 	    <phase>generate-sources</phase>
 	    <configuration>
 	      <includes>
-		rackconnect-devguide.xml,
-		rackconnect-gettingstarted.xml,
-		rackconnect-releasenotes.xml
+	      	rackconnect-devguide.xml
+		<!-- skip building inactive books
+			rackconnect-devguide.xml,
+			rackconnect-gettingstarted.xml,
+			rackconnect-releasenotes.xml
+		-->
 	      </includes>
 	    </configuration>
 	  </execution>

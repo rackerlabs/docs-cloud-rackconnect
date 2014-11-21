@@ -25,7 +25,9 @@
 <resources base="https://dfw.rackconnect.api.rackspacecloud.com/">
     <resource id="version" path="v3">
         <resource id="tenant_id" path="{tenant_id}">
-	        <param name="tenant_id" style="template"
+	        <param name="tenant_id" 
+	        	style="template"
+	        	required="true" 
 	        	type="xsd:string">
 	            <wadl:doc xmlns="http://docbook.org/ns/docbook">
 	                 <para>
@@ -40,7 +42,9 @@
 	  <method href="#listAllNetworks" />
 	  
 	  <resource path="{network_id}" id="network_id">
-	    <param name="network_id" style="template"
+	    <param name="network_id" 
+	    	style="template"
+	    	required="true"
 	    	type="xsd:string">
 	     <wadl:doc xmlns="http://docbook.org/ns/docbook">
 	      	<para>
@@ -60,7 +64,9 @@
         		<method href="#listAllLBPools" />
 
     	<resource path="{load_balancer_pool_id}" id="load_balancer_pool_id">
-    		<param name="load_balancer_pool_id" style="template"
+    		<param name="load_balancer_pool_id" 
+    			style="template"
+    			required="true"
     			type="xsd:string">
     			<wadl:doc xmlns="http://docbook.org/ns/docbook">
     				<para>
@@ -116,7 +122,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allVolumes-response.json"
+						href="../wadl/samples/rc3-allNetworks-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -146,7 +152,7 @@
 			<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1Volume-response.json"
+						href="../wadl/samples/rc3-1Network-response.json"
 					/>
 			</wadl:doc>
 			</representation>
@@ -258,7 +264,7 @@
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN">
 					<xsdxt:code 
-						href="../wadl/samples/rc3-addPublicIP-response.json"/>
+						href="../wadl/samples/rc3-addPublicIP-request.json"/>
 				</wadl:doc>
 			</representation>
 		</request>
