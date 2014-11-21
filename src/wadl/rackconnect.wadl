@@ -23,47 +23,60 @@
   		rackconnect-v30-api-add-and-remove-public-ip-addresses
   	-->
 <resources base="https://dfw.rackconnect.api.rackspacecloud.com/">
-    <resource id="version" path="v3">
-        <resource id="tenant_id" path="{tenant_id}">
+    <resource 
+    	id="version" 
+    	path="v3">
+        <resource 
+        	id="tenant_id" 
+        	path="{tenant_id}">
 	        <param name="tenant_id" 
 	        	style="template"
 	        	required="true" 
 	        	type="xsd:string">
 	            <wadl:doc xmlns="http://docbook.org/ns/docbook">
 	                 <para>
-	      The unique identifier of the tenant or account
-	      in a multi-tenancy cloud.
+	      				The unique identifier of the tenant or account
+	     			    in a multi-tenancy cloud.
 	    			 </para>
 	  			</wadl:doc>
 			</param>
+    <!-- ========================================= -->
     <!-- resources for *cloud networks* begin here -->    	
-	<resource id="cloud_networks" path="cloud_networks">
+	<resource 
+		id="cloud_networks" 
+		path="cloud_networks">
 	  <wadl:doc title="Cloud networks"/>   
 	  <method href="#listAllNetworks" />
 	  
-	  <resource path="{network_id}" id="network_id">
-	    <param name="network_id" 
-	    	style="template"
-	    	required="true"
-	    	type="xsd:string">
-	     <wadl:doc xmlns="http://docbook.org/ns/docbook">
-	      	<para>
-				The unique identifier of a network.
-	        </para>
-	      </wadl:doc>
-	    </param>
+		<resource 
+			id="network_id" 
+			path="{network_id}" >
+	    	<param name="network_id" 
+	    		style="template"
+	    		required="true"
+	    		type="xsd:string">
+	     	<wadl:doc xmlns="http://docbook.org/ns/docbook">
+	      		<para>
+					The unique identifier of a network.
+	      		</para>
+	       </wadl:doc>
+		   </param>
 	  	<method href="#retrieve1Network" />
 	  </resource>
 		
 	</resource>
     <!-- resources for *cloud networks* end here --> 
-
+    <!-- ========================================= -->
     <!-- resources for *load balancer pools* begin here -->    	
-    <resource id="load_balancer_pools" path="load_balancer_pools">
+    <resource 
+    	id="load_balancer_pools" 
+    	path="load_balancer_pools">
       <wadl:doc title="Load balancer pools"/>   
         		<method href="#listAllLBPools" />
 
-    	<resource path="{load_balancer_pool_id}" id="load_balancer_pool_id">
+    	<resource 
+    		id="load_balancer_pool_id" 
+    		path="{load_balancer_pool_id}">
     		<param name="load_balancer_pool_id" 
     			style="template"
     			required="true"
@@ -79,16 +92,36 @@
 
      </resource>
     <!-- resources for *load balancer pools* end here -->
-
+    <!-- ========================================= -->
     <!-- resources for *public IPs* begin here -->    	
-    <resource id="public_ips" path="public_ips">
+    <resource 
+    	id="public_ips" 
+    	path="public_ips">
       <wadl:doc title="Public IPs"/>   
     	<method href="#listAllPublicIPs" />
     	<method href="#add1PublicIP" />
-        		
+    	
+    	<resource 
+    		id="cloud_server_id" 
+    		path="cloud_server_id">
+	  <!--  	<resource path="{cloud_server_UUID}" id="cloud_server_UUID"> -->
+	    		<param name="cloud_server_UUID" 
+	    			style="query"
+	    			required="true"
+	    			type="xsd:string">
+	    			<wadl:doc xmlns="http://docbook.org/ns/docbook">
+	    				<para>
+	    					The UUID of a cloud server.
+	    				</para>
+	    			</wadl:doc>
+	    		</param>
+	    		<method href="#listPublicIPs1server" />
+	<!--    	</resource> -->
+    	</resource>
+    	
     </resource>
     <!-- resources for *public IPs* end here -->
-
+    <!-- ========================================= -->
       </resource>
     </resource>
   </resources>
@@ -275,6 +308,34 @@
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-addPublicIP-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- List all public IPs for one cloud server -->
+	<!--*******************************************************-->
+	<method name="GET" id="listPublicIPs1server">
+		<wadl:doc xml:lang="EN" title="List public IPs for a server"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				List public IPs for a server. 
+			</para>
+			<para>This operation 
+				lists all
+				public IPs 
+				for <code>cloud_server_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="OK" xml:lang="EN">Success.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-allPublicIPs1server-response.json"
 					/>
 				</wadl:doc>
 			</representation>
