@@ -33,7 +33,8 @@
 	        	style="template"
 	        	required="true" 
 	        	type="xsd:string">
-	            <wadl:doc xmlns="http://docbook.org/ns/docbook">
+	            <wadl:doc 
+	            	xmlns="http://docbook.org/ns/docbook">
 	                 <para>
 	      				The unique identifier of the tenant or account
 	     			    in a multi-tenancy cloud.
@@ -45,8 +46,10 @@
 	<resource 
 		id="cloud_networks" 
 		path="cloud_networks">
-	  <wadl:doc title="Cloud networks"/>   
-	  <method href="#listAllNetworks" />
+	  <wadl:doc 
+	  	title="Cloud networks"/>   
+	  <method 
+	  	href="#listAllNetworks" />
 	  
 		<resource 
 			id="network_id" 
@@ -55,13 +58,15 @@
 	    		style="template"
 	    		required="true"
 	    		type="xsd:string">
-	     	<wadl:doc xmlns="http://docbook.org/ns/docbook">
+	     	<wadl:doc 
+	     		xmlns="http://docbook.org/ns/docbook">
 	      		<para>
 					The unique identifier of a network.
 	      		</para>
 	       </wadl:doc>
 		   </param>
-	  	<method href="#retrieve1Network" />
+	  	<method 
+	  		href="#retrieve1Network" />
 	  </resource>
 		
 	</resource>
@@ -71,7 +76,8 @@
     <resource 
     	id="load_balancer_pools" 
     	path="load_balancer_pools">
-      <wadl:doc title="Load balancer pools"/>   
+      <wadl:doc 
+      	title="Load balancer pools"/>   
         		<method href="#listAllLBPools" />
 
     	<resource 
@@ -81,7 +87,8 @@
     			style="template"
     			required="true"
     			type="xsd:string">
-    			<wadl:doc xmlns="http://docbook.org/ns/docbook">
+    			<wadl:doc 
+    				xmlns="http://docbook.org/ns/docbook">
     				<para>
     					The unique identifier of a load balancer pool.
     				</para>
@@ -105,7 +112,8 @@
     		id="cloud_server_id" 
     		path="cloud_server_id">
 	  <!--  	<resource path="{cloud_server_UUID}" id="cloud_server_UUID"> -->
-	    		<param name="cloud_server_UUID" 
+	    		<param 
+	    			name="cloud_server_UUID" 
 	    			style="query"
 	    			required="true"
 	    			type="xsd:string">
@@ -115,7 +123,8 @@
 	    				</para>
 	    			</wadl:doc>
 	    		</param>
-	    		<method href="#listPublicIPs1server" />
+	    		<method 
+	    			href="#listPublicIPs1server" />
 	<!--    	</resource> -->
     	</resource>
     	
@@ -136,8 +145,12 @@
 	<!--*******************************************************-->
 	<!-- List all networks -->
 	<!--*******************************************************-->
-	<method name="GET" id="listAllNetworks">
-		<wadl:doc xml:lang="EN" title="List all cloud networks"
+	<method 
+		id="listAllNetworks" 
+		name="GET">
+		<wadl:doc 
+			title="List all cloud networks"
+			xml:lang="EN" 
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				List details for all cloud networks. 
@@ -149,10 +162,16 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
-		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
-			<doc title="OK" xml:lang="EN">Success.</doc>
-			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+		<response 
+			status="200" 
+			xmlns="http://wadl.dev.java.net/2009/02">
+			<doc 
+				title="OK" 
+				xml:lang="EN">Success.</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-allNetworks-response.json"
@@ -164,7 +183,9 @@
 	<!--*******************************************************-->
 	<!-- List details about one network -->
 	<!--*******************************************************-->
-	<method name="GET" id="retrieve1Network">
+	<method 
+		id="retrieve1Network"
+		name="GET">
 		<wadl:doc 
 			title="Retrieve one cloud network"
 			xmlns="http://docbook.org/ns/docbook"
@@ -179,9 +200,12 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
-		<response status="200">
+		<response 
+			status="200"
+			xmlns="http://wadl.dev.java.net/2009/02">
 			<doc title="OK">Success.</doc>
-			<representation mediaType="application/json">
+			<representation 
+				mediaType="application/json">
 			<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
@@ -195,8 +219,12 @@
 	<!--*******************************************************-->
 	<!-- List all load balancer pools -->
 	<!--*******************************************************-->
-	<method name="GET" id="listAllLBPools">
-		<wadl:doc xml:lang="EN" title="List all load balancer pools"
+	<method 
+		id="listAllLBPools"
+		name="GET">
+		<wadl:doc 
+			title="List all load balancer pools"
+			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				List details for all load balancer pools. 
@@ -208,9 +236,12 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
-		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+		<response 
+			status="200" 
+			xmlns="http://wadl.dev.java.net/2009/02">
 			<doc title="OK" xml:lang="EN">Success.</doc>
-			<representation mediaType="application/json">
+			<representation 
+				mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
@@ -223,11 +254,13 @@
 	<!--*******************************************************-->
 	<!-- List details about one load balancer pool -->
 	<!--*******************************************************-->
-	<method name="GET" id="retrieve1LBPool">
+	<method 
+		id="retrieve1LBPool"
+		name="GET">
 		<wadl:doc 
 			title="Retrieve one load balancer pool"
-			xmlns="http://docbook.org/ns/docbook"
-			xml:lang="EN">
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				List details for one load balancer pool. 
 			</para>
@@ -238,7 +271,8 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
-		<response status="200">
+		<response 
+			status="200">
 			<doc title="OK">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -253,8 +287,12 @@
 	<!--*******************************************************-->
 	<!-- List all public IPs -->
 	<!--*******************************************************-->
-	<method name="GET" id="listAllPublicIPs">
-		<wadl:doc xml:lang="EN" title="List all public IPs"
+	<method 
+		id="listAllPublicIPs"
+		name="GET">
+		<wadl:doc 
+			title="List all public IPs"
+			xml:lang="EN" 
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				List details for all public IPs. 
@@ -266,7 +304,9 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
-		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+		<response 
+			status="200" 
+			xmlns="http://wadl.dev.java.net/2009/02">
 			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -281,8 +321,12 @@
 	<!--*******************************************************-->
 	<!-- Add one public IP -->
 	<!--*******************************************************-->
-	<method name="POST" id="add1PublicIP">
-		<wadl:doc xml:lang="EN" title="Add one public IP"
+	<method 
+		id="add1PublicIP"
+		name="POST">
+		<wadl:doc 
+			title="Add one public IP"
+			xml:lang="EN" 
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				Add one public IP. 
@@ -294,14 +338,17 @@
 			</para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json">
+			<representation 
+				mediaType="application/json">
 				<wadl:doc xml:lang="EN">
 					<xsdxt:code 
 						href="../wadl/samples/rc3-addPublicIP-request.json"/>
 				</wadl:doc>
 			</representation>
 		</request>
-		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+		<response 
+			status="200" 
+			xmlns="http://wadl.dev.java.net/2009/02">
 			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -316,8 +363,12 @@
 	<!--*******************************************************-->
 	<!-- List all public IPs for one cloud server -->
 	<!--*******************************************************-->
-	<method name="GET" id="listPublicIPs1server">
-		<wadl:doc xml:lang="EN" title="List public IPs for a server"
+	<method 
+		id="listPublicIPs1server"
+		name="GET">
+		<wadl:doc 
+			title="List public IPs for a server"
+			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
 				List public IPs for a server. 
@@ -329,7 +380,9 @@
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
-		<response status="200" xmlns="http://wadl.dev.java.net/2009/02">
+		<response 
+			status="200" 
+			xmlns="http://wadl.dev.java.net/2009/02">
 			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
