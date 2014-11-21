@@ -146,7 +146,7 @@
 			<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allVolumes-response.json"
+						href="../wadl/samples/rc3-1Volume-response.json"
 					/>
 			</wadl:doc>
 			</representation>
