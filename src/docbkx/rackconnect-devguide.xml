@@ -454,62 +454,81 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         </listitem>
       </itemizedlist></para>
   </chapter>
-    <chapter xml:id="api-operations" role="api-reference">
+    <chapter 
+      xml:id="api-operations" 
+      role="api-reference">
       <!-- role="api-reference" introduces chapter 
         with table of operations describing full content of WADL -->
       <title>API Reference</title>
       <para>The API can perform these operations:</para>
 
-      <section xml:id="CloudNetworks_Operations">
+      <section 
+        xml:id="CloudNetworks_Operations">
         <title>Cloud networks</title>
         <para>This section describes the operations 
           that are available for cloud networks.</para>
         
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resources 
+          xmlns:wadl="http://wadl.dev.java.net/2009/02">
           <wadl:resource 
             href="../wadl/rackconnect.wadl#cloud_networks">
-            <wadl:method href="../wadl/rackconnect.wadl#listAllNetworks"/>  
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#listAllNetworks"/>  
           </wadl:resource>
           <wadl:resource 
             href="../wadl/rackconnect.wadl#network_id">
-            <wadl:method href="../wadl/rackconnect.wadl#retrieve1Network"/> 
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#retrieve1Network"/> 
           </wadl:resource>
         </wadl:resources> 
         
       </section>
       
-      <section xml:id="Load_Balancer_Pools_Operations">
+      <section 
+        xml:id="Load_Balancer_Pools_Operations">
         <title>Load balancer pools</title>
         <para>This section describes the operations 
           that are available for load balancer pools.</para>
         
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resources 
+          xmlns:wadl="http://wadl.dev.java.net/2009/02">
           <wadl:resource 
             href="../wadl/rackconnect.wadl#load_balancer_pools">
-            <wadl:method href="../wadl/rackconnect.wadl#listAllLBPools"/>
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#listAllLBPools"/>
           </wadl:resource>
           <wadl:resource 
             href="../wadl/rackconnect.wadl#load_balancer_pool_id">
-            <wadl:method href="../wadl/rackconnect.wadl#retrieve1LBPool"/> 
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#retrieve1LBPool"/> 
           </wadl:resource>
         </wadl:resources> 
         
       </section>
       
-      <section xml:id="PublicIPs_Operations">
+      <section 
+        xml:id="PublicIPs_Operations">
         <title>Public IPs</title>
         <para>This section describes the operations 
           that are available for public IPs.</para>
         
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resources 
+          xmlns:wadl="http://wadl.dev.java.net/2009/02">
           <wadl:resource 
             href="../wadl/rackconnect.wadl#public_ips">
-            <wadl:method href="../wadl/rackconnect.wadl#listAllPublicIPs"/>
-            <wadl:method href="../wadl/rackconnect.wadl#add1PublicIP"/>
-            <wadl:resource 
-              href="../wadl/rackconnect.wadl#cloud_server_id">
-              <wadl:method href="../wadl/rackconnect.wadl#listPublicIPs1server"/>
-            </wadl:resource>
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#listAllPublicIPs"/>
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#add1PublicIP"/>
+          </wadl:resource> 
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#public_IP_id">
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#retrieve1publicIP"/> 
+          </wadl:resource>
+          <wadl:resource 
+              href="../wadl/rackconnect.wadl#cloud_server_UUID">
+            <wadl:method href="../wadl/rackconnect.wadl#listPublicIPs1server"/>
           </wadl:resource>
         </wadl:resources> 
         

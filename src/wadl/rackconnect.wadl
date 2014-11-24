@@ -107,26 +107,39 @@
       <wadl:doc title="Public IPs"/>   
     	<method href="#listAllPublicIPs" />
     	<method href="#add1PublicIP" />
+    	<resource
+    		id="cloud_server_UUID">
+    	<param 
+    		name="cloud_server_UUID" 
+    		style="query"
+    		required="true"
+    		type="xsd:string">
+    		<wadl:doc xmlns="http://docbook.org/ns/docbook">
+    			<para>
+    				The UUID of a cloud server.
+    			</para>
+    		</wadl:doc>
+    	</param>
+    	<method 
+    		href="#listPublicIPs1server" />
+    	</resource>
     	
     	<resource 
-    		id="cloud_server_id" 
-    		path="cloud_server_id">
-	  <!--  	<resource path="{cloud_server_UUID}" id="cloud_server_UUID"> -->
-	    		<param 
-	    			name="cloud_server_UUID" 
-	    			style="query"
-	    			required="true"
-	    			type="xsd:string">
-	    			<wadl:doc xmlns="http://docbook.org/ns/docbook">
-	    				<para>
-	    					The UUID of a cloud server.
-	    				</para>
-	    			</wadl:doc>
-	    		</param>
-	    		<method 
-	    			href="#listPublicIPs1server" />
-	<!--    	</resource> -->
-    	</resource>
+    		id="public_IP_id" 
+    		path="{public_IP_id}">
+    		<param name="public_IP_id" 
+    			style="template"
+    			required="true"
+    			type="xsd:string">
+    			<wadl:doc 
+    				xmlns="http://docbook.org/ns/docbook">
+    				<para>
+    					The unique identifier of a public IP.
+    				</para>
+    			</wadl:doc>
+    		</param>
+    		<method href="#retrieve1publicIP" />
+    	</resource>    	
     	
     </resource>
     <!-- resources for *public IPs* end here -->
@@ -379,6 +392,15 @@
 				for <code>cloud_server_id</code>.
 			</para>
 		</wadl:doc>
+		<request
+			xmlns="http://wadl.dev.java.net/2009/02">
+			<param 
+				id="cloud_server_id" 
+				style="query"
+				type="xsd:string"
+				required="true"
+				xmlns="http://wadl.dev.java.net/2009/02"/>
+		</request>
 		<!-- no request body = no sample request -->
 		<response 
 			status="200" 
@@ -394,6 +416,42 @@
 			</representation>
 		</response>
 	</method>
+	<!--*******************************************************-->
+	<!-- List details about one public IP -->
+	<!--*******************************************************-->
+	<method 
+		id="retrieve1publicIP"
+		name="GET">
+		<wadl:doc 
+			title="Retrieve one public IP"
+			xmlns="http://docbook.org/ns/docbook"
+			xml:lang="EN">
+			<para role="shortdesc">
+				List details for one public IP. 
+			</para>
+			<para>This operation 
+				lists details for 
+				one public IP 
+				identified by <code>public_IP_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response 
+			status="200"
+			xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="OK">Success.</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-1PublicIP-retrieve-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	
 	<!--=======================================================-->
 	<!-- METHODS end here -->
 	<!--=======================================================-->
