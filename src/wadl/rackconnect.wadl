@@ -139,6 +139,7 @@
     			</wadl:doc>
     		</param>
     		<method href="#retrieve1publicIP" />
+    		<method href="#delete1publicIP" />
     	</resource>    	
     	
     </resource>
@@ -451,7 +452,28 @@
 			</representation>
 		</response>
 	</method>
-	
+	<!--*******************************************************-->
+	<!-- Delete one public IP -->
+	<!--*******************************************************-->
+	<method 
+		id="delete1publicIP"
+		name="DELETE">
+		<wadl:doc 
+			title="Delete one public IP"
+			xmlns="http://docbook.org/ns/docbook"
+			xml:lang="EN">
+			<para role="shortdesc">
+				Delete one public IP. 
+			</para>
+			<para>This operation 
+				deletes 
+				one public IP 
+				identified by <code>public_IP_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<!-- no response body = no sample response -->
+	</method>
 	<!--=======================================================-->
 	<!-- METHODS end here -->
 	<!--=======================================================-->

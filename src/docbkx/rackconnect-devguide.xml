@@ -525,6 +525,8 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
             href="../wadl/rackconnect.wadl#public_IP_id">
             <wadl:method 
               href="../wadl/rackconnect.wadl#retrieve1publicIP"/> 
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#delete1publicIP"/>
           </wadl:resource>
           <wadl:resource 
               href="../wadl/rackconnect.wadl#cloud_server_UUID">
