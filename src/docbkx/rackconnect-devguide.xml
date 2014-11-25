@@ -12,6 +12,7 @@
     xml:id="&PREFIX;-devguide"
     status="DRAFT">
     <title>Rackspace &PRODUCTNAME; API Developer Guide</title>
+    <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
     <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
   <info>
     <copyright>
@@ -500,14 +501,19 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
           <wadl:resource 
             href="../wadl/rackconnect.wadl#load_balancer_pool_id">
             <wadl:method 
-              href="../wadl/rackconnect.wadl#retrieve1LBPool"/> 
+              href="../wadl/rackconnect.wadl#summary1LBPool"/> 
             <wadl:resource 
               href="../wadl/rackconnect.wadl#nodes">
               <wadl:method 
                 href="../wadl/rackconnect.wadl#listNodes1LBPool"/>
               <wadl:method 
                 href="../wadl/rackconnect.wadl#addNode1LBPool"/>
-            </wadl:resource>
+              <wadl:resource 
+                href="../wadl/rackconnect.wadl#details">
+                <wadl:method 
+                  href="../wadl/rackconnect.wadl#detail1LBPool"/>
+              </wadl:resource>
+           </wadl:resource>
           </wadl:resource>
         </wadl:resources> 
         
@@ -540,7 +546,6 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
             <wadl:method 
               href="../wadl/rackconnect.wadl#delete1publicIP"/>
           </wadl:resource>
-
         </wadl:resources> 
         
       </section>

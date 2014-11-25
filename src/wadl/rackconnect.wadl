@@ -94,12 +94,17 @@
     				</para>
     			</wadl:doc>
     		</param>
-    		<method href="#retrieve1LBPool" />
+    		<method href="#summary1LBPool" />
     		<resource 
     			id="nodes" 
     			path="nodes">
     			<method href="#listNodes1LBPool" />
     			<method href="#addNode1LBPool" />
+    		</resource>
+    			<resource 
+    				id="details" 
+    				path="details">
+    			<method href="#detail1LBPool" />
     		</resource>
     	</resource>
 
@@ -272,20 +277,20 @@
 		</response>
 	</method>
 	<!--*******************************************************-->
-	<!-- List details about one load balancer pool -->
+	<!-- List basic info about one load balancer pool -->
 	<!--*******************************************************-->
 	<method 
-		id="retrieve1LBPool"
+		id="summary1LBPool"
 		name="GET">
 		<wadl:doc 
-			title="Retrieve one load balancer pool"
+			title="Summarize one load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
-				List details for one load balancer pool. 
+				List summary for one load balancer pool. 
 			</para>
 			<para>This operation 
-				lists details for 
+				provides basic information about 
 				one load balancer pool 
 				identified by <code>load_balancer_pool_id</code>.
 			</para>
@@ -294,11 +299,49 @@
 		<response 
 			status="200">
 			<doc title="OK">Success.</doc>
-			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-1LBPool-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- List details about one load balancer pool -->
+	<!--*******************************************************-->
+	<method 
+		id="detail1LBPool"
+		name="GET">
+		<wadl:doc 
+			title="Show details for one load balancer pool"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				List details for one load balancer pool. 
+			</para>
+			<para>This operation 
+				provides detailed information about 
+				all the nodes in 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response 
+			status="200">
+			<doc title="OK">Success.</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-1LBPool-allNodes-details-response.json"
 					/>
 				</wadl:doc>
 			</representation>
