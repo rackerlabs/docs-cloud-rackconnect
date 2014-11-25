@@ -95,6 +95,12 @@
     			</wadl:doc>
     		</param>
     		<method href="#retrieve1LBPool" />
+    		<resource 
+    			id="nodes" 
+    			path="nodes">
+    			<method href="#listNodes1LBPool" />
+    			<method href="#addNode1LBPool" />
+    		</resource>
     	</resource>
 
      </resource>
@@ -108,13 +114,14 @@
     	<method href="#listAllPublicIPs" />
     	<method href="#add1PublicIP" />
     	<resource
-    		id="cloud_server_UUID">
+    		id="cloud_server_UUID" 
+    		path="cloud_server_id">
     	<param 
     		name="cloud_server_UUID" 
     		style="query"
-    		required="true"
     		type="xsd:string">
-    		<wadl:doc xmlns="http://docbook.org/ns/docbook">
+    		<wadl:doc 
+    			xmlns="http://docbook.org/ns/docbook">
     			<para>
     				The UUID of a cloud server.
     			</para>
@@ -229,7 +236,6 @@
 			</representation>
 		</response>
 	</method>
-	
 	<!--*******************************************************-->
 	<!-- List all load balancer pools -->
 	<!--*******************************************************-->
@@ -293,6 +299,84 @@
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-1LBPool-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- List details about all the nodes                       -->
+	<!-- in	one load balancer pool                             -->
+	<!--*******************************************************-->
+	<method 
+		id="listNodes1LBPool"
+		name="GET">
+		<wadl:doc 
+			title="List the nodes in one load balancer pool"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				List nodes for one load balancer pool. 
+			</para>
+			<para>This operation 
+				lists the nodes in 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response 
+			status="200">
+			<doc title="OK">Success.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-1LBPool-allnodes-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- Add one node                                          -->
+	<!-- to	one load balancer pool                             -->
+	<!--*******************************************************-->
+	<method 
+		id="addNode1LBPool"
+		name="POST">
+		<wadl:doc 
+			title="Add node to load balancer pool"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				Add node to load balancer pool. 
+			</para>
+			<para>This operation 
+				a node to 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-1LBPool-addnode-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response 
+			status="200">
+			<doc title="OK">Success.</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-1LBPool-addnode-response.json"
 					/>
 				</wadl:doc>
 			</representation>

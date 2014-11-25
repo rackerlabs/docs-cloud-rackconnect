@@ -501,6 +501,13 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
             href="../wadl/rackconnect.wadl#load_balancer_pool_id">
             <wadl:method 
               href="../wadl/rackconnect.wadl#retrieve1LBPool"/> 
+            <wadl:resource 
+              href="../wadl/rackconnect.wadl#nodes">
+              <wadl:method 
+                href="../wadl/rackconnect.wadl#listNodes1LBPool"/>
+              <wadl:method 
+                href="../wadl/rackconnect.wadl#addNode1LBPool"/>
+            </wadl:resource>
           </wadl:resource>
         </wadl:resources> 
         
@@ -518,6 +525,11 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
             href="../wadl/rackconnect.wadl#public_ips">
             <wadl:method 
               href="../wadl/rackconnect.wadl#listAllPublicIPs"/>
+            <wadl:resource 
+              href="../wadl/rackconnect.wadl#cloud_server_UUID">
+              <wadl:method 
+                href="../wadl/rackconnect.wadl#listPublicIPs1server"/>
+            </wadl:resource>
             <wadl:method 
               href="../wadl/rackconnect.wadl#add1PublicIP"/>
           </wadl:resource> 
@@ -528,10 +540,7 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
             <wadl:method 
               href="../wadl/rackconnect.wadl#delete1publicIP"/>
           </wadl:resource>
-          <wadl:resource 
-              href="../wadl/rackconnect.wadl#cloud_server_UUID">
-            <wadl:method href="../wadl/rackconnect.wadl#listPublicIPs1server"/>
-          </wadl:resource>
+
         </wadl:resources> 
         
       </section>
