@@ -1,0 +1,34 @@
+{
+    "created": "2014-05-30T03:23:42Z",
+    "cloud_server": {
+        "cloud_network": {
+            "cidr": "192.168.100.0/24",
+            "created": "2014-05-25T01:23:42Z",
+            "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+            "name": "RC-CLOUD",
+            "private_ip_v4": "192.168.100.5",
+            "updated": "2014-05-25T02:28:44Z"
+        },
+        "created": "2014-05-30T02:18:42Z",
+        "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2",
+        "name": "RCv3TestServer1",
+        "updated": "2014-05-30T02:19:18Z"
+    }, 
+    "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
+    "load_balancer_pool": {
+        "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2",
+        "name": "RCv3Test",
+        "node_counts": {
+            "cloud_servers": 3,
+            "external": 4,
+            "total": 7
+        },
+        "port": 80,
+        "status": "ACTIVE",
+        "status_detail": null,
+        "virtual_ip": "203.0.113.5"
+    },
+    "status": "ACTIVE",
+    "status_detail": null,
+    "updated": "2014-05-30T03:24:18Z"
+}

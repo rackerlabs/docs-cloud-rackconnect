@@ -1,0 +1,6 @@
+{
+    "errors": [
+        "Cloud Server {cloud_server_id} is already a member of Load Balancer Pool {load_balancer_pool_id}",
+        "Load Balancer Pool {load_balancer_pool_id} is not in an ACTIVE state"
+     ]
+}

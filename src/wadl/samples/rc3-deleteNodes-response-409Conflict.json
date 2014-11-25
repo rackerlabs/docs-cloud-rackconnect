@@ -1,0 +1,6 @@
+{
+    "errors": [
+        "Node {load_balancer_pool_node_id} is not a member of Load Balancer Pool {load_balancer_pool_id}",
+        "Load Balancer Pool {load_balancer_pool_id} is not in an ACTIVE state"
+     ]
+}
