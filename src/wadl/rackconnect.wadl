@@ -440,7 +440,7 @@
 				Add nodes to load balancer pool. 
 			</para>
 			<para>This operation 
-				adds node in specified in bulk to 
+				adds nodes specified in bulk to 
 				one load balancer pool 
 				identified by <code>load_balancer_pool_id</code>.
 			</para>
@@ -470,7 +470,7 @@
 		</response>
 		<response 
 			status="409">
-			<doc title="OK">Conflict.</doc>
+			<doc title="Conflict">Conflict.</doc>
 			<representation 
 				mediaType="application/json">
 				<wadl:doc 
@@ -478,6 +478,54 @@
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-LBPools-nodes-addbulk-response-409Conflict.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- Delete bulk nodes                                     -->
+	<!-- from one load balancer pool                           -->
+	<!--*******************************************************-->
+	<method 
+		id="LBPools-nodes-deletebulk"
+		name="POST">
+		<wadl:doc 
+			title="Delete nodes from load balancer pool"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				Delete nodes from load balancer pool. 
+			</para>
+			<para>This operation 
+				deletes nodes specified in bulk from 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-nodes-deletebulk-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response 
+			status="204">
+			<doc title="OK">(No Content)</doc>
+		</response>
+		<response 
+			status="409">
+			<doc title="Conflict">Conflict</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-LBPools-nodes-deletebulk-response-409Conflict.json"
 					/>
 				</wadl:doc>
 			</representation>
