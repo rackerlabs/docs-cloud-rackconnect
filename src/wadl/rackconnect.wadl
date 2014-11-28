@@ -98,7 +98,7 @@
     		<resource 
     			id="nodes" 
     			path="nodes">
-    			<method href="#listNodes1LBPool" />
+    			<method href="#LBPools-nodes-listall" />
     			<method href="#LBPools-nodes-add1" />
     		</resource>
     			<resource 
@@ -352,7 +352,7 @@
 	<!-- in	one load balancer pool                             -->
 	<!--*******************************************************-->
 	<method 
-		id="listNodes1LBPool"
+		id="LBPools-nodes-listall"
 		name="GET">
 		<wadl:doc 
 			title="List the nodes in one load balancer pool"
@@ -375,7 +375,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1LBPool-allnodes-response.json"
+						href="../wadl/samples/rc3-LBPools-nodes-listall-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -420,6 +420,64 @@
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-LBPools-nodes-add1-response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- Add bulk nodes                                        -->
+	<!-- to	one load balancer pool                             -->
+	<!--*******************************************************-->
+	<method 
+		id="LBPools-nodes-addbulk"
+		name="POST">
+		<wadl:doc 
+			title="Add nodes to load balancer pool"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				Add nodes to load balancer pool. 
+			</para>
+			<para>This operation 
+				adds node in specified in bulk to 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-nodes-addbulk-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response 
+			status="201">
+			<doc title="OK">Created.</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-LBPools-nodes-addbulk-response-201Created.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+		<response 
+			status="409">
+			<doc title="OK">Conflict.</doc>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc 
+					xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-LBPools-nodes-addbulk-response-409Conflict.json"
 					/>
 				</wadl:doc>
 			</representation>
