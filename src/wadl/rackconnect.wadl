@@ -169,6 +169,7 @@
 	          defined in RESOURCES section-->
 	<!--=======================================================-->
 	<!--*******************************************************-->
+	<!--*******************************************************-->
 	<!-- List all networks -->
 	<!--*******************************************************-->
 	<method 
@@ -241,6 +242,7 @@
 			</representation>
 		</response>
 	</method>
+	<!--*******************************************************-->
 	<!--*******************************************************-->
 	<!-- List all load balancer pools -->
 	<!--*******************************************************-->
@@ -484,6 +486,64 @@
 		</response>
 	</method>
 	<!--*******************************************************-->
+	<!-- Delete one node                                       -->
+	<!-- from one load balancer pool                           -->
+	<!--*******************************************************-->
+	<method 
+		id="LBPools-nodes-delete1"
+		name="POST">
+		<wadl:doc 
+			title="Delete node from load balancer pool"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				Delete node from load balancer pool. 
+			</para>
+			<para>This operation 
+				deletes one node 
+				identified by <code>node_id</code>
+				from 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response 
+			status="204">
+			<doc title="OK">(No Content)</doc>
+		</response>
+		<response 
+			status="409">
+			<doc title="Conflict">Conflict</doc>
+			<wadl:doc 
+				title="Delete node from load balancer pool"
+				xml:lang="EN"
+				xmlns="http://docbook.org/ns/docbook">
+				<para>
+					Cloud Server {cloud_server_id} does not exist
+				</para>
+				<para>
+					or
+				</para>
+				<para>	
+					Node {load_balancer_pool_node_id} is not a member of Load Balancer Pool {load_balancer_pool_id}
+				</para>
+				<para>	
+					or
+				</para>
+				<para>	
+					Load Balancer Pool {load_balancer_pool_id} is not in an ACTIVE state
+				</para>
+				<para>	
+					or
+				</para>
+				<para>	
+					Load Balancer Pool Node {load_balancer_pool_node_id} is not in an ACTIVE state
+				</para>
+			</wadl:doc>
+		</response>
+	</method>
+	<!--*******************************************************-->
 	<!-- Delete bulk nodes                                     -->
 	<!-- from one load balancer pool                           -->
 	<!--*******************************************************-->
@@ -531,6 +591,7 @@
 			</representation>
 		</response>
 	</method>
+	<!--*******************************************************-->
 	<!--*******************************************************-->
 	<!-- List all public IPs -->
 	<!--*******************************************************-->
