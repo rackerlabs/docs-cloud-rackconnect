@@ -49,7 +49,7 @@
 	  <wadl:doc 
 	  	title="Cloud networks"/>   
 	  <method 
-	  	href="#listAllNetworks" />
+	  	href="#cloudNetworks-listall" />
 	  
 		<resource 
 			id="network_id" 
@@ -66,7 +66,7 @@
 	       </wadl:doc>
 		   </param>
 	  	<method 
-	  		href="#retrieve1Network" />
+	  		href="#cloudNetworks-list1" />
 	  </resource>
 		
 	</resource>
@@ -78,7 +78,7 @@
     	path="load_balancer_pools">
       <wadl:doc 
       	title="Load balancer pools"/>   
-        		<method href="#listAllLBPools" />
+        		<method href="#LBPools-listall" />
 
     	<resource 
     		id="load_balancer_pool_id" 
@@ -94,17 +94,17 @@
     				</para>
     			</wadl:doc>
     		</param>
-    		<method href="#summary1LBPool" />
+    		<method href="#LBPools-list1" />
     		<resource 
     			id="nodes" 
     			path="nodes">
     			<method href="#listNodes1LBPool" />
-    			<method href="#addNode1LBPool" />
+    			<method href="#LBPools-nodes-add1" />
     		</resource>
     			<resource 
     				id="details" 
     				path="details">
-    			<method href="#detail1LBPool" />
+    				<method href="#LBPools-nodes-listall-details" />
     		</resource>
     	</resource>
 
@@ -116,8 +116,8 @@
     	id="public_ips" 
     	path="public_ips">
       <wadl:doc title="Public IPs"/>   
-    	<method href="#listAllPublicIPs" />
-    	<method href="#add1PublicIP" />
+    	<method href="#publicIPs-listall" />
+    	<method href="#publicIPs-add1" />
     	<resource
     		id="cloud_server_UUID" 
     		path="cloud_server_id">
@@ -133,7 +133,7 @@
     		</wadl:doc>
     	</param>
     	<method 
-    		href="#listPublicIPs1server" />
+    		href="#publicIPs-cloudServers-list1" />
     	</resource>
     	
     	<resource 
@@ -150,8 +150,8 @@
     				</para>
     			</wadl:doc>
     		</param>
-    		<method href="#retrieve1publicIP" />
-    		<method href="#delete1publicIP" />
+    		<method href="#publicIPs-list1" />
+    		<method href="#publicIPs-delete1" />
     	</resource>    	
     	
     </resource>
@@ -172,7 +172,7 @@
 	<!-- List all networks -->
 	<!--*******************************************************-->
 	<method 
-		id="listAllNetworks" 
+		id="cloudNetworks-listall" 
 		name="GET">
 		<wadl:doc 
 			title="List all cloud networks"
@@ -200,7 +200,7 @@
 					xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allNetworks-response.json"
+						href="../wadl/samples/rc3-cloudNetworks-listall-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -210,7 +210,7 @@
 	<!-- List details about one network -->
 	<!--*******************************************************-->
 	<method 
-		id="retrieve1Network"
+		id="cloudNetworks-list1"
 		name="GET">
 		<wadl:doc 
 			title="Retrieve one cloud network"
@@ -235,7 +235,7 @@
 			<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1Network-response.json"
+						href="../wadl/samples/rc3-cloudNetworks-list1-response.json"
 					/>
 			</wadl:doc>
 			</representation>
@@ -245,7 +245,7 @@
 	<!-- List all load balancer pools -->
 	<!--*******************************************************-->
 	<method 
-		id="listAllLBPools"
+		id="LBPools-listall"
 		name="GET">
 		<wadl:doc 
 			title="List all load balancer pools"
@@ -270,7 +270,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allLBPools-response.json"
+						href="../wadl/samples/rc3-LBPools-listall-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -280,7 +280,7 @@
 	<!-- List basic info about one load balancer pool -->
 	<!--*******************************************************-->
 	<method 
-		id="summary1LBPool"
+		id="LBPools-list1"
 		name="GET">
 		<wadl:doc 
 			title="Summarize one load balancer pool"
@@ -305,7 +305,7 @@
 					xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1LBPool-response.json"
+						href="../wadl/samples/rc3-LBPools-list1-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -315,7 +315,7 @@
 	<!-- List details about one load balancer pool -->
 	<!--*******************************************************-->
 	<method 
-		id="detail1LBPool"
+		id="LBPools-nodes-listall-details"
 		name="GET">
 		<wadl:doc 
 			title="Show details for one load balancer pool"
@@ -341,7 +341,7 @@
 					xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1LBPool-allNodes-details-response.json"
+						href="../wadl/samples/rc3-LBPools-nodes-listall-details-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -386,7 +386,7 @@
 	<!-- to	one load balancer pool                             -->
 	<!--*******************************************************-->
 	<method 
-		id="addNode1LBPool"
+		id="LBPools-nodes-add1"
 		name="POST">
 		<wadl:doc 
 			title="Add node to load balancer pool"
@@ -406,7 +406,7 @@
 				mediaType="application/json">
 				<wadl:doc xml:lang="EN">
 					<xsdxt:code 
-						href="../wadl/samples/rc3-1LBPool-addnode-request.json"/>
+						href="../wadl/samples/rc3-LBPools-nodes-add1-request.json"/>
 				</wadl:doc>
 			</representation>
 		</request>
@@ -419,7 +419,7 @@
 					xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1LBPool-addnode-response.json"
+						href="../wadl/samples/rc3-LBPools-nodes-add1-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -429,7 +429,7 @@
 	<!-- List all public IPs -->
 	<!--*******************************************************-->
 	<method 
-		id="listAllPublicIPs"
+		id="publicIPs-listall"
 		name="GET">
 		<wadl:doc 
 			title="List all public IPs"
@@ -453,7 +453,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allPublicIPs-response.json"
+						href="../wadl/samples/rc3-publicIPs-listall-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -463,7 +463,7 @@
 	<!-- Add one public IP -->
 	<!--*******************************************************-->
 	<method 
-		id="add1PublicIP"
+		id="publicIPs-add1"
 		name="POST">
 		<wadl:doc 
 			title="Add one public IP"
@@ -483,7 +483,7 @@
 				mediaType="application/json">
 				<wadl:doc xml:lang="EN">
 					<xsdxt:code 
-						href="../wadl/samples/rc3-addPublicIP-request.json"/>
+						href="../wadl/samples/rc3-publicIPs-add1-request.json"/>
 				</wadl:doc>
 			</representation>
 		</request>
@@ -495,7 +495,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-addPublicIP-response.json"
+						href="../wadl/samples/rc3-publicIPs-add1-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -505,7 +505,7 @@
 	<!-- List all public IPs for one cloud server -->
 	<!--*******************************************************-->
 	<method 
-		id="listPublicIPs1server"
+		id="publicIPs-cloudServers-list1"
 		name="GET">
 		<wadl:doc 
 			title="List public IPs for a server"
@@ -538,7 +538,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-allPublicIPs1server-response.json"
+						href="../wadl/samples/rc3-publicIPs-listall-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -548,7 +548,7 @@
 	<!-- List details about one public IP -->
 	<!--*******************************************************-->
 	<method 
-		id="retrieve1publicIP"
+		id="publicIPs-list1"
 		name="GET">
 		<wadl:doc 
 			title="Retrieve one public IP"
@@ -573,7 +573,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook"
 					xml:lang="EN">
 					<xsdxt:code
-						href="../wadl/samples/rc3-1PublicIP-retrieve-response.json"
+						href="../wadl/samples/rc3-publicIPs-list1-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -583,7 +583,7 @@
 	<!-- Delete one public IP -->
 	<!--*******************************************************-->
 	<method 
-		id="delete1publicIP"
+		id="publicIPs-delete1"
 		name="DELETE">
 		<wadl:doc 
 			title="Delete one public IP"
