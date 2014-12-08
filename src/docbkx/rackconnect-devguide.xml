@@ -48,11 +48,15 @@
        landing page.
        Work with Self Service Engineering to find out what to put here. 
     -->
+    <!-- 
+         hide until can get valid value for RackConnect;
+         til then, it causes status=red 
       <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
         <raxm:displayname>API Developer Guide</raxm:displayname>
         <raxm:product version="v3">&PREFIX;</raxm:product>
         <raxm:priority>20</raxm:priority>
       </raxm:metadata>
+      -->
   </info>
 
   <chapter xml:id="Overview">
@@ -165,8 +169,9 @@
         
       </section>
       
-      <section 
-        xml:id="Load_Balancer_Pools_Operations">
+
+        <section 
+        xml:id="LBPools_Operations">
         <title>Load balancer pools</title>
         <para>
           Load balancer pools must be configured in advance 
@@ -185,7 +190,42 @@
         </para>
         <para> All load balancer pools currently return a status of
           <code>ACTIVE</code>. Future features may introduce
-        additional statuses. </para>
+        additional statuses. 
+        </para>
+        
+        <para>This section describes the &PRODUCTNAME; API operations
+        that relate to load balancer pools.</para>
+        
+        <wadl:resources 
+          xmlns:wadl="http://wadl.dev.java.net/2009/02">
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#load_balancer_pools">
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#LBPools-listall"/>
+          </wadl:resource>
+          <wadl:resource 
+            href="../wadl/rackconnect.wadl#load_balancer_pool_id">
+            <wadl:method 
+              href="../wadl/rackconnect.wadl#LBPools-list1"/> 
+          </wadl:resource>
+        </wadl:resources> 
+        
+      </section>
+      <!--      
+      <section 
+        xml:id="LBPoolNodes_Operations">
+        <title>Load balancer pool nodes</title>
+        <para>
+          The <code>load_balancer_pool_id</code>returned by 
+          these calls is automatically generated 
+          by the RackConnect automation 
+          and remains constant 
+          unless the load balancer pool 
+          is renamed on your hardware load balancer.
+        </para>
+        <para> All load balancer pools currently return a status of
+          <code>ACTIVE</code>. Future features may introduce
+          additional statuses. </para>
         <para> Node status values are: <itemizedlist>
           <listitem>
             <para><code>ADDING</code></para>
@@ -204,42 +244,43 @@
           </listitem>
         </itemizedlist></para>
         <para> The cloud_servers node count includes only cloud
-        servers from the cloud account specified as
+          servers from the cloud account specified as
           <code>tenant_id</code>. Any dedicated servers or cloud
-        servers from another cloud account on the same RackConnect
-        configuration are counted as external nodes. </para>
+          servers from another cloud account on the same RackConnect
+          configuration are counted as external nodes. </para>
         
         <para>This section describes the &PRODUCTNAME; API operations
-        that relate to load balancer pools.</para>
+          that relate to load balancer pool nodes.</para>
         
         <wadl:resources 
           xmlns:wadl="http://wadl.dev.java.net/2009/02">
+ 
           <wadl:resource 
             href="../wadl/rackconnect.wadl#load_balancer_pools">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#LBPools-listall"/>
           </wadl:resource>
+        
           <wadl:resource 
             href="../wadl/rackconnect.wadl#load_balancer_pool_id">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#LBPools-list1"/> 
+          </wadl:resource>
+ 
             <wadl:resource 
               href="../wadl/rackconnect.wadl#nodes">
               <wadl:method 
                 href="../wadl/rackconnect.wadl#listNodes1LBPool"/>
               <wadl:method 
                 href="../wadl/rackconnect.wadl#LBPools-nodes-add1"/>
-              <wadl:resource 
+            </wadl:resource>
+              
+            <wadl:resource 
                 href="../wadl/rackconnect.wadl#details">
                 <wadl:method 
                   href="../wadl/rackconnect.wadl#LBPools-nodes-listall-details"/>
-              </wadl:resource>
-           </wadl:resource>
-          </wadl:resource>
+             </wadl:resource>
+
         </wadl:resources> 
         
       </section>
-      
+    -->     
       <section 
         xml:id="PublicIPs_Operations">
         <title>Public IPs</title>

@@ -95,6 +95,7 @@
     			</wadl:doc>
     		</param>
     		<method href="#LBPools-list1" />
+    	</resource>
     		<resource 
     			id="nodes" 
     			path="nodes">
@@ -158,7 +159,6 @@
     <!-- resources for *public IPs* end here -->
     <!-- ========================================= -->
       </resource>
-    </resource>
   </resources>
 	<!--=======================================================-->
 	<!-- RESOURCES end here -->
@@ -180,7 +180,7 @@
 		id="cloudNetworks-list1"
 		name="GET">
 		<wadl:doc 
-			title="Retrieve one cloud network"
+			title="List one cloud network"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
 			<para role="shortdesc">
@@ -256,7 +256,7 @@
 		id="LBPools-list1"
 		name="GET">
 		<wadl:doc 
-			title="Summarize one load balancer pool"
+			title="List one load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
@@ -288,6 +288,7 @@
 	<!-- List all load balancer pools 
 		 id="LBPools-listall"-->
 	<!--*******************************************************-->
+	<!--+++++ methods related to load balancer pool nodes +++++-->
 	<method 
 		id="LBPools-listall"
 		name="GET">
@@ -336,7 +337,7 @@
 				Add node to load balancer pool. 
 			</para>
 			<para>This operation 
-				a node to 
+				adds a node to 
 				one load balancer pool 
 				identified by <code>load_balancer_pool_id</code>.
 			</para>
@@ -351,8 +352,8 @@
 			</representation>
 		</request>
 		<response 
-			status="200">
-			<doc title="OK">Success.</doc>
+			status="201">
+			<doc title="OK">Created</doc>
 			<representation 
 				mediaType="application/json">
 				<wadl:doc 
@@ -363,6 +364,33 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response 
+			status="409">
+			<doc title="Conflict">Conflict</doc>
+			<wadl:doc 
+				title="Add node to load balancer pool"
+				xml:lang="EN"
+				xmlns="http://docbook.org/ns/docbook">
+				<para>
+					Cloud Server {cloud_server_id} does not exist
+				</para>
+				<para>
+					or
+				</para>
+				<para>	
+					Cloud Server {cloud_server_id} 
+					is already a member of 
+					Load Balancer Pool {load_balancer_pool_id}
+				</para>
+				<para>	
+					or
+				</para>
+				<para>	
+					Load Balancer Pool {load_balancer_pool_id} 
+					is not in an ACTIVE state
+				</para>
+			</wadl:doc>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -466,19 +494,23 @@
 					or
 				</para>
 				<para>	
-					Node {load_balancer_pool_node_id} is not a member of Load Balancer Pool {load_balancer_pool_id}
+					Node {load_balancer_pool_node_id} 
+					is not a member of 
+					Load Balancer Pool {load_balancer_pool_id}
 				</para>
 				<para>	
 					or
 				</para>
 				<para>	
-					Load Balancer Pool {load_balancer_pool_id} is not in an ACTIVE state
+					Load Balancer Pool {load_balancer_pool_id} 
+					is not in an ACTIVE state
 				</para>
 				<para>	
 					or
 				</para>
 				<para>	
-					Load Balancer Pool Node {load_balancer_pool_node_id} is not in an ACTIVE state
+					Load Balancer Pool Node {load_balancer_pool_node_id} 
+					is not in an ACTIVE state
 				</para>
 			</wadl:doc>
 		</response>
@@ -527,6 +559,44 @@
 					xml:lang="EN">
 					<xsdxt:code
 						href="../wadl/samples/rc3-LBPools-nodes-deletebulk-response-409Conflict.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+	<!--*******************************************************-->
+	<!-- List details about all the nodes                       
+	  	 in	one load balancer pool
+		 id="LBPools-nodes-listall"-->
+	<!--*******************************************************-->
+	<method 
+		id="LBPools-nodes-list1-details"
+		name="GET">
+		<wadl:doc 
+			title="List details for one node"
+			xml:lang="EN"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">
+				List details for one node. 
+			</para>
+			<para>This operation 
+				lists details for 
+				one node 
+				identified by <code>node_id</code> 
+				in 
+				one load balancer pool 
+				identified by <code>load_balancer_pool_id</code>.
+			</para>
+		</wadl:doc>
+		<!-- no request body = no sample request -->
+		<response 
+			status="200">
+			<doc title="OK">Success.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook"
+					xml:lang="EN">
+					<xsdxt:code
+						href="../wadl/samples/rc3-LBPools-nodes-list1-details-response.json"
 					/>
 				</wadl:doc>
 			</representation>
@@ -725,7 +795,7 @@
 		id="publicIPs-list1"
 		name="GET">
 		<wadl:doc 
-			title="Retrieve one public IP"
+			title="List one public IP"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
 			<para role="shortdesc">
