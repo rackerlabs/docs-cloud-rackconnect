@@ -25,8 +25,8 @@
       </plugin>
       <plugin>
 	<groupId>com.rackspace.cloud.api</groupId>
-	<artifactId>clouddocs-maven-plugin</artifactId>
-	<version>2.1.3</version>
+    <artifactId>clouddocs-maven-plugin-docbook</artifactId>
+    <version>2.1.5-SNAPSHOT</version>
 	<executions>
 	  <execution>
 	    <goals>
@@ -87,14 +87,37 @@
 	  <name>Rackspace Research Repository</name>
 	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
 	</repository>
-      </repositories>
-      <pluginRepositories>
-	<pluginRepository>
-	  <id>rackspace-research</id>
-	  <name>Rackspace Research Repository</name>
-	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
-	</pluginRepository>
-      </pluginRepositories>
+ </repositories>
+    <pluginRepositories>
+    	<pluginRepository>
+		  <id>rackspace-research</id>
+		  <name>Rackspace Research Repository</name>
+		  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+		</pluginRepository>
+    	<pluginRepository>
+    		<id>docs-staging</id>
+    		<name>Docbook</name>
+    		<url>http://docs-nexus.rackspace.com/nexus/content/repositories/docs-staging/</url>
+    		<layout>default</layout>
+    		<snapshots>
+    			<enabled>true</enabled>
+    		</snapshots>
+    		<releases>
+    			<updatePolicy>never</updatePolicy>
+    		</releases>
+    	</pluginRepository>
+    	<pluginRepository>                                                                          
+    		<id>docs-prod</id>                                                             
+    		<name>Docbook release Repository</name>                                              
+    		<url>http://docs-nexus.rackspace.com/content/repositories/docs-prod/</url>
+    		<snapshots>
+    			<enabled>false</enabled>
+    		</snapshots>
+    		<releases>
+    			<enabled>true</enabled>
+    		</releases>
+    	</pluginRepository> 
+  </pluginRepositories>
     </profile>
   </profiles>
 </project>
