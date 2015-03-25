@@ -36,7 +36,7 @@
 	            <wadl:doc 
 	            	xmlns="http://docbook.org/ns/docbook">
 	                 <para>
-	      				The unique identifier of the tenant or account
+	      				Specifies the unique identifier of the tenant or account
 	     			    in a multi-tenancy cloud.
 	    			 </para>
 	  			</wadl:doc>
@@ -61,7 +61,7 @@
 	     	<wadl:doc 
 	     		xmlns="http://docbook.org/ns/docbook">
 	      		<para>
-					The unique identifier of a network.
+					Specifies the unique identifier of a network.
 	      		</para>
 	       </wadl:doc>
 		   </param>
@@ -90,7 +90,7 @@
     			<wadl:doc 
     				xmlns="http://docbook.org/ns/docbook">
     				<para>
-    					The unique identifier of a load balancer pool.
+    					Specifies the unique identifier of a load balancer pool.
     				</para>
     			</wadl:doc>
     		</param>
@@ -129,7 +129,7 @@
     		<wadl:doc 
     			xmlns="http://docbook.org/ns/docbook">
     			<para>
-    				The UUID of a cloud server.
+    				Specifies the UUID of a cloud server.
     			</para>
     		</wadl:doc>
     	</param>
@@ -147,7 +147,7 @@
     			<wadl:doc 
     				xmlns="http://docbook.org/ns/docbook">
     				<para>
-    					The unique identifier of a public IP.
+    					Specifies the unique identifier of a public IP address.
     				</para>
     			</wadl:doc>
     		</param>
@@ -189,7 +189,7 @@
 			<para>This operation 
 				lists details for 
 				one cloud network 
-				identified by <code>network_id</code>.
+				identified by the <code>network_id</code>.
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
@@ -206,6 +206,18 @@
 					/>
 			</wadl:doc>
 			</representation>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -246,6 +258,18 @@
 				</wadl:doc>
 			</representation>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 	</method>
 	<!--+++++ methods related to load balancer pools      +++++-->
 	<!--*******************************************************-->
@@ -283,6 +307,18 @@
 				</wadl:doc>
 			</representation>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 	</method>
 	<!--*******************************************************-->
 	<!-- List all load balancer pools 
@@ -319,6 +355,18 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -365,6 +413,10 @@
 				</wadl:doc>
 			</representation>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 		<response 
 			status="409">
 			<doc title="Conflict">Conflict</doc>
@@ -391,6 +443,10 @@
 					is not in an ACTIVE state
 				</para>
 			</wadl:doc>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -437,6 +493,10 @@
 				</wadl:doc>
 			</representation>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 		<response 
 			status="409">
 			<doc title="Conflict">Conflict.</doc>
@@ -450,6 +510,10 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -479,6 +543,10 @@
 		<response 
 			status="204">
 			<doc title="OK">(No Content)</doc>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 		<response 
 			status="409">
@@ -513,6 +581,10 @@
 					is not in an ACTIVE state
 				</para>
 			</wadl:doc>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -549,6 +621,10 @@
 			status="204">
 			<doc title="OK">(No Content)</doc>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 		<response 
 			status="409">
 			<doc title="Conflict">Conflict</doc>
@@ -562,6 +638,10 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -600,6 +680,18 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -674,6 +766,18 @@
 				</wadl:doc>
 			</representation>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 	</method>
 	<!--+++++ methods related to public IPs               +++++-->
 	<!--*******************************************************-->
@@ -717,6 +821,14 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -762,6 +874,18 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--*******************************************************-->
@@ -822,6 +946,18 @@
 				</wadl:doc>
 			</representation>
 		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
+		</response>
 	</method>
 	<!--*******************************************************-->
 	<!-- List all public IPs 
@@ -856,6 +992,18 @@
 					/>
 				</wadl:doc>
 			</representation>
+		</response>
+		<response status="400">
+			<doc title="Bad request" xml:lang="EN">The input was not in the correct format.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="404">
+			<doc title="Not found" xml:lang="EN">The requested item was not found.</doc>
+			<representation mediaType="application/json"/>
+		</response>
+		<response status="500">
+			<doc title="Internal server error" xml:lang="EN">An unexpected error has occurred.</doc>
+			<representation mediaType="application/json"/>
 		</response>
 	</method>
 	<!--=======================================================-->

@@ -77,153 +77,23 @@
         <raxm:priority>10</raxm:priority>
       </raxm:metadata>
   </info>
-  <preface xml:id="preface">
-    <title>Preface</title>
-    <para>Ipsum lorem lacus suscipit nunc, in consequat tortor turpis
-      vel nibh. Nulla eros nulla, iaculis vel laoreet at, consectetur
-      vitae massa. Praesent in imperdiet urna. Etiam commodo hendrerit
-      tincidunt. Aliquam non tortor lectus, sit amet laoreet tortor.
-      Vivamus sit amet tempor lorem. Fusce aliquam, lacus et eleifend
-      auctor, augue justo consectetur risus, a congue arcu mi a velit.
-      Donec lectus est, egestas eget laoreet a, accumsan ornare erat.
-      Suspendisse sed nulla ligula.</para>
-    <section xml:id="section_eow_tmw_ad">
-      <title>Intended Audience</title>
-      <para>This document is intended for technical writers and
-        developers who are learning to write DocBook documents. We
-        assume you have the following skills:</para>
-      <itemizedlist spacing="compact">
-        <listitem>
-          <para>Basic technical writing concepts</para>
-        </listitem>
-        <listitem>
-          <para>Basic XML </para>
-        </listitem>
-      </itemizedlist>
-      <para>Maecenas euismod, lectus vitae tincidunt sollicitudin, est
-        lacus suscipit nunc, in consequat tortor turpis vel nibh.
-        Nulla eros nulla, iaculis vel laoreet at, consectetur vitae
-        massa. Praesent in imperdiet urna. Etiam commodo hendrerit
-        tincidunt. Aliquam non tortor lectus, sit amet laoreet tortor.
-        Vivamus sit amet tempor lorem. Fusce aliquam, lacus et
-        eleifend auctor, augue justo consectetur risus, a congue arcu
-        mi a velit. Donec lectus est, egestas eget laoreet a, accumsan
-        ornare erat. Suspendisse sed nulla ligula.</para>
-      <para>Maecenas euismod, <link
-          xlink:href="http://www.rackspace.com">lectus</link> vitae
-        tincidunt sollicitudin, est lacus suscipit nunc, in consequat
-        tortor turpis vel nibh. Nulla eros nulla, iaculis vel laoreet
-        at, consectetur vitae massa. </para>
-    </section>
-    <section xml:id="change_history">
-      <title>Document Change History</title>
-      <para>This section is generated dynamically from the
-          <tag>revhistory</tag> element in <tag>book/info</tag>. The
-        processing instruction <code>&lt;?rax revhistory?></code> is
-        replaced at build-time with a formatted version of the
-          <tag>revhistory</tag> section.</para>
+  <chapter xml:id="change_history">
+    <title>Chapter 1: Document change history</title>
+      <para>This section is generated dynamically from the <tag>revhistory</tag> element in
+          <tag>book/info</tag>. The processing instruction <code>&lt;?rax revhistory?></code> is
+        replaced at build-time with a formatted version of the <tag>revhistory</tag> section.</para>
       <para>
         <?rax revhistory?>
-      </para>
-    </section>
-  </preface>
+      </para>    
+  </chapter>
   <chapter xml:id="Overview">
-    <title>Introduction</title>
+    <title>Overview</title>
     <!--You can use the <?dbhtml stop-chunking?> processing instruction to prevent a chapter or section for chunking furhter in the html output. -->
-    <para>This would normally be a good place to introduce the product
-      and API, but in this example document we'll look at some
-      commonly used constructs. The following an image with a title
-      using the <tag>figure</tag> element. The oXygen editor provides
-      a convenient way to insert figures with the necessary markup. <figure>
-        <title>An example of an .svg figure with a title</title>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="figures/example.png"
-              contentwidth="6in"/>
-          </imageobject>
-        </mediaobject>
-      </figure>
-    </para>
-    <para>When creating an image or diagram, use the correct
-      application and format for the situation. For images with lines
-      and text, you should use this scalable vector graphic format ,
-      SVG. SVG and other vector formats store the information as
-      points, lines, and fonts. As a result, they are very crisp when
-      printed and when scaled down or up. For screen shots and photos,
-      vector formats add no real value since they can only store the
-      raster image inside the vector as a binary blob. As a result,
-      you should use the png format scaled to the appropriate
-      size/resolution for your target browsers/screens. <itemizedlist>
-        <listitem>
-          <para>If you are creating an architectural diagram, seqence
-            diagram, flowchart, or something like a drawing with lots
-            of lines and text, then the preferred format is .svg.
-            Typically these are created with tools like <link
-              xlink:href="http://inkscape.org/">Inkscape</link>, Adobe
-            Illustrator, <link
-              xlink:href="https://www.omnigroup.com/products/omnigraffle/"
-              >Omnigraffle</link>, or Visio.</para>
-        </listitem>
-        <listitem>
-          <para>If you are working with screen shots or photos, use
-            png and a tool suited for manipulating raster formats.
-          </para>
-        </listitem>
-      </itemizedlist>Note that the for html output formats, the build
-      system converts .svg images to .png at build time since not all
-      browsers are capable of displaying .svg images. The .svg is used
-      directly for pdf output however. <table width="90%" >
-        <caption>An example of a table with a title</caption>
-        <col width="36%"/>
-        <col width="13%"/>
-        <col width="50%"/>
-        <thead>
-          <tr>
-            <th>Type of image</th>
-            <th>Preferred format</th>
-            <th>Tools</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Architectural diagrams, seqence diagrams, flowcharts,
-              or drawings with lots of lines and text</td>
-            <td>
-              <para>.svg</para>
-            </td>
-            <td>
-              <link xlink:href="http://inkscape.org/">Inkscape</link>,
-              Adobe Illustrator, <link
-                xlink:href="https://www.omnigroup.com/products/omnigraffle/"
-                >Omnigraffle</link>, or Visio.</td>
-          </tr>
-          <tr>
-            <td>A screen shot or picture</td>
-            <td>
-              <para>.png</para>
-            </td>
-            <td>
-              <para>Any screen capture utility or raster image
-                manipulating utility like the GIMP or Photoshop.
-              </para>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </para>
-    <para>You can also include tables without titles. These are
-        <tag>informaltable</tag>s in DocBook. <important>
-        <para>When you insert tables, be sure always to switch to the
-          html format instead of the CALS table format. For more
-          information on tables see the <link
-            xlink:href="http://docs.rackspace.com/writers-guide/content/ch_tables.html"
-            >Writer's Guide</link>.</para>
-        <para>Also note that this is an example of an admonition.
-          DocBook supports the following admonitions: <tag>note</tag>,
-            <tag>tip</tag>, <tag>important</tag>, <tag>caution</tag>,
-          and <tag>warning</tag>.</para>
-      </important>
-    </para>
+    <para>This would normally be a good place to introduce the product and API, but in this example
+      document we'll look at some commonly used constructs. The following an image with a title
+      using the <tag>figure</tag> element. The oXygen editor provides a convenient way to insert
+      figures with the necessary markup. </para>
+    <para> </para>
     <section xml:id="the-xml-id-attribute">
       <title>The xml:id attribute and linking</title>
       <para>You must add the <tag>xml:id</tag> attribute to all
@@ -286,145 +156,17 @@ xlink:href="https://one.rackspace.com/display/C3/Disqus+project+identifiers"
     </section>
     <section xml:id="lists">
       <title>Lists</title>
-      <para>The DocBook vocabulary supports several kinds of lists.
-        These lists can optionally have titles. <tip>
-          <para>A common pitfall writers fall into is to create
-            several small sections. This is suboptimal because you're
-            giving the full weight of a title in the table of contents
-            to something that may have a single sentence of content.
-            What you probably want in this case is some kind of
-            list.</para>
-        </tip><itemizedlist>
-          <title>Types of list in DocBook</title>
-          <para>Notice that this list has a title and an introductary
-            paragraph before the first list item. The title and intro
-            para are optional.</para>
-          <listitem>
-            <para><tag>itemizedlist</tag>: A bulleted list. Your hands
-              are soaking in one.</para>
-          </listitem>
-          <listitem>
-            <para><tag>orderedlist</tag>: A numbered list. There are
-              attributes that let you control the type of numbering
-              and the start of the numbering for unusual
-              situations.</para>
-          </listitem>
-          <listitem>
-            <para><tag>procedure</tag>: This is a list of steps.
-            </para>
-          </listitem>
-          <listitem>
-            <para><tag>variablelist</tag>: This is a list where each
-              item includes one or more <quote>terms</quote> followed
-              by a block of text describing it. You can control the
-              formatting so that it's formatted as blocks or as a
-              runin head. I'll include examples later in this
-              section.</para>
-          </listitem>
-          <listitem>
-            <para><tag>simplelist</tag>: This is a list without
-              bullets.</para>
-          </listitem>
-        </itemizedlist>The following are examples of
-          <tag>variablelist</tag>s. Notice that the
-          <quote>term</quote> is in bold. See <link
-          xlink:href="http://www.sagehill.net/docbookxsl/Variablelists.html"
-          >variablelist options</link> for detailed information on
-        formatting variablelists.<variablelist>
-          <title>Variablelist with default layout</title>
-          <varlistentry>
-            <term>itemizedlist</term>
-            <listitem>
-              <para>A bulleted list. Your hands are soaking in
-                one.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>orderedlist</term>
-            <listitem>
-              <para> A numbered list. There are attributes that let
-                you control the type of numbering and the start of the
-                numbering for unusual situations.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>procedure</term>
-            <listitem>
-              <para>This is a list of steps. As with other lists,
-                  <tag>procedure</tag>s can have <tag>title</tag>s and
-                some content before the first step. One use for
-                  <tag>procedure</tag>s is that you can create a list
-                of procedures at the front of the book. </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>variablelist</term>
-            <listitem>
-              <para>This is a list where each item includes one or
-                more <quote>terms</quote> followed by a block of text
-                describing it. You can control the formatting so that
-                it's formatted as blocks or as a runin head. I'll
-                include examples later in this section.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>simplelist</term>
-            <listitem>
-              <para>This is a list without bullets.</para>
-            </listitem>
-          </varlistentry>
-        </variablelist><variablelist>
-          <title>The same variablelist formatted as blocks</title>
-          <?dbfo list-presentation="blocks"?> 
-          <?dbfo term-width=".75in"?> 
-          <?dbhtml list-presentation="table"?> 
-          <?dbhtml term-width="15%"  list-width="85%" ?> 
-          <varlistentry>
-            <term>itemizedlist</term>
-            <listitem>
-              <para>A bulleted list. Your hands are soaking in
-                one.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>orderedlist</term>
-            <listitem>
-              <para> A numbered list. There are attributes that let
-                you control the type of numbering and the start of the
-                numbering for unusual situations.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>procedure</term>
-            <listitem>
-              <para>This is a list of steps. As with other lists,
-                  <tag>procedure</tag>s can have <tag>title</tag>s and
-                some content before the first step. One use for
-                  <tag>procedure</tag>s is that you can create a list
-                of procedures at the front of the book. </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>variablelist</term>
-            <listitem>
-              <para>This is a list where each item includes one or
-                more <quote>terms</quote> followed by a block of text
-                describing it. You can control the formatting so that
-                it's formatted as blocks or as a runin head. I'll
-                include examples later in this section.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>simplelist</term>
-            <listitem>
-              <para>This is a list without bullets.</para>
-            </listitem>
-          </varlistentry>
-        </variablelist></para>
+      <para>The DocBook vocabulary supports several kinds of lists. These lists can optionally have
+        titles. <tip>
+          <para>A common pitfall writers fall into is to create several small sections. This is
+            suboptimal because you're giving the full weight of a title in the table of contents to
+            something that may have a single sentence of content. What you probably want in this
+            case is some kind of list.</para>
+        </tip></para>
     </section>
   </chapter>
   <chapter xml:id="other-features">
-    <title>Conditional text/profiling</title>
+    <title>General API information</title>
     <para>One important feature of the publishing system is the
       ability to flag elements with certain attributes and produce
       different versions of the same document from the same source
