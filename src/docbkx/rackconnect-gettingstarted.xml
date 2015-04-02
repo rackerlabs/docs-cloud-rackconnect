@@ -3,47 +3,40 @@
 <!ENTITY PREFIX "rackconnect">
 <!ENTITY PRODUCTNAME "RackConnect">
 ]>
-  <book  
-    xmlns="http://docbook.org/ns/docbook" 
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude" 
-    xmlns:svg="http://www.w3.org/2000/svg"
-    version="5.0" 
-    xml:id="&PREFIX;-gettingstarted" 
-    status="DRAFT">
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
+  xml:id="&PREFIX;-gettingstarted" status="DRAFT">
   <title>Rackspace &PRODUCTNAME; Getting Started Guide</title>
-    <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
+  <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
   <info>
     <copyright>
       <year>2013</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
-    <productname>Rackspace &PRODUCTNAME;</productname><!--Note that the <productname> text matches the first few words of the title. The build system splits the title into productname + rest of title on the pdf cover.-->
+    <productname>Rackspace &PRODUCTNAME;</productname>
+    <!--Note that the <productname> text matches the first few words of the title. The build system splits the title into productname + rest of title on the pdf cover.-->
     <pubdate><!--If you leave the <pubdate> element empty, the build system inserts today's date automatically. --></pubdate>
     <revhistory>
       <revision>
         <date>2011-03-01</date>
         <revdescription>
-          <para>This is the revision history section. The technical
-            writer updates this section when major changes are made to
-            the doc to indicate what changed. Typically this will
-            include links into the body of the document. From this
-            element we generate the list in <xref
-              linkend="change_history"/> as well as the atom feed for
-            the document an <link xlink:href="../atom.xml">atom feed</link> for the document.
-              <itemizedlist spacing="compact">
+          <para>This is the revision history section. The technical writer updates this section when
+            major changes are made to the doc to indicate what changed. Typically this will include
+            links into the body of the document. From this element we generate the list in <xref
+              linkend="change_history"/> as well as the atom feed for the document an <link
+              xlink:href="../atom.xml">atom feed</link> for the document. <itemizedlist
+              spacing="compact">
               <listitem>
-                <para>Itemized lists are useful constructs for improving the readability of documents.</para>
+                <para>Itemized lists are useful constructs for improving the readability of
+                  documents.</para>
               </listitem>
               <listitem>
-                <para>One way that itemized lists improve readablity
-                  is by adding whitespace between the list
-                  items.</para>
+                <para>One way that itemized lists improve readablity is by adding whitespace between
+                  the list items.</para>
               </listitem>
               <listitem>
-                <para>Dates should be in the format YYYY-MM-DD.
-                </para>
+                <para>Dates should be in the format YYYY-MM-DD. </para>
               </listitem>
             </itemizedlist></para>
         </revdescription>
@@ -51,13 +44,11 @@
       <revision>
         <date>2011-02-02</date>
         <revdescription>
-          <para>This release fixed several bugs and, no doubt,
-            introduced some new ones. Etiam eros ipsum, tempor ut
-            laoreet nec, adipiscing vel eros. Integer sit amet nibh
-            iaculis sapien sagittis blandit. Quisque vel lectus felis,
-            vel congue lorem. Pellentesque vitae elit id sem faucibus
-            ornare. Ut dictum dapibus quam, in scelerisque quam tempus
-            sit amet. </para>
+          <para>This release fixed several bugs and, no doubt, introduced some new ones. Etiam eros
+            ipsum, tempor ut laoreet nec, adipiscing vel eros. Integer sit amet nibh iaculis sapien
+            sagittis blandit. Quisque vel lectus felis, vel congue lorem. Pellentesque vitae elit id
+            sem faucibus ornare. Ut dictum dapibus quam, in scelerisque quam tempus sit amet.
+          </para>
         </revdescription>
       </revision>
     </revhistory>
@@ -71,20 +62,20 @@
        Work with the Cloud Doc Tools team to find out what to put here. Once established, you should not change these
        values without first consulting with the CDT team.
     -->
-      <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-        <raxm:displayname>Getting Started Guide</raxm:displayname>
-        <raxm:product version="3">&PREFIX;</raxm:product>
-        <raxm:priority>10</raxm:priority>
-      </raxm:metadata>
+    <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+      <raxm:displayname>Getting Started Guide</raxm:displayname>
+      <raxm:product version="3">&PREFIX;</raxm:product>
+      <raxm:priority>10</raxm:priority>
+    </raxm:metadata>
   </info>
   <chapter xml:id="change_history">
     <title>Chapter 1: Document change history</title>
-      <para>This section is generated dynamically from the <tag>revhistory</tag> element in
-          <tag>book/info</tag>. The processing instruction <code>&lt;?rax revhistory?></code> is
-        replaced at build-time with a formatted version of the <tag>revhistory</tag> section.</para>
-      <para>
-        <?rax revhistory?>
-      </para>    
+    <para>This section is generated dynamically from the <tag>revhistory</tag> element in
+        <tag>book/info</tag>. The processing instruction <code>&lt;?rax revhistory?></code> is
+      replaced at build-time with a formatted version of the <tag>revhistory</tag> section.</para>
+    <para>
+      <?rax revhistory?>
+    </para>
   </chapter>
   <chapter xml:id="Overview">
     <title>Overview</title>
@@ -96,63 +87,9 @@
     <para> </para>
     <section xml:id="the-xml-id-attribute">
       <title>The xml:id attribute and linking</title>
-      <para>You must add the <tag>xml:id</tag> attribute to all
-          <tag>book</tag>s, <tag>chapter</tag>s, <tag>section</tag>s,
-          <tag>appendix</tag>s, and <tag>preface</tag>s. These ids are
-        used for more than one thing:<itemizedlist>
-          <listitem>
-            <para>The <tag>xml:id</tag> on the <tag>book</tag> element
-              must be unique among all other Rackspace documents. This
-              ensures that the <link xlink:href="http://disqus.com"
-                >Disqus</link> comments are associated with that one
-              document. See <link
-                xlink:href="https://one.rackspace.com/display/C3/Disqus+project+identifiers"
-                >Disqus project identifiers</link> for a list of
-                <tag>xml:id</tag>s currently in use.</para>
-          </listitem>
-          <listitem>
-            <para>The <tag>xml:id</tag> on each  <tag>chapter</tag>,
-                <tag>section</tag>, <tag>appendix</tag>, and
-                <tag>preface</tag> must be unique within the current
-              book. These ids are used to generate the filename for
-              the html format and also to associate the Disqus thread
-              with that page. </para>
-          </listitem>
-        </itemizedlist></para>
-      <para><?rax-fo keep-together?>The <tag>xml:id</tag> attribute is
-        also important for linking within the document. You use the
-          <tag>xref</tag> element with the <tag>linkend</tag>
-        attribute to create a hyperlink from one section to another.
-        At build-time, the <tag>xref</tag> is replaced with a
-        hyperlink and link text appropriate to the format. For
-        example, in html output an xref is just a hyperlink with the
-        title of the target as the link text. In pdf output, which is
-        intended for printing, the link text includes the page number
-        of the target, though in the pdf, the link is also a hot link
-        to the target. In the following example, <code>preface</code>
-        is the value of the <tag>xml:id</tag> of the target:<programlisting language="xml">&lt;xref linkend="preface"/></programlisting><important>
-          <para>Avoid putting the <tag>xml:id</tag> attribute on the
-              <tag>title</tag> tag. Instead put it on the element that
-            contains the <tag>title</tag>. For example avoid doing
-            this:<programlisting language="xml">&lt;section>&lt;title xml:id="widgets">Understanding widgets&lt;/title>...&lt;/section> &lt;!-- AVOID This! --></programlisting>Instead
-            do
-            this:<programlisting language="xml">&lt;section xml:id="widgets">&lt;title>Understanding widgets&lt;/title>...&lt;/section> &lt;!-- Much better! --></programlisting></para>
-        </important></para>
-      <para>We soon hope to support the <tag>olink</tag> tag, which
-        will allow you to link to other docs and provide a more
-        convenient way to link within a document. </para>
-      <para>If you need to link to a url, use the <tag>link</tag> tag
-        and the <tag>xlink:href</tag> attribute. For example, the
-        paragraph above contains some
-        hyperlinks:<programlisting language="xml">&lt;para>The &lt;tag>xml:id&lt;/tag> on the &lt;tag>book&lt;/tag> element
-must be unique among all other Rackspace documents. This
-ensures that the &lt;link xlink:href="http://disqus.com"
->Disqus&lt;/link> comments are associated with that one
-document. See &lt;link 
-xlink:href="https://one.rackspace.com/display/C3/Disqus+project+identifiers"
->Disqus project identifiers&lt;/link> for a list of
-&lt;tag>xml:id&lt;/tag>s currently in use.&lt;/para></programlisting>
-      </para>
+      <para>You must add the <tag>xml:id</tag> attribute to all <tag>book</tag>s,
+        <tag>chapter</tag>s, <tag>section</tag>s, <tag>appendix</tag>s, and <tag>preface</tag>s.
+        These ids are used for more than one thing:</para>
     </section>
     <section xml:id="lists">
       <title>Lists</title>
@@ -167,31 +104,27 @@ xlink:href="https://one.rackspace.com/display/C3/Disqus+project+identifiers"
   </chapter>
   <chapter xml:id="other-features">
     <title>General API information</title>
-    <para>One important feature of the publishing system is the
-      ability to flag elements with certain attributes and produce
-      different versions of the same document from the same source
+    <para>One important feature of the publishing system is the ability to flag elements with
+      certain attributes and produce different versions of the same document from the same source
       file. There are two scenarios in which you might use conditional text:<itemizedlist>
         <listitem>
-          <para>Flagging content as internal, reviewer, or writeronly,
-            for
+          <para>Flagging content as internal, reviewer, or writeronly, for
             example:<programlisting>&lt;para security="internal">This para will not appear in the customer-facing external
 verison of the document. It will appear in blue text in the internal version published on 
 docs-internal.rackspace.com. &lt;/para></programlisting>If
-            you instead use <tag>security="reviewer"</tag> the content
-            will appear only if you set
-              <tag>&lt;security>reviewer&lt;/security></tag> in your
-              <filename>pom.xml</filename> file. </para>
+            you instead use <tag>security="reviewer"</tag> the content will appear only if you set
+              <tag>&lt;security>reviewer&lt;/security></tag> in your <filename>pom.xml</filename>
+            file. </para>
         </listitem>
         <listitem>
           <para>Using a feature-flag to control whether content
             appears:<programlisting>&lt;para condition="foo-feature">This will appear only if the parameter profileCondition 
 contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
             your <filename>pom.xml</filename>, you can set
-              <tag>&lt;profileCondition>foo-feature&lt;/profileCondition></tag>.
-            Note that you can also use a semi-colon delimeted list:
-              <tag>&lt;profileCondition>foo-feature;bar-feature&lt;/profileCondition></tag>
-            to turn on elements with
-              <tag>condition="foo-feature"</tag> and
+              <tag>&lt;profileCondition>foo-feature&lt;/profileCondition></tag>. Note that you can
+            also use a semi-colon delimeted list:
+              <tag>&lt;profileCondition>foo-feature;bar-feature&lt;/profileCondition></tag> to turn
+            on elements with <tag>condition="foo-feature"</tag> and
               <tag>condition="bar-feature"</tag>.</para>
         </listitem>
       </itemizedlist></para>
