@@ -33,18 +33,12 @@
                 </imageobject>
               </inlinemediaobject>'>
 ]>
-
-  <book  
-    xmlns="http://docbook.org/ns/docbook" 
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude" 
-    xmlns:svg="http://www.w3.org/2000/svg"
-    version="5.0" 
-    xml:id="&PREFIX;-devguide"
-    status="DRAFT">
-    <title>Rackspace &PRODUCTNAME; API Developer Guide</title>
-    <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
-    <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
+  xml:id="&PREFIX;-devguide" status="DRAFT">
+  <title>Rackspace &PRODUCTNAME; API Developer Guide</title>
+  <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
+  <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
   <info>
     <copyright>
       <year>2014</year>
@@ -62,9 +56,7 @@
       <revision>
         <date>2014-12-01</date>
         <revdescription>
-          <para>
-            Initial Rackspace-branded draft.
-          </para>
+          <para> Initial Rackspace-branded draft. </para>
         </revdescription>
       </revision>
     </revhistory>
@@ -89,32 +81,23 @@
       </raxm:metadata>
       -->
   </info>
-
   <chapter xml:id="Overview">
     <title>Introduction</title>
-    <para>
-      This is an early, partial draft 
-      of Rackspace-branded documentation 
-      describing the &PRODUCTNAME; v3 API.
-    </para>
+    <para> This is an early, partial draft of Rackspace-branded documentation describing the
+      &PRODUCTNAME; v3 API. </para>
     <section xml:id="resources">
       <title>Additional resources</title>
-      <para>
-        Documentation of the &PRODUCTNAME; v3 API 
-        is under construction. 
-        You can see additional relevant work 
-        in progress in these places:
-        <itemizedlist>
+      <para> Documentation of the &PRODUCTNAME; v3 API is under construction. You can see additional
+        relevant work in progress in these places: <itemizedlist>
           <listitem>
             <para>source for this document at <link
-              xlink:href="https://github.com/rackerlabs/docs-rackconnect"
-              >github.com/rackerlabs/docs-rackconnect</link>
+                xlink:href="https://github.com/rackerlabs/docs-rackconnect"
+                >github.com/rackerlabs/docs-rackconnect</link>
             </para>
           </listitem>
           <listitem>
-            <para>draft descriptions of pending features 
-              at <link xlink:href="http://docs.rcv3.apiary.io"
-                >http://docs.rcv3.apiary.io</link>
+            <para>draft descriptions of pending features at <link
+                xlink:href="http://docs.rcv3.apiary.io">http://docs.rcv3.apiary.io</link>
             </para>
           </listitem>
         </itemizedlist>
@@ -122,286 +105,282 @@
     </section>
     <section xml:id="change_history">
       <title>Document change history</title>
-      <para>This version of the document 
-        replaces and obsoletes all previous versions. 
-        The following table describes the most recent changes:</para>
+      <para>This version of the document replaces and obsoletes all previous versions. The following
+        table describes the most recent changes:</para>
       <para>
         <?rax revhistory?>
       </para>
     </section>
   </chapter>
-<chapter xml:id="Authentication">
-  <title>Authentication</title>
-      <para> Every REST request against the Rackspace RackConnect service requires the inclusion of
-      a specific authentication token, supplied by the <code>X-Auth-Token</code> HTTP header. You
+  <chapter xml:id="Authentication">
+    <title>Authentication</title>
+    <para>Every REST request against the Rackspace RackConnect service requires the inclusion of a
+      specific authentication token, supplied by the <code>X-Auth-Token</code> HTTP header. You
       obtain this token by using the Rackspace Cloud Identity service and supplying a valid username
       and API access key. </para>
-      <section xml:id="Geographic_Endpoints">
-        <title>Geographic endpoints</title>
-        <para> The Rackspace Cloud Identity service serves as the entry point to all Rackspace Cloud
-          APIs and is itself a RESTful web service. </para>
-        <para> You can use the following endpoints to access the Rackspace Cloud Identity service
-          for authentication:</para>
-        <itemizedlist spacing="compact">
+    <section xml:id="Geographic_Endpoints">
+      <title>Geographic endpoints</title>
+      <para> The Rackspace Cloud Identity service serves as the entry point to all Rackspace Cloud
+        APIs and is itself a RESTful web service. </para>
+      <para> You can use the following endpoints to access the Rackspace Cloud Identity service for
+        authentication:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            <link xlink:href="&ENDPOINT-US-20;">&ENDPOINT-US-20;</link>
+          </para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section xml:id="Retrieving_the_auth_token">
+      <title>Retrieving the authentication token</title>
+      <informaltable rules="all">
+        <tbody>
+          <tr>
+            <td colspan="1">&POST; </td>
+            <td colspan="1"> v2.0/tokens </td>
+            <td colspan="4"> Authenticate to receive a token and a service catalog. </td>
+          </tr>
+        </tbody>
+      </informaltable>
+      <simpara> Normal response codes: <returnvalue>200</returnvalue>,
+          <returnvalue>203</returnvalue>
+      </simpara>
+      <simpara> Error response codes: unauthorized (<errorcode>401</errorcode>), userDisabled
+          (<errorcode>403</errorcode>), badRequest (<errorcode>400</errorcode>), authFault
+          (<errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>) </simpara>
+      <para> The authenticate operation provides clients with an authentication token and a list of
+        regional cloud endpoints. </para>
+      <para>The example requests and responses in this section illustrate a general case. In your
+        authentication request, use your own credentials rather than the example values shown here
+        for <code>username</code> and <code>apiKey</code>. When you authenticate successfully, the
+        response to your authentication request will include a catalog of the services to which you
+        have subscribed rather than the example values shown here.</para>
+      <note>
+        <title>Notes</title>
+        <itemizedlist>
           <listitem>
-            <para>
-              <link xlink:href="&ENDPOINT-US-20;">&ENDPOINT-US-20;</link>
-            </para>
+            <para>For information about how to use cURL to retrieve the authentication token, see
+              the <citetitle>Rackspace RackConnect Getting Started Guide</citetitle>.</para>
+          </listitem>
+          <listitem>
+            <para> If you authenticate with username and password credentials, you can use
+              multi-factor authentication to add an additional level of account security. This
+              feature is not implemented for username and API credentials. For more information, see
+                <link
+                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
+                >Multifactor authentication</link> in the <citetitle>Cloud Identity Client Developer
+                Guide</citetitle>. </para>
           </listitem>
         </itemizedlist>
-      </section>
-      <section xml:id="Retrieving_the_auth_token">
-        <title>Retrieving the authentication token</title>
-        <informaltable rules="all">
-          <tbody>
-            <tr>
-              <td colspan="1">&POST; </td>
-              <td colspan="1"> v2.0/tokens </td>
-              <td colspan="4"> Authenticate to receive a token and a service catalog. </td>
-            </tr>
-          </tbody>
-        </informaltable>
-        <simpara> Normal response codes: <returnvalue>200</returnvalue>,
-            <returnvalue>203</returnvalue>
-        </simpara>
-        <simpara> Error response codes: unauthorized (<errorcode>401</errorcode>), userDisabled
-            (<errorcode>403</errorcode>), badRequest (<errorcode>400</errorcode>), authFault
-            (<errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>) </simpara>
-        <para> The authenticate operation provides clients with an authentication token and a list
-          of regional cloud endpoints. </para>
-        <para>The example requests and responses in this section illustrate a general case. In your
-          authentication request, use your own credentials rather than the example values shown here
-          for <code>username</code> and <code>apiKey</code>. When you authenticate successfully, the
-          response to your authentication request will include a catalog of the services to which
-          you have subscribed rather than the example values shown here.</para>
-        <note>
-          <title>Notes</title>
-          <itemizedlist>
+      </note>
+      <example>
+        <title>Authentication with US endpoint: XML request</title>
+        <programlistingco>
+          <areaspec>
+            <area units="linecolumn" coords="12 26"/>
+            <area units="linecolumn" coords="13 26"/>
+          </areaspec>
+          <programlisting language="xml"><xi:include href="../wadl/samples/credentials-20.xml" parse="text"/></programlisting>
+        </programlistingco>
+      </example>
+      <example>
+        <title>Authentication with US endpoint: JSON request</title>
+        <programlistingco>
+          <areaspec>
+            <area units="linecolumn" coords="13 22"/>
+            <area units="linecolumn" coords="14 20"/>
+          </areaspec>
+          <programlisting language="json"><xi:include href="../wadl/samples/credentials-20.json" parse="text"/></programlisting>
+        </programlistingco>
+      </example>
+      <calloutlist>
+        <callout arearefs="credentials.xml.user">
+          <para>The username is your common Rackspace Cloud username. </para>
+        </callout>
+        <callout arearefs="credentials.xml.key">
+          <para>The key is your API access key. </para>
+          <para><emphasis role="bold">To find your API key</emphasis>
+          </para>
+          <orderedlist>
             <listitem>
-              <para>For information about how to use cURL to retrieve the authentication token, see
-              the <citetitle>Rackspace RackConnect Getting Started Guide</citetitle>.</para>
+              <para>Log in to the Cloud Control Panel (<link
+                  xlink:href="https://mycloud.rackspace.com"
+                >https://mycloud.rackspace.com</link>).</para>
             </listitem>
             <listitem>
-              <para> If you authenticate with username and password credentials, you can use
-                multi-factor authentication to add an additional level of account security. This
-                feature is not implemented for username and API credentials. For more information,
-                see <link
-                  xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
-                  >Multifactor authentication</link> in the <citetitle>Cloud Identity Client
-                  Developer Guide</citetitle>. </para>
+              <para>On the upper-right side of the top navigation pane, click your username.</para>
             </listitem>
-          </itemizedlist>
-        </note>
-        <example>
-          <title>Authentication with US endpoint: XML request</title>
-          <programlistingco>
-            <areaspec>
-              <area units="linecolumn" coords="12 26"/>
-              <area units="linecolumn" coords="13 26"/>
-            </areaspec>
-            <programlisting language="xml"><xi:include href="../wadl/samples/credentials-20.xml" parse="text"/></programlisting>
-          </programlistingco>
-        </example>
-        <example>
-          <title>Authentication with US endpoint: JSON request</title>
-          <programlistingco>
-            <areaspec>
-              <area units="linecolumn" coords="13 22"/>
-              <area units="linecolumn" coords="14 20"/>
-            </areaspec>
-            <programlisting language="json"><xi:include href="../wadl/samples/credentials-20.json" parse="text"/></programlisting>
-          </programlistingco>
-        </example>
-        <calloutlist>
-          <callout arearefs="credentials.xml.user">
-            <para>The username is your common Rackspace Cloud username. </para>
-          </callout>
-          <callout arearefs="credentials.xml.key">
-            <para>The key is your API access key. </para>
-            <para><emphasis role="bold">To find your API key</emphasis>
-            </para>
-            <orderedlist>
-              <listitem>
-                <para>Log in to the Cloud Control Panel (<link
-                    xlink:href="https://mycloud.rackspace.com"
-                  >https://mycloud.rackspace.com</link>).</para>
-              </listitem>
-              <listitem>
-                <para>On the upper-right side of the top navigation pane, click your
-                  username.</para>
-              </listitem>
-              <listitem>
-                <para>From the menu, select <guilabel>Account Settings</guilabel>.</para>
-              </listitem>
-              <listitem>
-                <para>In the Login Details section of the Account Settings page, locate the
-                    <guilabel>API Key</guilabel> field and click <guibutton>Show</guibutton>.</para>
-              </listitem>
-              <listitem>
-                <para>Copy the value of the API key and paste it into a text editor of your
-                  choice.</para>
-              </listitem>
-              <listitem>
-                <para>Click <guibutton>Hide</guibutton> to hide the value of the API key.</para>
-              </listitem>
-            </orderedlist>
-            <para>You also need your cloud account ID. In the documentation, the account ID is often
-              referred to as your tenant name or tenant ID (technically, the ID is different from
-              the name, but at Rackspace, they are the same thing). Together, three components—your
-              username, your API key, and your tenant ID or cloud account ID—form the authentication
-              credentials that are required to connect to the Rackspace cloud.</para>
-            <para>To find your tenant ID or cloud account ID, click your username on the upper-right
-              side of the top navigation pane in the Cloud Control Panel. The tenant ID or account
-              ID is listed first in the menu.</para>
-          </callout>
-        </calloutlist>
-        <example>
-          <title>Authentication with US endpoint: XML response</title>
-          <programlistingco>
-            <areaspec>
-              <area units="linecolumn" coords="7 9"/>
-              <area units="linecolumn" coords="15 10"/>
-              <area units="linecolumn" coords="16 67"/>
-              <area units="linecolumn" coords="17 12"/>
-              <area units="linecolumn" coords="22 21"/>
-              <area units="linecolumn" coords="51 34"/>
-              <area units="linecolumn" coords="51 54"/>
-              <area units="linecolumn" coords="52 30"/>
-              <area units="linecolumn" coords="53 66"/>
-              <area units="linecolumn" coords="54 9"/>
-            </areaspec>
-            <programlisting language="xml"><xi:include href="../wadl/samples/auth-20.xml" parse="text"/></programlisting>
-          </programlistingco>
-        </example>
-        <example>
-          <title>Authentication with US endpoint: JSON response</title>
-          <programlistingco>
-            <areaspec>
-              <area units="linecolumn" coords="217 1"/>
-              <area units="linecolumn" coords="9 8"/>
-              <area units="linecolumn" coords="16 45"/>
-              <area units="linecolumn" coords="17 12"/>
-              <area units="linecolumn" coords="30 8"/>
-              <area units="linecolumn" coords="193 13"/>
-              <area units="linecolumn" coords="192 13"/>
-              <area units="linecolumn" coords="198 16"/>
-              <area units="linecolumn" coords="199 16"/>
-              <area units="linecolumn" coords="200 16"/>
-            </areaspec>
-            <programlisting language="json"><xi:include href="../wadl/samples/auth-20.json" parse="text"/></programlisting>
-          </programlistingco>
-        </example>
-        <calloutlist>
-          <callout arearefs="response.xml.namespaces">
-            <para> In XML responses only, a list of namespaces identifies API extensions that add
-              functionality to the core API. </para>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.token">
-            <para>The token can be presented to a service as evidence of authentication. Tokens are
-              valid for a finite duration. An authentication token's default lifespan is 24 hours.
-              Applications should be designed to re-authenticate after receiving a 401
-              (Unauthorized) response from a service endpoint. </para>
-            <para>The token's <code>expires</code> attribute denotes the time after which the token
-              automatically becomes invalid. A token can be manually revoked before the time
-              identified by the <code>expires</code> attribute. The attribute predicts a token's
-              maximum possible lifespan but does not guarantee that it will reach that lifespan.
-              Clients are encouraged to cache a token until it expires. </para>
-          </callout>
-          <callout arearefs="response.xml.dfltregion">
-            <para>Users can be assigned a default region. If multiple endpoints are associated with
-              a service in the user's catalog, the endpoint for the user's default region is
-              selected if it is available. In this example, the user's default region is DFW, and
-              several of the services in the catalog are associated with endpoints in that region.
-              Whenever possible, the user's work is directed to the DFW region. </para>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.role">
-            <para>Users can be assigned multiple roles, with each role providing specific
-              privileges. In this example, <code>yourUserName</code> is the administrative user for
-              the account and holds the fully-privileged <code>identity:admin</code> role. Other
-              users might hold other roles with different privileges. Roles do not have to be
-              associated with actual job functions such as Administrator, Operator, Developer,
-              Tester, or Trainer. </para>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.catalog">
-            <para> The service catalog lists the services that you can access. In this example, the
-              user can access one database service, one load-balancing service, two compute services
-              (Cloud Servers OpenStack and Cloud Servers), two object storage services (Cloud Files
-              CDN and Cloud Files), one DNS service, one Rackspace CDN service, and two Rackspace
-              Cloud Metrics services. The catalog entry for each service provides at least one
-              endpoint URI for that service. Other information, such as regions, versions, and
-              tenants, is provided if it is relevant to a user's access to a service. </para>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.servicetype">
-            <para>The service <code>type</code> attribute identifies services that perform similar
-              functions, regardless of service names. In the examples, the service named
-                <code>cloudMetrics</code> is identified as
-              <code>type="rax:cloudmetrics"</code>.</para>
-            <tip>
-              <para>Beginning with Cloud Identity v2.0, the service catalog includes the service
-                  <code>type</code> attribute to identify services that perform similar functions
-                but have different names. For example, <code>type="compute"</code> identifies
-                compute services such as cloudServers and cloudServersOpenStack. Some developers
-                have found the service <code>type</code> attribute to be useful in parsing the
-                service catalog. For additional information about the Cloud Identity service, see
-                the <citetitle>Cloud Identity Client Developer Guide</citetitle> at <link
-                  xlink:href="http://docs.rackspace.com">http://docs.rackspace.com/</link>.</para>
-            </tip>
-            <important>
-              <para>Use the service <code>type</code> attribute as the primary value for locating a
-                service. If multiple endpoints of the same service type exist in the same region,
-                use the service <code>name</code> attribute to locate the appropriate
-                service.</para>
-            </important>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.servicename">
-            <para> The service <code>name</code> attribute identifies each unique service in the
-              catalog. After a service is created, its name does not change. However, new services
-              of the same service <code>type</code> can be added to the catalog with new names. </para>
-            <important>
-              <para> If you are programmatically parsing an authentication response, use service
-                  <code>type</code> rather than service <code>name</code> to determine whether a
-                user has access to a particular kind of service. Service type is stable across all
-                releases. New service types might be developed, but existing service types are not
-                renamed. In the preceding examples, <code>type="compute"</code> identifies all of
-                the available compute services. If new compute services are added in future
-                releases, you can recognize them by parsing for <code>type="compute"</code> in the
-                authentication response's service catalog.</para>
-            </important>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.region">
-            <para>A service might expose endpoints in different regions. Regional endpoints enable
-              users to provision resources in a manner that provides high availability. </para>
-            <para> Some services, such as Rackspace Cloud Metrics, are not region-specific. These
-              services supply a single non-regional endpoint and do not provide access to internal
-              URIs. </para>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.tenant">
-            <para> Some services recognize specification of a tenant. If a service recognizes
-              tenants, the format of the tenant specification is defined only by the service. For
-              details about whether and how to specify a tenant, check the documentation for the
-              service that you are using.</para>
-            <para> </para>
-          </callout>
-          <callout arearefs="response.xml.url">
-            <para> An endpoint can be assigned public URIs and internal URIs. A public URI is
-              accessible from anywhere. Access to a public URI usually incurs traffic charges.
-              Internal URIs are accessible only to services within the same region. Access to an
-              internal URI is free of charge. </para>
-            <para> </para>
-          </callout>
-        </calloutlist>
-        <para>Rackspace RackConnect service endpoints are published in the service catalog in the
+            <listitem>
+              <para>From the menu, select <guilabel>Account Settings</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>In the Login Details section of the Account Settings page, locate the
+                  <guilabel>API Key</guilabel> field and click <guibutton>Show</guibutton>.</para>
+            </listitem>
+            <listitem>
+              <para>Copy the value of the API key and paste it into a text editor of your
+                choice.</para>
+            </listitem>
+            <listitem>
+              <para>Click <guibutton>Hide</guibutton> to hide the value of the API key.</para>
+            </listitem>
+          </orderedlist>
+          <para>You also need your cloud account ID. In the documentation, the account ID is often
+            referred to as your tenant name or tenant ID (technically, the ID is different from the
+            name, but at Rackspace, they are the same thing). Together, three components—your
+            username, your API key, and your tenant ID or cloud account ID—form the authentication
+            credentials that are required to connect to the Rackspace cloud.</para>
+          <para>To find your tenant ID or cloud account ID, click your username on the upper-right
+            side of the top navigation pane in the Cloud Control Panel. The tenant ID or account ID
+            is listed first in the menu.</para>
+        </callout>
+      </calloutlist>
+      <example>
+        <title>Authentication with US endpoint: XML response</title>
+        <programlistingco>
+          <areaspec>
+            <area units="linecolumn" coords="7 9"/>
+            <area units="linecolumn" coords="15 10"/>
+            <area units="linecolumn" coords="16 67"/>
+            <area units="linecolumn" coords="17 12"/>
+            <area units="linecolumn" coords="22 21"/>
+            <area units="linecolumn" coords="51 34"/>
+            <area units="linecolumn" coords="51 54"/>
+            <area units="linecolumn" coords="52 30"/>
+            <area units="linecolumn" coords="53 66"/>
+            <area units="linecolumn" coords="54 9"/>
+          </areaspec>
+          <programlisting language="xml"><xi:include href="../wadl/samples/auth-20.xml" parse="text"/></programlisting>
+        </programlistingco>
+      </example>
+      <example>
+        <title>Authentication with US endpoint: JSON response</title>
+        <programlistingco>
+          <areaspec>
+            <area units="linecolumn" coords="217 1"/>
+            <area units="linecolumn" coords="9 8"/>
+            <area units="linecolumn" coords="16 45"/>
+            <area units="linecolumn" coords="17 12"/>
+            <area units="linecolumn" coords="30 8"/>
+            <area units="linecolumn" coords="193 13"/>
+            <area units="linecolumn" coords="192 13"/>
+            <area units="linecolumn" coords="198 16"/>
+            <area units="linecolumn" coords="199 16"/>
+            <area units="linecolumn" coords="200 16"/>
+          </areaspec>
+          <programlisting language="json"><xi:include href="../wadl/samples/auth-20.json" parse="text"/></programlisting>
+        </programlistingco>
+      </example>
+      <calloutlist>
+        <callout arearefs="response.xml.namespaces">
+          <para> In XML responses only, a list of namespaces identifies API extensions that add
+            functionality to the core API. </para>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.token">
+          <para>The token can be presented to a service as evidence of authentication. Tokens are
+            valid for a finite duration. An authentication token's default lifespan is 24 hours.
+            Applications should be designed to re-authenticate after receiving a 401 (Unauthorized)
+            response from a service endpoint. </para>
+          <para>The token's <code>expires</code> attribute denotes the time after which the token
+            automatically becomes invalid. A token can be manually revoked before the time
+            identified by the <code>expires</code> attribute. The attribute predicts a token's
+            maximum possible lifespan but does not guarantee that it will reach that lifespan.
+            Clients are encouraged to cache a token until it expires. </para>
+        </callout>
+        <callout arearefs="response.xml.dfltregion">
+          <para>Users can be assigned a default region. If multiple endpoints are associated with a
+            service in the user's catalog, the endpoint for the user's default region is selected if
+            it is available. In this example, the user's default region is DFW, and several of the
+            services in the catalog are associated with endpoints in that region. Whenever possible,
+            the user's work is directed to the DFW region. </para>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.role">
+          <para>Users can be assigned multiple roles, with each role providing specific privileges.
+            In this example, <code>yourUserName</code> is the administrative user for the account
+            and holds the fully-privileged <code>identity:admin</code> role. Other users might hold
+            other roles with different privileges. Roles do not have to be associated with actual
+            job functions such as Administrator, Operator, Developer, Tester, or Trainer. </para>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.catalog">
+          <para> The service catalog lists the services that you can access. In this example, the
+            user can access one database service, one load-balancing service, two compute services
+            (Cloud Servers OpenStack and Cloud Servers), two object storage services (Cloud Files
+            CDN and Cloud Files), one DNS service, one Rackspace CDN service, and two Rackspace
+            Cloud Metrics services. The catalog entry for each service provides at least one
+            endpoint URI for that service. Other information, such as regions, versions, and
+            tenants, is provided if it is relevant to a user's access to a service. </para>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.servicetype">
+          <para>The service <code>type</code> attribute identifies services that perform similar
+            functions, regardless of service names. In the examples, the service named
+              <code>cloudMetrics</code> is identified as
+            <code>type="rax:cloudmetrics"</code>.</para>
+          <tip>
+            <para>Beginning with Cloud Identity v2.0, the service catalog includes the service
+                <code>type</code> attribute to identify services that perform similar functions but
+              have different names. For example, <code>type="compute"</code> identifies compute
+              services such as cloudServers and cloudServersOpenStack. Some developers have found
+              the service <code>type</code> attribute to be useful in parsing the service catalog.
+              For additional information about the Cloud Identity service, see the <citetitle>Cloud
+                Identity Client Developer Guide</citetitle> at <link
+                xlink:href="http://docs.rackspace.com">http://docs.rackspace.com/</link>.</para>
+          </tip>
+          <important>
+            <para>Use the service <code>type</code> attribute as the primary value for locating a
+              service. If multiple endpoints of the same service type exist in the same region, use
+              the service <code>name</code> attribute to locate the appropriate service.</para>
+          </important>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.servicename">
+          <para> The service <code>name</code> attribute identifies each unique service in the
+            catalog. After a service is created, its name does not change. However, new services of
+            the same service <code>type</code> can be added to the catalog with new names. </para>
+          <important>
+            <para> If you are programmatically parsing an authentication response, use service
+                <code>type</code> rather than service <code>name</code> to determine whether a user
+              has access to a particular kind of service. Service type is stable across all
+              releases. New service types might be developed, but existing service types are not
+              renamed. In the preceding examples, <code>type="compute"</code> identifies all of the
+              available compute services. If new compute services are added in future releases, you
+              can recognize them by parsing for <code>type="compute"</code> in the authentication
+              response's service catalog.</para>
+          </important>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.region">
+          <para>A service might expose endpoints in different regions. Regional endpoints enable
+            users to provision resources in a manner that provides high availability. </para>
+          <para> Some services, such as Rackspace Cloud Metrics, are not region-specific. These
+            services supply a single non-regional endpoint and do not provide access to internal
+            URIs. </para>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.tenant">
+          <para> Some services recognize specification of a tenant. If a service recognizes tenants,
+            the format of the tenant specification is defined only by the service. For details about
+            whether and how to specify a tenant, check the documentation for the service that you
+            are using.</para>
+          <para> </para>
+        </callout>
+        <callout arearefs="response.xml.url">
+          <para> An endpoint can be assigned public URIs and internal URIs. A public URI is
+            accessible from anywhere. Access to a public URI usually incurs traffic charges.
+            Internal URIs are accessible only to services within the same region. Access to an
+            internal URI is free of charge. </para>
+          <para> </para>
+        </callout>
+      </calloutlist>
+      <para>Rackspace RackConnect service endpoints are published in the service catalog in the
         authentication response with the account information, which is a required element of the
         service endpoints. For more information about service endpoints, see <xref
           linkend="serviceEndpoints"/>.</para>
-      </section>
+    </section>
     <section xml:id="Role_based_access_control">
       <title>Role Based Access Control</title>
       <para>Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud
@@ -446,10 +425,10 @@
             because it already has full access to all capabilities.</para>
         </note>
       </section>
-    </section>  
-  
-</chapter>
-  <chapter xml:id="General_API_information"><title>General API information</title>
+    </section>
+  </chapter>
+  <chapter xml:id="General_API_information">
+    <title>General API information</title>
     <section xml:id="serviceEndpoints">
       <title>Service access endpoints</title>
       <para>Rackspace RackConnect has two global endpoints. Data is replicated to all data centers.
@@ -755,28 +734,19 @@ Content-Type: application/json
       </example>
     </section>
   </chapter>
-    <chapter 
-      xml:id="api-operations" 
-      role="api-reference">
-      <!-- role="api-reference" introduces chapter 
+  <chapter xml:id="api-operations" role="api-reference">
+    <!-- role="api-reference" introduces chapter 
         with table of operations describing full content of WADL -->
-      <title>API Reference</title>
-      <para>The API can perform these operations:</para>
-
-      <section 
-        xml:id="CloudNetworks_Operations">
-        <title>Cloud networks</title>
-        <para>
-          These API operations relate only 
-          to cloud networks associated with 
-          a RackConnect configuration
-        </para>
-        <para> The <code>network_id</code> returned by these calls
-        matches the cloud networks UUID returned by the Cloud Networks
-        (Neutron) API. <tip>
-          <para> You can learn about the Cloud Networks API in
-            Rackspace's usual sources of API-related documentation: 
-            <itemizedlist>
+    <title>API Reference</title>
+    <para>The API can perform these operations:</para>
+    <section xml:id="CloudNetworks_Operations">
+      <title>Cloud networks</title>
+      <para> These API operations relate only to cloud networks associated with a RackConnect
+        configuration </para>
+      <para> The <code>network_id</code> returned by these calls matches the cloud networks UUID
+        returned by the Cloud Networks (Neutron) API. <tip>
+          <para> You can learn about the Cloud Networks API in Rackspace's usual sources of
+            API-related documentation: <itemizedlist>
               <listitem>
                 <para> API operations reference at <link
                     xlink:href="http://api.rackspace.com/api-ref-networks.html"
@@ -797,67 +767,46 @@ Content-Type: application/json
               </listitem>
               -->
               <listitem>
-                <para> API DevGuide, Getting Started, and Release Notes
-                  at <link xlink:href="http://docs.rackspace.com/"
-                    >docs.rackspace.com</link>
+                <para> API DevGuide, Getting Started, and Release Notes at <link
+                    xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>
                 </para>
               </listitem>
             </itemizedlist>
           </para>
         </tip></para>
-        <para>This section describes the &PRODUCTNAME; API operations
-        that relate to cloud networks.</para>
-        
-        <wadl:resources 
-          xmlns:wadl="http://wadl.dev.java.net/2009/02">
-          <wadl:resource 
-            href="../wadl/rackconnect.wadl#cloud_networks">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#cloudNetworks-listall"/>  
-          </wadl:resource>
-          <wadl:resource 
-            href="../wadl/rackconnect.wadl#network_id">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#cloudNetworks-list1"/> 
-          </wadl:resource>
-        </wadl:resources> 
-        
-      </section>
-      
-
-        <section 
-        xml:id="LBPools_Operations">
-        <title>Load balancer pools</title>
-        <para>Load balancer pools must be configured in advance by your Network Security team to be
+      <para>This section describes the &PRODUCTNAME; API operations that relate to cloud
+        networks.</para>
+      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resource href="../wadl/rackconnect.wadl#cloud_networks">
+          <wadl:method href="../wadl/rackconnect.wadl#cloudNetworks-listall"/>
+        </wadl:resource>
+        <wadl:resource href="../wadl/rackconnect.wadl#network_id">
+          <wadl:method href="../wadl/rackconnect.wadl#cloudNetworks-list1"/>
+        </wadl:resource>
+      </wadl:resources>
+    </section>
+    <section xml:id="LBPools_Operations">
+      <title>Load balancer pools</title>
+      <para>Load balancer pools must be configured in advance by your Network Security team to be
         eligible for use with RackConnect. If you do not see a pool that you expect to see, contact
         your Support team for further assistance. </para>
-        <para>The <code>load_balancer_pool_id</code>returned by these calls is automatically
-        generated by the RackConnect automation and remains constant unless the load balancer pool
-        is renamed on your hardware load balancer. </para>
-        <para> All load balancer pools currently return a status of
-          <code>ACTIVE</code>. Future features may introduce
-        additional statuses. 
-        </para>
-        
-        <para>This section describes the &PRODUCTNAME; API operations
-        that relate to load balancer pools.</para>
-        
-        <wadl:resources 
-          xmlns:wadl="http://wadl.dev.java.net/2009/02">
-          <wadl:resource 
-            href="../wadl/rackconnect.wadl#load_balancer_pools">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#LBPools-listall"/>
-          </wadl:resource>
-          <wadl:resource 
-            href="../wadl/rackconnect.wadl#load_balancer_pool_id">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#LBPools-list1"/> 
-          </wadl:resource>
-        </wadl:resources> 
-        
-      </section>
-      <!--      
+      <para>The <code>load_balancer_pool_id</code>returned by these calls is automatically generated
+        by the RackConnect automation and remains constant unless the load balancer pool is renamed
+        on your hardware load balancer. </para>
+      <para> All load balancer pools currently return a status of <code>ACTIVE</code>. Future
+        features may introduce additional statuses. </para>
+      <para>This section describes the &PRODUCTNAME; API operations that relate to load balancer
+        pools.</para>
+      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resource href="../wadl/rackconnect.wadl#load_balancer_pools">
+          <wadl:method href="../wadl/rackconnect.wadl#LBPools-listall"/>
+        </wadl:resource>
+        <wadl:resource href="../wadl/rackconnect.wadl#load_balancer_pool_id">
+          <wadl:method href="../wadl/rackconnect.wadl#LBPools-list1"/>
+        </wadl:resource>
+      </wadl:resources>
+    </section>
+    <!--      
       <section 
         xml:id="LBPoolNodes_Operations">
         <title>Load balancer pool nodes</title>
@@ -926,11 +875,10 @@ Content-Type: application/json
         </wadl:resources> 
         
       </section>
-    -->     
-      <section 
-        xml:id="PublicIPs_Operations">
-        <title>Public IPs</title>
-        <para> Public IP status values are: <itemizedlist>
+    -->
+    <section xml:id="PublicIPs_Operations">
+      <title>Public IPs</title>
+      <para> Public IP status values are: <itemizedlist>
           <listitem>
             <para><code>ADDING</code></para>
           </listitem>
@@ -947,33 +895,21 @@ Content-Type: application/json
             <para><code>REMOVE_FAILED</code></para>
           </listitem>
         </itemizedlist></para>
-        <para>This section describes the &PRODUCTNAME; API operations
-        that relate to public IPs.</para>
-        
-        <wadl:resources 
-          xmlns:wadl="http://wadl.dev.java.net/2009/02">
-          <wadl:resource 
-            href="../wadl/rackconnect.wadl#public_ips">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#publicIPs-listall"/>
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#publicIPs-add1"/>
-            <wadl:resource 
-              href="../wadl/rackconnect.wadl#cloud_server_UUID">
-              <wadl:method 
-                href="../wadl/rackconnect.wadl#publicIPs-cloudServers-list1"/>
-            </wadl:resource>
-          </wadl:resource> 
-          <wadl:resource 
-            href="../wadl/rackconnect.wadl#public_IP_id">
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#publicIPs-list1"/> 
-            <wadl:method 
-              href="../wadl/rackconnect.wadl#publicIPs-delete1"/>
+      <para>This section describes the &PRODUCTNAME; API operations that relate to public
+        IPs.</para>
+      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resource href="../wadl/rackconnect.wadl#public_ips">
+          <wadl:method href="../wadl/rackconnect.wadl#publicIPs-listall"/>
+          <wadl:method href="../wadl/rackconnect.wadl#publicIPs-add1"/>
+          <wadl:resource href="../wadl/rackconnect.wadl#cloud_server_UUID">
+            <wadl:method href="../wadl/rackconnect.wadl#publicIPs-cloudServers-list1"/>
           </wadl:resource>
-        </wadl:resources> 
-        
-      </section>
-      
-    </chapter>
+        </wadl:resource>
+        <wadl:resource href="../wadl/rackconnect.wadl#public_IP_id">
+          <wadl:method href="../wadl/rackconnect.wadl#publicIPs-list1"/>
+          <wadl:method href="../wadl/rackconnect.wadl#publicIPs-delete1"/>
+        </wadl:resource>
+      </wadl:resources>
+    </section>
+  </chapter>
 </book>

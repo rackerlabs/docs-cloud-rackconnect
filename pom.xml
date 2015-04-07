@@ -8,25 +8,20 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>RackConnect API Docs</name>
+	<parent>
+		<groupId>com.rackspace.cloud.api</groupId>
+		<artifactId>rackspace-docs-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
   <build>
-    <plugins>
-      <plugin>
-        <groupId>com.rackspace.cloud.api</groupId>
-        <artifactId>olink-maven-plugin</artifactId>
-        <version>1.2.6</version>
-        <executions>
-          <execution>
-	    <phase>initialize</phase>
-	    <goals>
-	      <goal>olink</goal>
-	    </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-	<groupId>com.rackspace.cloud.api</groupId>
-    <artifactId>clouddocs-maven-plugin-docbook</artifactId>
-    <version>2.1.5-SNAPSHOT</version>
+  	<plugins>
+  		<plugin>
+  			<groupId>com.rackspace.cloud.api</groupId>
+  			<artifactId>olink-maven-plugin</artifactId>
+  		</plugin>
+  		<plugin>
+  	<groupId>com.rackspace.cloud.api</groupId>
+  	<artifactId>rackspace-docs-maven-plugin</artifactId>
 	<executions>
 	  <execution>
 	    <goals>
@@ -35,11 +30,9 @@
 	    <phase>generate-sources</phase>
 	    <configuration>
 	      <includes>
-	      	rackconnect-devguide.xml
-		<!-- skip building inactive books
 			rackconnect-devguide.xml,
 			rackconnect-gettingstarted.xml,
-			rackconnect-releasenotes.xml
+			<!--rackconnect-releasenotes.xml
 		-->
 	      </includes>
 	    </configuration>
@@ -49,7 +42,7 @@
 	  <!-- Set to Internet or intranet to turn on comments -->
 	  <enableDisqus>0</enableDisqus>
 	  <!-- feedbackEmail only applies to the internal comment system -->
-	  <feedbackEmail>rose.coste@rackspace.com</feedbackEmail>	  
+	  <feedbackEmail>constanze.kratel@rackspace.com</feedbackEmail>	  
 	  <branding>rackspace</branding>
 	  <showXslMessages>true</showXslMessages>
 	</configuration>
@@ -75,49 +68,4 @@
       </plugin>
     </plugins>
   </build>
-  <profiles>
-    <profile>
-      <id>Rackspace Research Repositories</id>
-      <activation>
-	<activeByDefault>true</activeByDefault>
-      </activation>
-      <repositories>
-	<repository>
-	  <id>rackspace-research</id>
-	  <name>Rackspace Research Repository</name>
-	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
-	</repository>
- </repositories>
-    <pluginRepositories>
-    	<pluginRepository>
-		  <id>rackspace-research</id>
-		  <name>Rackspace Research Repository</name>
-		  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
-		</pluginRepository>
-    	<pluginRepository>
-    		<id>docs-staging</id>
-    		<name>Docbook</name>
-    		<url>http://docs-nexus.rackspace.com/nexus/content/repositories/docs-staging/</url>
-    		<layout>default</layout>
-    		<snapshots>
-    			<enabled>true</enabled>
-    		</snapshots>
-    		<releases>
-    			<updatePolicy>never</updatePolicy>
-    		</releases>
-    	</pluginRepository>
-    	<pluginRepository>                                                                          
-    		<id>docs-prod</id>                                                             
-    		<name>Docbook release Repository</name>                                              
-    		<url>http://docs-nexus.rackspace.com/content/repositories/docs-prod/</url>
-    		<snapshots>
-    			<enabled>false</enabled>
-    		</snapshots>
-    		<releases>
-    			<enabled>true</enabled>
-    		</releases>
-    	</pluginRepository> 
-  </pluginRepositories>
-    </profile>
-  </profiles>
 </project>
