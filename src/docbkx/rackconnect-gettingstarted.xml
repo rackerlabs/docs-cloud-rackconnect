@@ -2,7 +2,24 @@
 <!DOCTYPE book [
 <!ENTITY PREFIX "rackconnect">
 <!ENTITY PRODUCTNAME "RackConnect">
+<!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash "&#x2013;">
+        <!ENTITY mdash "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
+        <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
+        <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
 ]>
+
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
   xml:id="&PREFIX;-gettingstarted" status="DRAFT">
@@ -56,20 +73,149 @@
   </chapter>
   <chapter xml:id="Overview">
     <title>Overview</title>
-    <para>RackConnect is the innovative hybrid connectivity offering from Rackspace that enables you
-      to select and combine the best features of Rackspace dedicated and cloud hosting into one
-      all-encompassing solution. </para>
-    <para> </para>
+    <para>RackConnect v3.0 is the innovative hybrid connectivity offering from Rackspace that
+      enables you to select and combine the best features of Rackspace dedicated and cloud hosting
+      into one all-encompassing solution. </para>
+    <para>RackConnect v3.0 enables you to dedicated your dedicated servers with Rackspace's fully
+      managed cloud and add products and services on an as-needed basis.</para>
+    <para>For more information on how to get started with RackConnect v2.0, see <link
+        xlink:href="http://www.rackspace.com/knowledge_center/article/how-do-i-get-started-with-rackconnect-v20"
+        >How do I get started with RackConnect 2.0</link>.</para>
+    <section xml:id="RackConnect_requirements">
+      <title>Requirements for using RackConnect v3.0</title>
+      <para>The following table provides a detailed list of requirements that must be met to
+        implement RackConnect v3.0.</para>
+      <para>
+        <table frame="border">
+          <caption>Requirements for RackConnect v 3.0</caption>
+          <col width="39%"/>
+          <col width="61%"/>
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cloud accoun</td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>The cloud account that you want to use with RackConnect must be <emphasis
+                        role="italic">linked</emphasis> to your dedicated account. You can
+                      accomplish this in the <link xlink:href="https://my.rackspace.com/"
+                        >MyRackspace Portal</link>.</para>
+                  </listitem>
+                  <listitem>
+                    <para>This cloud account must also be <emphasis role="italic"
+                        >associated</emphasis> with your RackConnect v3.0 configuration. You can
+                      accomplish this in the <link xlink:href="https://my.rackspace.com/"
+                        >MyRackspace Portal</link>.</para>
+                  </listitem>
+                  <listitem>
+                    <para>You can associate a single cloud account with multiple RackConnect v3.0
+                      configurations, if each configuration is located in a different region.</para>
+                  </listitem>
+                  <listitem>
+                    <para>You can have multiple cloud accounts associated with a RackConnect
+                      configuration.</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+            </tr>
+            <tr>
+              <td>Dedicated account</td>
+              <td>To use RackConnect v3.0, you must have a dedicated account with Rackspace.</td>
+            </tr>
+            <tr>
+              <td>Supported network device</td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>You must have a supported network device in your dedicated account.</para>
+                  </listitem>
+                  <listitem>
+                    <para>For a detailed list of the network devices currently supported by
+                      RackConnect v3.0 and their capabilities, see the article <link
+                        xlink:href="http://www.rackspace.com/knowledge_center/article/rackconnect-network-device-comparison"
+                        >RackConnect Network Device Comparison</link>.</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+            </tr>
+            <tr>
+              <td>Supported region</td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Your devices must be deployed in a region supported by RackConnect v3.0.
+                      The regions supported, as of October 2014, are DFW, IAD, ORD, LON, HKG, and
+                      SYD.</para>
+                  </listitem>
+                  <listitem>
+                    <para>You can have multiple RackConnect v3.0 configurations in multiple regions,
+                      but each configuration is an independent entity and cross-communication
+                      between configurations in different regions is not possible with RackConnect
+                      v3.0 (although, cross-communication between regions might be possible with a
+                      VPN solution).</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+            </tr>
+            <tr>
+              <td>Cloud network</td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Your cloud networks will be set up, configured, and associated with your
+                      configuration by Rackspace during the RackConnect v3.0 implementation process.
+                      RackConnect v3.0 supports up to 10 cloud networks. For details about Cloud
+                      Networks limitations, see the article, <link
+                        xlink:href="http://www.rackspace.com/knowledge_center/article/rackconnect-v30-limitations"
+                        >RackConnect v3.0 Limitations</link>.</para>
+                  </listitem>
+                  <listitem>
+                    <para>During the implementation process, you must provide the subnet (CIDR) and
+                      network segment name that you want to use with your cloud networks.</para>
+                  </listitem>
+                  <listitem>
+                    <para>With RackConnect v3.0,  multiple cloud networks can be associated with a
+                      single cloud account. However, to have RackConnect connectivity, the networks
+                      must be created by Rackspace. Please <link
+                        xlink:href="http://www.rackspace.com/knowledge_center/support">contact
+                        us</link> if you want to add additional cloud networks to your RackConnect
+                      v3.0 configuration.</para>
+                  </listitem>
+                  <listitem>
+                    <para>Additionally, to have RackConnect v3.0 connectivity, any cloud servers
+                      that you build must be built with a RackConnect v3.0 associated cloud
+                      network.</para>
+                  </listitem>
+                </itemizedlist>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <important>
+          <para>You cannot create the cloud network for use with RackConnect v3.0 yourself, and any
+            existing cloud networks will not work with RackConnect v3.0.  Only cloud networks
+            created by Rackspace during the RackConnect v3.0 implementation process work with
+            RackConnect v3.0.</para>
+        </important>
+      </para>
+    </section>
   </chapter>
   <chapter xml:id="other-features">
     <title>General API information</title>
     <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">The
-      following sections provide some general information about the Rackspace RackConnect
+      following sections provide some general information about the Rackspace RackConnect v3.0
       API.</para>
     <section xml:id="service_Endpoints">
       <title>Service access endpoints</title>
-      <para security="external">The RackConnect API provides the following global endpoints to make
-        API calls.</para>
+      <para security="external">The RackConnect v3.0 API provides the following global endpoint to
+        make API calls.</para>
       <para>
         <table frame="border">
           <caption>RackConnect service access endpoints</caption>
@@ -83,20 +229,19 @@
           </thead>
           <tbody>
             <tr>
-              <td>https://global.metrics-ingest.api.rackspacecloud.com/v2.0/123456</td>
-              <td>This endpoint is used to send metrics data to the database.</td>
-            </tr>
-            <tr>
-              <td>https://global.metrics.api.rackspacecloud.com/v2.0/123456</td>
-              <td>This endpoint is used to retrieve metrics data from the database.</td>
+              <td>https://&lt;region>.rackconnect.api.api.rackspacecloud.com/v3/123456</td>
+              <td>This endpoint is used to make API calls against the RackConnect  v3.0 API.</td>
             </tr>
           </tbody>
         </table>
       </para>
       <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
-        >Replace the example account ID number, 123456, with your actual account ID returned as part
-        of the authentication service response. Your account ID is located after the final slash (/)
-        in the <code>publicURL</code> field returned by the authentication response. </para>
+        >Replace the <emphasis role="italic">region</emphasis> and <emphasis role="italic"
+          >tenantID</emphasis> placeholders with the region where your cloud servers are located and
+        your cloud account's tenant ID number.</para>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+        Your account ID is located after the final slash (/) in the <code>publicURL</code> field
+        returned by the authentication response. </para>
     </section>
     <section xml:id="request_Response_Types">
       <title>Request and response type</title>
@@ -193,6 +338,503 @@
         </tbody>
       </table>
     </section>
+  </chapter>
+  <chapter xml:id="Feeds_Sending_API_Requests">
+    <title>Sending requests to the API</title>
+    <para>You have several options for sending requests through an API: </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>Developers and testers might prefer to use cURL, the command-line tool from <link
+            xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
+        <para>With cURL, you can send HTTP requests and receive responses back from the command
+          line. </para>
+      </listitem>
+      <listitem>
+        <para>If you prefer using a graphical interface, the REST client for Mozilla Firefox also
+          works well for testing and trying out commands. See <link
+            xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
+            >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
+      </listitem>
+      <listitem>
+        <para>You can download and install Rest client, a Java application used to test RESTful web
+          services, from <link xlink:href="http://code.google.com/p/rest-client/"
+            >http://code.google.com/p/rest-client/</link>. </para>
+      </listitem>
+    </itemizedlist>
+    <section xml:id="Using-curl-cli">
+      <title>Sending API requests by using cURL</title>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >cURL is a command-line tool that is available in UNIX® system-based environments and Apple
+        Mac OS X® systems, and can be downloaded for Microsoft Windows® to interact with the REST
+        interfaces. For more information about cURL, visit <link xlink:href="http://curl.haxx.se/"
+          >http://curl.haxx.se/</link>. </para>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >cURL enables you to transmit and receive HTTP requests and responses from the command line
+        or from within a shell script. As a result, you can work with the REST API directly without
+        using one of the client APIs.</para>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >The following cURL command-line options are used in this guide to run the examples.</para>
+      <table xml:id="curl_options" rules="all" width="75%"
+        xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+        <caption>cURL command-line options</caption>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <option>-d</option>
+            </td>
+            <td>
+              <para>Sends the specified data in a &POST; request to the HTTP server. Use this option
+                to send a JSON request body to the server.</para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <option>-H</option>
+            </td>
+            <td>
+              <para>Specifies an extra HTTP header in the request. You can specify any number of
+                extra headers. Precede each header with the <option>-H</option> option. </para>
+              <para>Common headers in Rackspace API requests are as follows:<itemizedlist>
+                  <listitem>
+                    <para><literal>Content-Type</literal>. Required for operations with a request
+                      body. </para>
+                    <para>Specifies the format of the request body. The syntax for the
+                        <literal>Content-Type</literal> header is as follows:</para>
+                    <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
+                    <para><parameter>format</parameter> is <literal>json</literal>.</para>
+                  </listitem>
+                  <listitem>
+                    <para><literal>X-Auth-Project-Id</literal>. Optional. Specifies the project ID,
+                      which can be your account number or another value.</para>
+                  </listitem>
+                  <listitem>
+                    <para><literal>Accept</literal>. Optional. </para>
+                    <para>Specifies the format of the response body. The syntax for the
+                        <literal>Accept</literal> header is as follows:</para>
+                    <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
+                    <para><parameter>format</parameter> is <literal>json</literal>. The default is
+                        <code>json</code>.</para>
+                  </listitem>
+                  <listitem>
+                    <para><literal>X-Auth-Token</literal>. Required. Specifies the authentication
+                      token.</para>
+                  </listitem>
+                </itemizedlist></para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <option>-i</option>
+            </td>
+            <td>
+              <para>Includes the HTTP header in the output. </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <option>-s</option>
+            </td>
+            <td>
+              <para>Silent or quiet mode. Does not show progress or error messages. Makes cURL mute. </para>
+              <para><emphasis role="bold">Note: </emphasis>If your cURL command is not generating
+                any output, try replacing the <code>-s</code> option with <code>-i</code>.</para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <option>-T</option>
+            </td>
+            <td>
+              <para>Transfers the specified local file to the remote URL.</para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <option>-X</option>
+            </td>
+            <td>
+              <para>Specifies the request method to use when communicating with the HTTP server. The
+                specified request is used instead of the default method, which is &GET;. </para>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <note xml:id="json_tool" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+        <title>About json.tool</title>
+        <para>For commands that return a response, you can append the following code to the command
+          to call json.tool to pretty-print output: </para>
+        <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
+        <para>To use json.tool, import the json module. For information about json.tool, see <link
+            xlink:href="http://docs.python.org/2/library/json.html">json — JSON encoder and
+            decoder</link>. </para>
+        <para>If you do not want to pretty-print JSON output, omit this code. </para>
+      </note>
+    </section>
+    <section xml:id="copy_and_paste_cURL_reauests">
+      <title xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >Copying and pasting cURL request examples into a terminal window</title>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >To run the cURL request examples shown in this guide on Linux or Mac systems, perform the
+        following actions:</para>
+      <orderedlist xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+        <listitem>
+          <para>Copy and paste each example from the HTML version of this guide into an ASCII text
+            editor (for example, vi or TextEdit). You can click on the small document icon to the
+            right of each request example to select it.</para>
+        </listitem>
+        <listitem>
+          <para>Modify each example with your required account information and so on, as detailed in
+            this guide.</para>
+        </listitem>
+        <listitem>
+          <para>After you are finished modifying the text for the cURL request example with your
+            information (for example, your username and your API key), paste the command into your
+            terminal window. </para>
+        </listitem>
+        <listitem>
+          <para>Press <guilabel>Enter</guilabel> to run the cURL command.</para>
+        </listitem>
+      </orderedlist>
+      <note xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+        <para>The carriage returns in the cURL request examples that are part of the cURL syntax are
+          escaped with a backslash (\) to avoid prematurely terminating the command. However, you
+          should not escape carriage returns inside the JSON message within the command.</para>
+      </note>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >Consider the following cURL authentication request, which is described in detail in <xref
+          linkend="Generating_Auth_Token"/>.</para>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+        <example>
+          <title>cURL authenticate request: JSON</title>
+          <?dbfo keep-together="always"?>
+          <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+'{
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
+    }
+}' \
+<option>-H 'Content-Type: application/json'</option> \
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
+        </example>
+      </para>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >Notice that the lines that are part of the cURL command syntax have been escaped with a
+        backslash (\) to indicate that the command continues on the next line.</para>
+      <screen language="bash" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"><command>curl</command> <option>-i</option> <option>-d</option> \
+  
+   
+(... lines within the JSON portion of the message are not shown in this example)
+(... the example only shows lines that are part of cURL syntax)     
+     
+
+   
+<option>-H 'Content-Type: application/json'</option> \
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >However, the lines within the JSON portion of the message are not escaped with a backslash
+        to avoid issues with the JSON processing.</para>
+      <screen language="bash" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">'{
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
+    }
+}' \
+</screen>
+      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        >The final line of the JSON message is escaped because the backslash lies outside the JSON
+        message and continues the cURL command to the next line.</para>
+      <tip xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+        <para>If you have trouble copying and pasting the examples as described, try typing the
+          entire example on one long line, removing all the backslash line continuation
+          characters.</para>
+      </tip>
+    </section>
+  </chapter>
+  <chapter xml:id="Generating_Auth_Token">
+    <title>Generating an authentication token</title>
+    <para>Whether you use cURL or a REST client to interact with the RackConnect v3.0 API, you must
+      generate an authentication token. You provide this token in the X-Auth-Token header in each
+      RackConnect v3.0 API request. </para>
+    <para>Examples 5.1 and 5.2 demonstrate how to use cURL to obtain the authentication token and
+      your account number. You must provide both when making subsequent RackConnect v3.0 API
+      requests.</para>
+    <para>Remember to replace the placeholder names in the following authentication request examples
+      with your information:</para>
+    <para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para><emphasis role="italic">yourUserName</emphasis> - Your common Rackspace Cloud
+            username, as supplied during registration.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">yourApiKey</emphasis> - Your API access key. You can obtain
+            the key from the Rackspace <link xlink:href="http://mycloud.rackspace.com/">Cloud
+              Control Panel</link> by selecting <emphasis role="bold">Account Settings</emphasis>
+            from the <emphasis role="italic">yourAccount</emphasis> menu in the top-right corner of
+            the window. </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+    <para>Notice that you authenticate by using a special URL for the Cloud Identity service. For
+      example, you can use <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>, as
+      shown in the following request examples. Note that the <code>v2.0</code> component in the URL
+      indicates that you are using version 2.0 of the Cloud Identity API.</para>
+    <note>
+      <para>You can use the <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code> for all
+        regions because it is a global endpoint. </para>
+    </note>
+    <example>
+      <title>cURL authenticate request: XML</title>
+      <?dbfo keep-together="always"?>
+      <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+'&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;auth>
+   &lt;apiKeyCredentials
+      xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
+         username="<replaceable>yourUserName</replaceable>"
+         apiKey="<replaceable>yourApiKey</replaceable>"/>
+&lt;/auth>' \
+<option>-H 'Content-Type: application/xml'</option> \
+<option>-H 'Accept: application/xml'</option> \
+<uri>'https://&lt;endpointURL>/v2.0/tokens'</uri></screen>
+    </example>
+    <example>
+      <title>cURL authenticate request: JSON</title>
+      <?dbfo keep-together="always"?>
+      <screen language="bash">curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
+     -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"<replaceable>yourUserName</replaceable>",
+        "apiKey":"<replaceable>yourApiKey</replaceable>"}}}' \ 
+     -H "Content-Type:
+        application/json" | python -m json.tool </screen>
+    </example>
+    <para>The authentication token <code>id</code> is returned with an <code>expires</code>
+      attribute that specifies when the token expires. </para>
+    <para>The following example shows the portion of an authentication response in JSON that
+      contains the authentication token.</para>
+    <para>
+      <example>
+        <title>cURL authenticate response: JSON</title>
+        <?dbfo keep-together="always"?>
+        <screen language="bash">        "token": {
+                "RAX-AUTH:authenticatedBy": [
+                "APIKEY"
+            ],
+                "expires": "2014-04-09T12:44:38.972Z",
+                "id": "a65b02fc16304414b95cc8fae2b00a30",
+                "tenant": {
+                    "id": "123456",
+                    "name": "123456"
+                          }
+                 }</screen>
+      </example>
+    </para>
+    <para>
+      <note>
+        <itemizedlist spacing="compact">
+          <listitem>
+            <para>The values that you receive in your response vary because they are specific to
+              your account.</para>
+          </listitem>
+          <listitem>
+            <para> The <code>expires</code> attribute denotes the time after which the token will
+              automatically expire. A token may be manually revoked before the time identified by
+              the <code>expires</code> attribute; <code>expires</code> predicts a token's maximum
+              possible lifespan but does not guarantee that it will reach that lifespan. Clients are
+              encouraged to cache a token until it expires.</para>
+          </listitem>
+          <listitem>
+            <para>Applications should be designed to re-authenticate after receiving a 401
+              (Unauthorized) response from a service endpoint.</para>
+          </listitem>
+        </itemizedlist>
+      </note>
+    </para>
+    <para>The actual account number is located after the final slash (/) in the
+        <code>publicURL</code> field. In the response examples in this guide, the account number is
+      123456. You must specify your account number in the RackConnect v3.0 API operations, where you
+      see the placeholder <code>tenantId</code> specified in the examples in this guide.</para>
+    <para>After authentication, you can use cURL to perform <command>GET</command> and
+        <command>POST</command> requests for the RackConnect v3.0 API.</para>
+  </chapter>
+  <chapter xml:id="Working_with_the_RackConnect_V3_api"><title>Working with the RackConnect v3.0 API</title>
+    <para>This chapter explains how to use the RackConnect v3.0 API to perform the following tasks
+      to manage IP addresses:</para>
+    <para><link linkend="List_public_IP_addresses">List public IP addresses for a Cloud Server by
+        using the RackConnect v3.0 API</link></para>
+    <para><link linkend="Adding_a_public_IP_address">Add a public IP address by using the
+        RackConnect v3.0 API</link></para>
+    <para><link linkend="Removing_a-public_IP_address">Remove a public IP address by using the
+        RackConnect v 3.0 API</link></para>
+    <section xml:id="List_public_IP_addresses">
+     <title>Listing public IP addresses</title>
+      <para>After you have obtained your authentication token, you can use RackConnect to list all
+        public IP addresses that apply to a specific cloud server. </para>
+      <para>The following example shows how to issue a <command>GET</command> requests that lists
+        all the public IP address that pertain to a specific server that has been set up for a
+        specific tenant.</para>
+      <para>
+        <programlisting xml:id="pre-4">curl --include \ 
+--request GET \
+--header "X-Auth-Token: <emphasis role="italic"><emphasis role="bold">authTokenId</emphasis></emphasis>" \
+--header "Content-Type: application/json" \
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic">tenantId</emphasis>/public_ips?cloud_server_id=<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis></programlisting></para>
+      <note>
+        <para>You can obtain the UUID (universally unique identifier) of your cloud server from
+          within its server details page in the <link xlink:href="https://mycloud.rackspace.com"
+            >Cloud Control Panel</link> or via the <link
+            xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html"
+            >Cloud Servers API—Get Server Details</link> operation. The UUID is a 32-character entry
+          with four hyphens in the <emphasis role="bold">ID</emphasis> or <emphasis role="bold"
+            >id</emphasis> section of the server details page.</para>
+      </note>
+<para>The following example shows a successful response for a Cloud server that has a public P
+        address assigned. In the example, the public IP address assigned to the cloud server and the
+        UUID associated with this public IP address are highlighted.</para>
+      <para>
+        <programlisting>[ 
+  {
+   "created": "2014-05-30T03:23:42Z",
+   "cloud_server":
+     {
+       "cloud_network":
+          { 
+             "cidr": "192.168.100.0/24",
+             "created": "2014-05-25T01:23:42Z",
+             "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+             "name": "RC-CLOUD",
+             "private_ip_v4": "192.168.100.5",
+             "updated": "2014-05-25T02:28:44Z"
+          },
+       "created": "2014-05-30T02:18:42Z",
+       "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2",
+       "name": "RCv3TestServer1",
+       "updated": "2014-05-30T02:19:18Z"
+     },
+    "id": "2d0f586b-37a7-4ae0-adac-2743d5feb450",
+    "public_ip_v4": "203.0.113.110",
+    "status": "ACTIVE",
+    "status_detail": null,
+    "updated": "2014-05-30T03:24:18Z" 
+  }
+]</programlisting>
+      </para>
+      <para>The following command shows how to list a single public IP address for a specific Cloud
+        Server that has been created for a specific tenant.</para>
+      <para>
+        <programlisting>curl --include \ 
+--request GET \
+--header "X-Auth-Token: <emphasis role="italic"><emphasis role="bold">authTokenId</emphasis></emphasis>" \
+--header "Content-Type: application/json" \
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="bold"><emphasis role="italic">tenantId</emphasis></emphasis>/public_ips/<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis></programlisting>
+      </para>
+      <para>The following example shows a successful response to a <command>GET</command> request to
+        retrieve a single public ID address for a specific tenant.</para>
+      <para>
+        <programlisting> {
+   "created": "2014-05-30T03:23:42Z",
+   "cloud_server":
+     { 
+      "cloud_network":
+        {
+         "cidr": "192.168.100.0/24",
+         "created": "2014-05-25T01:23:42Z",
+         "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+         "name": "RC-CLOUD",
+         "private_ip_v4": "192.168.100.5",
+         "updated": "2014-05-25T02:28:44Z"
+         },
+          "created": "2014-05-30T02:18:42Z",
+          "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2",
+          "name": "RCv3TestServer1",
+          "updated": "2014-05-30T02:19:18Z"
+       },
+        "id": "2d0f586b-37a7-4ae0-adac-2743d5feb450",
+        "public_ip_v4": "203.0.113.110",
+        "status": "ACTIVE",
+        "status_detail": null,
+        "updated": "2014-05-30T03:24:18Z"
+ }       </programlisting>
+      </para>
+    </section>
+  <section xml:id="Adding_a_public_IP_address"><title>Adding a public IP address</title><para>You can use the RackConnect API to add a public IP address to a Rackspace Cloud Server. The
+        following example shows how to use a <command>POST</command> request to add a new public IP
+        address to a specific Cloud server for a specific tenant.
+        <programlisting xml:id="pre-6">curl \
+--request POST \
+--header "X-Auth-Token: <emphasis role="bold"><emphasis role="italic">authTokenId</emphasis></emphasis>" \
+--header "Content-Type: application/json" \
+--data '{ "cloud_server": { "id": "<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis>" } }' \
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips \
+| python -m json.tool</programlisting></para>
+      <para>The following is an example of a successful response to a <command>POST</command>
+        request to add a public IP address to a cloud server API request. <programlisting>{ 
+  "created": "2014-05-30T03:23:42Z",
+  "cloud_server":
+   {
+    "cloud_network": 
+     {
+      "cidr": "192.168.100.0/24",
+      "created": "2014-05-25T01:23:42Z",
+      "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+      "name": "RC-CLOUD",
+      "private_ip_v4": "192.168.100.5",
+      "updated": "2014-05-25T02:28:44Z"
+     },
+   "created": "2014-05-30T02:18:42Z",
+   "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2",
+   "name": "RCv3TestServer1",
+   "updated": "2014-05-30T02:19:18Z"
+   },
+    "id": "2d0f586b-37a7-4ae0-adac-2743d5feb450",
+    "public_ip_v4": null,
+    "status": "ADDING",
+    "status_detail": null,
+    "updated": null 
+}</programlisting>
+        <note>
+          <para>Make sure to write down the <replaceable>id</replaceable> value of the new IP
+            address you have added. You will need it if you want to perform operations, such as
+            deleting an IP address. In the above example, the id is
+            "2d0f586b-37a7-4ae0-adac-2743d5feb450".</para>
+        </note></para></section>
+  <section xml:id="Removing_a-public_IP_address"><title>Removing a public IP address</title><para>You can use the RackConnect API to remove a public IP address from a Cloud server. </para>
+      <para>To remove a public IP address, issue a <command>DELETE</command> request against the
+        RackConnect endpoint by providing the cloud server's public IP v4 UUID. This value is listed
+        as the id entry just above the public_ip_v4 entry in the operations to <emphasis
+          role="italic">list</emphasis> and <emphasis role="italic">add</emphasis> public IP
+        addresses.
+        <programlisting xml:id="pre-8">curl --include \
+--request DELETE \
+--header "X-Auth-Token: <emphasis role="italic">authTokenId</emphasis>" \
+--header "Content-Type: application/json" \
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips/<emphasis role="bold"><emphasis role="italic">serverPublicIPv4Uuid</emphasis></emphasis></programlisting></para>
+      <para>This call does not return any JSON data—only an HTTP response code as shown in the
+        example below. A 204 response code signifies that the public IP address was successfully
+        removed from the cloud server.
+        <programlisting xml:id="pre-9">HTTP/1.1 <emphasis role="bold">204 No
+    Content</emphasis>
+Server: Apache-Coyote/1.1
+cache-control: no-cache
+via: 1.1 Repose (Repose/3.0.1)
+expires: -1
+date: Thu, 13 Sep 2014 14:48:58 GMT
+pragma: no-cache</programlisting>
+      </para></section>
   </chapter>
   <chapter xml:id="Additional_Resources">
     <title>Additional resources</title>

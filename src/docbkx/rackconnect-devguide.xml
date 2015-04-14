@@ -114,272 +114,209 @@
   </chapter>
   <chapter xml:id="Authentication">
     <title>Authentication</title>
-    <para>Every REST request against the Rackspace RackConnect service requires the inclusion of a
-      specific authentication token, supplied by the <code>X-Auth-Token</code> HTTP header. You
-      obtain this token by using the Rackspace Cloud Identity service and supplying a valid username
-      and API access key. </para>
-    <section xml:id="Geographic_Endpoints">
-      <title>Geographic endpoints</title>
-      <para> The Rackspace Cloud Identity service serves as the entry point to all Rackspace Cloud
-        APIs and is itself a RESTful web service. </para>
-      <para> You can use the following endpoints to access the Rackspace Cloud Identity service for
-        authentication:</para>
-      <itemizedlist spacing="compact">
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">Every REST request against the Rackspace
+      RackConnect Service requires the inclusion of a specific authorization token, supplied by the
+        <code>X-Auth-Token</code> HTTP header. Customers obtain this token by first using the
+      Rackspace Cloud Identity Service and supplying a valid user name and API access key. </para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">To authenticate, submit a
+        <code>POST/v2.0/tokens</code> request, presenting valid Rackspace customer credentials in
+      the message body to a Rackspace authentication endpoint. </para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">
+      <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
+    </para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">You can use either of two sets of credentials: <itemizedlist>
         <listitem>
-          <para>
-            <link xlink:href="&ENDPOINT-US-20;">&ENDPOINT-US-20;</link>
-          </para>
+          <para>your user name and password </para>
+        </listitem>
+        <listitem>
+          <para>your user name and API key </para>
         </listitem>
       </itemizedlist>
-    </section>
+    </para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">Your user name and password are the ones that you
+      use to login to the Cloud Control Panel. After you are logged in, you can use the Cloud
+      Control Panel to obtain your API key.</para>
+    <note xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">
+      <para> If you authenticate with username and password credentials, you can set up multi-factor
+        authentication to add an additional level of security to your account. This feature is not
+        available for username and API credentials. For information about setting up and using
+        multi-factor authentication, see <link
+          xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
+          >Multi-factor authentication</link> in the <citetitle>Cloud Identity Client Developer
+          Guide</citetitle>. </para>
+    </note>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML"><emphasis role="bold">To find your API
+        key:</emphasis>
+    </para>
+    <orderedlist xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:m="http://www.w3.org/1998/Math/MathML">
+      <listitem>
+        <para>Log in to the Cloud Control Panel (<link xlink:href="https://mycloud.rackspace.com"
+            >https://mycloud.rackspace.com</link>).</para>
+      </listitem>
+      <listitem>
+        <para>On the upper-right side of the top navigation pane, click your username.</para>
+      </listitem>
+      <listitem>
+        <para>From the menu, select <guilabel>Account Settings</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>In the Login Details section of the Account Settings page, locate the <guilabel>API
+            Key</guilabel> field and click <guibutton>Show</guibutton>.</para>
+      </listitem>
+      <listitem>
+        <para>Copy the value of the API key and paste it into a text editor of your choice.</para>
+      </listitem>
+      <listitem>
+        <para>Click <guibutton>Hide</guibutton> to hide the value of the API key.</para>
+      </listitem>
+    </orderedlist>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">You also need your cloud account number. In the
+      documentation, the account number is often referred to as your tenant name or tenant ID
+      (technically, the ID is different from the name, but at Rackspace, they are the same thing).
+      Together, three components—your user name, your API key, and your tenant ID or cloud account
+      number—form the authentication credentials that are required to connect to the Rackspace
+      cloud.</para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">To find your tenant ID or cloud account number,
+      locate your user name on the upper-right side of the top navigation pane in the Cloud Control
+      Panel. The tenant ID or account number is in parentheses just to the right of your user
+      name.</para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">
+      <emphasis role="bold">USE YOUR AUTHENTICATION ENDPOINT</emphasis>
+    </para>
+    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">Use the following global endpoint to access the
+      Cloud Identity Service: <itemizedlist spacing="compact">
+        <listitem>
+          <para><link xlink:href=" https://identity.api.rackspacecloud.com/v2.0/">
+              https://identity.api.rackspacecloud.com/v2.0/</link></para>
+        </listitem>
+      </itemizedlist></para>
     <section xml:id="Retrieving_the_auth_token">
       <title>Retrieving the authentication token</title>
-      <informaltable rules="all">
-        <tbody>
-          <tr>
-            <td colspan="1">&POST; </td>
-            <td colspan="1"> v2.0/tokens </td>
-            <td colspan="4"> Authenticate to receive a token and a service catalog. </td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara> Normal response codes: <returnvalue>200</returnvalue>,
-          <returnvalue>203</returnvalue>
-      </simpara>
-      <simpara> Error response codes: unauthorized (<errorcode>401</errorcode>), userDisabled
-          (<errorcode>403</errorcode>), badRequest (<errorcode>400</errorcode>), authFault
-          (<errorcode>500</errorcode>), serviceUnavailable (<errorcode>503</errorcode>) </simpara>
-      <para> The authenticate operation provides clients with an authentication token and a list of
-        regional cloud endpoints. </para>
-      <para>The example requests and responses in this section illustrate a general case. In your
-        authentication request, use your own credentials rather than the example values shown here
-        for <code>username</code> and <code>apiKey</code>. When you authenticate successfully, the
-        response to your authentication request will include a catalog of the services to which you
-        have subscribed rather than the example values shown here.</para>
-      <note>
-        <title>Notes</title>
-        <itemizedlist>
+      <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+        xmlns:m="http://www.w3.org/1998/Math/MathML">If you know your credentials and your
+        authentication endpoint, and you can issue a <code>POST /v2.0/tokens</code> request in an
+        API call, you have all the basic information that you need to use the Rackspace Cloud
+        Identity Service. </para>
+      <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+        xmlns:m="http://www.w3.org/1998/Math/MathML">You can use <link
+          xlink:href="http://curl.haxx.se/">cURL</link> to try the authentication process in two
+        steps: 1) get a token; 2) send the token to a service.<orderedlist>
           <listitem>
-            <para>For information about how to use cURL to retrieve the authentication token, see
-              the <citetitle>Rackspace RackConnect Getting Started Guide</citetitle>.</para>
+            <para>Get an authentication token by providing your user name and either your API key or
+              your password. Following are examples of both approaches:</para>
+            <itemizedlist>
+              <listitem>
+                <para>You can request a token by providing your user name and your API key.</para>
+                <para>
+                  <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"<emphasis role="bold">yourUserName</emphasis>", "apiKey":"<emphasis role="bold">yourApiKey</emphasis>" } } }' -H "Content-type: application/json"</literallayout>
+                </para>
+              </listitem>
+              <listitem>
+                <para>You can request a token by providing your user name and your password.</para>
+                <para>
+                  <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+'{"auth":{"passwordCredentials":{"username":"<emphasis role="bold">yourUserName</emphasis>","password":"<emphasis role="bold">yourPassword</emphasis>"}}}' -H "Content-type: application/json"</literallayout>
+                </para>
+              </listitem>
+            </itemizedlist>
           </listitem>
           <listitem>
-            <para> If you authenticate with username and password credentials, you can use
-              multi-factor authentication to add an additional level of account security. This
-              feature is not implemented for username and API credentials. For more information, see
-                <link
-                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
-                >Multifactor authentication</link> in the <citetitle>Cloud Identity Client Developer
-                Guide</citetitle>. </para>
+            <para>Review the authentication response. <itemizedlist>
+                <listitem>
+                  <para>Successful authentication returns a token that you can use as evidence that
+                    your identity has already been authenticated along with a service catalog, which
+                    lists the endpoints that you can use for Rackspace Cloud services. To use the
+                    token, pass it to other services as an <code>X-Auth-Token</code> header.</para>
+                </listitem>
+                <listitem>
+                  <para>If the Identity service returns a returns a 401 message with a request for
+                    additional credentials, your account requires <link
+                      xlink:href="https://identity.api.rackspacecloud.com/v2.0">multi-factor
+                      authentication</link>. To complete the authentication process, submit a second
+                      <guilabel>POST tokens</guilabel> request with these multi-factor
+                    authentication credentials: <itemizedlist>
+                      <listitem>
+                        <para>The session ID value returned in the <code>WWW-Authenticate: OS-MF
+                            sessionId</code> header parameter that is included in the response to
+                          the initial authentication request.</para>
+                      </listitem>
+                      <listitem>
+                        <para>The passcode from the mobile phone associated with your user
+                          account.</para>
+                        <example>
+                          <title>Authentication request with multi-factor authentication
+                            credentials</title>
+                          <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt>curl https://identity.api.rackspacecloud.com/v2.0/tokens \
+     -X POST \
+     -d '{"auth": {"RAX-AUTH:passcodeCredentials": {"passcode":"1411594"}}}'\
+     -H "X-SessionId: $SESSION_ID" \
+     -H "Content-Type: application/json" --verbose | python -m json.tool</programlisting>
+                        </example>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist>
+            </para>
           </listitem>
-        </itemizedlist>
-      </note>
-      <example>
-        <title>Authentication with US endpoint: XML request</title>
-        <programlistingco>
-          <areaspec>
-            <area units="linecolumn" coords="12 26"/>
-            <area units="linecolumn" coords="13 26"/>
-          </areaspec>
-          <programlisting language="xml"><xi:include href="../wadl/samples/credentials-20.xml" parse="text"/></programlisting>
-        </programlistingco>
-      </example>
-      <example>
-        <title>Authentication with US endpoint: JSON request</title>
-        <programlistingco>
-          <areaspec>
-            <area units="linecolumn" coords="13 22"/>
-            <area units="linecolumn" coords="14 20"/>
-          </areaspec>
-          <programlisting language="json"><xi:include href="../wadl/samples/credentials-20.json" parse="text"/></programlisting>
-        </programlistingco>
-      </example>
-      <calloutlist>
-        <callout arearefs="credentials.xml.user">
-          <para>The username is your common Rackspace Cloud username. </para>
-        </callout>
-        <callout arearefs="credentials.xml.key">
-          <para>The key is your API access key. </para>
-          <para><emphasis role="bold">To find your API key</emphasis>
-          </para>
-          <orderedlist>
-            <listitem>
-              <para>Log in to the Cloud Control Panel (<link
-                  xlink:href="https://mycloud.rackspace.com"
-                >https://mycloud.rackspace.com</link>).</para>
-            </listitem>
-            <listitem>
-              <para>On the upper-right side of the top navigation pane, click your username.</para>
-            </listitem>
-            <listitem>
-              <para>From the menu, select <guilabel>Account Settings</guilabel>.</para>
-            </listitem>
-            <listitem>
-              <para>In the Login Details section of the Account Settings page, locate the
-                  <guilabel>API Key</guilabel> field and click <guibutton>Show</guibutton>.</para>
-            </listitem>
-            <listitem>
-              <para>Copy the value of the API key and paste it into a text editor of your
-                choice.</para>
-            </listitem>
-            <listitem>
-              <para>Click <guibutton>Hide</guibutton> to hide the value of the API key.</para>
-            </listitem>
-          </orderedlist>
-          <para>You also need your cloud account ID. In the documentation, the account ID is often
-            referred to as your tenant name or tenant ID (technically, the ID is different from the
-            name, but at Rackspace, they are the same thing). Together, three components—your
-            username, your API key, and your tenant ID or cloud account ID—form the authentication
-            credentials that are required to connect to the Rackspace cloud.</para>
-          <para>To find your tenant ID or cloud account ID, click your username on the upper-right
-            side of the top navigation pane in the Cloud Control Panel. The tenant ID or account ID
-            is listed first in the menu.</para>
-        </callout>
-      </calloutlist>
-      <example>
-        <title>Authentication with US endpoint: XML response</title>
-        <programlistingco>
-          <areaspec>
-            <area units="linecolumn" coords="7 9"/>
-            <area units="linecolumn" coords="15 10"/>
-            <area units="linecolumn" coords="16 67"/>
-            <area units="linecolumn" coords="17 12"/>
-            <area units="linecolumn" coords="22 21"/>
-            <area units="linecolumn" coords="51 34"/>
-            <area units="linecolumn" coords="51 54"/>
-            <area units="linecolumn" coords="52 30"/>
-            <area units="linecolumn" coords="53 66"/>
-            <area units="linecolumn" coords="54 9"/>
-          </areaspec>
-          <programlisting language="xml"><xi:include href="../wadl/samples/auth-20.xml" parse="text"/></programlisting>
-        </programlistingco>
-      </example>
-      <example>
-        <title>Authentication with US endpoint: JSON response</title>
-        <programlistingco>
-          <areaspec>
-            <area units="linecolumn" coords="217 1"/>
-            <area units="linecolumn" coords="9 8"/>
-            <area units="linecolumn" coords="16 45"/>
-            <area units="linecolumn" coords="17 12"/>
-            <area units="linecolumn" coords="30 8"/>
-            <area units="linecolumn" coords="193 13"/>
-            <area units="linecolumn" coords="192 13"/>
-            <area units="linecolumn" coords="198 16"/>
-            <area units="linecolumn" coords="199 16"/>
-            <area units="linecolumn" coords="200 16"/>
-          </areaspec>
-          <programlisting language="json"><xi:include href="../wadl/samples/auth-20.json" parse="text"/></programlisting>
-        </programlistingco>
-      </example>
-      <calloutlist>
-        <callout arearefs="response.xml.namespaces">
-          <para> In XML responses only, a list of namespaces identifies API extensions that add
-            functionality to the core API. </para>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.token">
-          <para>The token can be presented to a service as evidence of authentication. Tokens are
-            valid for a finite duration. An authentication token's default lifespan is 24 hours.
-            Applications should be designed to re-authenticate after receiving a 401 (Unauthorized)
-            response from a service endpoint. </para>
-          <para>The token's <code>expires</code> attribute denotes the time after which the token
-            automatically becomes invalid. A token can be manually revoked before the time
-            identified by the <code>expires</code> attribute. The attribute predicts a token's
-            maximum possible lifespan but does not guarantee that it will reach that lifespan.
-            Clients are encouraged to cache a token until it expires. </para>
-        </callout>
-        <callout arearefs="response.xml.dfltregion">
-          <para>Users can be assigned a default region. If multiple endpoints are associated with a
-            service in the user's catalog, the endpoint for the user's default region is selected if
-            it is available. In this example, the user's default region is DFW, and several of the
-            services in the catalog are associated with endpoints in that region. Whenever possible,
-            the user's work is directed to the DFW region. </para>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.role">
-          <para>Users can be assigned multiple roles, with each role providing specific privileges.
-            In this example, <code>yourUserName</code> is the administrative user for the account
-            and holds the fully-privileged <code>identity:admin</code> role. Other users might hold
-            other roles with different privileges. Roles do not have to be associated with actual
-            job functions such as Administrator, Operator, Developer, Tester, or Trainer. </para>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.catalog">
-          <para> The service catalog lists the services that you can access. In this example, the
-            user can access one database service, one load-balancing service, two compute services
-            (Cloud Servers OpenStack and Cloud Servers), two object storage services (Cloud Files
-            CDN and Cloud Files), one DNS service, one Rackspace CDN service, and two Rackspace
-            Cloud Metrics services. The catalog entry for each service provides at least one
-            endpoint URI for that service. Other information, such as regions, versions, and
-            tenants, is provided if it is relevant to a user's access to a service. </para>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.servicetype">
-          <para>The service <code>type</code> attribute identifies services that perform similar
-            functions, regardless of service names. In the examples, the service named
-              <code>cloudMetrics</code> is identified as
-            <code>type="rax:cloudmetrics"</code>.</para>
-          <tip>
-            <para>Beginning with Cloud Identity v2.0, the service catalog includes the service
-                <code>type</code> attribute to identify services that perform similar functions but
-              have different names. For example, <code>type="compute"</code> identifies compute
-              services such as cloudServers and cloudServersOpenStack. Some developers have found
-              the service <code>type</code> attribute to be useful in parsing the service catalog.
-              For additional information about the Cloud Identity service, see the <citetitle>Cloud
-                Identity Client Developer Guide</citetitle> at <link
-                xlink:href="http://docs.rackspace.com">http://docs.rackspace.com/</link>.</para>
-          </tip>
-          <important>
-            <para>Use the service <code>type</code> attribute as the primary value for locating a
-              service. If multiple endpoints of the same service type exist in the same region, use
-              the service <code>name</code> attribute to locate the appropriate service.</para>
-          </important>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.servicename">
-          <para> The service <code>name</code> attribute identifies each unique service in the
-            catalog. After a service is created, its name does not change. However, new services of
-            the same service <code>type</code> can be added to the catalog with new names. </para>
-          <important>
-            <para> If you are programmatically parsing an authentication response, use service
-                <code>type</code> rather than service <code>name</code> to determine whether a user
-              has access to a particular kind of service. Service type is stable across all
-              releases. New service types might be developed, but existing service types are not
-              renamed. In the preceding examples, <code>type="compute"</code> identifies all of the
-              available compute services. If new compute services are added in future releases, you
-              can recognize them by parsing for <code>type="compute"</code> in the authentication
-              response's service catalog.</para>
-          </important>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.region">
-          <para>A service might expose endpoints in different regions. Regional endpoints enable
-            users to provision resources in a manner that provides high availability. </para>
-          <para> Some services, such as Rackspace Cloud Metrics, are not region-specific. These
-            services supply a single non-regional endpoint and do not provide access to internal
-            URIs. </para>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.tenant">
-          <para> Some services recognize specification of a tenant. If a service recognizes tenants,
-            the format of the tenant specification is defined only by the service. For details about
-            whether and how to specify a tenant, check the documentation for the service that you
-            are using.</para>
-          <para> </para>
-        </callout>
-        <callout arearefs="response.xml.url">
-          <para> An endpoint can be assigned public URIs and internal URIs. A public URI is
-            accessible from anywhere. Access to a public URI usually incurs traffic charges.
-            Internal URIs are accessible only to services within the same region. Access to an
-            internal URI is free of charge. </para>
-          <para> </para>
-        </callout>
-      </calloutlist>
-      <para>Rackspace RackConnect service endpoints are published in the service catalog in the
-        authentication response with the account information, which is a required element of the
-        service endpoints. For more information about service endpoints, see <xref
-          linkend="serviceEndpoints"/>.</para>
+          <listitem>
+            <para>Use the authentication token to send a <command>GET</command> to a service you
+              would like to use. Here is an example of passing an authentication token to the Cloud
+              Files service, using the Cloud Files service catalog endpoint that was returned along
+              with the token.</para>
+            <para>
+              <programlisting>curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+-H 'X-Auth-Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' --verbose</programlisting>
+            </para>
+          </listitem>
+        </orderedlist>
+      </para>
+      <tip xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+        xmlns:m="http://www.w3.org/1998/Math/MathML">
+        <para> For links to language binding examples you can adapt to work with the Cloud Identity
+          service, visit <link xlink:href="http://docs.rackspace.com/sdks/guide/content/index.html">
+            docs.rackspace.com/sdks/guide/content/index.html</link>.</para>
+      </tip>
+      <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+        xmlns:m="http://www.w3.org/1998/Math/MathML">Authentication tokens are typically valid for
+        24 hours. Applications should be designed to re-authenticate after receiving a 401
+        (Unauthorized) response from a service endpoint. </para>
+      <important xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:m="http://www.w3.org/1998/Math/MathML">
+        <para>If you are programmatically parsing an authentication response, be aware that service
+          names are stable for the life of the particular service and can be used as keys. You
+          should also be aware that a user's service catalog can include multiple uniquely-named
+          services that perform similar functions. For example, cloudServersOpenStack is the
+          OpenStack version of compute whereas cloudServers is the legacy version of compute. The
+          same user can have access to both services. In the Cloud Identity Service v2.0, the
+          service type attribute can be used as a key to recognize similar services. See the
+          following tip.</para>
+      </important>
+      <tip xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+        xmlns:m="http://www.w3.org/1998/Math/MathML">
+        <para>Beginning with Rackspace Cloud Identity Service v2.0 (earlier versions were called
+          Rackspace Cloud Authentication Service), the service catalog includes a service type
+          attribute to identify services that perform similar functions but have different names;
+          for example, <code>type="compute"</code> identifies compute services such as cloudServers
+          and cloudServersOpenStack. Some developers have found the service type attribute to be
+          useful in parsing the service catalog. For Cloud Identity Service v2.0 , you can see the
+          service type attribute in the "Service Catalog in Authentication Response" samples in the
+            <citetitle>Cloud Identity Client Developer Guide</citetitle> at <link
+            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
+            >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html</link>.</para>
+      </tip>
     </section>
     <section xml:id="Role_based_access_control">
       <title>Role Based Access Control</title>
@@ -459,10 +396,9 @@
       <para>Replace the example account ID number, <replaceable>123456</replaceable>, with your
         actual account ID returned as part of the authentication service response.</para>
       <para>Your account ID is located after the final slash (/) in the <code>publicURL</code> field
-        returned by the authentication response. For example, in <xref
-          linkend="auth-response-example-json"/> the <code>publicURL</code> field for RackConnect is
-          <code>https://global.metrics.api.rackspacecloud.com/v1.0/110011</code> and the account ID
-        is <emphasis role="bold">110011</emphasis>. </para>
+        returned by the authentication response. For example the <code>publicURL</code> field for
+        RackConnect is <code>https://global.metrics.api.rackspacecloud.com/v1.0/110011</code> and
+        the account ID is <emphasis role="bold">110011</emphasis>. </para>
       <note>
         <para>The account ID from Cloud Identity is the same as the project ID given in the
             <code>X-Project-Id</code> header in Rackspace RackConnect. (You might also see the
@@ -522,13 +458,6 @@
       <title>Limits</title>
       <para>All accounts are configured with default thresholds, or limits, that manage capacity and
         prevent abuse of the system. </para>
-      <para>Cloud Metrics provides an operation for both the Ingest API and the Query API that
-        enables users to verify the limit for each respective tenant.</para>
-      <para>Rate limits control the frequency at which the user can issue specific API
-        requests.</para>
-      <para>For Cloud Metrics, the rate limit is 1000. </para>
-      <para>Rate limits are reset after a certain amount of time passes. For Cloud Metrics, the rate
-        limit is per minute.</para>
       <note>
         <para>If the default limits are too low for your particular application, contact Rackspace
           Cloud support to request an increase. All requests require reasonable
