@@ -27,7 +27,7 @@
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
   <info>
     <copyright>
-      <year>2013</year>
+      <year>2015</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
@@ -35,13 +35,6 @@
     <!--Note that the <productname> text matches the first few words of the title. The build system splits the title into productname + rest of title on the pdf cover.-->
     <pubdate><!--If you leave the <pubdate> element empty, the build system inserts today's date automatically. --></pubdate>
     <revhistory>
-      <revision>
-        <date>2011-03-01</date>
-        <revdescription>
-          <para>This is the revision history section. The technical writer updates this section when
-            major changes are made to the doc to indicate what changed. </para>
-        </revdescription>
-      </revision>
       <revision>
         <date>2015-04-02</date>
         <revdescription>
@@ -73,10 +66,10 @@
   </chapter>
   <chapter xml:id="Overview">
     <title>Overview</title>
-    <para>RackConnect v3.0 is the innovative hybrid connectivity offering from Rackspace that
-      enables you to select and combine the best features of Rackspace dedicated and cloud hosting
-      into one all-encompassing solution. </para>
-    <para>RackConnect v3.0 enables you to dedicated your dedicated servers with Rackspace's fully
+    <para>RackConnect v3.0 is the hybrid connectivity offering from Rackspace that enables you to
+      select and combine a set of features of Rackspace dedicated and cloud hosting into one
+      all-encompassing solution. </para>
+    <para>RackConnect v3.0 enables you to merge your dedicated servers with Rackspace's fully
       managed cloud and add products and services on an as-needed basis.</para>
     <para>For more information on how to get started with RackConnect v2.0, see <link
         xlink:href="http://www.rackspace.com/knowledge_center/article/how-do-i-get-started-with-rackconnect-v20"
@@ -98,19 +91,19 @@
           </thead>
           <tbody>
             <tr>
-              <td>Cloud accoun</td>
+              <td>Cloud account</td>
               <td>
                 <itemizedlist>
                   <listitem>
                     <para>The cloud account that you want to use with RackConnect must be <emphasis
-                        role="italic">linked</emphasis> to your dedicated account. You can
-                      accomplish this in the <link xlink:href="https://my.rackspace.com/"
-                        >MyRackspace Portal</link>.</para>
+                        role="italic">linked</emphasis> to your dedicated account. You can complete
+                      this step in the <link xlink:href="https://my.rackspace.com/">MyRackspace
+                        Portal</link>.</para>
                   </listitem>
                   <listitem>
                     <para>This cloud account must also be <emphasis role="italic"
                         >associated</emphasis> with your RackConnect v3.0 configuration. You can
-                      accomplish this in the <link xlink:href="https://my.rackspace.com/"
+                      complete this step in the <link xlink:href="https://my.rackspace.com/"
                         >MyRackspace Portal</link>.</para>
                   </listitem>
                   <listitem>
@@ -200,11 +193,36 @@
         </table>
         <important>
           <para>You cannot create the cloud network for use with RackConnect v3.0 yourself, and any
-            existing cloud networks will not work with RackConnect v3.0.  Only cloud networks
-            created by Rackspace during the RackConnect v3.0 implementation process work with
-            RackConnect v3.0.</para>
+            existing cloud networks do not work with RackConnect v3.0.  Only cloud networks created
+            by Rackspace during the RackConnect v3.0 implementation process work with RackConnect
+            v3.0.</para>
         </important>
       </para>
+    </section>
+    <section xml:id="Prerequisites_for_running_examples">
+      <title><?sbr?>Prerequisites for running examples</title>
+      <para>To run the examples in this guide, you must have the following requirements:
+        <itemizedlist spacing="compact">
+          <listitem>
+            <para>A Cloud account, with user name and password, as specified during registration.</para>
+          </listitem>
+          <listitem>
+            <para>Prior knowledge of HTTP/1.1 conventions.</para>
+          </listitem>
+          <listitem>
+            <para>Basic familiarity with Cloud and RESTful APIs.</para>
+          </listitem>
+          <listitem>
+            <para>The Git client, which is available for download from <link
+              xlink:href="http://git-scm.com/downloads"
+              >http://git-scm.com/downloads</link>.</para>
+          </listitem>
+          <listitem>
+            <para>cURL, a command-line tool for transferring data with URL syntax. cURL is available
+              for download from <link xlink:href="http://curl.haxx.se"
+                >http://curl.haxx.se/</link>.</para>
+          </listitem>
+        </itemizedlist></para>
     </section>
   </chapter>
   <chapter xml:id="other-features">
@@ -219,8 +237,8 @@
       <para>
         <table frame="border">
           <caption>RackConnect service access endpoints</caption>
-          <col width="50%"/>
-          <col width="50%"/>
+          <col width="46%"/>
+          <col width="54%"/>
           <thead>
             <tr>
               <th>Endpoint</th>
@@ -229,7 +247,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>https://&lt;region>.rackconnect.api.api.rackspacecloud.com/v3/123456</td>
+              <td>https://&lt;<replaceable>region</replaceable>>.rackconnect.api.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable>></td>
               <td>This endpoint is used to make API calls against the RackConnect  v3.0 API.</td>
             </tr>
           </tbody>
@@ -684,15 +702,16 @@
      <title>Listing public IP addresses</title>
       <para>After you have obtained your authentication token, you can use RackConnect to list all
         public IP addresses that apply to a specific cloud server. </para>
-      <para>The following example shows how to issue a <command>GET</command> requests that lists
-        all the public IP address that pertain to a specific server that has been set up for a
+      <para>The following example shows how to issue a <command>GET</command> request that lists all
+        the public IP addresses that pertain to a specific server that has been set up for a
         specific tenant.</para>
       <para>
-        <programlisting xml:id="pre-4">curl --include \ 
+        <example><title>List public IP addresses - request</title>
+        <programlisting>curl --include \ 
 --request GET \
 --header "X-Auth-Token: <emphasis role="italic"><emphasis role="bold">authTokenId</emphasis></emphasis>" \
 --header "Content-Type: application/json" \
-https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic">tenantId</emphasis>/public_ips?cloud_server_id=<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis></programlisting></para>
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic">tenantId</emphasis>/public_ips?cloud_server_id=<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis></programlisting></example></para>
       <note>
         <para>You can obtain the UUID (universally unique identifier) of your cloud server from
           within its server details page in the <link xlink:href="https://mycloud.rackspace.com"
@@ -703,10 +722,9 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
             >id</emphasis> section of the server details page.</para>
       </note>
 <para>The following example shows a successful response for a Cloud server that has a public P
-        address assigned. In the example, the public IP address assigned to the cloud server and the
-        UUID associated with this public IP address are highlighted.</para>
+        address assigned. </para>
       <para>
-        <programlisting>[ 
+        <example><title>List public IP addresses - response</title><programlisting>[ 
   {
    "created": "2014-05-30T03:23:42Z",
    "cloud_server":
@@ -731,20 +749,22 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
     "status_detail": null,
     "updated": "2014-05-30T03:24:18Z" 
   }
-]</programlisting>
+]</programlisting></example>
       </para>
       <para>The following command shows how to list a single public IP address for a specific Cloud
         Server that has been created for a specific tenant.</para>
       <para>
+        <example><title>List a single public IP address - request</title>
         <programlisting>curl --include \ 
 --request GET \
 --header "X-Auth-Token: <emphasis role="italic"><emphasis role="bold">authTokenId</emphasis></emphasis>" \
 --header "Content-Type: application/json" \
 https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="bold"><emphasis role="italic">tenantId</emphasis></emphasis>/public_ips/<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis></programlisting>
-      </para>
+      </example></para>
       <para>The following example shows a successful response to a <command>GET</command> request to
         retrieve a single public ID address for a specific tenant.</para>
       <para>
+        <example><title>List a single public IP address - response</title>
         <programlisting> {
    "created": "2014-05-30T03:23:42Z",
    "cloud_server":
@@ -768,21 +788,21 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
         "status": "ACTIVE",
         "status_detail": null,
         "updated": "2014-05-30T03:24:18Z"
- }       </programlisting>
+ }       </programlisting></example>
       </para>
     </section>
   <section xml:id="Adding_a_public_IP_address"><title>Adding a public IP address</title><para>You can use the RackConnect API to add a public IP address to a Rackspace Cloud Server. The
         following example shows how to use a <command>POST</command> request to add a new public IP
         address to a specific Cloud server for a specific tenant.
-        <programlisting xml:id="pre-6">curl \
+    <example><title>Add a public IP address - request</title><programlisting>curl \
 --request POST \
 --header "X-Auth-Token: <emphasis role="bold"><emphasis role="italic">authTokenId</emphasis></emphasis>" \
 --header "Content-Type: application/json" \
 --data '{ "cloud_server": { "id": "<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis>" } }' \
 https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips \
-| python -m json.tool</programlisting></para>
+| python -m json.tool</programlisting></example></para>
       <para>The following is an example of a successful response to a <command>POST</command>
-        request to add a public IP address to a cloud server API request. <programlisting>{ 
+        request to add a public IP address to a cloud server API request.  <example><title>List a single public IP address - response</title><programlisting>{ 
   "created": "2014-05-30T03:23:42Z",
   "cloud_server":
    {
@@ -805,7 +825,7 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
     "status": "ADDING",
     "status_detail": null,
     "updated": null 
-}</programlisting>
+}</programlisting></example>
         <note>
           <para>Make sure to write down the <replaceable>id</replaceable> value of the new IP
             address you have added. You will need it if you want to perform operations, such as
@@ -818,22 +838,22 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
         as the id entry just above the public_ip_v4 entry in the operations to <emphasis
           role="italic">list</emphasis> and <emphasis role="italic">add</emphasis> public IP
         addresses.
-        <programlisting xml:id="pre-8">curl --include \
+        <example><title>Remove a public IP address - request</title><programlisting>curl --include \
 --request DELETE \
 --header "X-Auth-Token: <emphasis role="italic">authTokenId</emphasis>" \
 --header "Content-Type: application/json" \
-https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips/<emphasis role="bold"><emphasis role="italic">serverPublicIPv4Uuid</emphasis></emphasis></programlisting></para>
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips/<emphasis role="bold"><emphasis role="italic">serverPublicIPv4Uuid</emphasis></emphasis></programlisting></example></para>
       <para>This call does not return any JSON data—only an HTTP response code as shown in the
-        example below. A 204 response code signifies that the public IP address was successfully
-        removed from the cloud server.
-        <programlisting xml:id="pre-9">HTTP/1.1 <emphasis role="bold">204 No
+        example below. A <emphasis role="bold">204</emphasis> response code signifies that the
+        public IP address was successfully removed from the cloud server.
+        <example><title>Remove a public IP address - response</title><programlisting>HTTP/1.1 <emphasis role="bold">204 No
     Content</emphasis>
 Server: Apache-Coyote/1.1
 cache-control: no-cache
 via: 1.1 Repose (Repose/3.0.1)
 expires: -1
 date: Thu, 13 Sep 2014 14:48:58 GMT
-pragma: no-cache</programlisting>
+pragma: no-cache</programlisting></example>
       </para></section>
   </chapter>
   <chapter xml:id="Additional_Resources">
