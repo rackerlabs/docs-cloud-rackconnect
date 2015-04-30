@@ -232,8 +232,8 @@
       API.</para>
     <section xml:id="service_Endpoints">
       <title>Service access endpoints</title>
-      <para security="external">The RackConnect v3.0 API provides the following global endpoint to
-        make API calls.</para>
+      <para security="external">The RackConnect v3.0 API provides the following endpoint to make API
+        calls.</para>
       <para>
         <table frame="border">
           <caption>RackConnect service access endpoints</caption>
@@ -247,7 +247,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>https://&lt;<replaceable>region</replaceable>>.rackconnect.api.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable>></td>
+              <td>https://&lt;<replaceable>region</replaceable>>.rackconnect.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable>></td>
               <td>This endpoint is used to make API calls against the RackConnect  v3.0 API.</td>
             </tr>
           </tbody>
