@@ -65,6 +65,23 @@
         <remark>Copyright details are filled in by the build system.</remark>
       </annotation>
     </legalnotice>
+    <!-- abstract -->
+    <abstract>
+     <para>This document is intended for software developers interested in developing applications
+     using the RackConnect Application Programming Interface (<abbrev>API</abbrev>). </para>
+     </abstract>
+     <!--
+The values in raxm:metadata are used to control where the content appears on the landing page in docs.rackspace.com.
+Work with the Cloud Doc Tools team to find out what to put here. Once established, you should not change these
+values without first consulting with the CDT team.
+-->
+<raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:displayname>API Admin Developer Guide</raxm:displayname>
+            <raxm:product version="v3">rackconnect</raxm:product>
+            <raxm:priority>60</raxm:priority>
+        </raxm:metadata>
+</info>
+     
     <!-- 
        The values in raxm:metadata control 
        where the content appears on the docs.rackspace.com
