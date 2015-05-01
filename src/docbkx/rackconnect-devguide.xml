@@ -38,7 +38,7 @@
   xml:id="&PREFIX;-devguide" status="DRAFT">
   <title>Rackspace &PRODUCTNAME; API Developer Guide</title>
   <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
-  <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
+  <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-devguide/content"?>
   <info>
     <copyright>
       <year>2015</year>
@@ -51,7 +51,17 @@
       productname + rest of title on the pdf cover.-->
     <!--If you leave the <pubdate> element empty, 
       the build system inserts today's date automatically. -->
-    <pubdate>2014-12-01</pubdate>
+    <pubdate></pubdate>
+    <!-- abstract -->
+    <abstract>
+      <para>This document is intended for software developers interested in developing applications
+        using the RackConnect Application Programming Interface (<abbrev>API</abbrev>). </para>
+    </abstract>
+    <!--
+The values in raxm:metadata are used to control where the content appears on the landing page in docs.rackspace.com.
+Work with the Cloud Doc Tools team to find out what to put here. Once established, you should not change these
+values without first consulting with the CDT team.
+-->
     <revhistory>
         <revision>
         <date>2014-12-01</date>
@@ -65,22 +75,12 @@
         <remark>Copyright details are filled in by the build system.</remark>
       </annotation>
     </legalnotice>
-    <!-- abstract -->
-    <abstract>
-     <para>This document is intended for software developers interested in developing applications
-     using the RackConnect Application Programming Interface (<abbrev>API</abbrev>). </para>
-     </abstract>
-     <!--
-The values in raxm:metadata are used to control where the content appears on the landing page in docs.rackspace.com.
-Work with the Cloud Doc Tools team to find out what to put here. Once established, you should not change these
-values without first consulting with the CDT team.
--->
 <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:displayname>API Admin Developer Guide</raxm:displayname>
+            <raxm:displayname>API Developer Guide</raxm:displayname>
             <raxm:product version="v3">rackconnect</raxm:product>
             <raxm:priority>60</raxm:priority>
         </raxm:metadata>
-</info>
+
      
     <!-- 
        The values in raxm:metadata control 
