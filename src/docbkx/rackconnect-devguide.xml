@@ -33,11 +33,18 @@
                 </imageobject>
               </inlinemediaobject>'>
 ]>
-<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
-  xml:id="&PREFIX;-devguide" status="DRAFT">
+<book xmlns="http://docbook.org/ns/docbook" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" 
+  xmlns:svg="http://www.w3.org/2000/svg" 
+  version="5.0"
+  xml:id="&PREFIX;-rack-devguide" status="DRAFT">
   <title>Rackspace &PRODUCTNAME; API Developer Guide</title>
   <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
+  <?rax pdf.url="../../../rackconnect-devguide-latest.pdf"?>
+  <?rax title.font.size="35px"
+    pdf.url="../../rackconnect-devguide.pdf"
+    status.bar.text.font.size="40px"
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-devguide/content"?>
   <info>
     <copyright>
@@ -52,16 +59,14 @@
     <!--If you leave the <pubdate> element empty, 
       the build system inserts today's date automatically. -->
     <pubdate></pubdate>
+    
     <!-- abstract -->
     <abstract>
       <para>This document is intended for software developers interested in developing applications
         using the RackConnect Application Programming Interface (<abbrev>API</abbrev>). </para>
     </abstract>
-    <!--
-The values in raxm:metadata are used to control where the content appears on the landing page in docs.rackspace.com.
-Work with the Cloud Doc Tools team to find out what to put here. Once established, you should not change these
-values without first consulting with the CDT team.
--->
+
+    <!-- Revision history -->
     <revhistory>
         <revision>
         <date>2014-12-01</date>
@@ -75,28 +80,19 @@ values without first consulting with the CDT team.
         <remark>Copyright details are filled in by the build system.</remark>
       </annotation>
     </legalnotice>
-<raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v3">rackconnect</raxm:product>
-            <raxm:priority>60</raxm:priority>
-        </raxm:metadata>
-
-     
+    
     <!-- 
        The values in raxm:metadata control 
        where the content appears on the docs.rackspace.com
        landing page.
        Work with Self Service Engineering to find out what to put here. 
     -->
-    <!-- 
-         hide until can get valid value for RackConnect;
-         til then, it causes status=red 
       <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-        <raxm:displayname>API Developer Guide</raxm:displayname>
-        <raxm:product version="v3">&PREFIX;</raxm:product>
-        <raxm:priority>20</raxm:priority>
-      </raxm:metadata>
-      -->
+            <raxm:displayname>API Developer Guide</raxm:displayname>
+            <raxm:product version="v3">rackconnect</raxm:product>
+            <raxm:priority>20</raxm:priority>
+        </raxm:metadata>
+    
   </info>
   <chapter xml:id="Overview">
     <title>Introduction</title>

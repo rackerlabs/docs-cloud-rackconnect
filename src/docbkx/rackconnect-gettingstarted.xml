@@ -20,8 +20,11 @@
         <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
 ]>
 
-<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
+<book xmlns="http://docbook.org/ns/docbook" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" 
+  xmlns:svg="http://www.w3.org/2000/svg" 
+  version="5.0"
   xml:id="&PREFIX;-gettingstarted" status="DRAFT">
   <title>Rackspace &PRODUCTNAME; Getting Started Guide</title>
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
@@ -32,6 +35,13 @@
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace &PRODUCTNAME;</productname>
+    
+    <!--abstract-->
+    <abstract xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+      <para>This document is intended for software developers interested in developing applications
+        using the &PRODUCTNAME; Application Programming Interface (<abbrev>API</abbrev>). </para>
+    </abstract>
+    
     <!--Note that the <productname> text matches the first few words of the title. The build system splits the title into productname + rest of title on the pdf cover.-->
     <pubdate><!--If you leave the <pubdate> element empty, the build system inserts today's date automatically. --></pubdate>
     <revhistory>
@@ -54,7 +64,7 @@
     -->
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Getting Started Guide</raxm:displayname>
-      <raxm:product version="3">&PREFIX;</raxm:product>
+      <raxm:product version="3">rackconnect</raxm:product>
       <raxm:priority>10</raxm:priority>
     </raxm:metadata>
   </info>
