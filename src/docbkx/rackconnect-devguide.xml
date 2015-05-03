@@ -33,18 +33,11 @@
                 </imageobject>
               </inlinemediaobject>'>
 ]>
-<book xmlns="http://docbook.org/ns/docbook" 
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xi="http://www.w3.org/2001/XInclude" 
-  xmlns:svg="http://www.w3.org/2000/svg" 
-  version="5.0"
-  xml:id="&PREFIX;-rack-devguide" status="DRAFT">
-  <title>Rackspace &PRODUCTNAME; API Developer Guide</title>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
+  xml:id="&PREFIX;-devguide" status="DRAFT">
+  <title>&PRODUCTNAME; API Developer Guide</title>
   <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
-  <?rax pdf.url="../../../rackconnect-devguide-latest.pdf"?>
-  <?rax title.font.size="35px"
-    pdf.url="../../rackconnect-devguide.pdf"
-    status.bar.text.font.size="40px"
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-devguide/content"?>
   <info>
     <copyright>
@@ -59,14 +52,16 @@
     <!--If you leave the <pubdate> element empty, 
       the build system inserts today's date automatically. -->
     <pubdate></pubdate>
-    
     <!-- abstract -->
     <abstract>
       <para>This document is intended for software developers interested in developing applications
         using the RackConnect Application Programming Interface (<abbrev>API</abbrev>). </para>
     </abstract>
-
-    <!-- Revision history -->
+    <!--
+The values in raxm:metadata are used to control where the content appears on the landing page in docs.rackspace.com.
+Work with the Cloud Doc Tools team to find out what to put here. Once established, you should not change these
+values without first consulting with the CDT team.
+-->
     <revhistory>
         <revision>
         <date>2014-12-01</date>
@@ -80,23 +75,32 @@
         <remark>Copyright details are filled in by the build system.</remark>
       </annotation>
     </legalnotice>
-    
+<raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:displayname>API Developer Guide</raxm:displayname>
+            <raxm:product version="v3">rackconnect</raxm:product>
+            <raxm:priority>60</raxm:priority>
+        </raxm:metadata>
+
+     
     <!-- 
        The values in raxm:metadata control 
        where the content appears on the docs.rackspace.com
        landing page.
        Work with Self Service Engineering to find out what to put here. 
     -->
+    <!-- 
+         hide until can get valid value for RackConnect;
+         til then, it causes status=red 
       <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v3">rackconnect</raxm:product>
-            <raxm:priority>20</raxm:priority>
-        </raxm:metadata>
-    
+        <raxm:displayname>API Developer Guide</raxm:displayname>
+        <raxm:product version="v3">&PREFIX;</raxm:product>
+        <raxm:priority>20</raxm:priority>
+      </raxm:metadata>
+      -->
   </info>
   <chapter xml:id="Overview">
     <title>Introduction</title>
-    <para> This is an early, partial draft of Rackspace-branded documentation describing the
+    <para> This is an early draft of the Rackspace-branded documentation describing the
       &PRODUCTNAME; v3 API. </para>
     <section xml:id="resources">
       <title>Additional resources</title>
@@ -183,17 +187,17 @@
   <section xml:id="load-balancer-pools"><title>Load Balancer Pools</title><para>Load balancers distribute workloads across two or more servers, network links or other
         resources. This distribution maximizes throughput, minimizes response time and helps avoid
         overload.</para>
-      <para>With RackConnect v3.0, the dedicated F5 BIG-IP Local Traffic Manager (LTM) and Brocade
-        ADX Series load balancers are now supported for use with the RackConnect automated pool
-        membership management capabilities. </para>
+      <para>RackConnect v3.0 supports the dedicated F5 BIG-IP Local Traffic Manager (LTM) and
+        Brocade ADX Series load balancers for use with the RackConnect automated pool membership
+        management capabilities. </para>
       <para>When your cloud servers host an application that scales up and down (for example, the
         web tier of an application), it is important to have a method for adding and removing cloud
         servers from their associated load balancer pools. If you use a dedicated load balancer with
         RackConnect, you can specify the load balancer pool that a cloud server should be placed in
         when it is created. When you delete the cloud server, it will automatically be removed from
         the pool.</para>
-      <para>After you initially create a cloud server, you can use the following RackConnect v3.0
-        API load balancer pool operations:</para>
+      <para>After you initially create a cloud server, you can use the following RackConnect API
+        load balancer pool operations:</para>
       <itemizedlist>
         <listitem>
           <para>Retrieve a list of load balancer pools</para>
@@ -221,10 +225,9 @@
           <para>Bulk remove multiple pool member nodes from one or more load balancer pools</para>
         </listitem>
       </itemizedlist>
-      <para>The RackConnect v3.0 API is region-specific and returns results only for the region
-        specified in the URL of the API call itself. Fore more information on using the API to work
-        wit load balancer pools, see <link linkend="load-balancer-pools">Load balancer
-        pools</link>.</para></section>
+      <para>The RackConnect API is region-specific and returns results only for the region specified
+        in the URL of the API call itself. For more information on using the API to work with load
+        balancer pools, see <link linkend="load-balancer-pools">Load balancer pools</link>.</para></section>
   
   </chapter>
   <chapter xml:id="Authentication">
@@ -335,15 +338,13 @@
               <listitem>
                 <para>You can request a token by providing your user name and your API key.</para>
                 <para>
-                  <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
-'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"<emphasis role="bold">yourUserName</emphasis>", "apiKey":"<emphasis role="bold">yourApiKey</emphasis>" } } }' -H "Content-type: application/json"</literallayout>
+                  <programlisting> curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d '{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"<emphasis role="bold">yourUserName</emphasis>", "apiKey":"<emphasis role="bold">yourApiKey</emphasis>" } } }' -H "Content-type: application/json" </programlisting>
                 </para>
               </listitem>
               <listitem>
                 <para>You can request a token by providing your user name and your password.</para>
                 <para>
-                  <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
-'{"auth":{"passwordCredentials":{"username":"<emphasis role="bold">yourUserName</emphasis>","password":"<emphasis role="bold">yourPassword</emphasis>"}}}' -H "Content-type: application/json"</literallayout>
+                  <programlisting> curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d '{"auth":{"passwordCredentials":{"username":"<emphasis role="bold">yourUserName</emphasis>","password":"<emphasis role="bold">yourPassword</emphasis>"}}}' -H "Content-type: application/json" </programlisting>
                 </para>
               </listitem>
             </itemizedlist>
@@ -485,24 +486,8 @@
       <title>Service access endpoints</title>
       <para security="external">The RackConnect v3.0 API provides the following endpoint to make API
         calls.</para>
+      <para>https://&lt;<replaceable>region</replaceable>.rackconnect.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable></para>
       <para>
-        <table frame="border">
-          <caption>RackConnect service access endpoints</caption>
-          <col width="46%"/>
-          <col width="54%"/>
-          <thead>
-            <tr>
-              <th>Endpoint</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>https://&lt;<replaceable>region</replaceable>>.rackconnect.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable>></td>
-              <td>This endpoint is used to make API calls against the RackConnect  v3.0 API.</td>
-            </tr>
-          </tbody>
-        </table>
       </para>
       <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
         >Replace the <emphasis role="italic">region</emphasis> and <emphasis role="italic"
@@ -515,7 +500,7 @@
     <section xml:id="contractVersion" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <title>RackConnect contract version</title>
-      <para> The Rackspace RackConnect version defines the contract and build information for the
+      <para>The Rackspace RackConnect version defines the contract and build information for the
         API. </para>
       <para>The contract version denotes the data model and behavior that the API supports. The
         requested contract version is included in all request URLs. Different contract versions of
