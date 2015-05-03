@@ -23,7 +23,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
   xml:id="&PREFIX;-gettingstarted" status="DRAFT">
-  <title>Rackspace &PRODUCTNAME; Getting Started Guide</title>
+  <title>&PRODUCTNAME; v3.0 Getting Started Guide</title>
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
   <info>
     <copyright>
@@ -59,7 +59,7 @@
     </raxm:metadata>
   </info>
   <chapter xml:id="change_history">
-    <title>Chapter 1: Document change history</title>
+    <title>Document change history</title>
     <para>This version of the document replaces and obsoletes all earlier versions. The most recent
       changes are described in the following table: </para>
     <?rax revhistory?>
@@ -69,15 +69,16 @@
     <para>RackConnect v3.0 is the hybrid connectivity offering from Rackspace that enables you to
       select and combine a set of features of Rackspace dedicated and cloud hosting into one
       all-encompassing solution. </para>
-    <para>RackConnect v3.0 enables you to merge your dedicated servers with Rackspace's fully
-      managed cloud and add products and services on an as-needed basis.</para>
-    <para>For more information on how to get started with RackConnect v2.0, see <link
+    <para>RackConnect v3.0 includes an API that enables you to seamlessly add and remove cloud
+      servers from your load balancer pools, add and remove public IP addresses from your cloud
+      servers, and list cloud networks associated with your RackConnect v3.0 configuration. </para>
+    <para> For more information about how to get started with RackConnect v3.0, see  <link
         xlink:href="http://www.rackspace.com/knowledge_center/article/how-do-i-get-started-with-rackconnect-v20"
         >How do I get started with RackConnect 2.0</link>.</para>
     <section xml:id="RackConnect_requirements">
-      <title>Requirements for using RackConnect v3.0</title>
+      <title>Requirements for using RackConnect</title>
       <para>The following table provides a detailed list of requirements that must be met to
-        implement RackConnect v3.0.</para>
+        implement RackConnect.</para>
       <para>
         <table frame="border">
           <caption>Requirements for RackConnect v 3.0</caption>
@@ -107,7 +108,7 @@
                         >MyRackspace Portal</link>.</para>
                   </listitem>
                   <listitem>
-                    <para>You can associate a single cloud account with multiple RackConnect v3.0
+                    <para>You can associate a single cloud account with multiple RackConnect
                       configurations, if each configuration is located in a different region.</para>
                   </listitem>
                   <listitem>
@@ -119,7 +120,7 @@
             </tr>
             <tr>
               <td>Dedicated account</td>
-              <td>To use RackConnect v3.0, you must have a dedicated account with Rackspace.</td>
+              <td>To use RackConnect, you must have a dedicated account with Rackspace.</td>
             </tr>
             <tr>
               <td>Supported network device</td>
@@ -130,7 +131,7 @@
                   </listitem>
                   <listitem>
                     <para>For a detailed list of the network devices currently supported by
-                      RackConnect v3.0 and their capabilities, see the article <link
+                      RackConnect and their capabilities, see the article <link
                         xlink:href="http://www.rackspace.com/knowledge_center/article/rackconnect-network-device-comparison"
                         >RackConnect Network Device Comparison</link>.</para>
                   </listitem>
@@ -142,16 +143,16 @@
               <td>
                 <itemizedlist>
                   <listitem>
-                    <para>Your devices must be deployed in a region supported by RackConnect v3.0.
-                      The regions supported, as of October 2014, are DFW, IAD, ORD, LON, HKG, and
+                    <para>Your devices must be deployed in a region supported by RackConnect. The
+                      regions supported, as of October 2014, are DFW, IAD, ORD, LON, HKG, and
                       SYD.</para>
                   </listitem>
                   <listitem>
-                    <para>You can have multiple RackConnect v3.0 configurations in multiple regions,
-                      but each configuration is an independent entity and cross-communication
-                      between configurations in different regions is not possible with RackConnect
-                      v3.0 (although, cross-communication between regions might be possible with a
-                      VPN solution).</para>
+                    <para>You can have multiple RackConnect configurations in multiple regions, but
+                      each configuration is an independent entity and cross-communication between
+                      configurations in different regions is not possible with RackConnect (However,
+                      cross-communication between regions might be possible with a VPN
+                      solution.)</para>
                   </listitem>
                 </itemizedlist>
               </td>
@@ -162,9 +163,9 @@
                 <itemizedlist>
                   <listitem>
                     <para>Your cloud networks will be set up, configured, and associated with your
-                      configuration by Rackspace during the RackConnect v3.0 implementation process.
-                      RackConnect v3.0 supports up to 10 cloud networks. For details about Cloud
-                      Networks limitations, see the article, <link
+                      configuration by Rackspace during the RackConnect implementation process.
+                      RackConnect supports up to 10 cloud networks. For details about Cloud Networks
+                      limitations, see the article, <link
                         xlink:href="http://www.rackspace.com/knowledge_center/article/rackconnect-v30-limitations"
                         >RackConnect v3.0 Limitations</link>.</para>
                   </listitem>
@@ -173,17 +174,16 @@
                       network segment name that you want to use with your cloud networks.</para>
                   </listitem>
                   <listitem>
-                    <para>With RackConnect v3.0,  multiple cloud networks can be associated with a
-                      single cloud account. However, to have RackConnect connectivity, the networks
-                      must be created by Rackspace. Please <link
+                    <para>With RackConnect,  multiple cloud networks can be associated with a single
+                      cloud account. However, to have RackConnect connectivity, the networks must be
+                      created by Rackspace. Please <link
                         xlink:href="http://www.rackspace.com/knowledge_center/support">contact
                         us</link> if you want to add additional cloud networks to your RackConnect
-                      v3.0 configuration.</para>
+                      configuration.</para>
                   </listitem>
                   <listitem>
-                    <para>Additionally, to have RackConnect v3.0 connectivity, any cloud servers
-                      that you build must be built with a RackConnect v3.0 associated cloud
-                      network.</para>
+                    <para>Additionally, to have RackConnect connectivity, any cloud servers that you
+                      build must be built with a RackConnect associated cloud network.</para>
                   </listitem>
                 </itemizedlist>
                 
@@ -228,38 +228,20 @@
   <chapter xml:id="other-features">
     <title>General API information</title>
     <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">The
-      following sections provide some general information about the Rackspace RackConnect v3.0
-      API.</para>
+      following sections provide some general information about the RackConnect v3.0 API.</para>
     <section xml:id="service_Endpoints">
       <title>Service access endpoints</title>
-      <para security="external">The RackConnect v3.0 API provides the following endpoint to make API
-        calls.</para>
-      <para>
-        <table frame="border">
-          <caption>RackConnect service access endpoints</caption>
-          <col width="46%"/>
-          <col width="54%"/>
-          <thead>
-            <tr>
-              <th>Endpoint</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>https://&lt;<replaceable>region</replaceable>>.rackconnect.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable>></td>
-              <td>This endpoint is used to make API calls against the RackConnect  v3.0 API.</td>
-            </tr>
-          </tbody>
-        </table>
+      <para security="external">The RackConnect v3.0 API provides the following endpoint for making
+        API calls.</para>
+      <para security="external"
+          >https://<replaceable>region</replaceable>.rackconnect.api.rackspacecloud.com/v3/<replaceable>tenantId</replaceable><?sbr?><?sbr?>
       </para>
       <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
-        >Replace the <emphasis role="italic">region</emphasis> and <emphasis role="italic"
-          >tenantID</emphasis> placeholders with the region where your cloud servers are located and
-        your cloud account's tenant ID number.</para>
-      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
-        Your account ID is located after the final slash (/) in the <code>publicURL</code> field
-        returned by the authentication response. </para>
+        >Replace the <replaceable>region</replaceable> and
+        <replaceable>tenantID</replaceable> placeholders with the region where your cloud servers
+        are located and your cloud account's tenant ID number, which is also referred to as your
+        account ID. Your account ID is located after the final slash (/) in the publicURL field
+        returned by the authentication response.</para>
     </section>
     <section xml:id="request_Response_Types">
       <title>Request and response type</title>
@@ -374,7 +356,7 @@
             >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
       </listitem>
       <listitem>
-        <para>You can download and install Rest client, a Java application used to test RESTful web
+        <para>You can download and install rest client, a Java application used to test RESTful web
           services, from <link xlink:href="http://code.google.com/p/rest-client/"
             >http://code.google.com/p/rest-client/</link>. </para>
       </listitem>
@@ -521,11 +503,10 @@
           <para>Press <guilabel>Enter</guilabel> to run the cURL command.</para>
         </listitem>
       </orderedlist>
-      <note xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
         <para>The carriage returns in the cURL request examples that are part of the cURL syntax are
           escaped with a backslash (\) to avoid prematurely terminating the command. However, you
           should not escape carriage returns inside the JSON message within the command.</para>
-      </note>
+      
       <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
         >Consider the following cURL authentication request, which is described in detail in <xref
           linkend="Generating_Auth_Token"/>.</para>
@@ -586,10 +567,10 @@
   <chapter xml:id="Generating_Auth_Token">
     <title>Generating an authentication token</title>
     <para>Whether you use cURL or a REST client to interact with the RackConnect v3.0 API, you must
-      generate an authentication token. You provide this token in the X-Auth-Token header in each
-      RackConnect v3.0 API request. </para>
+      generate an authentication token. You provide this token in the <code>X-Auth-Token</code>
+      header in each RackConnect API request. </para>
     <para>Examples 5.1 and 5.2 demonstrate how to use cURL to obtain the authentication token and
-      your account number. You must provide both when making subsequent RackConnect v3.0 API
+      your account number. You must provide both when making subsequent RackConnect API
       requests.</para>
     <para>Remember to replace the placeholder names in the following authentication request examples
       with your information:</para>
@@ -603,8 +584,9 @@
           <para><emphasis role="italic">yourApiKey</emphasis> - Your API access key. You can obtain
             the key from the Rackspace <link xlink:href="http://mycloud.rackspace.com/">Cloud
               Control Panel</link> by selecting <emphasis role="bold">Account Settings</emphasis>
-            from the <emphasis role="italic">yourAccount</emphasis> menu in the top-right corner of
-            the window. </para>
+            from the <emphasis role="bold">Account:</emphasis>
+            <emphasis role="bold"><emphasis role="italic">yourAccountName</emphasis></emphasis>
+            <emphasis role="italic"> </emphasis> menu in the top-right corner of the window. </para>
         </listitem>
       </itemizedlist>
     </para>
@@ -613,8 +595,8 @@
       shown in the following request examples. Note that the <code>v2.0</code> component in the URL
       indicates that you are using version 2.0 of the Cloud Identity API.</para>
     <note>
-      <para>You can use the <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code> for all
-        regions because it is a global endpoint. </para>
+      <para>You can use the <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>
+        endpoint for all regions because it is a global endpoint. </para>
     </note>
     <example>
       <title>cURL authenticate request: XML</title>
@@ -670,7 +652,7 @@
           </listitem>
           <listitem>
             <para> The <code>expires</code> attribute denotes the time after which the token will
-              automatically expire. A token may be manually revoked before the time identified by
+              automatically expire. A token might be manually revoked before the time identified by
               the <code>expires</code> attribute; <code>expires</code> predicts a token's maximum
               possible lifespan but does not guarantee that it will reach that lifespan. Clients are
               encouraged to cache a token until it expires.</para>
@@ -690,23 +672,42 @@
         <command>POST</command> requests for the RackConnect v3.0 API.</para>
   </chapter>
   <chapter xml:id="Working_with_the_RackConnect_V3_api"><title>Working with the RackConnect v3.0 API</title>
-    <para>This chapter explains how to use the RackConnect v3.0 API to perform the following tasks
-      to manage IP addresses:</para>
-    <para><link linkend="List_public_IP_addresses">List public IP addresses for a Cloud Server by
-        using the RackConnect v3.0 API</link></para>
-    <para><link linkend="Adding_a_public_IP_address">Add a public IP address by using the
-        RackConnect v3.0 API</link></para>
-    <para><link linkend="Removing_a-public_IP_address">Remove a public IP address by using the
-        RackConnect v 3.0 API</link></para>
+    <para>This chapter explains how to use the RackConnect API to add and remove public IP addresses
+      from your RackConnect v3.0 cloud servers. It explains how to perform the following
+      tasks:</para>
+    <para>
+      <itemizedlist>
+        <listitem>
+          <para><link linkend="List_public_IP_addresses">List public IP addresses for a cloud
+              server</link></para>
+        </listitem>
+        <listitem>
+          <para><link linkend="Adding_a_public_IP_address">Add a public IP address</link></para>
+        </listitem>
+        <listitem>
+          <para><link linkend="Removing_a-public_IP_address">Remove a public IP
+            address</link></para>
+        </listitem>
+      </itemizedlist>
+    </para>
+    <para>
+      <note>
+        <para>As you complete these tasks, keep in mind that these public IP addresses are being
+          allocated out of your <emphasis role="italic">dedicated</emphasis> environment's assigned
+          public IP blocks. Also, after your RackConnect v3.0 cloud servers are built and active,
+          you can use the RackConnect v3.0 API to add and remove public IP addresses from them at
+          any time.</para>
+      </note>
+    </para>
     <section xml:id="List_public_IP_addresses">
-     <title>Listing public IP addresses</title>
-      <para>After you have obtained your authentication token, you can use RackConnect to list all
-        public IP addresses that apply to a specific cloud server. </para>
+     <title>Listing public IP addresses for a cloud server</title>
+      <para>After you have obtained your authentication token, you can use the RackConnect API to
+        list all public IP addresses that apply to a specific cloud server. </para>
       <para>The following example shows how to issue a <command>GET</command> request that lists all
         the public IP addresses that pertain to a specific server that has been set up for a
         specific tenant.</para>
       <para>
-        <example><title>List public IP addresses - request</title>
+        <example><title>List all public IP addresses - Request</title>
         <programlisting>curl --include \ 
 --request GET \
 --header "X-Auth-Token: <emphasis role="italic"><emphasis role="bold">authTokenId</emphasis></emphasis>" \
@@ -721,10 +722,10 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
           with four hyphens in the <emphasis role="bold">ID</emphasis> or <emphasis role="bold"
             >id</emphasis> section of the server details page.</para>
       </note>
-<para>The following example shows a successful response for a Cloud server that has a public P
+<para>The following example shows a successful response for a cloud server that has a public IP
         address assigned. </para>
       <para>
-        <example><title>List public IP addresses - response</title><programlisting>[ 
+        <example><title>List all public IP addresses - Response</title><programlisting>[ 
   {
    "created": "2014-05-30T03:23:42Z",
    "cloud_server":
@@ -791,18 +792,22 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
  }       </programlisting></example>
       </para>
     </section>
-  <section xml:id="Adding_a_public_IP_address"><title>Adding a public IP address</title><para>You can use the RackConnect API to add a public IP address to a Rackspace Cloud Server. The
+  <section xml:id="Adding_a_public_IP_address"><title>Adding a public IP address</title><para>You can use the RackConnect API to add a public IP address to a Rackspace cloud server. The
         following example shows how to use a <command>POST</command> request to add a new public IP
-        address to a specific Cloud server for a specific tenant.
-    <example><title>Add a public IP address - request</title><programlisting>curl \
+        address to a specific cloud server for a specific tenant. <example>
+          <title>Add a public IP address - Request</title>
+          <programlisting>curl \
 --request POST \
 --header "X-Auth-Token: <emphasis role="bold"><emphasis role="italic">authTokenId</emphasis></emphasis>" \
 --header "Content-Type: application/json" \
 --data '{ "cloud_server": { "id": "<emphasis role="italic"><emphasis role="bold">serverUuid</emphasis></emphasis>" } }' \
 https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips \
-| python -m json.tool</programlisting></example></para>
-      <para>The following is an example of a successful response to a <command>POST</command>
-        request to add a public IP address to a cloud server API request.  <example><title>List a single public IP address - response</title><programlisting>{ 
+| python -m json.tool</programlisting>
+        </example></para>
+      <para>Following is an example of a successful response to a <command>POST</command> request to
+        add a public IP address to a cloud server API request. <example>
+          <title>Add a single public IP address - Response</title>
+          <programlisting>{ 
   "created": "2014-05-30T03:23:42Z",
   "cloud_server":
    {
@@ -825,52 +830,57 @@ https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasi
     "status": "ADDING",
     "status_detail": null,
     "updated": null 
-}</programlisting></example>
+}</programlisting>
+        </example>
         <note>
-          <para>Make sure to write down the <replaceable>id</replaceable> value of the new IP
-            address you have added. You will need it if you want to perform operations, such as
-            deleting an IP address. In the above example, the id is
-            "2d0f586b-37a7-4ae0-adac-2743d5feb450".</para>
+          <para>Be sure to record the <emphasis role="italic">id </emphasis>value of new IP
+            addresses that you add. You need the ID to perform operations such as deleting an IP
+            address. In the preceding example, the ID is 2d0f586b-37a7-4ae0-
+            adac-2743d5feb450.</para>
         </note></para></section>
-  <section xml:id="Removing_a-public_IP_address"><title>Removing a public IP address</title><para>You can use the RackConnect API to remove a public IP address from a Cloud server. </para>
+  <section xml:id="Removing_a-public_IP_address"><title>Removing a public IP address</title><para>You can use the RackConnect API to remove a public IP address from a cloud server. </para>
       <para>To remove a public IP address, issue a <command>DELETE</command> request against the
         RackConnect endpoint by providing the cloud server's public IP v4 UUID. This value is listed
-        as the id entry just above the public_ip_v4 entry in the operations to <emphasis
-          role="italic">list</emphasis> and <emphasis role="italic">add</emphasis> public IP
-        addresses.
-        <example><title>Remove a public IP address - request</title><programlisting>curl --include \
+        as the id entry just above the public_ip_v4 entry in the responses of operations
+          to <emphasis role="italic">list</emphasis> and <emphasis role="italic">add</emphasis>
+        public IP addresses. <example>
+          <title>Remove a public IP address - Request</title>
+          <programlisting>curl --include \
 --request DELETE \
 --header "X-Auth-Token: <emphasis role="italic">authTokenId</emphasis>" \
 --header "Content-Type: application/json" \
-https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips/<emphasis role="bold"><emphasis role="italic">serverPublicIPv4Uuid</emphasis></emphasis></programlisting></example></para>
+https://<emphasis role="italic"><emphasis role="bold">region</emphasis></emphasis>.rackconnect.api.rackspacecloud.com/v3/<emphasis role="italic"><emphasis role="bold">tenantId</emphasis></emphasis>/public_ips/<emphasis role="bold"><emphasis role="italic">serverPublicIPv4Uuid</emphasis></emphasis></programlisting>
+        </example></para>
       <para>This call does not return any JSON data—only an HTTP response code as shown in the
-        example below. A <emphasis role="bold">204</emphasis> response code signifies that the
-        public IP address was successfully removed from the cloud server.
-        <example><title>Remove a public IP address - response</title><programlisting>HTTP/1.1 <emphasis role="bold">204 No
+        following example. A <emphasis role="bold">204</emphasis> response code signifies that the
+        public IP address was successfully removed from the cloud server. <example>
+          <title>Remove a public IP address - Response</title>
+          <programlisting>HTTP/1.1 <emphasis role="bold">204 No
     Content</emphasis>
 Server: Apache-Coyote/1.1
 cache-control: no-cache
 via: 1.1 Repose (Repose/3.0.1)
 expires: -1
 date: Thu, 13 Sep 2014 14:48:58 GMT
-pragma: no-cache</programlisting></example>
+pragma: no-cache</programlisting>
+        </example>
       </para></section>
   </chapter>
   <chapter xml:id="Additional_Resources">
     <title>Additional resources</title>
-    <para>To learn more about the RackConnect API, see the <emphasis role="italic"
-        >Rackspace</emphasis> RackConnect Developer Guide at <link
-        xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>.</para>
+    <para>To learn more about the RackConnect API, see the <emphasis role="italic">RackConnect
+        Developer Guide</emphasis> at <link xlink:href="http://docs.rackspace.com/"
+        >docs.rackspace.com</link>.</para>
     <para>To view a list of support-related articles about RackConnect, visit the <link
         xlink:href="">RackConnect support portal</link> on the Knowledge Center.</para>
-    <para>To learn more about the differences between RackConnect v2 and RackConnect v2, see this
-      article: <link
+    <para>To learn more about the differences between RackConnect v2.0 and RackConnect v3.0, see the
+      article <link
         xlink:href="http://www.rackspace.com/knowledge_center/article/comparing-rackconnect-v30-and-rackconnect-v20"
         >Comparing RackConnect v3.0 and RackConnect v2.0. </link></para>
     <para>For information about Rackspace Cloud products, see <link
         xlink:href="http://www.rackspace.com/cloud/">www.rackspace.com/cloud</link>. This site also
-      provides links to the official Rackspace support channels, including knowledge base articles,
-      forums, phone, chat, and email.</para>
+      provides links to the official Rackspace support channels, including Knowledge Center
+      articles, forums, phone, chat, and email.</para>
     <para>You can follow Rackspace updates and announcements via Twitter at <link
         xlink:href="http://www.twitter.com/rackspace">www.twitter.com/</link>
       <link xlink:href="http://www.twitter.com/rackspace">rackspace</link>.</para>
