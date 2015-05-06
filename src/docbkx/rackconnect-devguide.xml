@@ -84,7 +84,7 @@ values without first consulting with the CDT team.
 <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
             <raxm:product version="v3">rackconnect</raxm:product>
-            <raxm:priority>60</raxm:priority>
+            <raxm:priority>20</raxm:priority>
         </raxm:metadata>
 
      
