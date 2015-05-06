@@ -25,7 +25,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude" 
   xmlns:svg="http://www.w3.org/2000/svg" 
   version="5.0"
-  xml:id="&PREFIX;-gettingstarted" status="DRAFT">
+  xml:id="&PREFIX;-gettingstarted">
   <title>&PRODUCTNAME; v3.0 Getting Started Guide</title>
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content"?>
   <info>

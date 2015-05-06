@@ -35,7 +35,7 @@
 ]>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" version="5.0"
-  xml:id="&PREFIX;-devguide" status="DRAFT">
+  xml:id="&PREFIX;-devguide">
   <title>&PRODUCTNAME; API Developer Guide</title>
   <titleabbrev>&PRODUCTNAME; API DevGuide</titleabbrev>
   <?rax canonical.url.base="http://docs.rackspace.com/rackconnect/api/v3/rackconnect-devguide/content"?>
