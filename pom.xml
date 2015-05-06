@@ -25,6 +25,7 @@
   	<artifactId>rackspace-docs-maven-plugin</artifactId>
 	<executions>
 	  <execution>
+	  	<id>rackconnect-getting-started-external</id>
 	    <goals>
 	      <goal>generate-webhelp</goal> 
 	    </goals>
@@ -39,6 +40,7 @@
 	    </configuration>
 	  </execution>
 		<execution>
+			<id>rackconnect-devguide-external</id>
 			<goals>
 				<goal>generate-webhelp</goal> 
 			</goals>
