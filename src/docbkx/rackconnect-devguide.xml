@@ -75,26 +75,17 @@ values without first consulting with the CDT team.
         <remark>Copyright details are filled in by the build system.</remark>
       </annotation>
     </legalnotice>
-<raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v3">rackconnect</raxm:product>
-            <raxm:priority>60</raxm:priority>
-        </raxm:metadata>
-
-
+    
     <!--
        The values in raxm:metadata control
        where the content appears on the docs.rackspace.com
        landing page.
        Work with Self Service Engineering to find out what to put here.
     -->
-    <!--
-         hide until can get valid value for RackConnect;
-         til then, it causes status=red
-      <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+<raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
             <raxm:product version="v3">rackconnect</raxm:product>
-            <raxm:priority>10</raxm:priority>
+            <raxm:priority>60</raxm:priority>
         </raxm:metadata>
   </info>
   <chapter xml:id="Overview">
