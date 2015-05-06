@@ -64,8 +64,8 @@
     -->
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Getting Started Guide</raxm:displayname>
-      <raxm:product version="3">rackconnect</raxm:product>
-      <raxm:priority>10</raxm:priority>
+      <raxm:product version="v3">rackconnect</raxm:product>
+      <raxm:priority>80</raxm:priority>
     </raxm:metadata>
   </info>
   <chapter xml:id="change_history">

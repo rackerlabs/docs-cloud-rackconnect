@@ -6,26 +6,26 @@
         <!ENTITY ndash  "&#x2013;">
         <!ENTITY mdash  "&#x2014;">
         <!ENTITY hellip "&#x2026;">
-        
+
         <!-- Useful for describing APIs -->
         <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
         <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
         <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
         <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-        
+
         <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
         <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
         <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
         <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
         <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
-        
+
         <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
                  <imageobject>
                   <imagedata fileref="img/Check_mark_23x20_02.svg"
                              format="SVG" scale="60"/>
                 </imageobject>
               </inlinemediaobject>'>
-              
+
         <!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
                  <imageobject>
                   <imagedata fileref="img/Arrow_east.svg"
@@ -49,7 +49,7 @@
     <!--The <productname> text matches the first few words of the title. 
       The build system splits the title into 
       productname + rest of title on the pdf cover.-->
-    <!--If you leave the <pubdate> element empty, 
+    <!--If you leave the <pubdate> element empty,
       the build system inserts today's date automatically. -->
     <pubdate></pubdate>
     <!-- abstract -->
@@ -75,28 +75,18 @@ values without first consulting with the CDT team.
         <remark>Copyright details are filled in by the build system.</remark>
       </annotation>
     </legalnotice>
+    
+    <!--
+       The values in raxm:metadata control
+       where the content appears on the docs.rackspace.com
+       landing page.
+       Work with Self Service Engineering to find out what to put here.
+    -->
 <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
             <raxm:product version="v3">rackconnect</raxm:product>
             <raxm:priority>60</raxm:priority>
         </raxm:metadata>
-
-     
-    <!-- 
-       The values in raxm:metadata control 
-       where the content appears on the docs.rackspace.com
-       landing page.
-       Work with Self Service Engineering to find out what to put here. 
-    -->
-    <!-- 
-         hide until can get valid value for RackConnect;
-         til then, it causes status=red 
-      <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-        <raxm:displayname>API Developer Guide</raxm:displayname>
-        <raxm:product version="v3">&PREFIX;</raxm:product>
-        <raxm:priority>20</raxm:priority>
-      </raxm:metadata>
-      -->
   </info>
   <chapter xml:id="Overview">
     <title>Introduction</title>
@@ -229,7 +219,7 @@ values without first consulting with the CDT team.
       <para>The RackConnect API is region-specific and returns results only for the region specified
         in the URL of the API call itself. For more information on using the API to work with load
         balancer pools, see <link linkend="load-balancer-pools">Load balancer pools</link>.</para></section>
-  
+
   </chapter>
   <chapter xml:id="Authentication">
     <title>Authentication</title>
@@ -760,7 +750,7 @@ Content-Type: application/json
     </section>
   </chapter>
   <chapter xml:id="api-operations" role="api-reference">
-    <!-- role="api-reference" introduces chapter 
+    <!-- role="api-reference" introduces chapter
         with table of operations describing full content of WADL -->
     <title>API Reference</title>
     <para>The RackConnect 3.0 API provides API operations for the following features<itemizedlist>
@@ -788,13 +778,13 @@ Content-Type: application/json
                     >api.rackspace.com</link>
                 </para>
               </listitem>
-              <!-- 
-                2014-11-28 Cloud Networks is not included 
-                in QuickStarts; when it is, update this 
+              <!--
+                2014-11-28 Cloud Networks is not included
+                in QuickStarts; when it is, update this
               <listitem>
                 <para>
-                  SDK QuickStarts at 
-                  <link 
+                  SDK QuickStarts at
+                  <link
                     xlink:href="https://developer.rackspace.com/docs/cloud-servers/getting-started/">
                     developer.rackspace.com
                   </link>
@@ -841,16 +831,16 @@ Content-Type: application/json
         </wadl:resource>
       </wadl:resources>
     </section>
-    <!--      
-      <section 
+    <!--
+      <section
         xml:id="LBPoolNodes_Operations">
         <title>Load balancer pool nodes</title>
         <para>
-          The <code>load_balancer_pool_id</code>returned by 
-          these calls is automatically generated 
-          by the RackConnect automation 
-          and remains constant 
-          unless the load balancer pool 
+          The <code>load_balancer_pool_id</code>returned by
+          these calls is automatically generated
+          by the RackConnect automation
+          and remains constant
+          unless the load balancer pool
           is renamed on your hardware load balancer.
         </para>
         <para> All load balancer pools currently return a status of
@@ -878,37 +868,37 @@ Content-Type: application/json
           <code>tenant_id</code>. Any dedicated servers or cloud
           servers from another cloud account on the same RackConnect
           configuration are counted as external nodes. </para>
-        
+
         <para>This section describes the &PRODUCTNAME; API operations
           that relate to load balancer pool nodes.</para>
-        
-        <wadl:resources 
+
+        <wadl:resources
           xmlns:wadl="http://wadl.dev.java.net/2009/02">
- 
-          <wadl:resource 
+
+          <wadl:resource
             href="../wadl/rackconnect.wadl#load_balancer_pools">
           </wadl:resource>
-        
-          <wadl:resource 
+
+          <wadl:resource
             href="../wadl/rackconnect.wadl#load_balancer_pool_id">
           </wadl:resource>
- 
-            <wadl:resource 
+
+            <wadl:resource
               href="../wadl/rackconnect.wadl#nodes">
-              <wadl:method 
+              <wadl:method
                 href="../wadl/rackconnect.wadl#listNodes1LBPool"/>
-              <wadl:method 
+              <wadl:method
                 href="../wadl/rackconnect.wadl#LBPools-nodes-add1"/>
             </wadl:resource>
-              
-            <wadl:resource 
+
+            <wadl:resource
                 href="../wadl/rackconnect.wadl#details">
-                <wadl:method 
+                <wadl:method
                   href="../wadl/rackconnect.wadl#LBPools-nodes-listall-details"/>
              </wadl:resource>
 
-        </wadl:resources> 
-        
+        </wadl:resources>
+
       </section>
     -->
     <section xml:id="PublicIPs_Operations">
