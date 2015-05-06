@@ -1,0 +1,2 @@
+curl --include \
+ 'dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/cloud_networks'

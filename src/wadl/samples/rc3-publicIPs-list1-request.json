@@ -1,0 +1,2 @@
+curl --include \
+ 'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/public_ips/{id}'

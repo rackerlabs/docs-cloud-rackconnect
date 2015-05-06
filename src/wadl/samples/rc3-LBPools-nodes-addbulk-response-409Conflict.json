@@ -1,3 +1,6 @@
+409 (Conflict)
+Content-Type: application/json
+
 {
     "errors": [
         "Cloud Server {cloud_server_id} is already a member of Load Balancer Pool {load_balancer_pool_id}",
