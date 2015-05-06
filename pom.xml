@@ -31,13 +31,27 @@
 	    <phase>generate-sources</phase>
 	    <configuration>
 	      <includes>
-			rackconnect-devguide.xml,
-			rackconnect-gettingstarted.xml,
-			<!--rackconnect-releasenotes.xml
-		-->
+			rackconnect-gettingstarted.xml
 	      </includes>
+	    	<security>external</security>
+	    	<canonicalUrlBase>http://docs.rackspace.com/rackconnect/api/v3/rackconnect-gettingstarted/content</canonicalUrlBase>
+	    	<webhelpDefaultTopic>Overview.html</webhelpDefaultTopic>
 	    </configuration>
 	  </execution>
+		<execution>
+			<goals>
+				<goal>generate-webhelp</goal> 
+			</goals>
+			<phase>generate-sources</phase>
+			<configuration>
+				<includes>
+					rackconnect-devguide.xml
+				</includes>
+				<security>external</security>
+				<canonicalUrlBase>http://docs.rackspace.com/rackconnect/api/v3/rackconnect-devguide/content</canonicalUrlBase>
+				<webhelpDefaultTopic>Overview.html</webhelpDefaultTopic>
+			</configuration>
+		</execution>
 	</executions>
 	<configuration>
 	  <!-- Set to Internet or intranet to turn on comments -->
