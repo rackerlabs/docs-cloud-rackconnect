@@ -45,7 +45,7 @@
       <holder>Rackspace US, Inc.</holder>
     </copyright>
     <releaseinfo>API v3</releaseinfo>
-    <productname>Rackspace &PRODUCTNAME;</productname>
+    <productname>&PRODUCTNAME;</productname>
     <!--The <productname> text matches the first few words of the title. 
       The build system splits the title into 
       productname + rest of title on the pdf cover.-->
@@ -100,29 +100,31 @@ values without first consulting with the CDT team.
   </info>
   <chapter xml:id="Overview">
     <title>Introduction</title>
-    <para> This is an early draft of the Rackspace-branded documentation describing the
-      &PRODUCTNAME; v3 API. </para>
+    <para> This is an early draft of the Rackspace documentation describing the &PRODUCTNAME; v3
+      API. </para>
     <section xml:id="resources">
       <title>Additional resources</title>
       <para>You can view additional documentation at the following locations:</para>
       <para>
         <itemizedlist>
           <listitem>
-            <para>The draft descriptions of pending features at <link
+            <para>The draft descriptions of pending features is available at <link
                 xlink:href="http://docs.rcv3.apiary.io">http://docs.rcv3.apiary.io</link>
             </para>
           </listitem>
           <listitem>
-            <para>RackConnect Getting Started Guide at <link xlink:href="http://docs.rackspace.com"
+            <para>The <emphasis role="italic">RackConnect Getting Started Guide</emphasis> is
+              available at <link xlink:href="http://docs.rackspace.com"
                 >http://docs.rackspace.com</link></para>
           </listitem>
           <listitem>
-            <para>Getting Started with the RackConnect v3.0 API at: <link
+            <para>A Knowledge Center article about getting tarted with the RackConnect v3.0 API is
+              available at: <link
                 xlink:href="http://www.rackspace.com/knowledge_center/article/getting-started-with-the-rackconnect-v30-api"
                 >http://www.rackspace.com/knowledge_center/article/getting-started-with-the-rackconnect-v30-api</link>.</para>
           </listitem>
           <listitem>
-            <para>RackConnect support articles at: <link
+            <para>RackConnect support articles are available at: <link
                 xlink:href="http://www.rackspace.com/knowledge_center/product-page/rackconnect"
                 >http://www.rackspace.com/knowledge_center/product-page/rackconnect</link>.<?sbr?></para>
           </listitem>
@@ -138,10 +140,9 @@ values without first consulting with the CDT team.
       </para>
     </section>
   </chapter>
-  <chapter xml:id="Concepts"><title>RackConnect Concepts</title>
+  <chapter xml:id="Concepts"><title>RackConnect concepts</title>
     <para>RackConnect v3.0 is the hybrid connectivity offering from Rackspace that enables you to
-      select and combine a set of features of Rackspace dedicated and cloud hosting into one
-      all-encompassing solution. </para>
+      combine features of Rackspace dedicated and cloud hosting into one all-encompassing solution. </para>
     <para>
       <itemizedlist>
         <listitem>
@@ -153,17 +154,17 @@ values without first consulting with the CDT team.
         </listitem>
       </itemizedlist>
     </para>
-    <section xml:id="RackConnect_v3.0_API_overview"><title>RackConnect v3.0 API overview</title><para>RackConnect v3.0 includes an enhanced API that lets you accomplish the following
-      tasks:</para>
+    <section xml:id="RackConnect_v3.0_API_overview"><title>RackConnect v3.0 API overview</title><para>RackConnect v3.0 includes an enhanced API that enables you to accomplish the following
+        tasks:</para>
     <itemizedlist>
       <listitem>
-        <para>Seamlessly add and remove Cloud Servers from your load balancer pools</para>
+        <para>Seamlessly add and remove cloud servers from your load balancer pools</para>
       </listitem>
       <listitem>
         <para>List your available load balancer pools</para>
       </listitem>
       <listitem>
-        <para>Add and remove public IP addresses from your Cloud Servers</para>
+        <para>Add and remove public IP addresses from your cloud servers</para>
       </listitem>
       <listitem>
         <para>List your public IP addresses</para>
@@ -184,12 +185,12 @@ values without first consulting with the CDT team.
       <para>To further increase the security of your RackConnect environment, you also have the
         ability to use the Rackspace dedicated intrusion detection system (IDS) and web application
         firewall (WAF) offerings.</para></section>
-  <section xml:id="load-balancer-pools"><title>Load Balancer Pools</title><para>Load balancers distribute workloads across two or more servers, network links or other
+  <section xml:id="load-balancer-pools"><title>Load balancer pools</title><para>Load balancers distribute workloads across two or more servers, network links or other
         resources. This distribution maximizes throughput, minimizes response time and helps avoid
         overload.</para>
       <para>RackConnect v3.0 supports the dedicated F5 BIG-IP Local Traffic Manager (LTM) and
-        Brocade ADX Series load balancers for use with the RackConnect automated pool membership
-        management capabilities. </para>
+        Brocade ADX Series load balancers for use with the management of RackConnect automated pool
+        membership. </para>
       <para>When your cloud servers host an application that scales up and down (for example, the
         web tier of an application), it is important to have a method for adding and removing cloud
         servers from their associated load balancer pools. If you use a dedicated load balancer with
@@ -203,20 +204,20 @@ values without first consulting with the CDT team.
           <para>Retrieve a list of load balancer pools</para>
         </listitem>
         <listitem>
-          <para>Retrieve pool details for a given load balancer pool</para>
+          <para>Retrieve pool details for a specific load balancer pool</para>
         </listitem>
         <listitem>
-          <para>Retrieve a list of all pool member nodes for a given load balancer pool</para>
+          <para>Retrieve a list of all pool member nodes for a specific load balancer pool</para>
         </listitem>
         <listitem>
-          <para>Retrieve details for a given pool member node (servers) within a given load balancer
-            pool</para>
+          <para>Retrieve details for a specific pool member node (servers) within a specific load
+            balancer pool</para>
         </listitem>
         <listitem>
-          <para>Add a pool member node to a given load balancer pool</para>
+          <para>Add a pool member node to a specific load balancer pool</para>
         </listitem>
         <listitem>
-          <para>Remove a pool member node from a given load balancer pool</para>
+          <para>Remove a pool member node from a specific load balancer pool</para>
         </listitem>
         <listitem>
           <para>Bulk add multiple pool member nodes to one or more load balancer pools</para>
@@ -233,31 +234,31 @@ values without first consulting with the CDT team.
   <chapter xml:id="Authentication">
     <title>Authentication</title>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
-      xmlns:m="http://www.w3.org/1998/Math/MathML">Every REST request against the Rackspace
-      RackConnect Service requires the inclusion of a specific authorization token, supplied by the
+      xmlns:m="http://www.w3.org/1998/Math/MathML">Every REST request against the RackConnect
+      service requires the inclusion of a specific authorization token, supplied by the
         <code>X-Auth-Token</code> HTTP header. Customers obtain this token by first using the
-      Rackspace Cloud Identity Service and supplying a valid user name and API access key. </para>
+      Rackspace Cloud Identity service and supplying a valid user name and API access key. </para>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">To authenticate, submit a
         <code>POST/v2.0/tokens</code> request, presenting valid Rackspace customer credentials in
       the message body to a Rackspace authentication endpoint. </para>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">
-      <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
+      <emphasis role="bold">Get your credentials</emphasis>
     </para>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">You can use either of two sets of credentials: <itemizedlist>
         <listitem>
-          <para>your user name and password </para>
+          <para>Your user name and password </para>
         </listitem>
         <listitem>
-          <para>your user name and API key </para>
+          <para>Your user name and API key </para>
         </listitem>
       </itemizedlist>
     </para>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">Your user name and password are the ones that you
-      use to login to the Cloud Control Panel. After you are logged in, you can use the Cloud
+      use to log in to the Cloud Control Panel. After you are logged in, you can use the Cloud
       Control Panel to obtain your API key.</para>
     <note xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">
@@ -271,7 +272,7 @@ values without first consulting with the CDT team.
     </note>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML"><emphasis role="bold">To find your API
-        key:</emphasis>
+        key</emphasis>
     </para>
     <orderedlist xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:m="http://www.w3.org/1998/Math/MathML">
@@ -280,7 +281,8 @@ values without first consulting with the CDT team.
             >https://mycloud.rackspace.com</link>).</para>
       </listitem>
       <listitem>
-        <para>On the upper-right side of the top navigation pane, click your username.</para>
+        <para>On the upper-right side of the top navigation pane, click the <emphasis role="bold"
+            >Account: <emphasis role="italic">userName</emphasis></emphasis> menu. </para>
       </listitem>
       <listitem>
         <para>From the menu, select <guilabel>Account Settings</guilabel>.</para>
@@ -303,18 +305,17 @@ values without first consulting with the CDT team.
       Together, three components—your user name, your API key, and your tenant ID or cloud account
       number—form the authentication credentials that are required to connect to the Rackspace
       cloud.</para>
-    <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
-      xmlns:m="http://www.w3.org/1998/Math/MathML">To find your tenant ID or cloud account number,
-      locate your user name on the upper-right side of the top navigation pane in the Cloud Control
-      Panel. The tenant ID or account number is in parentheses just to the right of your user
-      name.</para>
+    <para>To find your tenant ID or cloud account number, click the <emphasis role="bold">Account:
+          <emphasis role="italic">userName</emphasis></emphasis> menu in the top navigation pane of
+      the Cloud Control Panel. The tenant ID or account number is listed as the first item in the
+      menu.</para>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">
-      <emphasis role="bold">USE YOUR AUTHENTICATION ENDPOINT</emphasis>
+      <emphasis role="bold">Use your authentication endpoint</emphasis>
     </para>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">Use the following global endpoint to access the
-      Cloud Identity Service: <itemizedlist spacing="compact">
+      Cloud Identity service: <itemizedlist spacing="compact">
         <listitem>
           <para><link xlink:href=" https://identity.api.rackspacecloud.com/v2.0/">
               https://identity.api.rackspacecloud.com/v2.0/</link></para>
@@ -326,23 +327,23 @@ values without first consulting with the CDT team.
         xmlns:m="http://www.w3.org/1998/Math/MathML">If you know your credentials and your
         authentication endpoint, and you can issue a <code>POST /v2.0/tokens</code> request in an
         API call, you have all the basic information that you need to use the Rackspace Cloud
-        Identity Service. </para>
+        Identity service. </para>
       <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
         xmlns:m="http://www.w3.org/1998/Math/MathML">You can use <link
           xlink:href="http://curl.haxx.se/">cURL</link> to try the authentication process in two
-        steps: 1) get a token; 2) send the token to a service.<orderedlist>
+        steps: get a token, and send the token to a service.<orderedlist>
           <listitem>
             <para>Get an authentication token by providing your user name and either your API key or
               your password. Following are examples of both approaches:</para>
             <itemizedlist>
               <listitem>
-                <para>You can request a token by providing your user name and your API key.</para>
+                <para>Your user name and your API key: </para>
                 <para>
                   <programlisting> curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d '{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"<emphasis role="bold">yourUserName</emphasis>", "apiKey":"<emphasis role="bold">yourApiKey</emphasis>" } } }' -H "Content-type: application/json" </programlisting>
                 </para>
               </listitem>
               <listitem>
-                <para>You can request a token by providing your user name and your password.</para>
+                <para>Your user name and your password: </para>
                 <para>
                   <programlisting> curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d '{"auth":{"passwordCredentials":{"username":"<emphasis role="bold">yourUserName</emphasis>","password":"<emphasis role="bold">yourPassword</emphasis>"}}}' -H "Content-type: application/json" </programlisting>
                 </para>
@@ -353,16 +354,17 @@ values without first consulting with the CDT team.
             <para>Review the authentication response. <itemizedlist>
                 <listitem>
                   <para>Successful authentication returns a token that you can use as evidence that
-                    your identity has already been authenticated along with a service catalog, which
-                    lists the endpoints that you can use for Rackspace Cloud services. To use the
+                    your identity has already been authenticated. A service catalog, which lists the
+                    endpoints that you can use for Rackspace Cloud services, is also returned. To
+                    use the token, pass it to other services as an X-Auth-Token header.  To use the
                     token, pass it to other services as an <code>X-Auth-Token</code> header.</para>
                 </listitem>
                 <listitem>
-                  <para>If the Identity service returns a returns a 401 message with a request for
-                    additional credentials, your account requires <link
+                  <para>If the Identity service returns a 401 message with a request for additional
+                    credentials, your account requires <link
                       xlink:href="https://identity.api.rackspacecloud.com/v2.0">multi-factor
                       authentication</link>. To complete the authentication process, submit a second
-                      <guilabel>POST tokens</guilabel> request with these multi-factor
+                      <code>POST /v2.0/tokens</code> request with the following multi-factor
                     authentication credentials: <itemizedlist>
                       <listitem>
                         <para>The session ID value returned in the <code>WWW-Authenticate: OS-MF
@@ -388,10 +390,10 @@ values without first consulting with the CDT team.
             </para>
           </listitem>
           <listitem>
-            <para>Use the authentication token to send a <command>GET</command> to a service you
-              would like to use. Here is an example of passing an authentication token to the Cloud
-              Files service, using the Cloud Files service catalog endpoint that was returned along
-              with the token.</para>
+            <para>Use the authentication token to send a <command>GET</command> request to a service
+              that you want to use. Following is an example of passing an authentication token to
+              the Cloud Files service, using the Cloud Files service catalog endpoint that was
+              returned with the token. </para>
             <para>
               <programlisting>curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
 -H 'X-Auth-Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' --verbose</programlisting>
@@ -401,8 +403,9 @@ values without first consulting with the CDT team.
       </para>
       <tip xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
         xmlns:m="http://www.w3.org/1998/Math/MathML">
-        <para> For links to language binding examples you can adapt to work with the Cloud Identity
-          service, visit <link xlink:href="http://docs.rackspace.com/sdks/guide/content/index.html">
+        <para> For links to language binding examples that you can adapt to work with the Cloud
+          Identity service, visit <link
+            xlink:href="http://docs.rackspace.com/sdks/guide/content/index.html">
             docs.rackspace.com/sdks/guide/content/index.html</link>.</para>
       </tip>
       <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
@@ -414,22 +417,24 @@ values without first consulting with the CDT team.
         <para>If you are programmatically parsing an authentication response, be aware that service
           names are stable for the life of the particular service and can be used as keys. You
           should also be aware that a user's service catalog can include multiple uniquely-named
-          services that perform similar functions. For example, cloudServersOpenStack is the
-          OpenStack version of compute whereas cloudServers is the legacy version of compute. The
-          same user can have access to both services. In the Cloud Identity Service v2.0, the
-          service type attribute can be used as a key to recognize similar services. See the
-          following tip.</para>
+          services that perform similar functions. For example, <emphasis role="italic"
+            >cloudServersOpenStack</emphasis> is the OpenStack version of compute whereas <emphasis
+            role="italic">cloudServers</emphasis> is the legacy version of compute. The same user
+          can have access to both services. In the Cloud Identity v2.0 service, the service type
+          attribute can be used as a key to recognize similar services. See the following
+          tip.</para>
       </important>
       <tip xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
         xmlns:m="http://www.w3.org/1998/Math/MathML">
-        <para>Beginning with Rackspace Cloud Identity Service v2.0 (earlier versions were called
+        <para>Beginning with Rackspace Cloud Identity v2.0 service (earlier versions were called
           Rackspace Cloud Authentication Service), the service catalog includes a service type
-          attribute to identify services that perform similar functions but have different names;
-          for example, <code>type="compute"</code> identifies compute services such as cloudServers
-          and cloudServersOpenStack. Some developers have found the service type attribute to be
-          useful in parsing the service catalog. For Cloud Identity Service v2.0 , you can see the
-          service type attribute in the "Service Catalog in Authentication Response" samples in the
-            <citetitle>Cloud Identity Client Developer Guide</citetitle> at <link
+          attribute to identify services that perform similar functions but have different names.
+          For example, <code>type="compute"</code> identifies compute services such as <emphasis
+            role="italic">cloudServers</emphasis> and <emphasis role="italic"
+            >cloudServersOpenStack</emphasis>. Some developers have found the service type attribute
+          to be useful in parsing the service catalog. For Cloud Identity v2.0 service , you can see
+          the service type attribute in the "Service Catalog in Authentication Response" samples in
+          the <citetitle>Cloud Identity Client Developer Guide</citetitle> at <link
             xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
             >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html</link>.</para>
       </tip>
@@ -437,25 +442,20 @@ values without first consulting with the CDT team.
     <section xml:id="Role_based_access_control">
       <title>Role Based Access Control</title>
       <para>Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud
-        services, including the Rackspace RackConnect API, to authorized users only. RBAC enables
-        Rackspace Cloud customers to specify which account users of their Cloud account have access
-        to which RackConnect API service capabilities, based on roles defined by Rackspace. The
-        permissions to perform certain operations in the RackConnect API – create, read, update,
-        delete – are assigned to specific roles. The Cloud account owner user assigns these roles,
-        either global (multiproduct) or product-specific, to account users. </para>
-      <para>For more information about RBAC, see the <link
+        services, including the RackConnect API, to authorized users only. RBAC enables Rackspace
+        Cloud customers to specify which account users of their Cloud account have access to which
+        RackConnect API service capabilities, based on roles defined by Rackspace.</para>
+      <para>The permissions to perform certain operations in the RackConnect API – create, read,
+        update, delete – are assigned to specific roles. The Cloud account owner
+        (identity:user-admin) can create account users on the account and then assign roles, either
+        global (multiproduct) or product-specific, to those users. Each account has only one account
+        owner, and that role is assigned by default to any Rackspace Cloud account when the account
+        is created.</para>
+        <para>For more information about RBAC, see the <link
           xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Role_Based_Access_Control-d1e808.html"
-          >RBAC</link> section in the <citetitle>Cloud Identity Client Developer
-        Guide</citetitle>.</para>
-      <section xml:id="Assigning_roles_to_account_users">
-        <title>Assigning roles to account users</title>
-        <para>The account owner (identity:user-admin) can create account users on the account and
-          then assign roles to those users. The roles grant the account users specific permissions
-          for accessing the capabilities of the RackConnect service. Each account has only one
-          account owner, and that role is assigned by default to any Rackspace Cloud account when
-          the account is created.</para>
-        <para>For information about how to perform the following tasks, see the <citetitle>Cloud
-            Identity Client Developer Guide</citetitle>:</para>
+          >RBAC</link> section in the <citetitle>Cloud Identity Client Developer Guide</citetitle>.
+        For information about how to perform the following tasks, see the <citetitle>Cloud Identity
+          Client Developer Guide</citetitle>:</para>
         <itemizedlist spacing="compact">
           <listitem>
             <para><link
@@ -477,25 +477,26 @@ values without first consulting with the CDT team.
           <para>The account owner (identity:user-admin) role cannot hold any additional roles
             because it already has full access to all capabilities.</para>
         </note>
-      </section>
+      
     </section>
   </chapter>
   <chapter xml:id="General_API_information">
     <title>General API information</title>
+    <para>The RackConnect v3.0 API is designed for Rackspace cloud accounts that leverage version 3
+      of RackConnect.</para>
     <section xml:id="serviceEndpoints">
       <title>Service access endpoints</title>
-      <para security="external">The RackConnect v3.0 API provides the following endpoint to make API
-        calls.</para>
-      <para>https://&lt;<replaceable>region</replaceable>.rackconnect.api.rackspacecloud.com/v3/&lt;<replaceable>tenantId</replaceable></para>
+      <para security="external">The RackConnect v3.0 API provides the following endpoint for making
+        API calls.</para>
+      <para>https://<replaceable>region</replaceable>.rackconnect.api.rackspacecloud.com/v3/<replaceable>tenantId</replaceable></para>
       <para>
       </para>
       <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
         >Replace the <emphasis role="italic">region</emphasis> and <emphasis role="italic"
           >tenantID</emphasis> placeholders with the region where your cloud servers are located and
-        your cloud account's tenant ID number.</para>
-      <para xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
-        Your account ID is located after the final slash (/) in the <code>publicURL</code> field
-        returned by the authentication response. </para>
+        your cloud account's tenant ID number, which is also referred to as your account ID. Your
+        account ID is located after the final slash (/) in the <code>publicURL</code> field returned
+        by the authentication response.</para>
     </section>
     <section xml:id="contractVersion" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
@@ -550,8 +551,8 @@ values without first consulting with the CDT team.
       <title>Limits</title>
       <para>All accounts are configured with default thresholds, or limits, that manage capacity and
         prevent abuse of the system. </para>
-      <para>There is a limit of 30 requests per minute from each of your Cloud Servers. If you
-        exceed the number of allowed requests per minute, you will receive an HTTP 403 (Forbidden)
+      <para>Each of your cloud servers is limited to making 30 requests per minute. If a server
+        exceeds the number of allowed requests per minute, you will receive an HTTP 403 (Forbidden)
         response code. The counter resets each minute.</para>
       <note>
         <para>If the default limits are too low for your particular application, contact Rackspace
@@ -592,14 +593,14 @@ values without first consulting with the CDT team.
           </tr>
           <tr>
             <td>Client-ID</td>
-            <td>A unique ID for each client instance. The <code>Client-ID</code> is used to avoid
-              echoing a sender's messages back to the same instance, and it can be logged by the
-              server for future use. The client generates the <code>Client-ID</code> once, and it
-              persists between restarts of the client. The client should reuse the same
-                <code>Client-ID</code>. <emphasis role="bold">Note</emphasis>: All message-related
-              operations require that <code>Client-ID</code> is included in the headers to ensure
-              that messages are not echoed back to the client that posted them, unless the client
-              explicitly requests this.</td>
+            <td>A unique ID for each client instance. A unique ID for each client instance. The
+              client ID is used to avoid echoing a sender's messages back to the same instance, and
+              it can be logged by the server for future use. The client generates the client ID
+              once, and it persists between restarts of the client. The client should reuse the same
+              client ID.  <emphasis role="bold">Note</emphasis>: All message-related operations
+              require that <code>Client-ID</code> is included in the headers to ensure that messages
+              are not echoed back to the client that posted them, unless the client explicitly
+              requests this.</td>
           </tr>
           <tr>
             <td>Content-Length</td>
@@ -624,8 +625,8 @@ values without first consulting with the CDT team.
     </section>
     <section xml:id="datetimeformat">
       <title>Date and time format</title>
-      <para>The Rackspace RackConnect service uses an ISO-8601 compliant date format for the display
-        and consumption of date and time values. </para>
+      <para>The RackConnect service uses an ISO-8601 compliant date format for the display and
+        consumption of date and time values. </para>
       <example>
         <title>Service date and time format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
@@ -653,7 +654,7 @@ values without first consulting with the CDT team.
           </tr>
           <tr>
             <td>dd</td>
-            <td>Two-digit day of month</td>
+            <td>Two-digit day of the month</td>
           </tr>
           <tr>
             <td>T</td>
@@ -698,7 +699,7 @@ values without first consulting with the CDT team.
       <para>The following table lists possible responses with their associated codes and
         descriptions.</para>
       <table rules="all">
-        <caption>List of repsonse codes</caption>
+        <caption>List of response codes</caption>
         <thead>
           <tr align="center">
             <td colspan="2">Response</td>
@@ -772,14 +773,14 @@ Content-Type: application/json
         <listitem>
           <para><link linkend="PublicIPs_Operations">Public IPs</link></para>
         </listitem>
-      </itemizedlist>:</para>
+      </itemizedlist></para>
     <section xml:id="CloudNetworks_Operations">
       <title>Cloud networks</title>
       <para> These API operations relate only to cloud networks associated with a RackConnect
         configuration.</para>
       <para> The <code>network_id</code> returned by these calls matches the cloud networks UUID
         returned by the Cloud Networks (Neutron) API. <tip>
-          <para> You can learn about the Cloud Networks API in Rackspace's usual sources of
+          <para> You can learn about the Cloud Networks API in the following sources of Rackspace
             API-related documentation: <itemizedlist>
               <listitem>
                 <para> API operations reference at <link
@@ -801,7 +802,7 @@ Content-Type: application/json
               </listitem>
               -->
               <listitem>
-                <para> API DevGuide, Getting Started, and Release Notes are located at <link
+                <para> API developer guide and getting started guide at <link
                     xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>
                 </para>
               </listitem>
@@ -823,12 +824,12 @@ Content-Type: application/json
       <title>Load balancer pools</title>
       <para>Load balancer pools must be configured in advance by your Network Security team to be
         eligible for use with RackConnect. If you do not see a pool that you expect to see, contact
-        your Support team for further assistance. </para>
+        your Support team for assistance. </para>
       <para>The <code>load_balancer_pool_id</code>returned by these calls is automatically generated
         by the RackConnect automation and remains constant unless the load balancer pool is renamed
         on your hardware load balancer. </para>
       <para> All load balancer pools currently return a status of <code>ACTIVE</code>. Future
-        features may introduce additional statuses. </para>
+        features might introduce additional statuses. </para>
       <para>This section describes the &PRODUCTNAME; API operations that relate to load balancer
         pools.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -912,7 +913,10 @@ Content-Type: application/json
     -->
     <section xml:id="PublicIPs_Operations">
       <title>Public IPs</title>
-      <para> Public IP status values are: <itemizedlist>
+      <para>The RackConnect v3.0 API enables you to add and remove public IP addresses from your
+        RackConnect v3.0 cloud servers. These public IP addresses are being allocated out of your
+          <emphasis role="italic">dedicated</emphasis> environment's assigned public IP blocks. </para>
+      <para> Public IP address status values are as follows: <itemizedlist>
           <listitem>
             <para><code>ADDING</code></para>
           </listitem>
@@ -930,7 +934,7 @@ Content-Type: application/json
           </listitem>
         </itemizedlist></para>
       <para>This section describes the &PRODUCTNAME; API operations that relate to public
-        IPs.</para>
+        IP addresses.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../wadl/rackconnect.wadl#public_ips">
           <wadl:method href="../wadl/rackconnect.wadl#publicIPs-listall"/>

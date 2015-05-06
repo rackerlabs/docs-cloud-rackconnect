@@ -123,7 +123,7 @@
     		id="cloud_server_UUID" 
     		path="cloud_server_id">
     	<param 
-    		name="cloud_server_UUID" 
+    		name="cloud_server_id" 
     		style="query"
     		type="xsd:string">
     		<wadl:doc 
@@ -188,11 +188,19 @@
 			</para>
 			<para>This operation 
 				lists details for 
-				one cloud network 
-				identified by the <code>network_id</code>.
+				the cloud network 
+				identified by the specified <code>network_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-cloudNetworks-list1-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200"
 			xmlns="http://wadl.dev.java.net/2009/02">
@@ -236,11 +244,19 @@
 			</para>
 			<para>This operation 
 				lists details for 
-				all cloud networks 
-				available to <code>tenant_id</code>.
+				all the cloud networks 
+				available to the specified <code>tenant_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-cloudNetworks-listall-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200" 
 			xmlns="http://wadl.dev.java.net/2009/02">
@@ -288,11 +304,19 @@
 			</para>
 			<para>This operation 
 				provides basic information about 
-				one load balancer pool 
-				identified by <code>load_balancer_pool_id</code>.
+				the load balancer pool 
+				identified by the specified <code>load_balancer_pool_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-list1-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200">
 			<doc title="OK">Success.</doc>
@@ -338,10 +362,18 @@
 			<para>This operation 
 				lists details for 
 				all load balancer pools 
-				available to <code>tenant_id</code>.
+				available to the specified <code>tenant_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-listall-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200" 
 			xmlns="http://wadl.dev.java.net/2009/02">
@@ -662,13 +694,21 @@
 			<para>This operation 
 				lists details for 
 				one node 
-				identified by <code>node_id</code> 
+				identified by the specified <code>node_id</code> 
 				in 
 				one load balancer pool 
-				identified by <code>load_balancer_pool_id</code>.
+				identified by the specified <code>load_balancer_pool_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-nodes-list1-details-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200">
 			<doc title="OK">Success.</doc>
@@ -715,7 +755,15 @@
 				identified by <code>load_balancer_pool_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-nodes-listall-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200">
 			<doc title="OK">Success.</doc>
@@ -751,7 +799,15 @@
 				identified by <code>load_balancer_pool_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-LBPools-nodes-listall-details-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200">
 			<doc title="OK">Success.</doc>
@@ -792,12 +848,12 @@
 			xml:lang="EN" 
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
-				Add one public IP. 
+				Add one public IP address. 
 			</para>
 			<para>This operation 
 				provisions a new
 				public IP 
-				for <code>tenant_id</code>.
+				address for the specified <code>tenant_id</code>.
 			</para>
 		</wadl:doc>
 		<request>
@@ -844,12 +900,12 @@
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
-				List public IPs for a server. 
+				List public IP addressess for a server. 
 			</para>
 			<para>This operation 
 				lists all
-				public IPs 
-				for <code>cloud_server_id</code>.
+				public IP addresses 
+				for the specified <code>cloud_server_id</code>.
 			</para>
 		</wadl:doc>
 		<request
@@ -860,8 +916,14 @@
 				type="xsd:string"
 				required="true"
 				xmlns="http://wadl.dev.java.net/2009/02"/>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-publicIPs-listall-request.json"/>
+				</wadl:doc>
+			</representation>
 		</request>
-		<!-- no request body = no sample request -->
 		<response 
 			status="200" 
 			xmlns="http://wadl.dev.java.net/2009/02">
@@ -896,16 +958,16 @@
 		id="publicIPs-delete1"
 		name="DELETE">
 		<wadl:doc 
-			title="Delete one public IP"
+			title="Delete one public IP address"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
 			<para role="shortdesc">
-				Delete one public IP. 
+				Delete one public IP address. 
 			</para>
 			<para>This operation 
 				deletes 
-				one public IP 
-				identified by <code>public_IP_id</code>.
+				the public IP 
+				address identified by the specified <code>public_IP_id</code>.
 			</para>
 		</wadl:doc>
 		<!-- no request body = no sample request -->
@@ -919,19 +981,27 @@
 		id="publicIPs-list1"
 		name="GET">
 		<wadl:doc 
-			title="List one public IP"
+			title="List one public IP adresses"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
 			<para role="shortdesc">
-				List details for one public IP. 
+				List details for one public IP address. 
 			</para>
 			<para>This operation 
 				lists details for 
-				one public IP 
-				identified by <code>public_IP_id</code>.
+				one public IP address
+				identified by the specified <code>public_IP_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-publicIPs-list1-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200"
 			xmlns="http://wadl.dev.java.net/2009/02">
@@ -967,19 +1037,27 @@
 		id="publicIPs-listall"
 		name="GET">
 		<wadl:doc 
-			title="List all public IPs"
+			title="List all public IP addresses"
 			xml:lang="EN" 
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">
-				List details for all public IPs. 
+				List details for all public IP addresses. 
 			</para>
 			<para>This operation 
 				lists details for 
-				all public IPs 
-				available to <code>tenant_id</code>.
+				all public IP addresses 
+				available to the specified<code>tenant_id</code>.
 			</para>
 		</wadl:doc>
-		<!-- no request body = no sample request -->
+		<request>
+			<representation 
+				mediaType="application/json">
+				<wadl:doc xml:lang="EN">
+					<xsdxt:code 
+						href="../wadl/samples/rc3-publicIPs-listall-request.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response 
 			status="200" 
 			xmlns="http://wadl.dev.java.net/2009/02">
