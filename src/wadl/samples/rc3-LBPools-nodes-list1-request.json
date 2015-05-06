@@ -1,6 +1,3 @@
-201 (Created)
-Content-Type: application/json
-
 {
     "created": "2014-05-30T03:23:42Z",
     "cloud_server": {
@@ -10,7 +7,7 @@ Content-Type: application/json
     "load_balancer_pool": {
         "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2"
     },
-    "status": "ADDING",
+    "status": "ACTIVE",
     "status_detail": null,
-    "updated": null
+    "updated": "2014-05-30T03:24:18Z"
 }
