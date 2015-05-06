@@ -63,6 +63,12 @@ Work with the Cloud Doc Tools team to find out what to put here. Once establishe
 values without first consulting with the CDT team.
 -->
     <revhistory>
+      <revision>
+        <date>2015-05-06</date>
+        <revdescription>
+          <para>Added new examples to API operations for making requests</para>
+        </revdescription>
+      </revision>
         <revision>
         <date>2014-12-01</date>
         <revdescription>
