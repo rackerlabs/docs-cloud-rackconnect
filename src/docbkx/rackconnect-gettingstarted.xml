@@ -82,7 +82,7 @@
     <para>RackConnect v3.0 includes an API that enables you to seamlessly add and remove cloud
       servers from your load balancer pools, add and remove public IP addresses from your cloud
       servers, and list cloud networks associated with your RackConnect v3.0 configuration. </para>
-    <para> For more information about how to get started with RackConnect v3.0, see  <link
+    <para> For more information about how to get started with RackConnect v2.0, see  <link
         xlink:href="http://www.rackspace.com/knowledge_center/article/how-do-i-get-started-with-rackconnect-v20"
         >How do I get started with RackConnect 2.0</link>.</para>
     <section xml:id="RackConnect_requirements">
