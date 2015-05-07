@@ -79,6 +79,9 @@
     <para>RackConnect v3.0 is the hybrid connectivity offering from Rackspace that enables you to
       select and combine a set of features of Rackspace dedicated and cloud hosting into one
       all-encompassing solution. </para>
+    <para>RackConnect v3.0 enables you to connect your dedicated servers to the Rackspace cloud,
+      giving you the performance of traditional hosting plus increased security with single-tenant
+      cloud networks. </para>
     <para>RackConnect v3.0 includes an API that enables you to seamlessly add and remove cloud
       servers from your load balancer pools, add and remove public IP addresses from your cloud
       servers, and list cloud networks associated with your RackConnect v3.0 configuration. </para>
