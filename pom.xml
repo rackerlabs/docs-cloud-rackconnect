@@ -57,7 +57,7 @@
 	</executions>
 	<configuration>
 	  <!-- Set to Internet or intranet to turn on comments -->
-	  <enableDisqus>0</enableDisqus>
+	  <enableDisqus>1</enableDisqus>
 	  <!-- feedbackEmail only applies to the internal comment system -->
 	  <feedbackEmail>constanze.kratel@rackspace.com</feedbackEmail>	  
 	  <branding>rackspace</branding>
