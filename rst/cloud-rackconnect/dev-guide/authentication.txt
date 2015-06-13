@@ -1,0 +1,29 @@
+Authentication
+---------------
+
+Every REST request against the RackConnect service requires
+the inclusion of a specific authentication token, supplied by the
+``X-Auth-Token`` HTTP header. You obtain this token by using the
+Rackspace Cloud Identity service and supplying a valid username and API
+access key.
+
+Geographic endpoint
+~~~~~~~~~~~~~~~~~~~~
+
+The Rackspace Cloud Identity service serves as the entry point to all
+Rackspace Cloud APIs and is itself a RESTful web service.
+
+You can use the following endpoints to access the Rackspace Cloud
+Identity service for authentication:
+
+-  https://identity.api.rackspacecloud.com/v2.0/
+
+Retrieving the authentication token
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the *Rackspace Cloud Identity Guide* for information about how to retrieve the 
+authentication token and detailed information about the request and response format and 
+parameters.  
+
+.. include:: role-based-access-control.txt
+

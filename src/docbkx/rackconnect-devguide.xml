@@ -104,7 +104,7 @@ values without first consulting with the CDT team.
       </raxm:metadata>
       -->
   </info>
-  <chapter xml:id="Overview">
+  <chapter xml:id="overview">
     <title>Introduction</title>
     <para> This is an early draft of the Rackspace documentation describing the &PRODUCTNAME; v3
       API. </para>
@@ -146,7 +146,7 @@ values without first consulting with the CDT team.
       </para>
     </section>
   </chapter>
-  <chapter xml:id="Concepts"><title>RackConnect concepts</title>
+  <chapter xml:id="concepts"><title>RackConnect concepts</title>
     <para>RackConnect v3.0 is the hybrid connectivity offering from Rackspace that enables you to
       combine features of Rackspace dedicated and cloud hosting into one all-encompassing solution. </para>
     <para>
@@ -237,7 +237,7 @@ values without first consulting with the CDT team.
         balancer pools, see <link linkend="load-balancer-pools">Load balancer pools</link>.</para></section>
   
   </chapter>
-  <chapter xml:id="Authentication">
+  <chapter xml:id="authentication">
     <title>Authentication</title>
     <para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:m="http://www.w3.org/1998/Math/MathML">Every REST request against the RackConnect
@@ -486,11 +486,11 @@ values without first consulting with the CDT team.
       
     </section>
   </chapter>
-  <chapter xml:id="General_API_information">
+  <chapter xml:id="general-api-information">
     <title>General API information</title>
     <para>The RackConnect v3.0 API is designed for Rackspace cloud accounts that leverage version 3
       of RackConnect.</para>
-    <section xml:id="serviceEndpoints">
+    <section xml:id="service-endpoints">
       <title>Service access endpoints</title>
       <para security="external">The RackConnect v3.0 API provides the following endpoint for making
         API calls.</para>
@@ -504,7 +504,7 @@ values without first consulting with the CDT team.
         account ID is located after the final slash (/) in the <code>publicURL</code> field returned
         by the authentication response.</para>
     </section>
-    <section xml:id="contractVersion" xmlns:m="http://www.w3.org/1998/Math/MathML"
+    <section xml:id="contract-version" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <title>RackConnect contract version</title>
       <para>The Rackspace RackConnect version defines the contract and build information for the
@@ -522,7 +522,7 @@ values without first consulting with the CDT team.
         <para>This document pertains to contract version 3.0.</para>
       </note>
     </section>
-    <section xml:id="Request_Response_Types-d1e903" xmlns:m="http://www.w3.org/1998/Math/MathML"
+    <section xml:id="request-response-types" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <title>Request and response types</title>
       <para>The RackConnect API supports JSON data serialization formats. </para>
@@ -552,7 +552,7 @@ values without first consulting with the CDT team.
         </tbody>
       </table>
     </section>
-    <section xml:id="Limits-d1e1397" xmlns:m="http://www.w3.org/1998/Math/MathML"
+    <section xml:id="limits" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <title>Limits</title>
       <para>All accounts are configured with default thresholds, or limits, that manage capacity and
@@ -566,7 +566,7 @@ values without first consulting with the CDT team.
           justification.</para>
       </note>
     </section>
-    <section xml:id="commonHeaders">
+    <section xml:id="common-headers">
       <title>Common headers</title>
       <para>The following table describes the common headers used by the API.</para>
       <table rules="all">
@@ -629,7 +629,7 @@ values without first consulting with the CDT team.
         </tbody>
       </table>
     </section>
-    <section xml:id="datetimeformat">
+    <section xml:id="date-time-format">
       <title>Date and time format</title>
       <para>The RackConnect service uses an ISO-8601 compliant date format for the display and
         consumption of date and time values. </para>
@@ -689,7 +689,7 @@ values without first consulting with the CDT team.
         </tbody>
       </table>
     </section>
-    <section xml:id="responseCodes-d101e">
+    <section xml:id="response-codes">
       <title>Response codes</title>
       <para>RackConnect returns an HTTP code that denotes the type of response. </para>
       <itemizedlist>
