@@ -11,7 +11,7 @@ given time and are not guaranteed to be compatible with one another. In this exa
 contract version is ``v3``.
 
  
-**Example: Request URL**
+**Request URL**
 
 .. code::  
 
