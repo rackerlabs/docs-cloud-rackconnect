@@ -3,15 +3,17 @@ Additional resources
 
 You can view additional documentation at the following locations:
 
--  Draft descriptions of pending features are available at
-   http://docs.rcv3.apiary.io
+-  Draft descriptions of pending features are available `here`_.
+   
+-  The `RackConnect Getting Started`_ guide.
+   
+-  Knowledge Center article about getting started with the `RackConnect
+   v3.0 API`_.
 
--  The RackConnect Getting Started Guide is available at
-   http://docs.rackspace.com
+-  RackConnect `support articles`_. 
+   
 
--  A Knowledge Center article about getting tarted with the RackConnect
-   v3.0 API is available at:
-   http://www.rackspace.com/knowledge_center/article/getting-started-with-the-rackconnect-v30-api.
-
--  RackConnect support articles are available at:
-   http://www.rackspace.com/knowledge_center/product-page/rackconnect.
+.. _here: http://docs.rcv3.apiary.io
+.. _RackConnect Getting Started: http://www.rackspace.com/knowledge_center/getting-started/rackconnect
+.. _RackConnect v3.0 API: http://www.rackspace.com/knowledge_center/article/getting-started-with-the-rackconnect-v30-api
+.. _support articles: http://www.rackspace.com/knowledge_center/product-page/rackconnect
