@@ -17,9 +17,9 @@ account when the account is created.
 
 For more information about RBAC, see the
 `RBAC <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Role_Based_Access_Control-d1e808.html>`__
-section in the *Cloud Identity Client Developer Guide*. For information
-about how to perform the following tasks, see the *Cloud Identity Client
-Developer Guide*:
+section in the "Cloud Identity Client Developer Guide". For information
+about how to perform the following tasks, see the "Cloud Identity Client
+Developer Guide":
 
 -  `Create account
    users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser__v2.0_users_User_Calls.html>`__
