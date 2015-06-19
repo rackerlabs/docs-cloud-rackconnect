@@ -5,8 +5,6 @@ RackConnect v3.0 is the hybrid connectivity offering from Rackspace that
 enables you to combine features of Rackspace dedicated and cloud hosting
 into one all-encompassing solution.
 
-This section describes the concepts that apply to Cloud Metrics.
-
 Load balancer pools
 ^^^^^^^^^^^^^^^^^^^^^
 
