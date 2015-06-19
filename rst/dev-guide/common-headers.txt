@@ -3,7 +3,7 @@ Common headers
 
 The API uses the common headers described in the following table.
 
-**Table: Common headers**
+**Common headers**
 
 +-----------------------+----------------------------------------------------+
 | Header                | Description                                        |
