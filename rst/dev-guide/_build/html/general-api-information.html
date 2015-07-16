@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rackspace Developer Center</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type='text/css'>
+
+  <!-- drc styles: -->
+  <link rel="stylesheet" href="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/main-ebdad849435665c9fe9a22d338a57bf6.css">
+
+  <!-- local styles: -->
+  <link rel="stylesheet" href="_static/localsphinx.css">
+
+  <link href="/atom.xml" rel="alternate" title="Rackspace Developer Portal" type="application/atom+xml">
+ <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=45237,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+<div id="header" class="navbar navbar-fixed-top navbar-inverse navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand new-landing-sprite rs-developer-logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-btn">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/sdks/">SDKs</a></li>
+                <li><a href="/databases/">Databases</a></li>
+                <li><a href="/docs/">API Docs</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://community.rackspace.com/developers/default">Developer Forum</a></li>
+                        <li><a href="/community/">Outreach &amp; Events</a></li>
+                        <li><a href="https://github.com/rackerlabs/developer.rackspace.com">This site on github</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Developer-to-Developer Support</a></li>-->
+                        <li><a href="http://www.rackspace.com/knowledge_center/">Knowledge Center</a></li>
+                        <li><a href="http://status.rackspace.com">System Health Status</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://my.rackspace.com/portal/auth/login">MyRackspace Portal</a></li>
+                        <li><a href="https://mycloud.rackspace.com">Cloud Control Panel</a></li>
+                        <li><a href="https://manage.rackspacecloud.com/pages/Login.jsp">Cloud Sites Control Panel</a>
+                        </li>
+                        <li><a href="https://apps.rackspace.com">Rackspace Webmail Login</a></li>
+                        <li><a href="https://cp.rackspace.com">Email Admin Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/signup" class="btn btn-default" id="btn-get-started">Sign up for $50/month credit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title-header">
+  <div class="inner">
+    <span class="headline">Rackspace Developer Center</span>
+  </div>
+</div>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-md-9 col-md-push-3 docs-content bodycontent">
+      <div class="document">
+  <div class="documentwrapper">
+      <div class="body" role="main">
+
+  <div class="section" id="general-api-information">
+<h1>General API information<a class="headerlink" href="#general-api-information" title="Permalink to this headline">#</a></h1>
+<p>The RackConnect v3.0 API is designed for Rackspace cloud accounts that
+leverage version 3 of RackConnect.</p>
+<div class="section" id="authentication">
+<span id="common-dg-auth"></span><h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">#</a></h2>
+<p>Every ReST request against a Rackspace Cloud service requires the inclusion of a specific authorization token, supplied by the <cite>X-Auth-Token</cite> HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity service and supplying valid authentication credentials.</p>
+<div class="section" id="authentication-endpoint">
+<span id="common-dg-auth-endpoint"></span><h3>Authentication endpoint<a class="headerlink" href="#authentication-endpoint" title="Permalink to this headline">#</a></h3>
+<p>The Rackspace Cloud Authentication Service serves as the entry point to all Rackspace Cloud APIs and is itself a ReSTful web service.</p>
+<p>Use the following endpoint to access the Cloud Identity service:</p>
+<p><cite>https://identity.api.rackspacecloud.com/v2.0/</cite></p>
+<p>Note that the v2.0 component in the URL indicates that you are using version 2.0 of the Cloud Authentication API.</p>
+</div>
+<div class="section" id="authenticating-by-using-token-based-authentication">
+<span id="common-dg-auth-token"></span><h3>Authenticating by using token-based authentication<a class="headerlink" href="#authenticating-by-using-token-based-authentication" title="Permalink to this headline">#</a></h3>
+<p>Before you can make Rackspace Cloud API requests, you must
+first generate an authentication token. You provide this
+token in the X-Auth-Token header in each Rackspace Cloud API request.</p>
+<p>The examples below demonstrate how to use cURL to obtain the
+authentication token and your account number. You must provide both when
+making subsequent API requests.</p>
+<p>Remember to replace the placeholder names in the following
+authentication request examples with your information:</p>
+<ul>
+<li><p class="first"><em>yourUserName</em> — Your common Rackspace Cloud username, as supplied
+during registration.</p>
+</li>
+<li><p class="first"><em>yourApiKey</em> — Your API access key.</p>
+<p>You can obtain the key from the Rackspace <a class="reference external" href="http://mycloud.rackspace.com/">Cloud Control Panel</a> by selecting
+<strong>Account Settings</strong> from the <em>yourAccount</em> menu in the top-right
+corner of the window.</p>
+</li>
+</ul>
+<p>In the following examples, you submit the request against the Rackspace Cloud Identity
+service endpoint. If the request is successful, the authentication response returns the authentication token, service catalog, and user information as shown in the example <a class="reference internal" href="#common-dg-auth-response"><span>authentication response</span></a>. You can use this information to <a class="reference internal" href="#common-dg-auth-submit-api-request"><span>submit an API request</span></a>.</p>
+<p id="common-dg-auth-request"><strong>Example: Authentication request, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X &#39;POST&#39; \
+     -d &#39;{&quot;auth&quot;:{&quot;RAX-KSKEY:apiKeyCredentials&quot;:{&quot;username&quot;:&quot;yourUserName&quot;,
+        &quot;apiKey&quot;:&quot;yourApiKey&quot;}}}&#39; \
+     -H &quot;Content-Type:
+        application/json&quot;
+</pre></div>
+</div>
+<p><strong>Example: Authentication request, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>POST /v2.0/tokens HTTP/1.1
+User-Agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.15 libssh2/1.2.6
+Host: identity.api.rackspacecloud.com
+Accept: application/xml
+Content-Type: application/xml
+Content-Length: 88
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;auth&gt;
+   &lt;apiKeyCredentials
+       xmlns=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0&quot;
+       username=&quot;jsmith&quot; **&lt;1&gt;**
+       apiKey=&quot;aaaaa-bbbbb-ccccc-12345678&quot;/&gt; **&lt;2&gt;**
+&lt;/auth&gt;
+</pre></div>
+</div>
+<p id="common-dg-auth-response"><strong>Example: Authentication response, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;access&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;serviceCatalog&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">&quot;endpoints&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;internalURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;publicURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;region&quot;</span><span class="p">:</span> <span class="s">&quot;DFW&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s">&quot;MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;internalURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;publicURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;region&quot;</span><span class="p">:</span> <span class="s">&quot;ORD&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s">&quot;MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;cloudFiles&quot;</span><span class="p">,</span>
+                <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;object-store&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s">&quot;endpoints&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;publicURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://servers.api.rackspacecloud.com/v1.0/010101&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s">&quot;010101&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionId&quot;</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionInfo&quot;</span><span class="p">:</span> <span class="s">&quot;https://servers.api.rackspacecloud.com/v1.0&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionList&quot;</span><span class="p">:</span> <span class="s">&quot;https://servers.api.rackspacecloud.com/&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;cloudServers&quot;</span><span class="p">,</span>
+                <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;compute&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s">&quot;endpoints&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;publicURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://dfw.servers.api.rackspacecloud.com/v2/010101&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;region&quot;</span><span class="p">:</span> <span class="s">&quot;DFW&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s">&quot;010101&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionId&quot;</span><span class="p">:</span> <span class="s">&quot;2&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionInfo&quot;</span><span class="p">:</span> <span class="s">&quot;https://dfw.servers.api.rackspacecloud.com/v2&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionList&quot;</span><span class="p">:</span> <span class="s">&quot;https://dfw.servers.api.rackspacecloud.com/&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;publicURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://ord.servers.api.rackspacecloud.com/v2/010101&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;region&quot;</span><span class="p">:</span> <span class="s">&quot;ORD&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s">&quot;010101&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionId&quot;</span><span class="p">:</span> <span class="s">&quot;2&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionInfo&quot;</span><span class="p">:</span> <span class="s">&quot;https://ord.servers.api.rackspacecloud.com/v2&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;versionList&quot;</span><span class="p">:</span> <span class="s">&quot;https://ord.servers.api.rackspacecloud.com/&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;cloudServersOpenStack&quot;</span><span class="p">,</span>
+                <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;compute&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s">&quot;token&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;expires&quot;</span><span class="p">:</span> <span class="s">&quot;2012-09-14T15:11:57.585-05:00&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;858fb4c2-bf15-4dac-917d-8ec750ae9baa&quot;</span><span class="p">,</span>
+            <span class="s">&quot;tenant&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;010101&quot;</span><span class="p">,</span>
+                <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;010101&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;RAX-AUTH:defaultRegion&quot;</span><span class="p">:</span> <span class="s">&quot;DFW&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;170454&quot;</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;MyRackspaceAcct&quot;</span><span class="p">,</span>
+            <span class="s">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;User Admin Role.&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;identity:user-admin&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example: Authentication response, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+Content-Length: 477
+Date: Thu, 12 Apr 2012 18:50:20 GMT
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;access xmlns:os-ksadm=&quot;http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0&quot;
+  xmlns=&quot;http://docs.openstack.org/identity/api/v2.0&quot;
+  xmlns:rax-kskey=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0&quot;
+  xmlns:rax-ksqa=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSQA/v1.0&quot;
+  xmlns:common=&quot;http://docs.openstack.org/common/api/v1.0&quot;
+  xmlns:ksgrp=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0&quot;
+  xmlns:rax-kscatalog=&quot;http://docs.openstack.org/identity/api/ext/OS-KSCATALOG/v1.0&quot;
+  xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot;&gt;
+  &lt;token id=&quot;vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz&quot; expires=&quot;2011-12-08T22:51:02.000-06:00&quot;/&gt;
+  &lt;user id=&quot;123456&quot; name=&quot;jsmith&quot; rax-auth:defaultRegion=&quot;DFW&quot;&gt;
+    &lt;roles&gt;
+      &lt;role id=&quot;identity:admin&quot; name=&quot;identity:admin&quot; description=&quot;Admin Role.&quot;/&gt;
+      &lt;role id=&quot;identity:default&quot; name=&quot;identity:default&quot; description=&quot;Default Role.&quot;/&gt;
+    &lt;/roles&gt;
+  &lt;/user&gt;
+  &lt;serviceCatalog&gt;
+    &lt;service type=&quot;rax:database&quot; name=&quot;cloudDatabases&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://dfw.databases.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://ord.databases.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;rax:load-balancer&quot; name=&quot;cloudLoadBalancers&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;compute&quot; name=&quot;cloudServersOpenStack&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot; tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://dfw.servers.api.rackspacecloud.com/v2/1100111&quot;&gt;
+        &lt;version id=&quot;2&quot; info=&quot;https://dfw.servers.api.rackspacecloud.com/v2/&quot;
+          list=&quot;https://dfw.servers.api.rackspacecloud.com/&quot; /&gt;
+      &lt;/endpoint&gt;
+      &lt;endpoint region=&quot;ORD&quot; tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://ord.servers.api.rackspacecloud.com/v2/1100111&quot;&gt;
+        &lt;version id=&quot;2&quot; info=&quot;https://ord.servers.api.rackspacecloud.com/v2/&quot;
+          list=&quot;https://ord.servers.api.rackspacecloud.com/&quot; /&gt;
+      &lt;/endpoint&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;compute&quot; name=&quot;cloudServers&quot;&gt;
+      &lt;endpoint tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://servers.api.rackspacecloud.com/v1.0/1100111&quot;&gt;
+        &lt;version id=&quot;1.0&quot;
+          info=&quot;https://servers.api.rackspacecloud.com/v1.0/&quot;
+          list=&quot;https://servers.api.rackspacecloud.com/&quot;/&gt;
+      &lt;/endpoint&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;object-store&quot; name=&quot;cloudFiles&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        internalURL=&quot;https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        internalURL=&quot;https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;rax:object-cdn&quot; name=&quot;cloudFilesCDN&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;rax:dns&quot; name=&quot;cloudDNS&quot;&gt;
+      &lt;endpoint tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://dns.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+    &lt;/service&gt;
+  &lt;/serviceCatalog&gt;
+&lt;/access&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For detailed information about the authentication request and response, see
+<a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html">authentication request and response</a> in the <em>Cloud Identity Developer Guide</em>.</p>
+</div>
+</div>
+<div class="section" id="submit-api-request">
+<span id="common-dg-auth-submit-api-request"></span><h3>Submit API request<a class="headerlink" href="#submit-api-request" title="Permalink to this headline">#</a></h3>
+<p>After you authenticate successfully, you can submit
+an API request for any service included in the service catalog.</p>
+<ol class="arabic">
+<li><p class="first">In the authentication response, copy the token <cite>id</cite> value from the
+token object and save it, or export it to an environment variable
+that can be supplied in the <cite>X-Auth-Token</cite> header required in each
+API request. In this example, the token value is
+<cite>123abc5368901230076b12357897898</cite>.</p>
+<div class="code highlight-python"><div class="highlight"><pre>&quot;token&quot;:
+      {
+        &quot;RAX-AUTH:authenticatedBy&quot;: [
+            &quot;APIKEY&quot;
+                ],
+        &quot;expires&quot;: &quot;2015-01-09T15:08:53.645-06:00&quot;,
+        &quot;id&quot;: &quot;123abc5368901230076b12357897898&quot;
+      }
+</pre></div>
+</div>
+</li>
+<li><p class="first">Find the endpoint URL for the service that you want to access.</p>
+<p>For example, the endpoint URL for Cloud Files is
+<cite>https://storage101.ord1.clouddrive.com/v1/yourTenantID</cite>.</p>
+</li>
+<li><p class="first">Submit an API request to the service endpoint that you identified.</p>
+<p>The following example shows a cURL request to retrieve a list of
+containers for a tenant by using the Cloud Files API.</p>
+<div class="code highlight-python"><div class="highlight"><pre>$ cURL -i -s \
+-X GET https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_9c24e3db-52bf-4f26-8dc1-220871796e9f \
+-H &quot;X-Auth-Token: $AUTH_TOKEN&quot; \
+-H &quot;Content-type: application/json&quot;  --verbose | python -m json.tool
+</pre></div>
+</div>
+<p>If the authentication token is accepted, the Cloud Files service
+returns the following response if the authentication token is
+accepted.</p>
+<div class="code highlight-python"><div class="highlight"><pre>GET /v1/MossoCloudFS_9c24e3db-52bf-4f26-8dc1-220871796e9f HTTP/1.1
+User-Agent: curl/7.30.0
+Host: storage101.ord1.clouddrive.com
+Accept: */*
+X-Auth-Token: 69dc089d983f4729af29bec5a7dc6426
+Content-type: application/json
+
+ HTTP/1.1 200 OK
+ Content-Length: 22
+ X-Account-Object-Count: 0
+ X-Account-Storage-Policy-Policy-0-Bytes-Used: 0
+ X-Timestamp: 1345588196.72805
+ X-Account-Storage-Policy-Policy-0-Object-Count: 0
+ X-Account-Meta-Temp-Url-Key: e1f97840118eafc550d45dbd8e530c11
+ X-Account-Bytes-Used: 0
+ X-Account-Container-Count: 3
+ Content-Type: text/plain; charset=utf-8
+ Accept-Ranges: bytes
+ X-Trans-Id: tx1353de66dd9d49da84eda-00544799f4ord1
+ Date: Wed, 15 June 2015 11:50:12 GMT
+
+ metest
+ mytest
+ mytest2
+ * Connection #0 to host storage101.ord1.clouddrive.com left intact
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="manage-authentication-tokens">
+<span id="common-dg-auth-manage"></span><h3>Manage authentication tokens<a class="headerlink" href="#manage-authentication-tokens" title="Permalink to this headline">#</a></h3>
+<p>Authentication tokens are valid for 24 hours by default. The expiration
+time stamp is included in the token object returned in the
+authentication response. Administrators and users can invalidate a token
+immediately by submitting a <strong>Revoke token</strong> API request to the Identity
+service endpoint.</p>
+<p>If you re-authenticate before the <cite>token</cite> expires, the Identity
+service returns the same token as long as it remains valid.</p>
+<p>When a token expires or becomes invalid, any API request submitted
+against Rackspace Cloud services returns a 401 error message. To regain
+access, submit another <strong>POST tokens</strong> request to the authentication
+endpoint.</p>
+<p><strong>Best practices</strong></p>
+<ul>
+<li><p class="first">Cache authentication tokens.</p>
+<p>By default, the Rackspace Cloud Identity service makes an
+authentication request before every API call.</p>
+<p>To speed up your API operations and reduce system load, store the
+authentication token in a secure cache or database so that the
+API can use the stored information, instead of having to
+re-authenticate for each API request. You can re-use the cached
+token value as long as it remains valid.</p>
+</li>
+<li><p class="first">Design applications to re-authenticate after receiving a
+<cite>401 Unauthorized</cite> response from a service endpoint, or use
+either of the following methods to get a new token before the
+existing token expires.</p>
+</li>
+<li><p class="first">Submit a <strong>POST tokens</strong> request within an hour of the token
+expiration to obtain a new token. Note that this behavior is a
+Rackspace customization of the OpenStack Identity (keystone)
+implementation.</p>
+</li>
+<li><p class="first">Submit a <strong>DELETE token</strong> request to revoke the existing
+token, and then followed by a <strong>POST tokens</strong> request to get a new token.</p>
+</li>
+<li><p class="first">To simplify authentication, credential, and token management, use an
+<a class="reference external" href="https://wiki.openstack.org/wiki/OpenStackClients">OpenStack command-line client application</a> or one of the <a class="reference external" href="https://developer.rackspace.com/sdks/">Rackspace SDKs</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="service-access-endpoints">
+<h2>Service access endpoints<a class="headerlink" href="#service-access-endpoints" title="Permalink to this headline">#</a></h2>
+<p>The RackConnect v3.0 API provides the following endpoint for making API
+calls.</p>
+<p><code class="docutils literal"><span class="pre">https://&lt;region&gt;.rackconnect.api.rackspacecloud.com/v3/&lt;tenantId&gt;</span></code></p>
+<p>Replace the <code class="docutils literal"><span class="pre">&lt;region&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;tenantId&gt;</span></code> placeholders with the region where your
+cloud servers are located and your cloud account&#8217;s tenant ID number,
+which is also referred to as your account ID. Your account ID is located
+after the final slash (//) in the <code class="docutils literal"><span class="pre">publicURL</span></code> field returned in the
+authentication response.</p>
+</div>
+<div class="section" id="contract-version">
+<h2>Contract version<a class="headerlink" href="#contract-version" title="Permalink to this headline">#</a></h2>
+<p>The Rackspace RackConnect version defines the contract and build
+information for the API.</p>
+<p>The contract version denotes the data model and behavior that the API
+supports. The requested contract version is included in all request
+URLs. Different contract versions of the API might be available at any
+given time and are not guaranteed to be compatible with one another. In this example, the
+contract version is <code class="docutils literal"><span class="pre">v3</span></code>.</p>
+<p><strong>Request URL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>https://dfw.rackconnect.api.rackspacecloud.com/v3/123456
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This document pertains to contract version 3.0.</p>
+</div>
+</div>
+<div class="section" id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">#</a></h2>
+<p>All accounts are configured with default thresholds, or limits, that
+manage capacity and prevent abuse of the system.</p>
+<p>Each of your cloud servers is limited to making 30 requests per minute.
+If a server exceeds the number of allowed requests per minute, you will
+receive an HTTP 403 (Forbidden) response code. The counter resets each
+minute.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the default limits are too low for your particular application,
+contact Rackspace Cloud support to request an increase. All requests
+require reasonable justification.</p>
+</div>
+</div>
+<div class="section" id="common-headers">
+<h2>Common headers<a class="headerlink" href="#common-headers" title="Permalink to this headline">#</a></h2>
+<p>The API uses the common headers described in the following table.</p>
+<p><strong>Common headers</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>X-Auth-Token</td>
+<td>Authentication token. Required.</td>
+</tr>
+<tr class="row-odd"><td>X-Project-Id</td>
+<td>A unique ID for the user to which the value of
+<code class="docutils literal"><span class="pre">X-Auth-Token</span></code> grants access. The unique ID is
+your account ID.</td>
+</tr>
+<tr class="row-even"><td>Accept</td>
+<td>Media type. Initially, only <code class="docutils literal"><span class="pre">application/json</span></code>
+is supported.</td>
+</tr>
+<tr class="row-odd"><td>Accept-Encoding</td>
+<td>Specifies that the agent accepts gzip-encoded
+response bodies</td>
+</tr>
+<tr class="row-even"><td>Client-ID</td>
+<td><p class="first">A unique ID for each client instance. A unique ID
+for each client instance. The client ID is used to
+avoid echoing a sender&#8217;s messages back to the same
+instance, and it can be logged by the server for
+future use. The client generates the client ID
+once, and it persists between restarts of the
+client. The client should reuse the same client
+ID.</p>
+<p class="last"><strong>Note</strong>: All message-related operations
+require that <code class="docutils literal"><span class="pre">Client-ID</span></code> is included in the
+headers to ensure that messages are not echoed
+back to the client that posted them, unless the
+client explicitly requests this.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>Content-Length</td>
+<td>For <strong>POST</strong> or <strong>PUT</strong> requests, the length in
+bytes of the message document being submitted</td>
+</tr>
+<tr class="row-even"><td>Content-Type</td>
+<td><code class="docutils literal"><span class="pre">application/json</span></code></td>
+</tr>
+<tr class="row-odd"><td>Date</td>
+<td>Current date and time</td>
+</tr>
+<tr class="row-even"><td>Host</td>
+<td>Host name of the API</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="date-and-time-format">
+<h2>Date and time format<a class="headerlink" href="#date-and-time-format" title="Permalink to this headline">#</a></h2>
+<p>The RackConnect service uses an ISO-8601 compliant date format for the display and consumption of date and time values.</p>
+<p>The system time is expressed as UTC.</p>
+<p><strong>Example: Date and time format</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>yyyy-MM-dd&#39;T&#39;HH:mm:ssZ
+</pre></div>
+</div>
+<p>For example, the UTC-5 format for May 19, 2015 at 8:07:08 a.m. is</p>
+<div class="code highlight-python"><div class="highlight"><pre>2015-05-19T08:07:08-05:00
+</pre></div>
+</div>
+<p><strong>Date and time format codes</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">yyyy</th>
+<th class="head">Four digit year</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>MM</td>
+<td>Two digit month</td>
+</tr>
+<tr class="row-odd"><td>DD</td>
+<td>Two digit day</td>
+</tr>
+<tr class="row-even"><td>T</td>
+<td>Separator for date/time</td>
+</tr>
+<tr class="row-odd"><td>HH</td>
+<td>Two digit hour (00-23)</td>
+</tr>
+<tr class="row-even"><td>mm</td>
+<td>Two digit minute</td>
+</tr>
+<tr class="row-odd"><td>ss</td>
+<td>Two digit second</td>
+</tr>
+<tr class="row-even"><td>Z</td>
+<td>RFC 8601 timezone (offset from GMT).
+If Z is not replaced with the offset from GMT,
+it indicates a 00:00 offset.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="status-codes">
+<span id="common-dg-status"></span><h2>Status codes<a class="headerlink" href="#status-codes" title="Permalink to this headline">#</a></h2>
+<p>When you send an API request to a Rackspace Cloud service, the service returns an
+object containing an HTTP status code the denotes the response. The response body
+returns additional information about the status code.</p>
+<p>HTTP status codes come in different classes. Classes are determined by the first
+digit of the status code:</p>
+<blockquote>
+<div><ul class="simple">
+<li>2xx (Success)</li>
+<li>4xx (Client error)</li>
+<li>5xx (Server error)</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>HTTP status codes are not standard across all Rackspace Cloud services.
+The same code could have multiple response types. Read the response body
+carefully to accurately the determine the nature of the response.</li>
+<li>For a more comprehensive list of HTTP status codes, refer to <a class="reference external" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">RFC-7231</a>.</li>
+</ul>
+</div>
+<div class="section" id="response-body">
+<span id="common-dg-status-body"></span><h3>Response body<a class="headerlink" href="#response-body" title="Permalink to this headline">#</a></h3>
+<p>The response body of HTTP status codes varies by service and type. Responses may contain
+some or all of these elements:</p>
+<ul class="simple">
+<li>Title</li>
+<li><code class="docutils literal"><span class="pre">type</span></code></li>
+<li><code class="docutils literal"><span class="pre">code</span></code></li>
+<li><code class="docutils literal"><span class="pre">message</span></code></li>
+<li><code class="docutils literal"><span class="pre">details</span></code></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Elements such as <code class="docutils literal"><span class="pre">type</span></code>, <code class="docutils literal"><span class="pre">message</span></code>, and <code class="docutils literal"><span class="pre">details</span></code> only appear with 4xx (Client error)
+and 5xx (Server Error) status codes.</p>
+</div>
+<p><strong>Example: Error message syntax</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>{ &quot;error&quot;: {
+ &quot;type&quot;: &quot;failure type&quot;,
+ &quot;code&quot;: HTTP status code,
+ &quot;message&quot;: &quot;detailed message&quot;,
+ &quot;details&quot;: &quot;any specific details about the error&quot;
+ }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="xx-status-codes">
+<span id="common-dg-status-two"></span><h3>2xx status codes<a class="headerlink" href="#xx-status-codes" title="Permalink to this headline">#</a></h3>
+<p>The 2xx class status code confirms that a request has succeeded.</p>
+<p>The following table lists possible 2xx status codes with their associated
+descriptions:</p>
+<blockquote>
+<div><p><strong>Table: 2xx status codes</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="38%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Status code</th>
+<th class="head">Response</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td><code class="docutils literal"><span class="pre">OK</span></code></td>
+<td>The request has succeeded.
+(Some API calls might return
+201 instead.)</td>
+</tr>
+<tr class="row-odd"><td>201</td>
+<td><code class="docutils literal"><span class="pre">Created</span></code></td>
+<td>The request has been fulfilled
+and a new resource was created.</td>
+</tr>
+<tr class="row-even"><td>202</td>
+<td><code class="docutils literal"><span class="pre">Accepted</span></code></td>
+<td>The request has been accepted
+for processing.</td>
+</tr>
+<tr class="row-odd"><td>204</td>
+<td><code class="docutils literal"><span class="pre">No</span> <span class="pre">Content</span></code></td>
+<td>No additional content sent to
+response body despite the
+request being filled.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p id="common-dg-status-two-example">The following examples show basic <code class="docutils literal"><span class="pre">200</span> <span class="pre">OK</span></code> request. Since the request succeeded,
+no <code class="docutils literal"><span class="pre">type</span></code>, <code class="docutils literal"><span class="pre">message</span></code>, or <code class="docutils literal"><span class="pre">details</span></code> elements are contained in the response
+body:</p>
+<p><strong>Example: basic success response, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 455
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;3593a5e9-83af-4eb8-ae1a-25f07b747d80&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80&lt;/callbackUrl&gt;
+    &lt;status&gt;COMPLETED&lt;/status&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: basic success response, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 190
+
+{
+  &quot;status&quot; : &quot;COMPLETED&quot;,
+  &quot;jobId&quot; : &quot;3593a5e9-83af-4eb8-ae1a-25f07b747d80&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80&quot;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="common-dg-status-four">
+<span id="id1"></span><h3>4xx status codes<a class="headerlink" href="#common-dg-status-four" title="Permalink to this headline">#</a></h3>
+<p>The 4xx class status code indicates that a request contains errors or cannot
+be fulfilled.</p>
+<p>The following table lists possible 4xx status codes with their associated
+descriptions:</p>
+<blockquote>
+<div><p><strong>Table: 4xx status codes</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="39%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Status code</th>
+<th class="head">Response</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>400</td>
+<td><code class="docutils literal"><span class="pre">badRequest</span></code></td>
+<td>There was one or more errors
+in the user request.</td>
+</tr>
+<tr class="row-odd"><td>401</td>
+<td><code class="docutils literal"><span class="pre">unauthorized</span></code></td>
+<td>The supplied token is not
+authorized to access the
+resources, either it&#8217;s
+expired or invalid.</td>
+</tr>
+<tr class="row-even"><td>403</td>
+<td><code class="docutils literal"><span class="pre">forbidden</span></code></td>
+<td>Access to the requested
+resource was denied.</td>
+</tr>
+<tr class="row-odd"><td>404</td>
+<td><code class="docutils literal"><span class="pre">Not</span> <span class="pre">Found</span></code></td>
+<td>The back-end services did not
+find anything matching the
+request-URI.</td>
+</tr>
+<tr class="row-even"><td>405</td>
+<td><code class="docutils literal"><span class="pre">badMethod</span></code></td>
+<td>The requested method is not
+allowed for this resource.</td>
+</tr>
+<tr class="row-odd"><td>412</td>
+<td><code class="docutils literal"><span class="pre">invalidImage</span></code></td>
+<td>This fault is related to
+creating volumes for the boot
+from volume feature. The
+uncompressed image size must
+be 127 GB or less.</td>
+</tr>
+<tr class="row-even"><td>413</td>
+<td><code class="docutils literal"><span class="pre">overLimit</span></code></td>
+<td>Either the number of entities
+in the request is larger than
+allowed limits, or the user
+has exceeded allowable
+request rate limits. See the
+details element for more
+specifics. Contact support if
+you think you need higher
+request rate limits.</td>
+</tr>
+<tr class="row-odd"><td>415</td>
+<td><code class="docutils literal"><span class="pre">badMediaType</span></code></td>
+<td>The requested content type is
+not supported by this service</td>
+</tr>
+<tr class="row-even"><td>422</td>
+<td><code class="docutils literal"><span class="pre">unprocessableEntity</span></code></td>
+<td>The requested resource could
+not be processed on at the
+moment.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p id="common-dg-status-four-example">The following <code class="docutils literal"><span class="pre">badRequest</span></code> examples show errors when the volume size of a request
+is invalid.</p>
+<p><strong>Example: badRequest fault on volume size errors, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 400 None
+Content-Type: application/xml
+Content-Length: 121
+Date: Mon, 28 Nov 2011 18:19:37 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;badRequest code=&quot;400&quot; xmlns=&quot;http://docs.rackspace.com/cbs/api/v1.0&quot;&gt;
+    &lt;message&gt; Volume &#39;size&#39; needs to be a positive integer value, -1.0
+        cannot be accepted. &lt;/message&gt;
+&lt;/badRequest&gt;
+</pre></div>
+</div>
+<p><strong>Example: badRequest fault on volume size errors, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 400 None
+Content-Length: 120
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 29 Nov 2011 00:33:48 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;badRequest&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;code&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span>
+      <span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;Volume &#39;size&#39; needs to be a positive integer value, -1.0 cannot be accepted.&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="common-dg-status-five">
+<span id="id2"></span><h3>5xx status codes<a class="headerlink" href="#common-dg-status-five" title="Permalink to this headline">#</a></h3>
+<p>The 5xx status code indicates that a request cannot be fulfilled because the
+server has encountered an error.</p>
+<p>The following table lists possible 5xx status codes with their associated
+descriptions:</p>
+<blockquote>
+<div><p><strong>Table: 5xx status codes</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="32%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Status code</td>
+<td>Response</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>500</td>
+<td><code class="docutils literal"><span class="pre">instanceFault</span></code></td>
+<td>This is a generic server error and
+the message contains the reason
+for this error. This error could
+error could wrap several error
+messages and is a catch all.</td>
+</tr>
+<tr class="row-odd"><td>501</td>
+<td><code class="docutils literal"><span class="pre">notImplemented</span></code></td>
+<td>The requested method or resource
+is not implemented.</td>
+</tr>
+<tr class="row-even"><td>503</td>
+<td><code class="docutils literal"><span class="pre">serviceUnavailable</span></code></td>
+<td>The request has been accepted
+for processing.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p id="common-dg-status-five-example">The following <code class="docutils literal"><span class="pre">instanceFault</span></code> examples show errors when the server has
+erred or cannot perform the requested operation.</p>
+<p><strong>Example: instanceFault response, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 500 Internal Server Error
+Content-Type: application/xml
+Content-Length: 121
+Date: Mon, 28 Jun 2015 18:19:37 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;instanceFault code=&quot;500&quot;
+    xmlns=&quot;http://docs.rackspace.com/cbs/api/v1.0&quot;&gt;
+    &lt;message&gt; The server has either erred or is incapable of
+        performing the requested operation. &lt;/message&gt;
+&lt;/instanceFault&gt;
+</pre></div>
+</div>
+<p><strong>Example: instanceFault response, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 500 Internal Server Error
+Content-Length: 120
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 29 Jun 2015 00:33:48 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;instance_fault&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;code&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
+      <span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;The server has either erred or is incapable of performing the requested operation.&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="synchronous-versus-asynchronous-responses">
+<span id="common-dg-status-synch"></span><h3>Synchronous versus asynchronous responses<a class="headerlink" href="#synchronous-versus-asynchronous-responses" title="Permalink to this headline">#</a></h3>
+<p><strong>Synchronous</strong></p>
+<p><em>Synchronous</em> responses occur at request time. Synchronous responses contains all or some
+of same elements as found in the <a class="reference internal" href="#common-dg-status-body"><span>response body</span></a> attached
+to an HTTP status code.</p>
+<p><strong>GET</strong> requests often return <em>synchronous</em> responses, since the request is always
+retrieving existing information.</p>
+<p id="common-dg-status-aynch"><strong>Asynchronous</strong></p>
+<p><em>Asynchronous</em> responses occur in the background while an instance, database, or
+user is being built or an instance is executing an action.</p>
+<p><strong>PUT</strong>, <strong>POST</strong>, and <strong>DELETE</strong> requests return <em>asynchronous</em> responses. These
+responses take some time to process. Therefore an <em>asynchronous</em> response return
+<code class="docutils literal"><span class="pre">202</span> <span class="pre">Accepted</span></code> responses containing information with a callback URL, which allows the progress,
+status, and/or response information of the call to be retrieved at a later point in time.</p>
+<p>When an asynchronous request returns an error, the system places the instance, database,
+or user in an ERROR state and embeds the fault in the offending instance, database, or user.</p>
+<p>Asynchronous responses contain these elements:</p>
+<p><strong>Attributes for asynchronous responses</strong></p>
+<dl class="docutils">
+<dt>jobId</dt>
+<dd>An identifier for the specific request.
+Inclusion: Basic and Detail</dd>
+<dt>callbackUrl</dt>
+<dd>Resource locator for querying the status of the request.
+Inclusion: Basic and Detail</dd>
+<dt>status</dt>
+<dd>An indicator of the request status: INITIALIZED, RUNNING, COMPLETED, or
+ERROR.
+Inclusion: Basic and Detail</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">INITIALIZED is the status that immediately precedes RUNNING and is
+the first possible state of a job. It indicates acceptance of the job.</p>
+</div>
+<dl class="docutils">
+<dt>requestUrl</dt>
+<dd>The url of the original request.
+Inclusion: Detail only</dd>
+<dt>verb</dt>
+<dd>The type of the original request: PUT, POST, or DELETE.
+Inclusion: Detail only</dd>
+<dt>request</dt>
+<dd>The original request data, if any.
+Inclusion: Detail only</dd>
+<dt>response</dt>
+<dd>The results of a COMPLETE operation, if any.
+Inclusion: Detail only</dd>
+<dt>error</dt>
+<dd>The results of an ERROR operation.
+Inclusion: Detail only</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that an asynchronous operation, if it fails, may not give the user an error,
+and the operation can error out without a failure notification.</p>
+</div>
+<p>The asynchronous response body will look similar to the following
+examples, depending on whether basic or detailed information is
+requested.</p>
+<p>If an error occurs as a result of processing the original request,
+querying the callback URL will return the information about the error.
+If you use the callback URL without specifying the query parameter
+<code class="docutils literal"><span class="pre">showDetails=true</span></code>, only basic information is provided:</p>
+<p id="common-dg-status-async-example"><strong>Example: Basic error asynchronous response, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 451
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/callbackUrl&gt;
+    &lt;status&gt;ERROR&lt;/status&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: Basic error asynchronous response, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 186
+
+{
+  &quot;status&quot; : &quot;ERROR&quot;,
+  &quot;jobId&quot; : &quot;e63886c9-acf0-4e5d-8023-09a0fae37446&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&quot;
+}
+</pre></div>
+</div>
+<p>If you use the callback URL with the query parameter
+<code class="docutils literal"><span class="pre">showDetails=true</span></code>, then detailed information is provided:</p>
+<p><strong>Example: Detail error asynchronous response, XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/xml
+Content-Length: 847
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;asyncresponse xmlns:ns2=&quot;http://www.w3.org/2005/Atom&quot; xmlns=&quot;http://docs.rackspacecloud.com/dns/api/v1.0&quot; xmlns:ns3=&quot;http://docs.rackspacecloud.com/dns/api/management/v1.0&quot;&gt;
+    &lt;jobId&gt;e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/jobId&gt;
+    &lt;callbackUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&lt;/callbackUrl&gt;
+    &lt;status&gt;ERROR&lt;/status&gt;
+    &lt;requestUrl&gt;https://dns.api.rackspacecloud.com/v1.0/1234/domains&lt;/requestUrl&gt;
+    &lt;verb&gt;POST&lt;/verb&gt;
+    &lt;request&gt;{
+        &quot;domains&quot; : [ {
+        &quot;name&quot; : &quot;example.com&quot;,
+        &quot;emailAddress&quot; : &quot;admin@example.com&quot;
+        } ]
+        }
+    &lt;/request&gt;
+    &lt;error code=&quot;409&quot;&gt;
+        &lt;message&gt;The object already exists.&lt;/message&gt;
+        &lt;details&gt;Domain already exists&lt;/details&gt;
+    &lt;/error&gt;
+&lt;/asyncresponse&gt;
+</pre></div>
+</div>
+<p><strong>Example: Detail error asynchronous response, JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>Status: 200 OK
+Date: Thu, 28 Jul 2011 21:54:21 GMT
+X-API-VERSION: 1.0.17
+Content-Type: application/json
+Content-Length: 564
+
+{
+  &quot;status&quot; : &quot;ERROR&quot;,
+  &quot;error&quot; : {
+    &quot;message&quot; : &quot;The object already exists.&quot;,
+    &quot;code&quot; : 409,
+    &quot;details&quot; : &quot;Domain already exists&quot;
+  },
+  &quot;request&quot; : &quot;{\n        \&quot;domains\&quot; : [ {\n        \&quot;name\&quot; : \&quot;example.com\&quot;,\n        \&quot;emailAddress\&quot; : \&quot;admin@example.com\&quot;\n        } ]\n        }\n    &quot;,
+  &quot;verb&quot; : &quot;POST&quot;,
+  &quot;jobId&quot; : &quot;e63886c9-acf0-4e5d-8023-09a0fae37446&quot;,
+  &quot;callbackUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/status/e63886c9-acf0-4e5d-8023-09a0fae37446&quot;,
+  &quot;requestUrl&quot; : &quot;https://dns.api.rackspacecloud.com/v1.0/1234/domains&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+  <div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+
+      </div>
+<div class="clearer"></div>
+</div>
+    </div>
+    <div class="col-md-3 col-md-pull-9 sidebar">
+<ul>
+  <li><a href="/" class="back">&laquo; Developer Home</a></li>
+</ul>
+<ul>
+  
+|
+
+<a href="">>></a>
+
+  <li><span class="sidebarheader">Contents</span></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#additional-resources">Additional resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#document-change-history">Document change history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">General API information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-access-endpoints">Service access endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contract-version">Contract version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limits">Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-headers">Common headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#date-and-time-format">Date and time format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#status-codes">Status codes</a></li>
+</ul>
+</li>
+</ul>
+
+
+      <div class="callout">
+  <span class="sidebarheader">Need Help?</span>
+
+  <p>
+    E-mail <a href="mailto:sdk-support@rackspace.com">sdk-support@rackspace.com</a>,<br>
+    tweet <a href="https://twitter.com/rackspace">@rackspace</a>,
+    chat with us in #rackspace on Freenode,
+    or post in <a href="https://community.rackspace.com/developers/default">our developer forum</a>.
+  </p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Found a bug? Caught a typo?</span>
+  <p>File a <a href="https://github.com/rackerlabs/developer.rackspace.com/issues/new">bug report</a> or submit a <a target="blank" href="https://github.com/rackerlabs/developer.rackspace.com">pull request</a> on our developer site Github repo.</p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Want To Stay Up To Date?</span>
+  <p>Subscribe to our developer blog <a href="/atom.xml">RSS</a> feed.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="basement">
+    <div class="container">
+        <img src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/rackerpowered-logo-79838459d447e1e48dd93c76549bdf74.png" alt="Racker Powered">
+        <ul>
+            <li>©2015 Rackspace, US Inc.</li>
+            <li><a href="http://www.rackspace.com/about/">About Rackspace</a></li>
+            <li><a href="http://ir.rackspace.com/">Investors</a></li>
+            <li><a href="http://www.rackertalent.com">Careers</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/privacystatement">Privacy Statement</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/websiteterms">Website Terms</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/copyrights_trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/app-b899e84f641d7962050ed3d62a3d53a7.js"></script>
+
+  <!-- analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35639070-1']);
+    _gaq.push(['_setDomainName', 'rackspace.com']);
+    _gaq.push(['_trackPageview']);
+
+   (function () {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
+
+ <!-- Tealium -->
+ <script type="text/javascript" src="https://tags.tiqcdn.com/utag/rackspace/developer/prod/utag.js"></script>
+
+ <!-- Google Code for Rackspace Blog Page Visitors (Global Tag) -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1040066332;
+    var google_conversion_label = "wFI2CI7LnQQQnM747wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040066332/?value=0&amp;label=wFI2CI7LnQQQnM747wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>
