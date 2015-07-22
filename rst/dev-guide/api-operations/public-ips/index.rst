@@ -8,15 +8,17 @@ out of your dedicated environment's assigned public IP blocks.
 
 Public IP address status values are as follows:
 
-  * ADDING
+- `ADDING`
 
-  * ACTIVE
+- `ACTIVE`
 
-  * REMOVING
+- `REMOVING`
 
-  * ADD_FAILED
+- `ADD_FAILED`
 
-  * REMOVE_FAILED
+- `REMOVE_FAILED`
+
+These values will appear in the response body of an API request.
 
 .. toctree::
     :maxdepth: 2

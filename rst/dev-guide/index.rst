@@ -10,7 +10,7 @@ RackConnect
    general-api-information
 
 API Operations
--------------------
+--------------
 
 .. toctree::
     :maxdepth: 1
