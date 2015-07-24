@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List One Load Balancer Pool -  rackconnect
-=============================================================================
-
 List One Load Balancer Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-load-balancer-pool-id.html#request>`__
-`Response <get-list-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-load-balancer-pool-id.html#response>`__
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools/{load_balancer_pool_id}
 
-				List summary for one load balancer pool.
+List summary for one load balancer pool. 
 
 This operation 				provides basic information about 				the load balancer pool 				identified by the specified ``load_balancer_pool_id``.
 
@@ -53,7 +46,7 @@ This table shows the URI parameters for the request:
 |                          |                         |or account in a multi-   |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{load_balancer_pool_id}   |xsd:string *(Required)*  |Specifies the unique     |
+|{load_balancer_pool_id}   |String *(Required)*      |Specifies the unique     |
 |                          |                         |identifier of a load     |
 |                          |                         |balancer pool.           |
 +--------------------------+-------------------------+-------------------------+

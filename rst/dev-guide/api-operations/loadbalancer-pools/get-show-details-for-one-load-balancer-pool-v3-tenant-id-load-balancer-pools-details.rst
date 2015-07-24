@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Show Details For One Load Balancer Pool -  rackconnect
-=============================================================================
-
 Show Details For One Load Balancer Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-show-details-for-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-details.html#request>`__
-`Response <get-show-details-for-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-details.html#response>`__
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools/details
 
-				List details for one load balancer pool.
+	List details for one load balancer pool.
 
 This operation 				provides detailed information about 				all the nodes in 				one load balancer pool 				identified by ``load_balancer_pool_id``.
 

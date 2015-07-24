@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Public Ips For A Server -  rackconnect
-=============================================================================
-
 List Public Ips For A Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-public-ips-for-a-server-v3-public-ips-cloud-server-id.html#request>`__
-`Response <get-list-public-ips-for-a-server-v3-public-ips-cloud-server-id.html#response>`__
 
 .. code::
 
     GET /v3/public_ips/cloud_server_id
 
-				List public IP addresses for a server. 
+List public IP addresses for a server.
 
 This operation 				lists all 				public IP addresses 				for the specified ``cloud_server_id``.
 

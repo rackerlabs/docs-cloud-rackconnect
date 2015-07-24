@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Add One Public Ip -  rackconnect
-=============================================================================
-
 Add One Public Ip
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-add-one-public-ip-v3-public-ips.html#request>`__
-`Response <post-add-one-public-ip-v3-public-ips.html#response>`__
 
 .. code::
 
     POST /v3/public_ips
 
-				Add one public IP address.
+Add one public IP address.
 
 This operation 				provisions a new 				public IP 				address for the specified ``tenant_id``.
 

@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Add Node To Load Balancer Pool -  rackconnect
-=============================================================================
-
 Add Node To Load Balancer Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-add-node-to-load-balancer-pool-v3-tenant-id-load-balancer-pools-nodes.html#request>`__
-`Response <post-add-node-to-load-balancer-pool-v3-tenant-id-load-balancer-pools-nodes.html#response>`__
 
 .. code::
 
     POST /v3/{tenant_id}/load_balancer_pools/nodes
 
-				Add node to load balancer pool.
+Add node to load balancer pool.
 
 This operation 				adds a node to 				one load balancer pool 				identified by ``load_balancer_pool_id``.
 

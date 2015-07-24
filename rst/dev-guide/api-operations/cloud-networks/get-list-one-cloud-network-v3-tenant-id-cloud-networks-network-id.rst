@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List One Cloud Network -  rackconnect
-=============================================================================
-
 List One Cloud Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-one-cloud-network-v3-tenant-id-cloud-networks-network-id.html#request>`__
-`Response <get-list-one-cloud-network-v3-tenant-id-cloud-networks-network-id.html#response>`__
 
 .. code::
 
     GET /v3/{tenant_id}/cloud_networks/{network_id}
 
-				List details for one cloud network.
+List details for one cloud network.
 
 This operation 				lists details for 				the cloud network 				identified by the specified ``network_id``.
 
