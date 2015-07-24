@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List One Public Ip Addresses -  rackconnect
-=============================================================================
-
 List One Public Ip Addresses
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-one-public-ip-addresses-v3-public-ips-public-ip-id.html#request>`__
-`Response <get-list-one-public-ip-addresses-v3-public-ips-public-ip-id.html#response>`__
 
 .. code::
 
     GET /v3/public_ips/{public_IP_id}
 
-				List details for one public IP address.
+List details for one public IP address.
 
 This operation 				lists details for 				one public IP address 				identified by the specified ``public_IP_id``.
 

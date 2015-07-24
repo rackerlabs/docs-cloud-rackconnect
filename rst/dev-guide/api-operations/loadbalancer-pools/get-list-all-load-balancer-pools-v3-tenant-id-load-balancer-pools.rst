@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List All Load Balancer Pools -  rackconnect
-=============================================================================
-
 List All Load Balancer Pools
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-all-load-balancer-pools-v3-tenant-id-load-balancer-pools.html#request>`__
-`Response <get-list-all-load-balancer-pools-v3-tenant-id-load-balancer-pools.html#response>`__
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools
 
-				List details for all load balancer pools.
+List details for all load balancer pools.
 
 This operation 				lists details for 				all load balancer pools 				available to the specified ``tenant_id``.
 

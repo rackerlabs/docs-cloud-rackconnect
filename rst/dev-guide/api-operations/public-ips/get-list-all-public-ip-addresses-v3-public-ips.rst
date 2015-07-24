@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List All Public Ip Addresses -  rackconnect
-=============================================================================
-
 List All Public Ip Addresses
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-all-public-ip-addresses-v3-public-ips.html#request>`__
-`Response <get-list-all-public-ip-addresses-v3-public-ips.html#response>`__
 
 .. code::
 
     GET /v3/public_ips
 
-				List details for all public IP addresses.
+List details for all public IP addresses.
 
 This operation 				lists details for 				all public IP addresses 				available to the specified ``tenant_id``.
 

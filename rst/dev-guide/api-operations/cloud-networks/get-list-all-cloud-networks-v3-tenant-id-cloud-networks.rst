@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List All Cloud Networks -  rackconnect
-=============================================================================
-
 List All Cloud Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-all-cloud-networks-v3-tenant-id-cloud-networks.html#request>`__
-`Response <get-list-all-cloud-networks-v3-tenant-id-cloud-networks.html#response>`__
 
 .. code::
 
     GET /v3/{tenant_id}/cloud_networks
 
-				List details for all cloud networks.
+List details for all cloud networks.
 
 This operation 				lists details for 				all the cloud networks 				available to the specified ``tenant_id``.
 

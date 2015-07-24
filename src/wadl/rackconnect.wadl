@@ -35,10 +35,7 @@
 	        	type="xsd:string">
 	            <wadl:doc
 	            	xmlns="http://docbook.org/ns/docbook">
-	                 <para>
-	      				Specifies the unique identifier of the tenant or account
-	     			    in a multi-tenancy cloud.
-	    			 </para>
+	              <para>Specifies the unique identifier of the tenant or account in a multi-tenancy cloud.</para>
 	  			</wadl:doc>
 			</param>
     <!-- ========================================= -->
@@ -60,9 +57,7 @@
 	    		type="xsd:string">
 	     	<wadl:doc
 	     		xmlns="http://docbook.org/ns/docbook">
-	      		<para>
-					Specifies the unique identifier of a network.
-	      		</para>
+	      		<para>Specifies the unique identifier of a network.</para>
 	       </wadl:doc>
 		   </param>
 	  	<method
@@ -85,13 +80,11 @@
     		path="{load_balancer_pool_id}">
     		<param name="load_balancer_pool_id"
     			style="template"
-    			required="true"
-    			type="xsd:string">
+    			required="false"
+    			type="String">
     			<wadl:doc
     				xmlns="http://docbook.org/ns/docbook">
-    				<para>
-    					Specifies the unique identifier of a load balancer pool.
-    				</para>
+    				<para>Specifies the unique identifier of a load balancer pool.</para>
     			</wadl:doc>
     		</param>
     		<method href="#LBPools-list1" />
@@ -128,9 +121,7 @@
     		type="xsd:string">
     		<wadl:doc
     			xmlns="http://docbook.org/ns/docbook">
-    			<para>
-    				Specifies the UUID of a cloud server.
-    			</para>
+    			<para>Specifies the UUID of a cloud server.</para>
     		</wadl:doc>
     	</param>
     	<method
@@ -146,9 +137,7 @@
     			type="xsd:string">
     			<wadl:doc
     				xmlns="http://docbook.org/ns/docbook">
-    				<para>
-    					Specifies the unique identifier of a public IP address.
-    				</para>
+    				<para>Specifies the unique identifier of a public IP address.</para>
     			</wadl:doc>
     		</param>
     		<method href="#publicIPs-list1" />
@@ -183,9 +172,7 @@
 			title="List one cloud network"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
-			<para role="shortdesc">
-				List details for one cloud network.
-			</para>
+			<para role="shortdesc">List details for one cloud network.</para>
 			<para>This operation
 				lists details for
 				the cloud network
@@ -239,9 +226,7 @@
 			title="List all cloud networks"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List details for all cloud networks.
-			</para>
+			<para role="shortdesc"> List details for all cloud networks.</para>
 			<para>This operation
 				lists details for
 				all the cloud networks
@@ -299,9 +284,7 @@
 			title="List one load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List summary for one load balancer pool.
-			</para>
+			<para role="shortdesc"> List summary for one load balancer pool. </para>
 			<para>This operation
 				provides basic information about
 				the load balancer pool
@@ -356,9 +339,7 @@
 			title="List all load balancer pools"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List details for all load balancer pools.
-			</para>
+			<para role="shortdesc"> List details for all load balancer pools.</para>
 			<para>This operation
 				lists details for
 				all load balancer pools
@@ -413,9 +394,7 @@
 			title="Add node to load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				Add node to load balancer pool.
-			</para>
+			<para role="shortdesc">Add node to load balancer pool.</para>
 			<para>This operation
 				adds a node to
 				one load balancer pool
@@ -493,9 +472,7 @@
 			title="Add nodes to load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				Add nodes to load balancer pool.
-			</para>
+			<para role="shortdesc">Add nodes to load balancer pool.</para>
 			<para>This operation
 				adds nodes specified in bulk to
 				one load balancer pool
@@ -560,9 +537,7 @@
 			title="Delete node from load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				Delete node from load balancer pool.
-			</para>
+			<para role="shortdesc">Delete node from load balancer pool.</para>
 			<para>This operation
 				deletes one node
 				identified by <code>node_id</code>
@@ -631,9 +606,7 @@
 			title="Delete nodes from load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				Delete nodes from load balancer pool.
-			</para>
+			<para role="shortdesc">Delete nodes from load balancer pool.</para>
 			<para>This operation
 				deletes nodes specified in bulk from
 				one load balancer pool
@@ -688,9 +661,7 @@
 			title="List details for one node"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List details for one node.
-			</para>
+			<para role="shortdesc">List details for one node.</para>
 			<para>This operation
 				lists details for
 				one node
@@ -746,9 +717,7 @@
 			title="List the nodes in one load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List nodes for one load balancer pool.
-			</para>
+			<para role="shortdesc">List nodes for one load balancer pool.</para>
 			<para>This operation
 				lists the nodes in
 				one load balancer pool
@@ -789,9 +758,7 @@
 			title="Show details for one load balancer pool"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List details for one load balancer pool.
-			</para>
+			<para role="shortdesc">	List details for one load balancer pool.</para>
 			<para>This operation
 				provides detailed information about
 				all the nodes in
@@ -847,9 +814,7 @@
 			title="Add one public IP"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				Add one public IP address.
-			</para>
+			<para role="shortdesc">Add one public IP address.</para>
 			<para>This operation
 				provisions a new
 				public IP
@@ -899,9 +864,7 @@
 			title="List public IPs for a server"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List public IP addresses for a server. 
-			</para>
+			<para role="shortdesc">List public IP addresses for a server.</para>
 			<para>This operation
 				lists all
 				public IP addresses
@@ -961,9 +924,7 @@
 			title="Delete one public IP address"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
-			<para role="shortdesc">
-				Delete one public IP address.
-			</para>
+			<para role="shortdesc">Delete one public IP address.</para>
 			<para>This operation
 				deletes
 				the public IP
@@ -984,9 +945,7 @@
 			title="List one public IP addresses"
 			xmlns="http://docbook.org/ns/docbook"
 			xml:lang="EN">
-			<para role="shortdesc">
-				List details for one public IP address.
-			</para>
+			<para role="shortdesc">List details for one public IP address.</para>
 			<para>This operation
 				lists details for
 				one public IP address
@@ -1040,9 +999,7 @@
 			title="List all public IP addresses"
 			xml:lang="EN"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">
-				List details for all public IP addresses.
-			</para>
+			<para role="shortdesc">List details for all public IP addresses.</para>
 			<para>This operation
 				lists details for
 				all public IP addresses

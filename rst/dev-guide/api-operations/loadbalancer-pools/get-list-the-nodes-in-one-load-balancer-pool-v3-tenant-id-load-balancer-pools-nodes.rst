@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List The Nodes In One Load Balancer Pool -  rackconnect
-=============================================================================
-
 List The Nodes In One Load Balancer Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-the-nodes-in-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-nodes.html#request>`__
-`Response <get-list-the-nodes-in-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-nodes.html#response>`__
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools/nodes
 
-				List nodes for one load balancer pool.
+List nodes for one load balancer pool.
 
 This operation 				lists the nodes in 				one load balancer pool 				identified by ``load_balancer_pool_id``.
 
