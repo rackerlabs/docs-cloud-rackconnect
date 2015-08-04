@@ -2,7 +2,7 @@
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
 List All Public Ip Addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -34,12 +34,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
+
+This operation does not accept a request body.
 
 
 
@@ -54,7 +56,7 @@ Request
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
@@ -92,4 +94,5 @@ Response
             "updated": "2014-05-30T03:24:18Z"
         }
     ]
+
 

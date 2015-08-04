@@ -2,7 +2,7 @@
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
 List One Load Balancer Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -34,19 +34,19 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string *(Required)*  |Specifies the unique     |
+|{tenant_id}               |String *(Required)*      |Specifies the unique     |
 |                          |                         |identifier of the tenant |
 |                          |                         |or account in a multi-   |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{load_balancer_pool_id}   |String *(Required)*      |Specifies the unique     |
+|{load_balancer_pool_id}   |String *(Optional)*      |Specifies the unique     |
 |                          |                         |identifier of a load     |
 |                          |                         |balancer pool.           |
 +--------------------------+-------------------------+-------------------------+
@@ -54,6 +54,8 @@ This table shows the URI parameters for the request:
 
 
 
+
+This operation does not accept a request body.
 
 
 
@@ -68,7 +70,7 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
@@ -96,4 +98,5 @@ Response
         "virtual_ip": "203.0.113.5"
       }
     ]
+
 
