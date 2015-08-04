@@ -2,7 +2,7 @@
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
 List Public Ips For A Server
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -34,14 +34,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|cloud_server_id           |xsd:string               |Specifies the UUID of a  |
+|cloud_server_id           |String                   |Specifies the UUID of a  |
 |                          |                         |cloud server.            |
 +--------------------------+-------------------------+-------------------------+
 
@@ -52,11 +52,13 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|                          |xsd:string *(Required)*  |                         |
+|                          |String *(Required)*      |                         |
 +--------------------------+-------------------------+-------------------------+
 
 
 
+
+This operation does not accept a request body.
 
 
 
@@ -71,7 +73,7 @@ This table shows the query parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
@@ -109,4 +111,5 @@ Response
             "updated": "2014-05-30T03:24:18Z"
         }
     ]
+
 

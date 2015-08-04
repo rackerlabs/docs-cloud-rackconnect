@@ -2,7 +2,7 @@
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
 Add Node To Load Balancer Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -42,14 +42,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string *(Required)*  |Specifies the unique     |
+|{tenant_id}               |String *(Required)*      |Specifies the unique     |
 |                          |                         |identifier of the tenant |
 |                          |                         |or account in a multi-   |
 |                          |                         |tenancy cloud.           |
@@ -58,6 +58,8 @@ This table shows the URI parameters for the request:
 
 
 
+
+This operation does not accept a request body.
 
 
 
@@ -75,7 +77,7 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
@@ -103,4 +105,5 @@ Response
         "updated": null
     }
     
+
 
