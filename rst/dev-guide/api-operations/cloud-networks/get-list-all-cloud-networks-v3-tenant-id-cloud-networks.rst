@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List All Cloud Networks
+List all cloud networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -56,7 +56,7 @@ This operation does not accept a request body.
 
 
 
-**Example List All Cloud Networks: JSON request**
+**Example List all cloud networks: JSON request**
 
 
 .. code::
@@ -72,7 +72,7 @@ Response
 
 
 
-**Example List All Cloud Networks: JSON response**
+**Example List all cloud networks: JSON response**
 
 
 .. code::

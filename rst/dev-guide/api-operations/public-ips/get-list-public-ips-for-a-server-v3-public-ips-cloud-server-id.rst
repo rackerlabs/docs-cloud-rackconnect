@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List Public Ips For A Server
+List public ips for a server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -63,7 +63,7 @@ This operation does not accept a request body.
 
 
 
-**Example List Public Ips For A Server: JSON request**
+**Example List public ips for a server: JSON request**
 
 
 .. code::
@@ -79,7 +79,7 @@ Response
 
 
 
-**Example List Public Ips For A Server: JSON response**
+**Example List public ips for a server: JSON response**
 
 
 .. code::

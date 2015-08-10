@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List One Public Ip Addresses
+List one public ip addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -55,7 +55,7 @@ This operation does not accept a request body.
 
 
 
-**Example List One Public Ip Addresses: JSON request**
+**Example List one public ip addresses: JSON request**
 
 
 .. code::
@@ -71,7 +71,7 @@ Response
 
 
 
-**Example List One Public Ip Addresses: JSON response**
+**Example List one public ip addresses: JSON response**
 
 
 .. code::

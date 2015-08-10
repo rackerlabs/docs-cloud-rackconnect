@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Add Node To Load Balancer Pool
+Add node to load balancer pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -64,7 +64,7 @@ This operation does not accept a request body.
 
 
 
-**Example Add Node To Load Balancer Pool: JSON request**
+**Example Add node to load balancer pool: JSON request**
 
 
 .. code::
@@ -83,7 +83,7 @@ Response
 
 
 
-**Example Add Node To Load Balancer Pool: JSON response**
+**Example Add node to load balancer pool: JSON response**
 
 
 .. code::

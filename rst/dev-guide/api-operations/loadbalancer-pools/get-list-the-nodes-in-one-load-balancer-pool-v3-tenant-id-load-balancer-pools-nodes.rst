@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List The Nodes In One Load Balancer Pool
+List the nodes in one load balancer pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -47,7 +47,7 @@ This operation does not accept a request body.
 
 
 
-**Example List The Nodes In One Load Balancer Pool: JSON request**
+**Example List the nodes in one load balancer pool: JSON request**
 
 
 .. code::
@@ -63,7 +63,7 @@ Response
 
 
 
-**Example List The Nodes In One Load Balancer Pool: JSON response**
+**Example List the nodes in one load balancer pool: JSON response**
 
 
 .. code::
