@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Add One Public Ip
+Add one public ip
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -43,7 +43,7 @@ This operation does not accept a request body.
 
 
 
-**Example Add One Public Ip: JSON request**
+**Example Add one public ip: JSON request**
 
 
 .. code::
@@ -62,7 +62,7 @@ Response
 
 
 
-**Example Add One Public Ip: JSON response**
+**Example Add one public ip: JSON response**
 
 
 .. code::

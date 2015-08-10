@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List One Cloud Network
+List one cloud network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -59,7 +59,7 @@ This operation does not accept a request body.
 
 
 
-**Example List One Cloud Network: JSON request**
+**Example List one cloud network: JSON request**
 
 
 .. code::
@@ -75,7 +75,7 @@ Response
 
 
 
-**Example List One Cloud Network: JSON response**
+**Example List one cloud network: JSON response**
 
 
 .. code::

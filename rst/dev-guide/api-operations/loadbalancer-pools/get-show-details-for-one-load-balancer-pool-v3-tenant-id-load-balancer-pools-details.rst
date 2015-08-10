@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Show Details For One Load Balancer Pool
+Show details for one load balancer pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -56,7 +56,7 @@ This operation does not accept a request body.
 
 
 
-**Example Show Details For One Load Balancer Pool: JSON request**
+**Example Show details for one load balancer pool: JSON request**
 
 
 .. code::
@@ -72,7 +72,7 @@ Response
 
 
 
-**Example Show Details For One Load Balancer Pool: JSON response**
+**Example Show details for one load balancer pool: JSON response**
 
 
 .. code::
