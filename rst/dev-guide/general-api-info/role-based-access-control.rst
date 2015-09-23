@@ -1,3 +1,5 @@
+.. _role-based-access-control
+
 Role Based Access Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -30,6 +32,6 @@ Developer Guide":
 -  `Delete roles from account
    users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`__
 
-..  note:: 
+..  note::
     The account owner (identity:user-admin) role cannot hold any additional
     roles because it already has full access to all capabilities.

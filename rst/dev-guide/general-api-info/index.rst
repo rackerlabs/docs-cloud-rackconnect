@@ -1,3 +1,5 @@
+.. _api-info-index:
+
 General API information
 -------------------------
 

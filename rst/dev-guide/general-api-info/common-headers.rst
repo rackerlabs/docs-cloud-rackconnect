@@ -1,3 +1,5 @@
+.. _common-headers:
+
 Common headers
 ~~~~~~~~~~~~~~~~~
 
@@ -44,4 +46,3 @@ The API uses the common headers described in the following table.
 +-----------------------+----------------------------------------------------+
 | Host                  | Host name of the API                               |
 +-----------------------+----------------------------------------------------+
-

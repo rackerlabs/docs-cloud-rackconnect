@@ -1,3 +1,5 @@
+.. _service-endpoints:
+
 Service access endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

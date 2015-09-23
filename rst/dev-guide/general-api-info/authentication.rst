@@ -1,6 +1,5 @@
 .. _common-dg-auth:
 
-
 Authentication
 ~~~~~~~~~~~~~~
 
@@ -50,13 +49,13 @@ service endpoint. If the request is successful, the authentication response retu
 
 **Example: Authentication request, JSON**
 
-.. code::  
+.. code::
 
     curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
          -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"yourUserName",
-            "apiKey":"yourApiKey"}}}' \ 
+            "apiKey":"yourApiKey"}}}' \
          -H "Content-Type:
-            application/json" 
+            application/json"
 
 **Example: Authentication request, XML**
 
@@ -70,9 +69,9 @@ service endpoint. If the request is successful, the authentication response retu
     Content-Length: 88
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <auth>   
-       <apiKeyCredentials     
-           xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
+    <auth>
+       <apiKeyCredentials
+           xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
            username="jsmith" **<1>**
            apiKey="aaaaa-bbbbb-ccccc-12345678"/> **<2>**
     </auth>
@@ -89,73 +88,73 @@ service endpoint. If the request is successful, the authentication response retu
                 {
                     "endpoints": [
                         {
-                            "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
-                            "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
-                            "region": "DFW", 
+                            "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7",
+                            "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7",
+                            "region": "DFW",
                             "tenantId": "MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7"
-                        }, 
+                        },
                         {
-                            "internalURL": "https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
-                            "publicURL": "https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
-                            "region": "ORD", 
+                            "internalURL": "https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7",
+                            "publicURL": "https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7",
+                            "region": "ORD",
                             "tenantId": "MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7"
                         }
-                    ], 
-                    "name": "cloudFiles", 
+                    ],
+                    "name": "cloudFiles",
                     "type": "object-store"
-                }, 
+                },
                 {
                     "endpoints": [
                         {
-                            "publicURL": "https://servers.api.rackspacecloud.com/v1.0/010101", 
-                            "tenantId": "010101", 
-                            "versionId": "1.0", 
-                            "versionInfo": "https://servers.api.rackspacecloud.com/v1.0", 
+                            "publicURL": "https://servers.api.rackspacecloud.com/v1.0/010101",
+                            "tenantId": "010101",
+                            "versionId": "1.0",
+                            "versionInfo": "https://servers.api.rackspacecloud.com/v1.0",
                             "versionList": "https://servers.api.rackspacecloud.com/"
                         }
-                    ], 
-                    "name": "cloudServers", 
+                    ],
+                    "name": "cloudServers",
                     "type": "compute"
-                }, 
+                },
                 {
-                    "endpoints": [ 
+                    "endpoints": [
                         {
-                            "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/010101", 
-                            "region": "DFW", 
-                            "tenantId": "010101", 
-                            "versionId": "2", 
-                            "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2", 
+                            "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/010101",
+                            "region": "DFW",
+                            "tenantId": "010101",
+                            "versionId": "2",
+                            "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2",
                             "versionList": "https://dfw.servers.api.rackspacecloud.com/"
-                        }, 
+                        },
                         {
-                            "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/010101", 
-                            "region": "ORD", 
-                            "tenantId": "010101", 
-                            "versionId": "2", 
-                            "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2", 
+                            "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/010101",
+                            "region": "ORD",
+                            "tenantId": "010101",
+                            "versionId": "2",
+                            "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2",
                             "versionList": "https://ord.servers.api.rackspacecloud.com/"
                         }
-                    ], 
-                    "name": "cloudServersOpenStack", 
+                    ],
+                    "name": "cloudServersOpenStack",
                     "type": "compute"
                 }
-            ], 
+            ],
             "token": {
-                "expires": "2012-09-14T15:11:57.585-05:00", 
-                "id": "858fb4c2-bf15-4dac-917d-8ec750ae9baa", 
+                "expires": "2012-09-14T15:11:57.585-05:00",
+                "id": "858fb4c2-bf15-4dac-917d-8ec750ae9baa",
                 "tenant": {
-                    "id": "010101", 
+                    "id": "010101",
                     "name": "010101"
                 }
-            }, 
+            },
             "user": {
-                "RAX-AUTH:defaultRegion": "DFW", 
-                "id": "170454", 
-                "name": "MyRackspaceAcct", 
+                "RAX-AUTH:defaultRegion": "DFW",
+                "id": "170454",
+                "name": "MyRackspaceAcct",
                 "roles": [
                     {
-                        "description": "User Admin Role.", 
-                        "id": "3", 
+                        "description": "User Admin Role.",
+                        "id": "3",
                         "name": "identity:user-admin"
                     }
                 ]
@@ -230,10 +229,10 @@ service endpoint. If the request is successful, the authentication response retu
         <service type="rax:object-cdn" name="cloudFilesCDN">
           <endpoint region="DFW"
             tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-            publicURL="https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/> 
+            publicURL="https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/>
           <endpoint region="ORD"
             tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-            publicURL="https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/>    
+            publicURL="https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/>
         </service>
         <service type="rax:dns" name="cloudDNS">
           <endpoint tenantId="1100111"
@@ -243,7 +242,7 @@ service endpoint. If the request is successful, the authentication response retu
     </access>
 
 .. note::
-    For detailed information about the authentication request and response, see  
+    For detailed information about the authentication request and response, see
     `authentication request and response`_ in the *Cloud Identity Developer Guide*.
 
 .. _Cloud Control Panel: http://mycloud.rackspace.com/
@@ -265,7 +264,7 @@ an API request for any service included in the service catalog.
 
    .. code::
 
-       "token": 
+       "token":
              {
                "RAX-AUTH:authenticatedBy": [
                    "APIKEY"
@@ -284,7 +283,7 @@ an API request for any service included in the service catalog.
    The following example shows a cURL request to retrieve a list of
    containers for a tenant by using the Cloud Files API.
 
-   .. code::  
+   .. code::
 
        $ cURL -i -s \
        -X GET https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_9c24e3db-52bf-4f26-8dc1-220871796e9f \
@@ -295,16 +294,16 @@ an API request for any service included in the service catalog.
    returns the following response if the authentication token is
    accepted.
 
-   .. code:: 
-                       
+   .. code::
+
         GET /v1/MossoCloudFS_9c24e3db-52bf-4f26-8dc1-220871796e9f HTTP/1.1
         User-Agent: curl/7.30.0
         Host: storage101.ord1.clouddrive.com
         Accept: */*
         X-Auth-Token: 69dc089d983f4729af29bec5a7dc6426
         Content-type: application/json
-        
-         HTTP/1.1 200 OK 
+
+         HTTP/1.1 200 OK
          Content-Length: 22
          X-Account-Object-Count: 0
          X-Account-Storage-Policy-Policy-0-Bytes-Used: 0
@@ -317,7 +316,7 @@ an API request for any service included in the service catalog.
          Accept-Ranges: bytes
          X-Trans-Id: tx1353de66dd9d49da84eda-00544799f4ord1
          Date: Wed, 15 June 2015 11:50:12 GMT
-                           
+
          metest
          mytest
          mytest2
@@ -368,13 +367,13 @@ endpoint.
 -  Submit a **DELETE token** request to revoke the existing
    token, and then followed by a **POST tokens** request to get a new token.
 
--  To simplify authentication, credential, and token management, use an 
+-  To simplify authentication, credential, and token management, use an
    `OpenStack command-line client application`_ or one of the `Rackspace SDKs`_.
 
 .. note:
     - For more detailed authentication instructions, see the `Identity service quickstart`_.
 
-    - The Rackspace Cloud Identity service supports additional authentication methods like 
+    - The Rackspace Cloud Identity service supports additional authentication methods like
       username and password, and multi-factor authentication. For more information, see
       `Rackspace Cloud Identity service Developer Guide`_.
 

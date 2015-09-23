@@ -1,18 +1,20 @@
+.. _date-time-format:
+
 Date and time format
 ~~~~~~~~~~~~~~~~~~~~~
 
-The RackConnect service uses an ISO-8601 compliant date format for the display and consumption of date and time values. 
+The RackConnect service uses an ISO-8601 compliant date format for the display and consumption of date and time values.
 
 The system time is expressed as UTC.
 
 
 **Example: Date and time format**
 
-.. code:: 
+.. code::
 
     yyyy-MM-dd'T'HH:mm:ssZ
 
-For example, the UTC-5 format for May 19, 2015 at 8:07:08 a.m. is 
+For example, the UTC-5 format for May 19, 2015 at 8:07:08 a.m. is
 
 .. code::
 
@@ -35,8 +37,7 @@ For example, the UTC-5 format for May 19, 2015 at 8:07:08 a.m. is
 +------+------------------------------------------------+
 | ss   | Two digit second                               |
 +------+------------------------------------------------+
-| Z    | RFC 8601 timezone (offset from GMT).           | 
+| Z    | RFC 8601 timezone (offset from GMT).           |
 |      | If Z is not replaced with the offset from GMT, |
 |      | it indicates a 00:00 offset.                   |
 +------+------------------------------------------------+
-
