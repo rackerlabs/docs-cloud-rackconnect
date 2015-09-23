@@ -1,8 +1,10 @@
+.. _document-change-history:
+
 Document change history
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This version of the document replaces and obsoletes all previous
-versions. The following table describes the most recent changes:
+versions. The following list describes the most recent changes:
 
 Recent changes
 ---------------

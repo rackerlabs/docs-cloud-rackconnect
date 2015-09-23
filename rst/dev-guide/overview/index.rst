@@ -1,5 +1,6 @@
-Overview
-~~~~~~~~~
+=========================
+About the Rackconnect API
+=========================
 
 RackConnect v3.0 includes an enhanced API that enables you to accomplish
 the following tasks:
@@ -33,6 +34,9 @@ To further increase the security of your RackConnect environment, you
 also have the ability to use the Rackspace dedicated intrusion detection
 system (IDS) and web application firewall (WAF) offerings.
 
-.. include:: additional-resources.txt
+.. toctree:: :hidden:
+   :maxdepth: 2
 
-.. include:: document-change-history.txt
+   additional-resources
+   document-change-history
+   Pricing and terms of service <pricing-service-level>
