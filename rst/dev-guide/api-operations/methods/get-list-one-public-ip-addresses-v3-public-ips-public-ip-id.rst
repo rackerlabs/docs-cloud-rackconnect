@@ -1,16 +1,18 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List all cloud networks
+.. _get-list-one-public-ip-addresses-v3-public-ips-public-ip-id:
+
+List one public IP addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /v3/{tenant_id}/cloud_networks
+    GET /v3/public_ips/{public_IP_id}
 
-List details for all cloud networks.
+List details for one public IP address.
 
-This operation 				lists details for 				all the cloud networks 				available to the specified ``tenant_id``.
+This operation 				lists details for 				one public IP address 				identified by the specified ``public_IP_id``.
 
 
 
@@ -36,15 +38,17 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |Specifies the unique     |
-|                          |                         |identifier of the tenant |
-|                          |                         |or account in a multi-   |
-|                          |                         |tenancy cloud.           |
+|{public_IP_id}            |String *(Required)*      |Specifies the unique     |
+|                          |                         |identifier of a public   |
+|                          |                         |IP address.              |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -56,13 +60,16 @@ This operation does not accept a request body.
 
 
 
-**Example List all cloud networks: JSON request**
+**Example List one public IP addresses: JSON request**
 
 
 .. code::
 
-    curl --include \
-     'dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/cloud_networks'
+   curl --include \
+    'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/public_ips/{id}'
+
+
+
 
 
 Response
@@ -72,29 +79,42 @@ Response
 
 
 
-**Example List all cloud networks: JSON response**
+
+
+
+
+
+**Example List one public IP addresses: JSON response**
 
 
 .. code::
 
-    200 (OK)
-    Content-Type: application/json
-    
-    [
-        {
-            "cidr": "192.168.100.0/24",
-            "created": "2014-05-25T01:23:42Z",
-            "id": "07426958-1ebf-4c38-b032-d456820ca21a",
-            "name": "RC-CLOUD",
-            "updated": "2014-05-25T02:28:44Z"
-        },
-        {
-            "cidr": "192.168.200.0/24",
-            "created": "2014-05-25T02:30:55Z",
-            "id": "07426958-1ebf-5d49-c043-e566820db27b",
-            "name": "RC-CLOUD2",
-            "updated": "2014-05-25T02:39:22Z"
-        }
-    ]
+   200 (OK)
+   Content-Type: application/json
+   
+   {
+       "created": "2014-05-30T03:23:42Z",
+       "cloud_server": {
+           "cloud_network": {
+               "cidr": "192.168.100.0/24",
+               "created": "2014-05-25T01:23:42Z",
+               "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+               "name": "RC-CLOUD",
+               "private_ip_v4": "192.168.100.5",
+               "updated": "2014-05-25T02:28:44Z"
+           },
+           "created": "2014-05-30T02:18:42Z",
+           "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2",
+           "name": "RCv3TestServer1",
+           "updated": "2014-05-30T02:19:18Z"
+       },
+       "id": "2d0f586b-37a7-4ae0-adac-2743d5feb450",
+       "public_ip_v4": "203.0.113.110",
+       "status": "ACTIVE",
+       "status_detail": null,
+       "updated": "2014-05-30T03:24:18Z"
+   }
+
+
 
 

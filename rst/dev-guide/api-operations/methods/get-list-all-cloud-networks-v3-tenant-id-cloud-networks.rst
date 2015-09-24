@@ -1,16 +1,18 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List all load balancer pools
+.. _get-list-all-cloud-networks-v3-tenant-id-cloud-networks:
+
+List all cloud networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /v3/{tenant_id}/load_balancer_pools
+    GET /v3/{tenant_id}/cloud_networks
 
-List details for all load balancer pools.
+List details for all cloud networks.
 
-This operation 				lists details for 				all load balancer pools 				available to the specified ``tenant_id``.
+This operation 				lists details for 				all the cloud networks 				available to the specified ``tenant_id``.
 
 
 
@@ -36,6 +38,9 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -56,13 +61,16 @@ This operation does not accept a request body.
 
 
 
-**Example List all load balancer pools: JSON request**
+**Example List all cloud networks: JSON request**
 
 
 .. code::
 
-    curl --include \
-     'http://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools'
+   curl --include \
+    'dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/cloud_networks'
+
+
+
 
 
 Response
@@ -72,53 +80,36 @@ Response
 
 
 
-**Example List all load balancer pools: JSON response**
+
+
+
+
+
+**Example List all cloud networks: JSON response**
 
 
 .. code::
 
-    200 (OK)
-    Content-Type: application/json
-    [
-        {
-            "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2",
-            "name": "RCv3Test",
-            "node_counts": {
-                "cloud_servers": 3,
-                "external": 4,
-                "total": 7
-            },
-            "port": 80,
-            "status": "ACTIVE",
-            "status_detail": null,
-            "virtual_ip": "203.0.113.5"
-        },
-        {
-            "id": "33021100-4abf-4836-9080-465a6d87ab68",
-            "name": "RCv3Test2",
-            "node_counts": {
-                "cloud_servers": 1,
-                "external": 0,
-                "total": 1
-            },
-            "port": 80,
-            "status": "ACTIVE",
-            "status_detail": null,
-            "virtual_ip": "203.0.113.7"
-        },
-        {
-            "id": "b644350a-301b-47b5-a411-c6e0f933c347",
-            "name": "RCv3Test3",
-            "node_counts": {
-                "cloud_servers": 2,
-                "external": 3,
-                "total": 5
-            },
-            "port": 443,
-            "status": "ACTIVE,
-            "status_detail": null",
-            "virtual_ip": "203.0.113.15"
-        }
-    ]
+   200 (OK)
+   Content-Type: application/json
+   
+   [
+       {
+           "cidr": "192.168.100.0/24",
+           "created": "2014-05-25T01:23:42Z",
+           "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+           "name": "RC-CLOUD",
+           "updated": "2014-05-25T02:28:44Z"
+       },
+       {
+           "cidr": "192.168.200.0/24",
+           "created": "2014-05-25T02:30:55Z",
+           "id": "07426958-1ebf-5d49-c043-e566820db27b",
+           "name": "RC-CLOUD2",
+           "updated": "2014-05-25T02:39:22Z"
+       }
+   ]
+
+
 
 

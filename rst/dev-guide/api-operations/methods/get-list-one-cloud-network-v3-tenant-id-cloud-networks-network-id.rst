@@ -1,16 +1,18 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Add node to load balancer pool
+.. _get-list-one-cloud-network-v3-tenant-id-cloud-networks-network-id:
+
+List one cloud network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    POST /v3/{tenant_id}/load_balancer_pools/nodes
+    GET /v3/{tenant_id}/cloud_networks/{network_id}
 
-Add node to load balancer pool.
+List details for one cloud network.
 
-This operation 				adds a node to 				one load balancer pool 				identified by ``load_balancer_pool_id``.
+This operation 				lists details for 				the cloud network 				identified by the specified ``network_id``.
 
 
 
@@ -20,21 +22,13 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|201                       |OK                       |Created                  |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad request              |The input was not in the |
 |                          |                         |correct format.          |
 +--------------------------+-------------------------+-------------------------+
-|409                       |Add node to load         |Conflict Cloud Server    |
-|                          |balancer pool            |{cloud_server_id} does   |
-|                          |                         |not exist or Cloud       |
-|                          |                         |Server {cloud_server_id} |
-|                          |                         |is already a member of   |
-|                          |                         |Load Balancer Pool       |
-|                          |                         |{load_balancer_pool_id}  |
-|                          |                         |or Load Balancer Pool    |
-|                          |                         |{load_balancer_pool_id}  |
-|                          |                         |is not in an ACTIVE state|
+|404                       |Not found                |The requested item was   |
+|                          |                         |not found.               |
 +--------------------------+-------------------------+-------------------------+
 |500                       |Internal server error    |An unexpected error has  |
 |                          |                         |occurred.                |
@@ -43,6 +37,9 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -54,6 +51,9 @@ This table shows the URI parameters for the request:
 |                          |                         |or account in a multi-   |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
+|{network_id}              |String *(Required)*      |Specifies the unique     |
+|                          |                         |identifier of a network. |
++--------------------------+-------------------------+-------------------------+
 
 
 
@@ -64,16 +64,16 @@ This operation does not accept a request body.
 
 
 
-**Example Add node to load balancer pool: JSON request**
+**Example List one cloud network: JSON request**
 
 
 .. code::
 
-    {
-        "cloud_server": {
-            "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
-        }
-    }
+   curl --include \
+    'http://dfw.rackconnect.api.rackspacecloud.comv3/{tenant_id}/cloud_networks/{id}'
+
+
+
 
 
 Response
@@ -83,27 +83,29 @@ Response
 
 
 
-**Example Add node to load balancer pool: JSON response**
+
+
+
+
+
+**Example List one cloud network: JSON response**
 
 
 .. code::
 
-    201 (Created)
-    Content-Type: application/json
-    
-    {
-        "created": "2014-05-30T03:23:42Z",
-        "cloud_server": {
-            "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
-        }, 
-        "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
-        "load_balancer_pool": {
-            "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2"
-        },
-        "status": "ADDING",
-        "status_detail": null,
-        "updated": null
-    }
-    
+   200 (OK)
+   Content-Type: application/json
+   
+   [
+       {
+           "cidr": "192.168.100.0/24",
+           "created": "2014-05-25T01:23:42Z",
+           "id": "07426958-1ebf-4c38-b032-d456820ca21a",
+           "name": "RC-CLOUD",
+           "updated": "2014-05-25T02:28:44Z"
+       }
+   ]
+
+
 
 

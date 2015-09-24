@@ -1,16 +1,18 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List one load balancer pool
+.. _get-list-all-load-balancer-pools-v3-tenant-id-load-balancer-pools:
+
+List all load balancer pools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /v3/{tenant_id}/load_balancer_pools/{load_balancer_pool_id}
+    GET /v3/{tenant_id}/load_balancer_pools
 
-List summary for one load balancer pool. 
+List details for all load balancer pools.
 
-This operation 				provides basic information about 				the load balancer pool 				identified by the specified ``load_balancer_pool_id``.
+This operation 				lists details for 				all load balancer pools 				available to the specified ``tenant_id``.
 
 
 
@@ -36,6 +38,9 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -45,10 +50,6 @@ This table shows the URI parameters for the request:
 |                          |                         |identifier of the tenant |
 |                          |                         |or account in a multi-   |
 |                          |                         |tenancy cloud.           |
-+--------------------------+-------------------------+-------------------------+
-|{load_balancer_pool_id}   |String *(Optional)*      |Specifies the unique     |
-|                          |                         |identifier of a load     |
-|                          |                         |balancer pool.           |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -60,13 +61,16 @@ This operation does not accept a request body.
 
 
 
-**Example List one load balancer pool: JSON request**
+**Example List all load balancer pools: JSON request**
 
 
 .. code::
 
-    curl --include \
-     'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools/{id}'
+   curl --include \
+    'http://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools'
+
+
+
 
 
 Response
@@ -76,27 +80,60 @@ Response
 
 
 
-**Example List one load balancer pool: JSON response**
+
+
+
+
+
+**Example List all load balancer pools: JSON response**
 
 
 .. code::
 
-    200 (OK)
-    Content-Type: application/json
-    [
-      {
-        "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2",
-        "name": "RCv3Test",
-        "node_counts": {
-                "cloud_servers": 3,
-                "external": 4,
-                "total": 7
-            },
-        "port": 80,
-        "status": "ACTIVE",
-        "status_detail": null,
-        "virtual_ip": "203.0.113.5"
-      }
-    ]
+   200 (OK)
+   Content-Type: application/json
+   [
+       {
+           "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2",
+           "name": "RCv3Test",
+           "node_counts": {
+               "cloud_servers": 3,
+               "external": 4,
+               "total": 7
+           },
+           "port": 80,
+           "status": "ACTIVE",
+           "status_detail": null,
+           "virtual_ip": "203.0.113.5"
+       },
+       {
+           "id": "33021100-4abf-4836-9080-465a6d87ab68",
+           "name": "RCv3Test2",
+           "node_counts": {
+               "cloud_servers": 1,
+               "external": 0,
+               "total": 1
+           },
+           "port": 80,
+           "status": "ACTIVE",
+           "status_detail": null,
+           "virtual_ip": "203.0.113.7"
+       },
+       {
+           "id": "b644350a-301b-47b5-a411-c6e0f933c347",
+           "name": "RCv3Test3",
+           "node_counts": {
+               "cloud_servers": 2,
+               "external": 3,
+               "total": 5
+           },
+           "port": 443,
+           "status": "ACTIVE,
+           "status_detail": null",
+           "virtual_ip": "203.0.113.15"
+       }
+   ]
+
+
 
 

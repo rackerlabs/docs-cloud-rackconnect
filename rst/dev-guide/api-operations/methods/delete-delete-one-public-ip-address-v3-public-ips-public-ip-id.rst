@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Delete one public ip address
+.. _delete-delete-one-public-ip-address-v3-public-ips-public-ip-id:
+
+Delete one public IP address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -16,10 +18,13 @@ This operation 				deletes 				the public IP 				address identified by the speci
 
 This table shows the possible response codes for this operation:
 
-None
+
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -47,5 +52,9 @@ Response
 
 
 
+
 This operation does not return a response body.
+
+
+
 

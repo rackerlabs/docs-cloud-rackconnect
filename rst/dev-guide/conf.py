@@ -1,17 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @DonNateR
- Unwatch 51
-  Star 0
- Fork 6 rackerlabs/docs-cloud-images
-Branch: master  docs-cloud-images/rst/dev-guide/conf.py
-@meker12meker12 8 days ago Nexus migration clean up.
-4 contributors @meker12 @ktbartholomew @smashwilson @catlook
-RawBlameHistory     299 lines (225 sloc)  9.9 KB
 # -*- coding: utf-8 -*-
 #
 # Rackspace Developer Documentation documentation build configuration file, created by
@@ -310,5 +296,3 @@ texinfo_documents = [
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 lexers['php'] = PhpLexer(startinline=True)
-Status API Training Shop Blog About Pricing
-© 2015 GitHub, Inc. Terms Privacy Security Contact Help
