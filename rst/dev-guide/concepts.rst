@@ -1,3 +1,5 @@
+.. _concepts:
+
 Concepts
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -48,4 +50,4 @@ RackConnect API load balancer pool operations:
    pools
 
 The RackConnect API is region-specific and returns results only for the
-region specified in the URL of the API call itself. 
+region specified in the URL of the API call itself.

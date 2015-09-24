@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Rackspace Developer Documentation documentation build configuration file, created by
-# sphinx-quickstart on Thu Mar 6 14:14:55 2014.
+# sphinx-quickstart on Thu Mar  6 14:14:55 2014.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -31,6 +31,9 @@ import os
 extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.todo',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.extlinks'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -45,8 +48,12 @@ source_suffix = '.rst'
 # The master toctree document.
 master_doc = 'index'
 
+# The builder to use when running via the deconst preparer
+# builder = 'deconst-serial'
+builder = 'deconst-single'
+
 # General information about the project.
-project = 'Rackspace Developer Portal'
+project = 'Rackspace Developer Documentation'
 copyright = '2015, Rackspace'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -70,7 +77,7 @@ release = '1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -90,6 +97,27 @@ exclude_patterns = ['_build', 'samples']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+# External link library
+extlinks = {
+    'rax': ('http://www.rackspace.com/%s', ''),
+    'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
+    'rax-docs': ('http://docs.rackspace.com/%s', ''),
+    'rax-dev': ('https://developer.rackspace.com/%s', ''),
+    'rax-api': ('http://api.rackspace.com/%s', ''),
+    'rax-git': ('https://github.com/rackspace/%s', ''),
+    'mycloud': ('https://mycloud.rackspace.com/%s', ''),
+    'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
+    'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
+    'kc-faq': ('http://www.rackspace.com/knowledge_center/frequently-asked-question/%s', ''),
+    'kc-product-faq': ('http://www.rackspace.com/knowledge_center/product-faq/%s', ''),
+    'os': ('http://www.openstack.org/%s', ''),
+    'os-docs': ('http://docs.openstack.org/%s', ''),
+    'os-wiki': ('http://wiki.openstack.org/%s', ''),
+    'git-repo': ('https://github.com/rackerlabs/docs-core-infra-user-guide/%s', ''),
+    'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
+    'rocket': ('https://objectrocket.com/%s', '')
+}
+
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
@@ -101,7 +129,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'classic'
+#html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -113,10 +141,11 @@ html_theme = 'classic'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = 'Rackspace Rackconnect version 2.0 API Developer Guide'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+html_short_title = 'Rackspace Rackconnect'
+
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -130,7 +159,7 @@ html_theme = 'classic'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
+html_static_path = []
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -179,10 +208,11 @@ html_static_path = ["_static"]
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'RackspaceDeveloperDocumentationdoc'
+htmlhelp_basename = 'RackspaceCloudApiRackconnectDeveloperDoc'
 
 # this will change the 'paragraph' character to '#'
 html_add_permalinks = '#'
+
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -200,7 +230,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'RackspaceDeveloperDocumentation.tex', 'Rackspace Developer Documentation',
+  ('index', 'RackspaceCloudApiRackconnectDeveloperDoc.tex', 'Rackspace Rackconnect API Developer Guide',
    'Rackspace', 'manual'),
 ]
 
@@ -230,7 +260,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'rackspacedeveloperdocumentation', 'Rackspace Developer Documentation',
+    ('index', 'RackspaceCloudApiRackconnectDeveloperDoc', 'Rackspace Rackconnect API Developer Guide',
      ['Rackspace'], 1)
 ]
 
@@ -244,8 +274,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'RackspaceDeveloperDocumentation', 'Rackspace Developer Documentation',
-   'Rackspace', 'RackspaceDeveloperDocumentation', 'One line description of project.',
+  ('index', 'RackspaceCloudApiRackconnectDeveloperDoc', 'Rackspace Rackconnect API Developer Guide',
+   'Rackspace', 'RackspaceCloudApiRackconnectDeveloperDoc', 'Learn about using the REST API for the Rackspace Rackconnect service.',
    'Miscellaneous'),
 ]
 
