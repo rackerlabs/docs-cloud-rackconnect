@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-list-one-cloud-network-v3-tenant-id-cloud-networks-network-id:
+.. _get-list-one-cloud-network-v3-cloud-networks:
 
 List one cloud network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/{tenant_id}/cloud_networks/{network_id}
 
-List details for one cloud network.
-
-This operation 				lists details for 				the cloud network 				identified by the specified ``network_id``.
-
-
+This operation lists details for the cloud network identified by the specified ``network_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -34,12 +26,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |occurred.                |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -55,47 +43,23 @@ This table shows the URI parameters for the request:
 |                          |                         |identifier of a network. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example List one cloud network: JSON request**
-
 
 .. code::
 
    curl --include \
     'http://dfw.rackconnect.api.rackspacecloud.comv3/{tenant_id}/cloud_networks/{id}'
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+"""""""""
 
 **Example List one cloud network: JSON response**
-
 
 .. code::
 
    200 (OK)
    Content-Type: application/json
-   
+
    [
        {
            "cidr": "192.168.100.0/24",
@@ -105,7 +69,3 @@ Response
            "updated": "2014-05-25T02:28:44Z"
        }
    ]
-
-
-
-

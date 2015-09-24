@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-list-all-load-balancer-pools-v3-tenant-id-load-balancer-pools:
+.. _get-list-all-load-balancer-pools-v3-load-balancer-pools:
 
 List all load balancer pools
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools
 
-List details for all load balancer pools.
-
-This operation 				lists details for 				all load balancer pools 				available to the specified ``tenant_id``.
-
-
+This operation lists details for all load balancer pools available to the specified ``tenant_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -36,10 +28,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -52,15 +41,6 @@ This table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example List all load balancer pools: JSON request**
 
 
@@ -69,21 +49,8 @@ This operation does not accept a request body.
    curl --include \
     'http://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools'
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List all load balancer pools: JSON response**
 
@@ -133,7 +100,3 @@ Response
            "virtual_ip": "203.0.113.15"
        }
    ]
-
-
-
-

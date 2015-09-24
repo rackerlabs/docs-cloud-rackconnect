@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-list-the-nodes-in-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-nodes:
+.. _get-list-the-nodes-in-one-load-balancer-pool-v3-load-balancer-pools:
 
 List the nodes in one load balancer pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools/nodes
 
-List nodes for one load balancer pool.
-
-This operation 				lists the nodes in 				one load balancer pool 				identified by ``load_balancer_pool_id``.
-
-
+This operation lists the nodes in one load balancer pool 	identified by ``load_balancer_pool_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -27,10 +19,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -43,53 +32,29 @@ This table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example List the nodes in one load balancer pool: JSON request**
-
 
 .. code::
 
    curl --include \
     'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools/{load_balancer_pool_id}/nodes'
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List the nodes in one load balancer pool: JSON response**
-
 
 .. code::
 
    200 (OK)
    Content-Type: application/json
-   
+
    [
        {
            "created": "2014-05-30T03:23:42Z",
            "cloud_server": {
                "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
-           }, 
+           },
            "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
            "load_balancer_pool": {
                "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2"
@@ -125,7 +90,3 @@ Response
            "updated": "2014-05-31T08:24:36Z"
        }
    ]
-
-
-
-

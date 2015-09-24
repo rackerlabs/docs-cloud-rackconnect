@@ -1,23 +1,16 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-show-details-for-one-load-balancer-pool-v3-tenant-id-load-balancer-pools-details:
+.. _get-show-details-for-one-load-balancer-pool-v3-load-balancer-pools:
 
 Show details for one load balancer pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/{tenant_id}/load_balancer_pools/details
 
-	List details for one load balancer pool.
-
-This operation 				provides detailed information about 				all the nodes in 				one load balancer pool 				identified by ``load_balancer_pool_id``.
-
-
+This operation provides detailed information about all the nodes in one load balancer pool
+identified by ``load_balancer_pool_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -36,10 +29,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -52,15 +42,6 @@ This table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example Show details for one load balancer pool: JSON request**
 
 
@@ -70,29 +51,16 @@ This operation does not accept a request body.
     'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools/{load_balancer_pool_id}/nodes/details'
 
 
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Show details for one load balancer pool: JSON response**
-
 
 .. code::
 
    200 (OK)
    Content-Type: application/json
-   
+
    [
        {
            "created": "2014-05-30T03:23:42Z",
@@ -109,7 +77,7 @@ Response
                "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2",
                "name": "RCv3TestServer1",
                "updated": "2014-05-30T02:19:18Z"
-           }, 
+           },
            "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
            "load_balancer_pool": {
                "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2",
@@ -197,7 +165,3 @@ Response
            "updated": "2014-05-31T08:24:36Z"
        }
    ]
-
-
-
-

@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-list-public-ips-for-a-server-v3-public-ips-cloud-server-id:
+.. _get-list-public-ips-for-a-server-v3-public-ips:
 
 List public IPs for a server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/public_ips/cloud_server_id
 
-List public IP addresses for a server.
-
-This operation 				lists all 				public IP addresses 				for the specified ``cloud_server_id``.
-
-
+This operation lists all public IP addresses for the specified ``cloud_server_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -36,37 +28,16 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|cloud_server_id           |String                   |Specifies the UUID of a  |
+|cloud_server_id           |String *(Optional)*      |Specifies the UUID of a  |
 |                          |                         |cloud server.            |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-This table shows the query parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|                          |String *(Required)*      |                         |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
-This operation does not accept a request body.
-
-
-
 
 **Example List public IPs for a server: JSON request**
 
@@ -77,20 +48,8 @@ This operation does not accept a request body.
     'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/public_ips'
 
 
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List public IPs for a server: JSON response**
 
@@ -99,7 +58,7 @@ Response
 
    200 (OK)
    Content-Type: application/json
-   
+
    [
        {
            "created": "2014-05-30T03:23:42Z",
@@ -124,7 +83,3 @@ Response
            "updated": "2014-05-30T03:24:18Z"
        }
    ]
-
-
-
-

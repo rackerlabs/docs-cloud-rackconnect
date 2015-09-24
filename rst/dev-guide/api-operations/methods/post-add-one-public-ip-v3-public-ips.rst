@@ -1,23 +1,14 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-add-one-public-ip-v3-public-ips:
 
 Add one public IP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+^^^^^^^^^^^^^^^^^
 .. code::
 
     POST /v3/public_ips
 
-Add one public IP address.
-
-This operation 				provisions a new 				public IP 				address for the specified ``tenant_id``.
-
-
+This operation provisions a new public IP address for the specified ``tenant_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -33,19 +24,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
-
-
-
-
-
-This operation does not accept a request body.
-
-
-
+"""""""
 
 **Example Add one public IP: JSON request**
 
@@ -59,29 +38,16 @@ This operation does not accept a request body.
    }
 
 
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Add one public IP: JSON response**
-
 
 .. code::
 
    201 (Created)
    Content-Type: application/json
-   
+
    {
        "created": "2014-05-30T03:23:42Z",
        "cloud_server": {
@@ -104,7 +70,3 @@ Response
        "status_detail": null,
        "updated": null
    }
-
-
-
-

@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-all-public-ip-addresses-v3-public-ips:
 
 List all public IP addresses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/public_ips
 
-List details for all public IP addresses.
-
-This operation 				lists details for 				all public IP addresses 				available to the specified ``tenant_id``.
-
-
+This operation lists details for all public IP addresses available to the specified ``tenant_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -34,45 +26,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |occurred.                |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
-
-
-
-
-
-This operation does not accept a request body.
-
-
-
+"""""""
 
 **Example List all public IP addresses: JSON request**
-
 
 .. code::
 
    curl --include \
     'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/public_ips'
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List all public IP addresses: JSON response**
 
@@ -81,7 +46,7 @@ Response
 
    200 (OK)
    Content-Type: application/json
-   
+
    [
        {
            "created": "2014-05-30T03:23:42Z",
@@ -106,7 +71,3 @@ Response
            "updated": "2014-05-30T03:24:18Z"
        }
    ]
-
-
-
-

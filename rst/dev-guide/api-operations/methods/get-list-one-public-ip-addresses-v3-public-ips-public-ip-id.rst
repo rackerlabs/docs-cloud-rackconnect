@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-list-one-public-ip-addresses-v3-public-ips-public-ip-id:
+.. _get-list-one-public-ip-addresses-v3-public-ips:
 
 List one public IP addresses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/public_ips/{public_IP_id}
 
-List details for one public IP address.
-
-This operation 				lists details for 				one public IP address 				identified by the specified ``public_IP_id``.
-
-
+This operation lists details for one public IP address identified by the specified ``public_IP_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -36,10 +28,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+""""""""
 
 This table shows the URI parameters for the request:
 
@@ -51,47 +40,23 @@ This table shows the URI parameters for the request:
 |                          |                         |IP address.              |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example List one public IP addresses: JSON request**
-
 
 .. code::
 
    curl --include \
     'https://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/public_ips/{id}'
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List one public IP addresses: JSON response**
-
 
 .. code::
 
    200 (OK)
    Content-Type: application/json
-   
+
    {
        "created": "2014-05-30T03:23:42Z",
        "cloud_server": {
@@ -114,7 +79,3 @@ Response
        "status_detail": null,
        "updated": "2014-05-30T03:24:18Z"
    }
-
-
-
-

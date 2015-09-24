@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _post-add-node-to-load-balancer-pool-v3-tenant-id-load-balancer-pools-nodes:
+.. _post-add-node-to-load-balancer-pool-v3-load-balancer-pools:
 
 Add node to load balancer pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /v3/{tenant_id}/load_balancer_pools/nodes
 
-Add node to load balancer pool.
-
-This operation 				adds a node to 				one load balancer pool 				identified by ``load_balancer_pool_id``.
-
-
+This operation adds a node to one load balancer pool identified by ``load_balancer_pool_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -44,10 +36,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -60,17 +49,7 @@ This table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example Add node to load balancer pool: JSON request**
-
 
 .. code::
 
@@ -81,34 +60,21 @@ This operation does not accept a request body.
    }
 
 
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Add node to load balancer pool: JSON response**
-
 
 .. code::
 
    201 (Created)
    Content-Type: application/json
-   
+
    {
        "created": "2014-05-30T03:23:42Z",
        "cloud_server": {
            "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
-       }, 
+       },
        "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
        "load_balancer_pool": {
            "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2"
@@ -117,8 +83,3 @@ Response
        "status_detail": null,
        "updated": null
    }
-   
-
-
-
-

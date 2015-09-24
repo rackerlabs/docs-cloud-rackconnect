@@ -13,10 +13,9 @@ Learn how to use the Rackconnect service by using the REST API.
 .. toctree:: :hidden:
    :maxdepth: 2
 
-   overview/index
+   About the API <overview/index>
    developer-guide
    concepts
    general-api-info/index
    api-reference
    api-operations/index
-   glossary

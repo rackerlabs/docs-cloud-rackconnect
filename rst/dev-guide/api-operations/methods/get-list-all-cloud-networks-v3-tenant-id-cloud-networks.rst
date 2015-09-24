@@ -1,23 +1,15 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
-.. _get-list-all-cloud-networks-v3-tenant-id-cloud-networks:
+.. _get-list-all-cloud-networks-v3-networks:
 
 List all cloud networks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v3/{tenant_id}/cloud_networks
 
-List details for all cloud networks.
-
-This operation 				lists details for 				all the cloud networks 				available to the specified ``tenant_id``.
-
-
+This operation lists details for all the cloud networks available to the specified ``tenant_id``.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -36,10 +28,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -52,47 +41,23 @@ This table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
 **Example List all cloud networks: JSON request**
-
 
 .. code::
 
    curl --include \
     'dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/cloud_networks'
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List all cloud networks: JSON response**
-
 
 .. code::
 
    200 (OK)
    Content-Type: application/json
-   
+
    [
        {
            "cidr": "192.168.100.0/24",
@@ -109,7 +74,3 @@ Response
            "updated": "2014-05-25T02:39:22Z"
        }
    ]
-
-
-
-
