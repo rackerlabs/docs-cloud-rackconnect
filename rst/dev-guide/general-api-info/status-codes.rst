@@ -32,8 +32,6 @@ Response body
 The response body of HTTP status codes varies by service and type. Responses may contain
 some or all of these elements:
 
-- *title*
-
 - ``type``
 
 - ``code``
