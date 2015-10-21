@@ -1,4 +1,4 @@
-.. _common-dg-status:
+.. _status:
 
 Status codes
 ~~~~~~~~~~~~
@@ -24,7 +24,7 @@ digit of the status code:
 
 .. _RFC-7231: http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
 
-.. _common-dg-status-body:
+.. _status-body:
 
 Response body
 ^^^^^^^^^^^^^
@@ -56,7 +56,7 @@ some or all of these elements:
     }
    }
 
-.. _common-dg-status-two:
+.. _status-two:
 
 2xx status codes
 ^^^^^^^^^^^^^^^^
@@ -86,7 +86,7 @@ descriptions:
   |             |                            | request being filled.           |
   +-------------+----------------------------+---------------------------------+
 
-.. _common-dg-status-two-example:
+.. _status-two-example:
 
 The following examples show basic ``200 OK`` request. Since the request succeeded,
 no ``type``, ``message``, or ``details`` elements are contained in the response
@@ -126,7 +126,7 @@ body:
       "callbackUrl" : "https://dns.api.rackspacecloud.com/v1.0/1234/status/3593a5e9-83af-4eb8-ae1a-25f07b747d80"
     }
 
-.. _common-dg-status-four:
+.. _status-four:
 
 4xx status codes
 ^^^^^^^^^^^^^^^^
@@ -184,7 +184,7 @@ descriptions:
   |             |                             | moment.                        |
   +-------------+-----------------------------+--------------------------------+
 
-.. _common-dg-status-four-example:
+.. _status-four-example:
 
 The following ``badRequest`` examples show errors when the volume size of a request
 is invalid.
@@ -224,7 +224,7 @@ is invalid.
        }
     }
 
-.. _common-dg-status-five:
+.. _status-five:
 
 5xx status codes
 ^^^^^^^^^^^^^^^^
@@ -253,7 +253,7 @@ descriptions:
   |             |                        | for processing.                     |
   +-------------+------------------------+-------------------------------------+
 
-.. _common-dg-status-five-example:
+.. _status-five-example:
 
 The following ``instanceFault`` examples show errors when the server has
 erred or cannot perform the requested operation.
@@ -295,7 +295,7 @@ erred or cannot perform the requested operation.
        }
     }
 
-.. _common-dg-status-synch:
+.. _status-synch:
 
 Synchronous versus asynchronous responses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -303,13 +303,13 @@ Synchronous versus asynchronous responses
 **Synchronous**
 
 *Synchronous* responses occur at request time. Synchronous responses contains all or some
-of same elements as found in the :ref:`response body <common-dg-status-body>` attached
+of same elements as found in the :ref:`response body <status-body>` attached
 to an HTTP status code.
 
 **GET** requests often return *synchronous* responses, since the request is always
 retrieving existing information.
 
-.. _common-dg-status-aynch:
+.. _status-aynch:
 
 **Asynchronous**
 
@@ -378,7 +378,7 @@ querying the callback URL will return the information about the error.
 If you use the callback URL without specifying the query parameter
 ``showDetails=true``, only basic information is provided:
 
-.. _common-dg-status-async-example:
+.. _status-async-example:
 
 **Example: Basic error asynchronous response, XML**
 
