@@ -1,16 +1,20 @@
-.. _common-dg-auth:
+.. _auth:
 
 Authentication
 ~~~~~~~~~~~~~~
 
-Every ReST request against a Rackspace Cloud service requires the inclusion of a specific authorization token, supplied by the `X-Auth-Token` HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity service and supplying valid authentication credentials.
+Every ReST request against a Rackspace Cloud service requires the inclusion of a specific 
+authorization token, supplied by the `X-Auth-Token` HTTP header. Customers obtain this 
+token by first using the Rackspace Cloud Identity service and supplying valid authentication 
+credentials.
 
-.. _common-dg-auth-endpoint:
+.. _auth-endpoint:
 
 Authentication endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The Rackspace Cloud Authentication Service serves as the entry point to all Rackspace Cloud APIs and is itself a ReSTful web service.
+The Rackspace Cloud Authentication Service serves as the entry point to all Rackspace Cloud 
+APIs and is itself a ReSTful web service.
 
 Use the following endpoint to access the Cloud Identity service:
 
@@ -18,7 +22,7 @@ Use the following endpoint to access the Cloud Identity service:
 
 Note that the v2.0 component in the URL indicates that you are using version 2.0 of the Cloud Authentication API.
 
-.. _common-dg-auth-token:
+.. _auth-token:
 
 Authenticating by using token-based authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,9 +47,12 @@ authentication request examples with your information:
    corner of the window.
 
 In the following examples, you submit the request against the Rackspace Cloud Identity
-service endpoint. If the request is successful, the authentication response returns the authentication token, service catalog, and user information as shown in the example :ref:`authentication response <common-dg-auth-response>`. You can use this information to :ref:`submit an API request <common-dg-auth-submit-api-request>`.
+service endpoint. If the request is successful, the authentication response returns 
+the authentication token, service catalog, and user information as shown in the example 
+:ref:`authentication response <auth-response>`. You can use this information 
+to :ref:`submit an API request <auth-submit-api-request>`.
 
-.. _common-dg-auth-request:
+.. _auth-request:
 
 **Example: Authentication request, JSON**
 
@@ -76,7 +83,7 @@ service endpoint. If the request is successful, the authentication response retu
            apiKey="aaaaa-bbbbb-ccccc-12345678"/> **<2>**
     </auth>
 
-.. _common-dg-auth-response:
+.. _auth-response:
 
 **Example: Authentication response, JSON**
 
@@ -242,13 +249,13 @@ service endpoint. If the request is successful, the authentication response retu
     </access>
 
 .. note::
-    For detailed information about the authentication request and response, see
-    `authentication request and response`_ in the *Cloud Identity Developer Guide*.
+    For detailed information about the authentication request and response, see the annotated 
+    authentication request and response in the 
+    :rax-devdocs:`Cloud Identity Developer Guide<cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>`.
 
 .. _Cloud Control Panel: http://mycloud.rackspace.com/
-.. _authentication request and response: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html
 
-.. _common-dg-auth-submit-api-request:
+.. _auth-submit-api-request:
 
 Submit API request
 ^^^^^^^^^^^^^^^^^^
@@ -322,7 +329,7 @@ an API request for any service included in the service catalog.
          mytest2
          * Connection #0 to host storage101.ord1.clouddrive.com left intact
 
-.. _common-dg-auth-manage:
+.. _auth-manage:
 
 Manage authentication tokens
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -371,7 +378,8 @@ endpoint.
    `OpenStack command-line client application`_ or one of the `Rackspace SDKs`_.
 
 .. note:
-    - For more detailed authentication instructions, see the `Identity service quickstart`_.
+    - For more detailed authentication instructions, see the 
+      :rax-devdocs:`Identity service quickstart<cloud-identity/v2/developer-guide/#document-quickstart-guide>`.
 
     - The Rackspace Cloud Identity service supports additional authentication methods like
       username and password, and multi-factor authentication. For more information, see
@@ -379,5 +387,3 @@ endpoint.
 
 .. _OpenStack command-line client application: https://wiki.openstack.org/wiki/OpenStackClients
 .. _Rackspace SDKs: https://developer.rackspace.com/sdks/
-.. _Identity service quickstart: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/QuickStart-000.html
-.. _Rackspace Cloud Identity service Developer: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html
