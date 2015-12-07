@@ -2,8 +2,9 @@
 About the Rackconnect API
 =========================
 
-RackConnect v3.0 includes an enhanced API that enables you to accomplish
-the following tasks:
+The Rackspace RackConnect service allows customers connect dedicated Rackspace resources to the Rackspac Cloud servers by using Cisco ASA Firewall or an F5 load balancer.
+
+You can use the RackConnect 3.0 API to accomplish the following tasks:
 
 -  Seamlessly add and remove cloud servers from your load balancer pools
 
