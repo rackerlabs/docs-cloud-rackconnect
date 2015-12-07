@@ -17,7 +17,8 @@ Learn how to use the Rackconnect service by using the REST API.
    
    RackConnect 3.0 <self>
    API Status <http://www.rackspacestatus.com/>
-   overview/index
+   About the API <overview/index>
+   getting-started/index
    developer-guide
    concepts
    general-api-info/index
