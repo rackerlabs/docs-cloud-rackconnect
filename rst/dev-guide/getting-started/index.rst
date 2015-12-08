@@ -7,5 +7,7 @@
 .. toctree::
    :maxdepth: 2
 
+   Prerequisites <prerequisites-for-using-api>
+   Send API requests <send-request-ovw>
    Authenticate <authenticate>
    working-with-rackconnect-api

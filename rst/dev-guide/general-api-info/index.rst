@@ -10,10 +10,10 @@ leverage version 3 of RackConnect.
    :maxdepth: 2
 
    authentication
+   service-endpoints
    role-based-access-control
    common-headers
    contract-version
    date-time-format
    limits
-   service-endpoints
    status-codes

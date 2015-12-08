@@ -1,6 +1,6 @@
 .. _auth-curl-request:
 
-.. code:: 
+.. code::
 
 	  $ curl https://identity.api.rackspacecloud.com/v2.0/tokens  \
 	   -X POST \
