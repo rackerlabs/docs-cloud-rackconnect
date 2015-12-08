@@ -1,12 +1,12 @@
-.. _auth-response-example:
+.. _auth-response-example: 
 
-.. code::
+.. code:: 
 
 	{
 		"access": {
 			"token": {
 				"id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-				"expires": "2014-11-24T22:05:39.115Z",
+				"expires": "2014-11-24T22:05:39.115Z", 
 				"tenant": {
 					"id": "110011",
 					"name": "110011"
@@ -47,9 +47,9 @@
 					],
 					"type": "rax:database"
 				},
-
-				...
-
+		 
+				...        
+		 
 				{
 					"name": "cloudDNS",
 					"endpoints": [
@@ -69,12 +69,12 @@
 							"tenantId": "110011"
 						}
 					],
-
+			 
 					"type": "rax:cdn"
 				}
 			],
 			"user": {
-				"id": "123456",
+				"id": "123456", 
 				"roles": [
 					{
 						"description": "A Role that allows a user access to keystone Service methods",
