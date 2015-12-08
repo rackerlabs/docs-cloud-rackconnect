@@ -50,18 +50,14 @@ authentication response. You'll need these values to submit requests to the API.
 If the request failed, review the response message and
 the following error message descriptions to determine next steps.
 
-``400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting``
+``400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting``: Review the 
+authentication request for syntax or coding errors. If you are using cURL, see the 
+:ref:`Using cURL <how-curl-commands-work>`.
 
-  Review the authentication request for syntax or coding errors.
-  If you are using cURL, see the :ref:`Using cURL <how-curl-commands-work>`.
 
-
-``401 Unable to authenticate user with credentials provided.``
-
-  Verify the authentication credentials submitted in the
-  authentication request. If necessary, contact your Rackspace
-  Cloud Administrator or Rackspace Support to get valid
-  credentials.
+``401 Unable to authenticate user with credentials provided.``: Verify the authentication credentials 
+submitted in the authentication request. If necessary, contact your Rackspace Cloud Administrator or 
+Rackspace Support to get valid credentials.
 
 ..  note::
        For additional information about authentication errors, see the
@@ -134,10 +130,6 @@ To reference the value in an API request, prefix the variable name with a $, for
 
 #. In the ``service catalog`` section of the authentication response, copy the ``publicURL``
    value for the |apiservice|, version, and region that you want to access.
-
-   This example shows the endpoints available for the |apiservice|.
-
-   .. include:: ../common-gs/samples/service-catalog-endpoint.rst
 
 
 #. Copy the URL, and then export it to an environment variable.

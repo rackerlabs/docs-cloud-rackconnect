@@ -9,7 +9,7 @@ RackConnect API 3.0
 Use the following links to get user and reference information for the
 Rackconnect service REST API.
 
-- :ref:`Getting Started Guide <getting-started/index>`
+- :ref:`Getting Started Guide <getting-started>`
 - :ref:`Developer Guide <developer-guide>`
 - :ref:`API reference <api-reference>`
 
