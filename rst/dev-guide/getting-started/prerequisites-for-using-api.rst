@@ -3,6 +3,9 @@
 Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+To use the getting started examples, make sure you have the following information and
+complete any necessary configuration work.
+
 - Rackspace Cloud account
 - Username and password to access the account
 - API key to access Rackspace Cloud services

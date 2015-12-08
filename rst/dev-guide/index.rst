@@ -11,7 +11,8 @@ Rackconnect service REST API.
 
 - :ref:`Getting Started Guide <getting-started>`
 - :ref:`Developer Guide <developer-guide>`
-- :ref:`API reference <api-reference>`
+- :ref:`API Reference <api-reference>`
+- :ref:`Release Notes <release-notes>`
 
 .. toctree:: :hidden:
    :maxdepth: 2
@@ -26,3 +27,4 @@ Rackconnect service REST API.
    general-api-info/index
    api-reference
    api-operations/index
+   release-notes
