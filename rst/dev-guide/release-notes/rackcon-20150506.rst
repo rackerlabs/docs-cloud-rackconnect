@@ -1,0 +1,17 @@
+API |contract version| release, May 6, 2015
+------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+New examples were added to API operations for making requests.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
