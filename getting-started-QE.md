@@ -2,11 +2,11 @@
 
 **Getting Started navigation**
 
-- [ ] Link at top of doc
+- [x] Link at top of doc
   
       ![Part links](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-part-links.png)
   
-- [ ] Content hierarchy for top-sections looks like one of these two models, with GS title in nav
+- [x] Content hierarchy for top-sections looks like one of these two models, with GS title in nav
   
       ![Nav with curl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-nav-curl-only.png) 
       ![Nav with curl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-nav-with-client.png) 
@@ -24,12 +24,12 @@
 
 **Getting Started common content**
 
-- [ ]  Prerequisites include config environment variables (late change)
+- [x]  Prerequisites include config environment variables (late change)
        
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-prereqs.png) 
        
 
-- [ ]  GS intro topic that follows boiler plate, might have extra content depending on product.
+- [x]  GS intro topic that follows boiler plate, might have extra content depending on product.
 
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-intro.png) 
        
@@ -39,7 +39,7 @@
        ![Get Credsl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-getcreds.png) 
 
 
-- [ ]  Send API requests content follows template (some docs have only cURL, some have cURL and CLI)
+- [x]  Send API requests content follows template (some docs have only cURL, some have cURL and CLI)
       
 
 - [ ]  Authenticate uses [common content](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-getting-started/authenticate) 
@@ -52,51 +52,51 @@
 
 **General API section**
 
-- [ ] Authentication section contains short section referencing GS auth example and Identity doc. 
+- [x] Authentication section contains short section referencing GS auth example and Identity doc. 
       See [example](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-general-api-info/authentication-gen-api)
 
-- [ ] Service access endpoints topic is listed immediately after the authentication topic in the left nav. 
+- [x] Service access endpoints topic is listed immediately after the authentication topic in the left nav. 
 
-- [ ] Service access endpoints topic has link to the authentication response in the Review Auth response section of this Getting Started Guide.
+- [x] Service access endpoints topic has link to the authentication response in the Review Auth response section of this Getting Started Guide.
 
-- [ ] How to use cURL topic not included in the General API section (info provided in common auth section)
+- [x] How to use cURL topic not included in the General API section (info provided in common auth section)
 
 
 ##Copy check
 
 **Check links**
 
-- [ ] Run link check on page.
+- [x] Run link check on page.
 
-- [ ] Look for malformed internal and external cross-references
+- [x] Look for malformed internal and external cross-references
 
-- [ ] Look for link references that aren't linked, or links that refer to html topics from docs.rackspace.com
+- [x] Look for link references that aren't linked, or links that refer to html topics from docs.rackspace.com
 
-- [ ] Look for missing punctuation when link is at end of sentence.  
+- [x] Look for missing punctuation when link is at end of sentence.  
           (Leave a space between the end of link and the punctuation. ```This is a :ref:`test <refid>` .```
 
 **Code samples**
 
-- [ ] Make sure spacing is OK -- as good as it can be.
+- [x] Make sure spacing is OK -- as good as it can be.
 
-- [ ] Examples use environment variables -- ``$ENDPOINT``, ``$TENANT_ID``, and ``$AUTH_TOKEN``  (just mark it if not used, not critical but prefereable.)
+- [x] Examples use environment variables -- ``$ENDPOINT``, ``$TENANT_ID``, and ``$AUTH_TOKEN``  (just mark it if not used, not critical but prefereable.)
 
-- [ ] Paragraph text not merged into code samples.
+- [x] Paragraph text not merged into code samples.
 
 **Inline markup**
 
-- [ ] Look for stray ` or * symbols or funny spacing
+- [x] Look for stray ` or * symbols or funny spacing
 
-- [ ] Find Bold, italic, or inline literal rendering issues
+- [x] Find Bold, italic, or inline literal rendering issues
 
-- [ ] Look for stray | or html leftovers  (margin: 0 ... )
+- [x] Look for stray | or html leftovers  (margin: 0 ... )
 
 **Tables**
 
-- [ ] Check formatting and inline markup for weird stuff
+- [x] Check formatting and inline markup for weird stuff
 
-- [ ] Tables have titles 
+- [x] Tables have titles 
 
 **Lists**
 
-- [ ] Look for strange indenting or bolding (ragged margins make Sphinx think things are dl lists.)
+- [x] Look for strange indenting or bolding (ragged margins make Sphinx think things are dl lists.)
