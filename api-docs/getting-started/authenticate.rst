@@ -21,5 +21,5 @@ which means that you must generate a new token each day.
      in the Rackspace Cloud Identity service developer guide.
 
 
-.. include:: common-gs/auth-using-curl.rst
+.. include:: ../common-gs/auth-using-curl.rst
 
