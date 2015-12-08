@@ -13,4 +13,4 @@ Replace the ``<region>`` and ``<tenantId>`` placeholders with the region where y
 cloud servers are located and your cloud account's tenant ID number,
 which is also referred to as your account ID. Your account ID is located
 after the final slash (//) in the ``publicURL`` field returned in the
-authentication response.
+:ref:`authentication service response<review-auth-resp>`.

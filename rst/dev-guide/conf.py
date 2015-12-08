@@ -55,7 +55,6 @@ builder = 'deconst-single'
 # General information about the project.
 project = 'Rackspace Rackconnect'
 copyright = '2015, Rackspace'
-author = 'Constanze Kratel'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -79,7 +78,7 @@ today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples', 'api-operations/methods*', 'common-gs']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods*', 'common-gs', 'getting-started/examples']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -132,6 +131,7 @@ rst_epilog = """
 .. |apiservice| replace:: Rackspace RackConnect API
 .. |no changes| replace:: None for this release.
 .. |contract version| replace:: 3.0
+.. |product name| replace:: Rackspace RackConnect
 """
 
 # A list of ignored prefixes for module index sorting.
