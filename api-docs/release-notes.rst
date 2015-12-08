@@ -13,4 +13,4 @@ resolved issues, and other important details about |apiservice| |contract versio
    :maxdepth: 2  
       
    May 6, 2015 <release-notes/rackcon-20150506>
-   December 1, 2014 <release-notes/rackcon-20141201>   
+   December 1, 2014 <release-notes/rackcon-20141201>
