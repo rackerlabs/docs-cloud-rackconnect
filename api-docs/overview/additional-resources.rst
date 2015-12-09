@@ -1,21 +1,44 @@
 .. _additional-resources:
 
 Additional resources
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
-You can view additional documentation at the following locations:
+We welcome feedback, comments, and bug reports. Visit the `Rackspace Product Feedback Forum`_ 
+to let us know what you think about Cloud Databases. 
 
--  Draft descriptions of pending features are available `here`_.
+Use the links below to learn more about the Rackspace RackConnect service and API.
 
--  The `RackConnect Getting Started`_ guide.
+- For general information about |product name|, see the `RackConnect FAQ`_ in 
+  the Rackspace Knowledge Center.
+  
+- To learn about differences between RackConnect v2.0 and RackConnect v3.0, see the 
+  article `Compare RackConnect v2.0 and v3.0`_
 
--  Knowledge Center article about getting started with the `RackConnect
-   v3.0 API`_.
+- Draft descriptions of pending features are available `here`_.
 
--  RackConnect `support articles`_.
+- To get started with the API, see the :ref:`Getting Started Guide <getting-started>`
+    
+- To get information about APIs for other Rackspace Cloud services, see the
+  `Rackspace API Documentation`_.  
+  
+- To get more information about Rackspace Cloud products, see the `Rackspace website`_  
+  This site also offers links to the Rackspace official support channels, including knowledge 
+  base articles, forums, phone, chat, and email.
+  
+- You can follow Rackspace updates and announcements via `Twitter`_.
+  
+- To learn about using Rackspace Cloud SDKs, see `Software Development Kits & Tools`_. 
 
-
+- This API uses standard HTTP 1.1 response codes as documented at HTTP Status Code Definitions.
+    
+  
+.. _Rackspace Product Feedback Forum: http://feedback.rackspace.com 
+.. _RackConnect FAQ: http://www.rackspace.com/knowledge_center/article/rackconnect-v30-faq
+.. _Getting Started with Rackspace Cloud Databases: http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html
+.. _Rackspace API Documentation: https://developer.rackspace.com/docs/
+.. _Rackspace website: http://www.rackspace.com
+.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/
+.. _Twitter: https://twitter.com/rackspace
+.. _HTTP Status Code Definitions: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+.. _Compare RackConnect v2.0 and v3.0: http://www.rackspace.com/knowledge_center/article/comparing-rackconnect-v30-and-rackconnect-v20
 .. _here: http://docs.rcv3.apiary.io
-.. _RackConnect Getting Started: http://www.rackspace.com/knowledge_center/getting-started/rackconnect
-.. _RackConnect v3.0 API: http://www.rackspace.com/knowledge_center/article/getting-started-with-the-rackconnect-v30-api
-.. _support articles: http://www.rackspace.com/knowledge_center/product-page/rackconnect
