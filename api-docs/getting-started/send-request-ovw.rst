@@ -1,6 +1,6 @@
 .. _send-api-requests:
 
-Sending API requests to Cloud Queues
+Sending API requests to RackConnect
 ---------------------------------------
 
 This Getting Started Guide shows how to send requests by using cURL.
