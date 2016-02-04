@@ -37,4 +37,3 @@ system (IDS) and web application firewall (WAF) offerings.
    :maxdepth: 2
 
    additional-resources
-   Pricing and terms of service <pricing-service-level>
