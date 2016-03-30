@@ -1,7 +1,6 @@
 # Rackspace Rackconnect API documentation
 
-[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-rackconnect.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-rackconnect)
-
+[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-rackconnect/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-rackconnect/)
 
 ## Purpose
 
