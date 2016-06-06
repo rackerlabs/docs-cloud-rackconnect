@@ -1,2 +1,0 @@
-curl --include \
- 'http://dfw.rackconnect.api.rackspacecloud.com/v3/{tenant_id}/load_balancer_pools'

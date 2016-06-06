@@ -1,5 +1,0 @@
-<books xmlns="http://docs.rackspace.com/olink">
-    <book path="src/docbkx/rackconnect-devguide.xml"/>
-    <book path="src/docbkx/rackconnect-gettingstarted.xml"/>
-    <book path="src/docbkx/rackconnect-releasenotes.xml"/>
-</books>

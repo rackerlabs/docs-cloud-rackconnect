@@ -1,3 +1,0 @@
-./src/wadl/rackconnect.wadl:
-    title: rackconnect
-    output_directory: rst/dev-guide/api-operations
