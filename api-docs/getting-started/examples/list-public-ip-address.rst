@@ -24,7 +24,7 @@ been set up for a specific tenant.
 
 .. note:: You can obtain the UUID (universally unique identifier) of your cloud
    server from within its server details page in the `Cloud Control
-   Panel <https://mycloud.rackspace.com>`__ or with the `Cloud Servers
+   Panel <https://login.rackspace.com>`__ or with the `Cloud Servers
    API—Get Server Details <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#get-list-servers-with-details-servers-detail>`__
    operation. The UUID is a 32-character entry with four hyphens in the
    **ID** or **id** section of the server details page.
