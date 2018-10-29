@@ -35,4 +35,4 @@ Save your account number
       insecure client-server communications. Also, make sure that the value is not
       included in source code that is stored in public repositories.
 
-.. _Log in to the Rackspace Cloud Control panel: https://mycloud.rackspace.com   
+.. _Log in to the Rackspace Cloud Control panel: https://login.rackspace.com   
