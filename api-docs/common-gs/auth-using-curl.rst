@@ -12,7 +12,7 @@ Follow these steps to authenticate to the Rackspace Cloud by
 
 Send an authentication request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-From a command prompt, send a **POST tokens** request to the Rackspace Cloud Identity
+From a command prompt, send a **POST tokens** request to the Rackspace Identity
 service.  Include your username and :ref:`API key <get-credentials>`
 as shown in the following example.
 
@@ -34,10 +34,10 @@ In the following example, the ellipsis (...)  represents other service endpoints
 are not shown. The values shown in this and other examples vary because the information
 returned is specific to your account.
 
-.. note:: 
-     For detailed information about the authentication response, see the 
+.. note::
+     For detailed information about the authentication response, see the
      :rax-devdocs:`annotated authentication request and response<cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>` in the Rackspace Cloud API documentation.
-     
+
 **Example: Authentication response**
 
 .. include:: ../common-gs/samples/auth-resp-json.rst
@@ -50,13 +50,13 @@ authentication response. You'll need these values to submit requests to the API.
 If the request failed, review the response message and
 the following error message descriptions to determine next steps.
 
-``400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting``: Review the 
-authentication request for syntax or coding errors. If you are using cURL, see the 
+``400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting``: Review the
+authentication request for syntax or coding errors. If you are using cURL, see the
 :ref:`Using cURL <how-curl-commands-work>`.
 
 
-``401 Unable to authenticate user with credentials provided.``: Verify the authentication credentials 
-submitted in the authentication request. If necessary, contact your Rackspace Cloud Administrator or 
+``401 Unable to authenticate user with credentials provided.``: Verify the authentication credentials
+submitted in the authentication request. If necessary, contact your Rackspace Cloud Administrator or
 Rackspace Support to get valid credentials.
 
 ..  note::
@@ -84,8 +84,8 @@ token ID
 
 tenant ID
     The tenant ID provides your account number. For most Rackspace Cloud service APIs, the
-    tenant ID is appended to the API endpoint in the service catalog automatically. For 
-    Rackspace Cloud Services, the tenant ID has the same value as the tenant name. 
+    tenant ID is appended to the API endpoint in the service catalog automatically. For
+    Rackspace Cloud Services, the tenant ID has the same value as the tenant name.
 
 endpoint
 	The API endpoint provides the URL that you use to access the API service. For guidance
@@ -139,5 +139,4 @@ To reference the value in an API request, prefix the variable name with a $, for
         $ export API_ENDPOINT="publicURL"
 
 
-   Replace *publicURL* with the publicURL value listed in the service catalog. 
-   
+   Replace *publicURL* with the publicURL value listed in the service catalog.

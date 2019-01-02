@@ -17,12 +17,12 @@ product-specific, to those users. Each account has only one account
 owner, and that role is assigned by default to any Rackspace Cloud
 account when the account is created.
 
-For more information about RBAC, see the 
-:rax-devdocs:`RBAC<cloud-identity/v2/developer-guide/#document-authentication-info/role-based-access-control>` 
-section in the "Cloud Identity Client Developer Guide". See the following links for information 
-about how to manage users and roles by using the Cloud Identity service:
+For more information about RBAC, see the
+:rax-devdocs:`RBAC<cloud-identity/v2/developer-guide/#document-authentication-info/role-based-access-control>`
+section in the "Rackspace Identity Client Developer Guide". See the following links for information
+about how to manage users and roles by using the Rackspace Identity service:
 
--  :rax-devdocs:`Add account user<cloud-identity/v2/developer-guide/#add-user>`   
+-  :rax-devdocs:`Add account user<cloud-identity/v2/developer-guide/#add-user>`
 
 -  :rax-devdocs:`Assign roles to account users<cloud-identity/v2/developer-guide/#add-role-to-user>`
 
