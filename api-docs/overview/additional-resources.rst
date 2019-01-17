@@ -3,8 +3,7 @@
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
-We welcome feedback, comments, and bug reports. Visit the `Rackspace Product Feedback Forum`_ 
-to let us know what you think about Cloud Databases. 
+We welcome feedback, comments, and bug reports.
 
 Use the links below to learn more about the Rackspace RackConnect service and API.
 
@@ -26,18 +25,14 @@ Use the links below to learn more about the Rackspace RackConnect service and AP
   base articles, forums, phone, chat, and email.
   
 - You can follow Rackspace updates and announcements via `Twitter`_.
-  
-- To learn about using Rackspace Cloud SDKs, see `Software Development Kits & Tools`_. 
 
 - This API uses standard HTTP 1.1 response codes as documented at HTTP Status Code Definitions.
     
   
-.. _Rackspace Product Feedback Forum: http://feedback.rackspace.com 
 .. _RackConnect FAQ: http://www.rackspace.com/knowledge_center/article/rackconnect-v30-faq
 .. _Getting Started with Rackspace Cloud Databases: http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html
 .. _Rackspace API Documentation: https://developer.rackspace.com/docs/
 .. _Rackspace website: http://www.rackspace.com
-.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/
 .. _Twitter: https://twitter.com/rackspace
 .. _HTTP Status Code Definitions: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 .. _Compare RackConnect v2.0 and v3.0: http://www.rackspace.com/knowledge_center/article/comparing-rackconnect-v30-and-rackconnect-v20
