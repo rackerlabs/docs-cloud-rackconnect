@@ -12,7 +12,7 @@ Follow these steps to authenticate to the Rackspace Cloud by
 
 Send an authentication request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-From a command prompt, send a **POST tokens** request to the Rackspace Identity
+From a command prompt, send a **POST tokens** request to the Identity
 service.  Include your username and :ref:`API key <get-credentials>`
 as shown in the following example.
 

@@ -19,8 +19,8 @@ account when the account is created.
 
 For more information about RBAC, see the
 :rax-devdocs:`RBAC<cloud-identity/v2/developer-guide/#document-authentication-info/role-based-access-control>`
-section in the "Rackspace Identity Client Developer Guide". See the following links for information
-about how to manage users and roles by using the Rackspace Identity service:
+section in the "Identity Client Developer Guide". See the following links for information
+about how to manage users and roles by using the Identity service:
 
 -  :rax-devdocs:`Add account user<cloud-identity/v2/developer-guide/#add-user>`
 
