@@ -28,11 +28,11 @@ Use the links below to learn more about the Rackspace RackConnect service and AP
 - This API uses standard HTTP 1.1 response codes as documented at HTTP Status Code Definitions.
 
 
-.. _RackConnect FAQ: http://www.rackspace.com/knowledge_center/article/rackconnect-v30-faq
-.. _Getting Started with Rackspace Cloud Databases: http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html
+.. _RackConnect FAQ: https://www.rackspace.com/knowledge_center/article/rackconnect-v30-faq
+.. _Getting Started with Rackspace Cloud Databases: https://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html
 .. _Rackspace API Documentation: https://developer.rackspace.com/docs/
-.. _Rackspace website: http://www.rackspace.com
+.. _Rackspace website: https://www.rackspace.com
 .. _Twitter: https://twitter.com/rackspace
 .. _HTTP Status Code Definitions: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-.. _Compare RackConnect v2.0 and v3.0: http://www.rackspace.com/knowledge_center/article/comparing-rackconnect-v30-and-rackconnect-v20
+.. _Compare RackConnect v2.0 and v3.0: https://www.rackspace.com/knowledge_center/article/comparing-rackconnect-v30-and-rackconnect-v20
 .. _here: http://docs.rcv3.apiary.io

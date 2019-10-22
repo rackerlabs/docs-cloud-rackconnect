@@ -14,10 +14,10 @@ by the Cloud Networks (Neutron) API.
    - :rax-devdocs:`API operations reference<cloud-networks/v1/developer-guide/#document-api-reference>`
 
    - :rax-devdocs:`API developer guide<cloud-networks/v1/developer-guide/>`
-   
+
    - `Getting started guide`_
-   
-.. _Getting started guide: http://docs.rackspace.com/networks/api/v2/cn-gettingstarted/content/ch_preface.html
+
+.. _Getting started guide: https://docs.rackspace.com/networks/api/v2/cn-gettingstarted/content/ch_preface.html
 
 
 .. include:: methods/get-list-all-cloud-networks-v3-tenant-id-cloud-networks.rst
