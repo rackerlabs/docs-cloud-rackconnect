@@ -1,8 +1,9 @@
 {
-  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-rackconnect/",
-  "githubUrl": "https://github.com/rackerlabs/docs-cloud-rackconnect/",
-  "githubBranch": "master",
-  "meta": {
-    "preferGithubIssues": true
+    "contentIDBase": "https://github.com/rackerlabs/docs-cloud-rackconnect/",
+    "githubUrl": "https://github.com/rackerlabs/docs-cloud-rackconnect/",
+    "githubBranch": "master",
+    "meta": {
+      "preferGithubIssues": true
+    }
   }
-}
+  
