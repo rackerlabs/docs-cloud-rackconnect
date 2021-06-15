@@ -1,7 +1,6 @@
 # Rackspace RackConnect API documentation
 
-[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-rackconnect/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-rackconnect/)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c30c6ea6-ca65-4ea3-837a-664ad59d5447/deploy-status)](https://app.netlify.com/sites/docs-cloud-rackconnect/deploys)
 
 This repository contains the source files for the following RackConnect API documentation:
 
@@ -13,6 +12,14 @@ This repository contains the source files for the following RackConnect API docu
 When you commit changes to the master branch of this repository, the
 [Strider CI/CD build job](https://build.developer.rackspace.com/rackerlabs/docs-cloud-rackconnect/)
 builds the documentation. Successful builds are deployed to production.
+
+## Local Setup
+
+`npm i -g netlify-cli`
+`netlify init`
+`netlify build`
+`netlify dev`
+`netlify deploy`
 
 ### Support and feedback
 
